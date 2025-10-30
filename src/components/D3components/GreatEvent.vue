@@ -13,7 +13,7 @@
             density="compact"
             hide-details
             clearable
-          ></v-text-field>
+            @update:model-value="currentPage = 1" ></v-text-field>
         </v-col>
 
         <v-col cols="12" md="8">
@@ -26,7 +26,7 @@
                 variant="solo-filled"
                 density="compact"
                 hide-details
-              ></v-select>
+                @update:model-value="currentPage = 1" ></v-select>
             </v-col>
             <v-col cols="12" sm="4" md="auto">
               <v-select
@@ -36,7 +36,7 @@
                 variant="solo-filled"
                 density="compact"
                 hide-details
-              ></v-select>
+                @update:model-value="currentPage = 1" ></v-select>
             </v-col>
             <v-col cols="6" sm="2" md="auto">
               <v-btn
@@ -60,15 +60,13 @@
 
     <v-row>
       <v-col
-        v-for="event in filteredEvents"
-        :key="event.id"
+        v-for="event in paginatedEvents" :key="event.id"
         cols="12"
         sm="6"
         md="4"
-        lg="3"
-      >
+        lg="4" >
         <v-card class="event-card fill-height d-flex flex-column" elevation="0" variant="outlined">
-          <v-card-text class="pb-2">
+           <v-card-text class="pb-2">
             <div class="d-flex justify-space-between align-start mb-3">
               <div class="d-flex align-center flex-wrap">
                 <span class="event-year mr-2">{{ event.yearPrefix }}{{ Math.abs(event.year) }}</span>
@@ -96,7 +94,6 @@
                 </v-chip>
               </div>
             </div>
-
             <div class="event-title text-h6 mb-2">
               {{ event.title }}
             </div>
@@ -104,34 +101,45 @@
               {{ event.description }}
             </p>
           </v-card-text>
-
           <v-spacer></v-spacer>
-
           <v-card-actions class="px-4 pt-0">
             <span class="event-people">人物：{{ event.people }}</span>
           </v-card-actions>
-        </v-card>
+          </v-card>
       </v-col>
 
-      <v-col v-if="filteredEvents.length === 0" cols="12">
-        <v-card class="event-card text-center pa-10" variant="outlined">
+      <v-col v-if="filteredEvents.length === 0" cols="12"> <v-card class="event-card text-center pa-10" variant="outlined">
           <v-icon size="50" color="#a1887f">mdi-archive-search-outline</v-icon>
           <div class="event-title mt-4">未找到相关纪事</div>
           <p class="event-description">请尝试调整搜索或筛选条件。</p>
         </v-card>
       </v-col>
     </v-row>
+
+    <v-row v-if="totalPages > 1" justify="center" class="mt-6">
+      <v-col cols="auto">
+        <v-pagination
+          v-model="currentPage"
+          :length="totalPages"
+          :total-visible="7"
+          active-color="#8D6E63"
+          variant="elevated"
+          density="comfortable"
+        ></v-pagination>
+      </v-col>
+    </v-row>
+
   </v-container>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
-// 事件条目类型
+// 事件条目类型 (保持不变)
 interface EventItem {
   id: number;
-  year: number; // 负数表示公元前
-  yearPrefix: string; // "约" "公元前" "公元"
+  year: number;
+  yearPrefix: string;
   dynasty: string;
   title: string;
   description: string;
@@ -139,13 +147,17 @@ interface EventItem {
   people: string;
 }
 
-// 筛选和排序状态
+// 筛选和排序状态 (保持不变)
 const searchQuery = ref('');
 const selectedDynasty = ref('全部朝代');
 const selectedTag = ref('全部标签');
-const sortOrder = ref<'asc' | 'desc'>('asc'); // 默认升序（按时间从远到近）
+const sortOrder = ref<'asc' | 'desc'>('asc');
 
-// 静态数据
+// --- NEW: 分页状态 ---
+const currentPage = ref(1);
+const itemsPerPage = ref(9); // 每页显示9条 (3行 x 3列)
+
+// 静态数据 (保持不变)
 const allEvents = ref<EventItem[]>([
   { id: 1, year: -6000, yearPrefix: '约', dynasty: '先秦', title: '雪山遗址发现', description: '一九六一年在北京市昌平县雪山村发现一处新石器时代遗址...', tags: ['文化', '考古'], people: '—' },
   { id: 2, year: -2000, yearPrefix: '约', dynasty: '先秦', title: '雪山二期文化', description: '在北京地区发现的反映这时人类生产、生活的遗址...', tags: ['社会'], people: '—' },
@@ -169,160 +181,156 @@ const allEvents = ref<EventItem[]>([
   { id: 20, year: 907, yearPrefix: '公元', dynasty: '五代十国', title: '五代十国开始', description: '唐朝灭亡，中国进入分裂时期，北京地区成为战场...', tags: ['政权'], people: '—' },
 ]);
 
-// 动态计算筛选器选项
+// 动态计算筛选器选项 (保持不变)
 const dynasties = computed(() => {
   return ['全部朝代', ...Array.from(new Set(allEvents.value.map(e => e.dynasty)))];
 });
-
 const tags = computed(() => {
   return ['全部标签', ...Array.from(new Set(allEvents.value.flatMap(e => e.tags)))];
 });
 
-// 核心逻辑：计算过滤和排序后的事件
+// --- MODIFIED: 先计算过滤和排序后的完整列表 ---
 const filteredEvents = computed(() => {
   let events = allEvents.value;
-
-  // 1. 筛选 - 朝代
+  // 筛选逻辑 (保持不变)
   if (selectedDynasty.value !== '全部朝代') {
     events = events.filter(e => e.dynasty === selectedDynasty.value);
   }
-
-  // 2. 筛选 - 标签
   if (selectedTag.value !== '全部标签') {
     events = events.filter(e => e.tags.includes(selectedTag.value));
   }
-
-  // 3. 筛选 - 搜索
   if (searchQuery.value) {
     const query = searchQuery.value.toLowerCase();
-    events = events.filter(e => 
+    events = events.filter(e =>
       e.title.toLowerCase().includes(query) ||
       e.description.toLowerCase().includes(query) ||
       e.people.toLowerCase().includes(query)
     );
   }
-
-  // 4. 排序
+  // 排序逻辑 (保持不变)
   events.sort((a, b) => {
     return sortOrder.value === 'asc' ? a.year - b.year : b.year - a.year;
   });
-
   return events;
 });
 
-// --- 方法 ---
+// --- NEW: 计算总页数 ---
+const totalPages = computed(() => {
+  return Math.ceil(filteredEvents.value.length / itemsPerPage.value);
+});
 
-// 切换排序
+// --- NEW: 计算当前页要显示的数据 ---
+const paginatedEvents = computed(() => {
+  const startIndex = (currentPage.value - 1) * itemsPerPage.value;
+  const endIndex = startIndex + itemsPerPage.value;
+  // 使用 .slice() 从过滤排序后的列表中提取当前页的数据
+  return filteredEvents.value.slice(startIndex, endIndex);
+});
+
+// --- 方法 (保持不变) ---
 const toggleSort = () => {
   sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
+  currentPage.value = 1; // 排序后回到第一页
 };
-
-// 重置所有筛选
 const resetFilters = () => {
   searchQuery.value = '';
   selectedDynasty.value = '全部朝代';
   selectedTag.value = '全部标签';
   sortOrder.value = 'asc';
+  currentPage.value = 1; // 重置后回到第一页
 };
-
-// 根据标签内容返回不同颜色
 const getTagColor = (tag: string) => {
   switch (tag) {
-    case '文化': return '#a1887f'; // 棕褐
-    case '科技': return '#00695C'; // 墨绿
-    case '考古': return '#6D4C41'; // 深棕
-    case '社会': return '#8D6E63'; // 浅棕
-    case '政权': return '#BF360C'; // 暗红
-    case '军事': return '#E65100'; // 橙黄
+    case '文化': return '#a1887f';
+    case '科技': return '#00695C';
+    case '考古': return '#6D4C41';
+    case '社会': return '#8D6E63';
+    case '政权': return '#BF360C';
+    case '军事': return '#E65100';
     default: return '#5D4037';
   }
 };
 </script>
 
 <style scoped lang="scss">
-// 引入仿古字体（如果需要，但为简单起见，我们主要用颜色）
-// @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
-
-// 仿古风格配色
-$bg-color: #fcfaf6; // 纸莎草纸米白
-$card-bg-color: #faf6f0; // 卡片米色
-$border-color: #dcd3c5; // 边框
-$text-dark-brown: #5a4b40; // 深棕文字（标题）
-$text-mid-brown: #6d5f53; // 中棕文字（正文）
-$text-light-brown: #8c7b6f; // 浅棕文字（辅助）
+/* 样式保持不变 */
+$bg-color: #fcfaf6;
+$card-bg-color: #faf6f0;
+$border-color: #dcd3c5;
+$text-dark-brown: #5a4b40;
+$text-mid-brown: #6d5f53;
+$text-light-brown: #8c7b6f;
 
 .great-events-page {
   background-color: $bg-color;
   min-height: 100vh;
 }
-
 .page-title {
-  // font-family: 'Noto Serif SC', serif; // 衬线字体
   font-weight: 700;
   color: $text-dark-brown;
 }
-
 .controls-bar {
   background-color: $card-bg-color;
   border: 1px solid $border-color;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-
   .v-text-field, .v-select {
     background-color: $bg-color;
   }
-  
   .control-button {
     color: $text-mid-brown;
     font-weight: 600;
   }
 }
-
 .event-card {
   background-color: $card-bg-color;
   border: 1px solid $border-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
   &:hover {
     box-shadow: 0 5px 12px rgba(90, 75, 64, 0.12);
     transform: translateY(-4px);
     border-color: darken($border-color, 10%);
   }
 }
-
 .event-year {
   color: $text-light-brown;
   font-weight: 700;
   font-size: 1.1rem;
   white-space: nowrap;
 }
-
 .dynasty-chip {
   font-weight: 600;
-  color: #fff !important; // 确保朝代芯片文字为白色
+  color: #fff !important;
 }
-
 .tag-chip {
-  color: #fff !important; // 确保标签芯片文字为白色
+  color: #fff !important;
   font-weight: 500;
 }
-
 .event-title {
-  // font-family: 'Noto Serif SC', serif;
   font-weight: 600;
   color: $text-dark-brown;
   line-height: 1.3;
 }
-
 .event-description {
   color: $text-mid-brown;
   font-size: 0.9rem;
   line-height: 1.6;
 }
-
 .event-people {
   color: $text-light-brown;
   font-size: 0.85rem;
   font-style: italic;
+}
+
+/* NEW: 为分页按钮添加一些间距和仿古颜色 */
+.v-pagination {
+  :deep(.v-pagination__item--is-active) {
+     background-color: #8D6E63 !important; // 浅棕色作为激活色
+     border-color: #8D6E63 !important;
+     color: #fff !important;
+  }
+   :deep(.v-pagination__item) {
+     color: $text-mid-brown;
+   }
 }
 </style>

@@ -259,8 +259,47 @@ onUnmounted(() => {
   </v-card>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+// --- 仿古风格 (仅卡片和标题) ---
+$bg-color: #fcfaf6;
+$card-bg-color: #faf6f0;
+$border-color: #dcd3c5;
+$text-dark-brown: #5a4b40;
+
+.v-card {
+  background-color: $card-bg-color !important;
+  border: 1px solid $border-color !important;
+  overflow: hidden; // **NEW: 防止 graphic 元素溢出卡片**
+
+  &.v-theme--dark {
+    background-color: #263238 !important;
+    border-color: #4E342E !important;
+  }
+}
+
+.v-card-title {
+  color: $text-dark-brown !important;
+  font-weight: 600;
+
+  .v-theme--dark & {
+    color: #D7CCC8 !important;
+  }
+}
+
 .v-card-text {
   padding: 0 !important;
+  // **NEW: 确保容器真正填充 v-card-text**
+  height: 500px; /* 或者从 props 传入，或者确保父级有固定高度 */
+  width: 100%;
+  position: relative; /* 确保子 div 的 100% 高度有效 */
+
+   // 直接给 ECharts 容器 div 设置背景色，而不是依赖透明度
+   > div { // 指向 ref="echartsContainer" 的 div
+      background-color: $card-bg-color;
+       .v-theme--dark & {
+         background-color: #263238;
+      }
+   }
 }
+
 </style>

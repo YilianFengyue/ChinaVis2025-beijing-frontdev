@@ -13,6 +13,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 import CircularDynastyChart from '@/components/D3components/CircularDynastyChart.vue';
 import SequencesSunburst from '@/components/D3components/SequencesSunburst.vue';
 import GreatEvent from '~/src/components/D3components/GreatEvent.vue';
+import RadialAreaChart from '~/src/components/D3components/RadialAreaChart.vue';
 
 // 注册 ECharts 组件
 echarts.use([
@@ -86,10 +87,10 @@ onMounted(() => {
   
     <v-container>
     <v-row>
-      <v-col cols="12">
+      <v-col cols="6">
         <CircularDynastyChart />
       </v-col>
-      <v-col cols="12">
+      <v-col cols="6">
         <SequencesSunburst />
       </v-col>
     </v-row>
@@ -97,6 +98,9 @@ onMounted(() => {
     <v-row>
       <v-col cols="12">
         <GreatEvent />
+      </v-col>
+      <v-col cols="12">
+        <RadialAreaChart />
       </v-col>
     </v-row>
   </v-container>
