@@ -17,6 +17,15 @@ export const routes = [
     },
     component: () => import("@/views/pages/DashBoard.vue"),
   },
+  {
+    path: "/D3",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/demo/D3tryPage.vue"),
+  },
+
 
 
 
