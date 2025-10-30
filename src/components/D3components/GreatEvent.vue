@@ -65,11 +65,11 @@
         sm="6"
         md="4"
         lg="4" >
-        <v-card class="event-card fill-height d-flex flex-column" elevation="0" variant="outlined">
+        <v-card class="event-card d-flex flex-column" height="380px" elevation="0" variant="outlined">
            <v-card-text class="pb-2">
             <div class="d-flex justify-space-between align-start mb-3">
               <div class="d-flex align-center flex-wrap">
-                <span class="event-year mr-2">{{ event.yearPrefix }}{{ Math.abs(event.year) }}</span>
+                <span class="event-year mr-2">{{ event.yearPrefix }}{{ event.year === 0 ? '' : Math.abs(event.year) }}</span>
                 <v-chip
                   color="#8D6E63"
                   variant="flat"
@@ -94,16 +94,44 @@
                 </v-chip>
               </div>
             </div>
-            <div class="event-title text-h6 mb-2">
+            
+            <div class="event-title text-h6 mb-2 text-truncate">
               {{ event.title }}
             </div>
+
             <p class="event-description">
               {{ event.description }}
             </p>
           </v-card-text>
+
           <v-spacer></v-spacer>
+
           <v-card-actions class="px-4 pt-0">
-            <span class="event-people">人物：{{ event.people }}</span>
+            <span class="event-people text-truncate">人物：{{ event.people }}</span>
+            <v-spacer></v-spacer>
+            
+            <v-menu location="center" open-on-click>
+              <template v-slot:activator="{ props }">
+                <v-btn v-bind="props" variant="text" size="small" color="#6D4C41">
+                  查看详情
+                </v-btn>
+              </template>
+              <v-card max-width="450px" elevation="10">
+                <v-card-title class="text-wrap" style="background-color: #faf6f0; color: #5a4b40;">
+                  {{ event.title }}
+                </v-card-title>
+                <v-card-subtitle class="pb-2" style="background-color: #faf6f0; color: #6d5f53;">
+                  {{ event.yearPrefix }}{{ event.year === 0 ? '' : Math.abs(event.year) }} - {{ event.dynasty }}
+                </v-card-subtitle>
+                <v-divider></v-divider>
+                <v-card-text style="white-space: pre-wrap; max-height: 400px; overflow-y: auto; background-color: #fcfaf6; color: #5a4b40;">
+                  <strong v-if="event.people !== '—'">人物：{{ event.people }}</strong>
+                  <v-divider class="my-2" v-if="event.people !== '—'"></v-divider>
+                  {{ event.description }}
+                </v-card-text>
+              </v-card>
+            </v-menu>
+
           </v-card-actions>
           </v-card>
       </v-col>
@@ -133,9 +161,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue'; 
+import * as d3 from 'd3'; 
 
-// 事件条目类型 (保持不变)
+// 接口 (无修改)
 interface EventItem {
   id: number;
   year: number;
@@ -147,52 +176,112 @@ interface EventItem {
   people: string;
 }
 
-// 筛选和排序状态 (保持不变)
+// 状态 (无修改)
 const searchQuery = ref('');
 const selectedDynasty = ref('全部朝代');
 const selectedTag = ref('全部标签');
 const sortOrder = ref<'asc' | 'desc'>('asc');
-
-// --- NEW: 分页状态 ---
 const currentPage = ref(1);
-const itemsPerPage = ref(9); // 每页显示9条 (3行 x 3列)
+const itemsPerPage = ref(9); 
+const allEvents = ref<EventItem[]>([]);
 
-// 静态数据 (保持不变)
-const allEvents = ref<EventItem[]>([
-  { id: 1, year: -6000, yearPrefix: '约', dynasty: '先秦', title: '雪山遗址发现', description: '一九六一年在北京市昌平县雪山村发现一处新石器时代遗址...', tags: ['文化', '考古'], people: '—' },
-  { id: 2, year: -2000, yearPrefix: '约', dynasty: '先秦', title: '雪山二期文化', description: '在北京地区发现的反映这时人类生产、生活的遗址...', tags: ['社会'], people: '—' },
-  { id: 3, year: -2000, yearPrefix: '约', dynasty: '先秦', title: '燕丹遗址发现', description: '类似雪山二期文化的遗址，还有昌平县的燕丹遗址...', tags: ['文化', '考古'], people: '—' },
-  { id: 4, year: -2000, yearPrefix: '约', dynasty: '先秦', title: '翼碾遗址发现', description: '类似雪山二期文化的遗址，还有昌平县的翼碾遗址...', tags: ['文化', '考古'], people: '—' },
-  { id: 5, year: -1800, yearPrefix: '约', dynasty: '先秦', title: '进入奴隶社会', description: '夏商时期是中国奴隶社会的开端。从现有考古材料看...', tags: ['政权', '社会'], people: '—' },
-  { id: 6, year: -1500, yearPrefix: '约', dynasty: '先秦', title: '发现青铜器物', description: '北京地区属于夏家店下层文化的同类遗址，发现了青铜器...', tags: ['文化', '科技'], people: '—' },
-  { id: 7, year: -1045, yearPrefix: '约', dynasty: '先秦', title: '发现铁刃铜钺', description: '在刘家河墓葬中还有一件铁刃铜钺，这是人工冶铁的证明...', tags: ['科技', '军事'], people: '—' },
-  { id: 8, year: -1044, yearPrefix: '约', dynasty: '先秦', title: '发现商代古城址', description: '在北京发现的商代文化遗迹和遗物，较重要的有房山...', tags: ['文化', '考古'], people: '—' },
-  { id: 9, year: -1043, yearPrefix: '约', dynasty: '先秦', title: '周初封燕', description: '周武王灭商后，封召公奭于燕，建立燕国，都城在蓟...', tags: ['政权'], people: '召公奭' },
-  { id: 10, year: -770, yearPrefix: '公元前', dynasty: '先秦', title: '春秋战国', description: '燕国成为春秋战国时期的重要诸侯国之一，蓟城更为繁荣...', tags: ['政权', '社会'], people: '—' },
-  { id: 11, year: -221, yearPrefix: '公元前', dynasty: '秦', title: '秦朝统一', description: '秦始皇统一六国，建立秦朝，北京地区属广阳郡，蓟城为其郡治...', tags: ['政权', '军事'], people: '秦始皇' },
-  { id: 12, year: -202, yearPrefix: '公元前', dynasty: '汉', title: '汉朝建立', description: '汉高祖刘邦建立汉朝，北京为广阳郡，后改为广阳国...', tags: ['政权'], people: '刘邦' },
-  { id: 13, year: 100, yearPrefix: '公元', dynasty: '汉', title: '《说文解字》成书', description: '许慎完成了中国首部字典，标志着汉字研究的系统化...', tags: ['文化', '科技'], people: '许慎' },
-  { id: 14, year: 184, yearPrefix: '公元', dynasty: '汉', title: '黄巾起义', description: '大规模的农民起义，动摇了东汉的统治，幽州是重要战区...', tags: ['军事', '社会'], people: '张角' },
-  { id: 15, year: 220, yearPrefix: '公元', dynasty: '三国', title: '三国鼎立', description: '魏、蜀、吴三国鼎立的局面形成，北京地区属魏国幽州...', tags: ['政权', '军事'], people: '曹操, 刘备, 孙权' },
-  { id: 16, year: 420, yearPrefix: '公元', dynasty: '南北朝', title: '南北朝开始', description: '刘裕建立宋，中国进入南北朝对峙时期，北京地区先后属北魏...', tags: ['政权'], people: '刘裕' },
-  { id: 17, year: 581, yearPrefix: '公元', dynasty: '隋', title: '隋朝建立', description: '杨坚建立隋朝，重新统一中国，设涿郡，即今北京...', tags: ['政权'], people: '杨坚' },
-  { id: 18, year: 618, yearPrefix: '公元', dynasty: '唐', title: '唐朝建立', description: '李渊建立唐朝，北京为幽州，是北方重镇和军事中心...', tags: ['政权'], people: '李渊' },
-  { id: 19, year: 755, yearPrefix: '公元', dynasty: '唐', title: '安史之乱', description: '安禄山在范阳（今北京）起兵，是唐朝由盛转衰的转折点...', tags: ['军事', '社会'], people: '安禄山, 史思明' },
-  { id: 20, year: 907, yearPrefix: '公元', dynasty: '五代十国', title: '五代十国开始', description: '唐朝灭亡，中国进入分裂时期，北京地区成为战场...', tags: ['政权'], people: '—' },
-]);
+// --- MODIFIED: onMounted - 更新了年份和标题的解析逻辑 ---
+onMounted(async () => {
+  const data = await d3.csv('/data/events_step2_processed.csv');
+  
+  // 辅助函数 (无修改)
+  const mergeFigures = (p1: string, p2: string): string => {
+    const fig1 = p1 === '—' ? [] : p1.split(',').map(s => s.trim());
+    const fig2 = p2 === '—' ? [] : p2.split(',').map(s => s.trim());
+    
+    const all = [...fig1, ...fig2];
+    const unique = [...new Set(all.filter(p => p))]; 
+    return unique.length ? unique.join(', ') : '—';
+  };
+  
+  const mergeDescriptions = (d1: string, d2: string): string => {
+    const unique = [...new Set([d1, d2].filter(d => d))]; 
+    return unique.join('\n\n'); 
+  };
 
-// 动态计算筛选器选项 (保持不变)
+  const groupedEvents = new Map<string, EventItem>();
+
+  data.forEach((d) => {
+    
+    // --- MODIFIED: 逻辑更新 ---
+
+    // 1. 解析年份 (Requirement 1)
+    const yearString = d.year_abs || '';
+    const year = parseInt(yearString || '0'); // 年份为空则为 0
+    let prefix = '公元';
+
+    if (yearString === '') {
+      // 如果年份为空, 则前缀显示朝代
+      prefix = d.dynasty_name || '未知';
+    } else if (d.year_ad_raw?.includes('约')) {
+      prefix = '约';
+    } else if (year < 0) {
+      prefix = '公元前';
+    }
+
+    // 2. 解析标题 (Requirement 2)
+    const rawText = d.raw_text || '';
+    let title = d.event_summary || '';
+
+    if (!title && rawText) {
+      // 如果标题为空，但描述不为空，则截取描述
+      title = rawText.substring(0, 5) + (rawText.length > 5 ? '...' : '');
+    } else if (!title && !rawText) {
+      // 标题和描述都为空，检查是否是完全的空行
+      if (yearString === '' && (prefix === '未知' || prefix === '')) {
+         return; // 跳过完全无效的行
+      }
+      title = '无标题';
+    }
+    
+    // 3. 定义唯一键 (使用解析后的 title)
+    const key = `${year}_${title}`;
+    
+    const currentEvent = {
+      id: 0, 
+      year: year, //
+      yearPrefix: prefix, //
+      dynasty: d.dynasty_name || '未知',
+      title: title, //
+      description: rawText, // 描述字段使用完整的 raw_text
+      tags: [], // CSV中无此字段，保持为空
+      people: d.figure || '—',
+    };
+
+    // 4. 检查是否存在，存在则合并，不存在则新增
+    if (groupedEvents.has(key)) {
+      const existing = groupedEvents.get(key)!;
+      existing.people = mergeFigures(existing.people, currentEvent.people);
+      existing.description = mergeDescriptions(existing.description, currentEvent.description);
+    } else {
+      groupedEvents.set(key, currentEvent);
+    }
+    // --- 逻辑更新结束 ---
+  });
+  
+  // 5. 将 Map 转回数组 (无修改)
+  allEvents.value = Array.from(groupedEvents.values()).map((event, index) => ({
+    ...event,
+    id: index, // 使用索引作为最终的唯一ID
+  }));
+});
+// --- 结束: onMounted ---
+
+
+// 计算属性 (无修改)
 const dynasties = computed(() => {
   return ['全部朝代', ...Array.from(new Set(allEvents.value.map(e => e.dynasty)))];
 });
 const tags = computed(() => {
   return ['全部标签', ...Array.from(new Set(allEvents.value.flatMap(e => e.tags)))];
 });
-
-// --- MODIFIED: 先计算过滤和排序后的完整列表 ---
 const filteredEvents = computed(() => {
   let events = allEvents.value;
-  // 筛选逻辑 (保持不变)
   if (selectedDynasty.value !== '全部朝代') {
     events = events.filter(e => e.dynasty === selectedDynasty.value);
   }
@@ -207,37 +296,31 @@ const filteredEvents = computed(() => {
       e.people.toLowerCase().includes(query)
     );
   }
-  // 排序逻辑 (保持不变)
   events.sort((a, b) => {
     return sortOrder.value === 'asc' ? a.year - b.year : b.year - a.year;
   });
   return events;
 });
-
-// --- NEW: 计算总页数 ---
 const totalPages = computed(() => {
   return Math.ceil(filteredEvents.value.length / itemsPerPage.value);
 });
-
-// --- NEW: 计算当前页要显示的数据 ---
 const paginatedEvents = computed(() => {
   const startIndex = (currentPage.value - 1) * itemsPerPage.value;
   const endIndex = startIndex + itemsPerPage.value;
-  // 使用 .slice() 从过滤排序后的列表中提取当前页的数据
   return filteredEvents.value.slice(startIndex, endIndex);
 });
 
-// --- 方法 (保持不变) ---
+// 方法 (无修改)
 const toggleSort = () => {
   sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
-  currentPage.value = 1; // 排序后回到第一页
+  currentPage.value = 1;
 };
 const resetFilters = () => {
   searchQuery.value = '';
   selectedDynasty.value = '全部朝代';
   selectedTag.value = '全部标签';
   sortOrder.value = 'asc';
-  currentPage.value = 1; // 重置后回到第一页
+  currentPage.value = 1; 
 };
 const getTagColor = (tag: string) => {
   switch (tag) {
@@ -253,7 +336,7 @@ const getTagColor = (tag: string) => {
 </script>
 
 <style scoped lang="scss">
-/* 样式保持不变 */
+/* 样式 (无修改) */
 $bg-color: #fcfaf6;
 $card-bg-color: #faf6f0;
 $border-color: #dcd3c5;
@@ -315,17 +398,22 @@ $text-light-brown: #8c7b6f;
   color: $text-mid-brown;
   font-size: 0.9rem;
   line-height: 1.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 8; 
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 .event-people {
   color: $text-light-brown;
   font-size: 0.85rem;
   font-style: italic;
+  max-width: 200px;
 }
-
-/* NEW: 为分页按钮添加一些间距和仿古颜色 */
 .v-pagination {
   :deep(.v-pagination__item--is-active) {
-     background-color: #8D6E63 !important; // 浅棕色作为激活色
+     background-color: #8D6E63 !important; 
      border-color: #8D6E63 !important;
      color: #fff !important;
   }
