@@ -49,7 +49,7 @@ const selectedDynasty = ref('西汉');
 // ... (无变动) ...
 async function fetchDataAndProcess() {
   try {
-    const response = await fetch('/data/disaster_events.json'); 
+    const response = await fetch('/data/disaster_events(3).json'); 
     if (!response.ok) throw new Error('网络响应失败');
     const rawData = await response.json();
     allDisasterData.value = rawData;
@@ -302,10 +302,7 @@ const createChart = () => {
     .call(g => g.append("path")
         .attr("stroke", colors.text) 
         .attr("stroke-opacity", 0.15) 
-        .attr("d", d => `
-            M${d3.pointRadial(x(d)!, innerRadius)}
-            L${d3.pointRadial(x(d)!, outerRadius)}
-        `))
+        .attr("d", d => `M${d3.pointRadial(x(d)!, innerRadius)} L${d3.pointRadial(x(d)!, outerRadius)}`))
     .call(g => g.append("text")
         .attr("transform", d => {
             const [px, py] = d3.pointRadial(x(d)!, labelRadius);

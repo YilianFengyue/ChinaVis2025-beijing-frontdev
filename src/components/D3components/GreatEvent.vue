@@ -57,7 +57,7 @@
         </v-col>
       </v-row>
     </v-sheet>
-
+    
     <v-row>
       <v-col
         v-for="event in paginatedEvents" :key="event.id"
@@ -102,7 +102,7 @@
             <p class="event-description">
               {{ event.description }}
             </p>
-          </v-card-text>
+           </v-card-text>
 
           <v-spacer></v-spacer>
 
@@ -110,10 +110,15 @@
             <span class="event-people text-truncate">人物：{{ event.people }}</span>
             <v-spacer></v-spacer>
             
+            <span class="event-location">
+              <v-icon size="x-small" start>mdi-map-marker-outline</v-icon>
+              {{ event.province || '未知' }}
+            </span>
+            
             <v-menu location="center" open-on-click>
               <template v-slot:activator="{ props }">
                 <v-btn v-bind="props" variant="text" size="small" color="#6D4C41">
-                  查看详情
+                  详情
                 </v-btn>
               </template>
               <v-card max-width="450px" elevation="10">
@@ -161,10 +166,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'; 
+// [!! MODIFIED: 引入 PropType !!]
+import { ref, computed, onMounted, type PropType } from 'vue'; 
 import * as d3 from 'd3'; 
 
-// 接口 (无修改)
+// [!! REMOVED: emit 不再需要 !!]
+// const emit = defineEmits(['show-map']);
+
+// [!! MODIFIED: 接口定义 !!]
 interface EventItem {
   id: number;
   year: number;
@@ -174,7 +183,16 @@ interface EventItem {
   description: string;
   tags: string[];
   people: string;
+  province: string;
 }
+
+// [!! MODIFIED: 接收 props !!]
+const props = defineProps({
+  allEvents: {
+    type: Array as PropType<EventItem[]>,
+    required: true
+  }
+});
 
 // 状态 (无修改)
 const searchQuery = ref('');
@@ -183,105 +201,20 @@ const selectedTag = ref('全部标签');
 const sortOrder = ref<'asc' | 'desc'>('asc');
 const currentPage = ref(1);
 const itemsPerPage = ref(9); 
-const allEvents = ref<EventItem[]>([]);
+// const allEvents = ref<EventItem[]>([]); // [!! REMOVED: 现在是 prop !!]
 
-// --- MODIFIED: onMounted - 更新了年份和标题的解析逻辑 ---
-onMounted(async () => {
-  const data = await d3.csv('/data/events_step2_processed.csv');
-  
-  // 辅助函数 (无修改)
-  const mergeFigures = (p1: string, p2: string): string => {
-    const fig1 = p1 === '—' ? [] : p1.split(',').map(s => s.trim());
-    const fig2 = p2 === '—' ? [] : p2.split(',').map(s => s.trim());
-    
-    const all = [...fig1, ...fig2];
-    const unique = [...new Set(all.filter(p => p))]; 
-    return unique.length ? unique.join(', ') : '—';
-  };
-  
-  const mergeDescriptions = (d1: string, d2: string): string => {
-    const unique = [...new Set([d1, d2].filter(d => d))]; 
-    return unique.join('\n\n'); 
-  };
+// [!! REMOVED: onMounted 数据加载逻辑已移至父组件 !!]
+// onMounted(async () => { ... });
 
-  const groupedEvents = new Map<string, EventItem>();
-
-  data.forEach((d) => {
-    
-    // --- MODIFIED: 逻辑更新 ---
-
-    // 1. 解析年份 (Requirement 1)
-    const yearString = d.year_abs || '';
-    const year = parseInt(yearString || '0'); // 年份为空则为 0
-    let prefix = '公元';
-
-    if (yearString === '') {
-      // 如果年份为空, 则前缀显示朝代
-      prefix = d.dynasty_name || '未知';
-    } else if (d.year_ad_raw?.includes('约')) {
-      prefix = '约';
-    } else if (year < 0) {
-      prefix = '公元前';
-    }
-
-    // 2. 解析标题 (Requirement 2)
-    const rawText = d.raw_text || '';
-    let title = d.event_summary || '';
-
-    if (!title && rawText) {
-      // 如果标题为空，但描述不为空，则截取描述
-      title = rawText.substring(0, 5) + (rawText.length > 5 ? '...' : '');
-    } else if (!title && !rawText) {
-      // 标题和描述都为空，检查是否是完全的空行
-      if (yearString === '' && (prefix === '未知' || prefix === '')) {
-         return; // 跳过完全无效的行
-      }
-      title = '无标题';
-    }
-    
-    // 3. 定义唯一键 (使用解析后的 title)
-    const key = `${year}_${title}`;
-    
-    const currentEvent = {
-      id: 0, 
-      year: year, //
-      yearPrefix: prefix, //
-      dynasty: d.dynasty_name || '未知',
-      title: title, //
-      description: rawText, // 描述字段使用完整的 raw_text
-      tags: [], // CSV中无此字段，保持为空
-      people: d.figure || '—',
-    };
-
-    // 4. 检查是否存在，存在则合并，不存在则新增
-    if (groupedEvents.has(key)) {
-      const existing = groupedEvents.get(key)!;
-      existing.people = mergeFigures(existing.people, currentEvent.people);
-      existing.description = mergeDescriptions(existing.description, currentEvent.description);
-    } else {
-      groupedEvents.set(key, currentEvent);
-    }
-    // --- 逻辑更新结束 ---
-  });
-  
-  // 5. 将 Map 转回数组 (无修改)
-  allEvents.value = Array.from(groupedEvents.values()).map((event, index) => ({
-    ...event,
-    id: index, // 使用索引作为最终的唯一ID
-  }));
-});
-// --- 结束: onMounted ---
-
-
-// 计算属性 (无修改)
+// --- [!! MODIFIED: 计算属性现在使用 props.allEvents !!] ---
 const dynasties = computed(() => {
-  return ['全部朝代', ...Array.from(new Set(allEvents.value.map(e => e.dynasty)))];
+  return ['全部朝代', ...Array.from(new Set(props.allEvents.map(e => e.dynasty)))];
 });
 const tags = computed(() => {
-  return ['全部标签', ...Array.from(new Set(allEvents.value.flatMap(e => e.tags)))];
+  return ['全部标签', ...Array.from(new Set(props.allEvents.flatMap(e => e.tags)))];
 });
 const filteredEvents = computed(() => {
-  let events = allEvents.value;
+  let events = props.allEvents; // [!! MODIFIED !!]
   if (selectedDynasty.value !== '全部朝代') {
     events = events.filter(e => e.dynasty === selectedDynasty.value);
   }
@@ -310,7 +243,7 @@ const paginatedEvents = computed(() => {
   return filteredEvents.value.slice(startIndex, endIndex);
 });
 
-// 方法 (无修改)
+// --- 方法 (无修改) ---
 const toggleSort = () => {
   sortOrder.value = sortOrder.value === 'asc' ? 'desc' : 'asc';
   currentPage.value = 1;
@@ -336,7 +269,7 @@ const getTagColor = (tag: string) => {
 </script>
 
 <style scoped lang="scss">
-/* 样式 (无修改) */
+/* ... 样式 (无修改) ... */
 $bg-color: #fcfaf6;
 $card-bg-color: #faf6f0;
 $border-color: #dcd3c5;
@@ -409,7 +342,15 @@ $text-light-brown: #8c7b6f;
   color: $text-light-brown;
   font-size: 0.85rem;
   font-style: italic;
-  max-width: 200px;
+  max-width: 100px;
+}
+/* [!! NEW: 为地点添加样式 !!] */
+.event-location {
+  color: $text-light-brown;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
 }
 .v-pagination {
   :deep(.v-pagination__item--is-active) {
