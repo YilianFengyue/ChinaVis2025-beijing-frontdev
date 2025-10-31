@@ -48,124 +48,94 @@ const selectedDynasty = ref('西汉');
 // --- 2. 异步数据获取与处理 ---
 // ... (无变动) ...
 async function fetchDataAndProcess() {
-  try {
-    const response = await fetch('/data/disaster_events(3).json'); 
-    if (!response.ok) throw new Error('网络响应失败');
-    const rawData = await response.json();
-    allDisasterData.value = rawData;
+  try {
+    const response = await fetch('/data/disaster_events(3).json'); 
+    if (!response.ok) throw new Error('网络响应失败');
+    const rawData = await response.json();
+    allDisasterData.value = rawData;
 
-    const categoriesSet = new Set<string>();
-    const dataMap = new Map<string, Map<string, number>>(); 
-    const dynastyTotalWeight = new Map<string, number>();
-    // [移除] 不再需要 categoryTotalWeight
-    // const categoryTotalWeight = new Map<string, number>(); 
+    const categoriesSet = new Set<string>();
+    const dataMap = new Map<string, Map<string, number>>(); 
+    const dynastyTotalWeight = new Map<string, number>();
 
-    rawData.forEach((event: any) => {
-      if (!event.dynasty_name || !event.disaster_type || event.weight == null) {
-        return; 
-      }
-      
-      const dynasty = event.dynasty_name;
-      const category = event.disaster_type;
-      const weight = +event.weight || 0;
+    rawData.forEach((event: any) => {
+      if (!event.dynasty_name || !event.disaster_type || event.weight == null) {
+        return; 
+      }
+      
+      const dynasty = event.dynasty_name;
+      const category = event.disaster_type;
+      const weight = +event.weight || 0;
 
-      categoriesSet.add(category);
+      categoriesSet.add(category);
 
-      // --- 聚合朝代数据 (不变) ---
-      if (!dataMap.has(dynasty)) {
-        dataMap.set(dynasty, new Map<string, number>());
-      }
-      const categoryMap = dataMap.get(dynasty)!;
-      const currentCatWeight = categoryMap.get(category) || 0;
-      categoryMap.set(category, currentCatWeight + weight);
+      if (!dataMap.has(dynasty)) {
+        dataMap.set(dynasty, new Map<string, number>());
+      }
+      const categoryMap = dataMap.get(dynasty)!;
+      const currentCatWeight = categoryMap.get(category) || 0;
+      categoryMap.set(category, currentCatWeight + weight);
 
-      // --- 聚合朝代总权重 (不变) ---
-      const currentTotalWeight = dynastyTotalWeight.get(dynasty) || 0;
-      dynastyTotalWeight.set(dynasty, currentTotalWeight + weight);
-      
-      // [移除] 不再需要聚合灾害类型总权重
-      // const currentCategoryTotal = ...
-    });
+      const currentTotalWeight = dynastyTotalWeight.get(dynasty) || 0;
+      dynastyTotalWeight.set(dynasty, currentTotalWeight + weight);
+    });
 
-    // --- [修改] 移除 Top 7 筛选逻辑 ---
-    // const sortedCategories = ... (已移除)
-    // const top7Categories = ... (已移除)
-    // const top7CategoriesSet = ... (已移除)
-    // const top7NamesSorted = ... (已移除) 
+    allCategories.value = Array.from(categoriesSet).sort();
 
-    // [修改] allCategories 现在包含数据源中的所有类型
-    allCategories.value = Array.from(categoriesSet).sort();
+    const sortedDynasties = Array.from(dynastyTotalWeight.entries())
+                            .sort((a, b) => b[1] - a[1]);
+    
+    const top10 = sortedDynasties.slice(0, 10);
+    const top10Names = new Set(top10.map(d => d[0]));
 
-    // --- 确定 Top 10 朝代 (不变) ---
-    const sortedDynasties = Array.from(dynastyTotalWeight.entries())
-                                .sort((a, b) => b[1] - a[1]);
-    
-    const top10 = sortedDynasties.slice(0, 10);
-    const top10Names = new Set(top10.map(d => d[0]));
+    const finalProcessedData = new Map<string, { category: string, value: number }[]>();
+    const otherDynastyGroupedMap = new Map<string, number>();
+    allCategories.value.forEach(cat => otherDynastyGroupedMap.set(cat, 0));
 
-    // --- [修改] 重组数据以匹配 (所有) 类别 ---
-    
-    const finalProcessedData = new Map<string, { category: string, value: number }[]>();
-    
-    // [修改] 此 Map 用于 "其他" 朝代，且其键也必须是 (所有) 类别
-    const otherDynastyGroupedMap = new Map<string, number>();
-    // 初始化 "其他" 朝代的 map (现在包含所有类型)
-    allCategories.value.forEach(cat => otherDynastyGroupedMap.set(cat, 0));
+    dataMap.forEach((originalCategoryMap, dynasty) => {
+      
+      const groupedCategoryMap = new Map<string, number>();
+      
+      originalCategoryMap.forEach((weight, category) => {
+        groupedCategoryMap.set(category, (groupedCategoryMap.get(category) || 0) + weight);
+      });
+      
+      if (top10Names.has(dynasty)) {
+        const chartArray = allCategories.value.map(category => ({
+          category: category,
+          value: groupedCategoryMap.get(category) || 0, 
+        }));
+        finalProcessedData.set(dynasty, chartArray);
 
-    // 遍历所有朝代的数据
-    dataMap.forEach((originalCategoryMap, dynasty) => {
-      
-      // [修改] 临时 Map，用于存放当前朝代的 (所有) 数据
-      const groupedCategoryMap = new Map<string, number>();
-      
-      // [修改] 遍历该朝代的所有 *原始* 灾害类型，不再筛选
-      originalCategoryMap.forEach((weight, category) => {
-        // [修改] 移除了 if (top7CategoriesSet.has(category))
-        groupedCategoryMap.set(category, (groupedCategoryMap.get(category) || 0) + weight);
-      });
-      
-      // --- (不变) 根据朝代是 Top 10 还是 "其他" 来处理 ---
-      
-      if (top10Names.has(dynasty)) {
-        // 1. 如果是 Top 10 朝代，直接生成图表数组
-        const chartArray = allCategories.value.map(category => ({
-          category: category,
-          value: groupedCategoryMap.get(category) || 0, // 从重组后的 map 中取值
-        }));
-        finalProcessedData.set(dynasty, chartArray);
+      } else {
+        groupedCategoryMap.forEach((weight, category) => {
+          const currentOtherTotal = otherDynastyGroupedMap.get(category) || 0;
+          otherDynastyGroupedMap.set(category, currentOtherTotal + weight);
+        });
+      }
+    });
 
-      } else {
-        // 2. 如果是 "其他" 朝代，将其重组后的数据累加到 'otherDynastyGroupedMap'
-        groupedCategoryMap.forEach((weight, category) => {
-          const currentOtherTotal = otherDynastyGroupedMap.get(category) || 0;
-          otherDynastyGroupedMap.set(category, currentOtherTotal + weight);
-        });
-      }
-    });
+    const otherChartArray = allCategories.value.map(category => ({
+      category: category,
+      value: otherDynastyGroupedMap.get(category) || 0,
+    }));
+    finalProcessedData.set('其他', otherChartArray);
+    
+    dynastyList.value = [...top10.map(d => d[0]), '其他'];
+    
+    processedData.value = finalProcessedData;
 
-    // [修改] 为 "其他" 朝代创建最终的图表数组 (现在包含所有类型)
-    const otherChartArray = allCategories.value.map(category => ({
-      category: category,
-      value: otherDynastyGroupedMap.get(category) || 0,
-    }));
-    finalProcessedData.set('其他', otherChartArray);
-    
-    // --- (不变) 设置朝代列表和默认值 ---
-    dynastyList.value = [...top10.map(d => d[0]), '其他'];
-    
-    processedData.value = finalProcessedData;
+    if (top10Names.has('西汉')) {
+      selectedDynasty.value = '西汉';
+    } else if (dynastyList.value.length > 0) {
+      selectedDynaSty.value = dynastyList.value[0]; 
+    } else {
+      selectedDynasty.value = '其他';
+    }
 
-    if (top10Names.has('西汉')) {
-      selectedDynasty.value = '西汉';
-    } else if (dynastyList.value.length > 0) {
-      selectedDynasty.value = dynastyList.value[0]; 
-    } else {
-      selectedDynasty.value = '其他';
-    }
-
-  } catch (error) {
-    console.error('加载或处理灾害数据时出错:', error);
-  }
+  } catch (error) {
+    console.error('加载或处理灾害数据时出错:', error);
+  }
 }
 
 // --- 3. 计算属性 ---
@@ -207,192 +177,199 @@ const themeColors = computed(() => {
 });
 
 
-// --- 5. D3 绘图函数 (已修复和优化) ---
+// --- 5. D3 绘图函数 ( [!! 核心修改 !!] ) ---
 const createChart = () => {
-  if (!svgContainer.value || chartData.value.length === 0 || allCategories.value.length === 0) {
-    d3.select(svgContainer.value).html('<p style="text-align: center; color: gray; padding-top: 50px;">数据加载中或当前朝代无数据。</p>');
-    return;
-  }
-  
-  const tooltipEl = d3.select(tooltip.value);
-  if (!tooltipEl.node()) {
-    console.warn("Tooltip DOM element (ref='tooltip') not found.");
-  }
+  if (!svgContainer.value || chartData.value.length === 0 || allCategories.value.length === 0) {
+    d3.select(svgContainer.value).html('<p style="text-align: center; color: gray; padding-top: 50px;">数据加载中或当前朝代无数据。</p>');
+    return;
+  }
+  
+  const tooltipEl = d3.select(tooltip.value);
+  if (!tooltipEl.node()) {
+    console.warn("Tooltip DOM element (ref='tooltip') not found.");
+  }
 
-  const data = chartData.value;
-  const categories = allCategories.value;
-  const colors = themeColors.value;
-  
-  d3.select(svgContainer.value).html(''); 
+  const data = chartData.value;
+  const categories = allCategories.value;
+  const colors = themeColors.value;
+  
+  d3.select(svgContainer.value).html(''); 
 
-  const width = 928;
-  const height = width;
-  const margin = 40; 
-  const innerRadius = width / 5;
-  const outerRadius = width / 2 - margin; 
+  const width = 928;
+  const height = width;
+  const margin = 40; 
+  const innerRadius = width / 5;
+  const outerRadius = width / 2 - margin; 
 
-  // --- [!!! 关键修复：解决首尾重叠问题 !!!] ---
+  // --- [无变动] 比例尺定义 (修复首尾重叠的代码) ---
+  const numCategories = categories.length > 0 ? categories.length : 1; 
+  const angleSegment = (2 * Math.PI) / numCategories;
+  const rotationOffset = angleSegment / 2;
+  const x = d3.scalePoint()
+      .domain(categories)
+      .range([rotationOffset, 2 * Math.PI - angleSegment + rotationOffset]);
+  // --- [修复代码结束] ---
 
-  // 1. 获取类别数量
-  const numCategories = categories.length > 0 ? categories.length : 1; 
-  
-  // 2. 计算每个类别的角度 "扇区" 大小
-  const angleSegment = (2 * Math.PI) / numCategories;
+  const yMax = (d3.max(data, d => d.value) || 10) * 1.05; 
+  const y = d3.scaleRadial()
+      .domain([0, yMax])
+      .range([innerRadius, outerRadius]);
 
-  // 3. 计算旋转偏移量 (使其错开 12 点钟方向)
-  //    (这等同于您原来的 Math.PI / categories.length)
-  const rotationOffset = angleSegment / 2;
+  const area = d3.areaRadial()
+      .curve(d3.curveLinearClosed) 
+      .angle(d => x((d as any).category)!) 
+      .innerRadius(innerRadius) 
+      .outerRadius(d => y((d as any).value)); 
 
-  // 4. 定义 X 轴 (角度) 比例尺
-  const x = d3.scalePoint()
-      .domain(categories)
-      // 5. [!! 核心修复 !!]
-      // 原始 range: [rotationOffset, 2 * Math.PI + rotationOffset]
-      // 这会导致 domain 的第一个值和最后一个值被映射到同一个角度，从而重叠。
-      //
-      // 修正 range: [rotationOffset, 2 * Math.PI - angleSegment + rotationOffset]
-      // 这样最后一个点的位置就在第一个点 *之前* 的一个 "扇区"，
-      // d3.curveLinearClosed 会自动将它们连接起来。
-      .range([rotationOffset, 2 * Math.PI - angleSegment + rotationOffset]);
+  const svg = d3.select(svgContainer.value).append("svg")
+      .attr("viewBox", [-width / 2, -height / 2, width, height]);
 
-  // [!! 旧代码已被替换 !!]
-  // const rotationOffset = Math.PI / (categories.length > 0 ? categories.length : 8);
-  // const x = d3.scalePoint()
-  //     .domain(categories)
-  //     .range([rotationOffset, 2 * Math.PI + rotationOffset]);
-  // --- [!!! 修复结束 !!!] ---
+  // 主 <g> 元素 (无变动)
+  const g = svg.append("g");
 
-  const yMax = (d3.max(data, d => d.value) || 10) * 1.05; 
-  const y = d3.scaleRadial()
-      .domain([0, yMax])
-      .range([innerRadius, outerRadius]);
+  // 绘制雷达图区域 (无变动)
+  g.append("path")
+      .attr("fill", colors.areaDark) 
+      .attr("fill-opacity", 0.7)
+      .attr("d", area(data as any));
 
-  const area = d3.areaRadial()
-      .curve(d3.curveLinearClosed) // <- 这个闭合曲线现在可以正常工作了
-      .angle(d => x((d as any).category)!) 
-      .innerRadius(innerRadius) 
-      .outerRadius(d => y((d as any).value)); 
+  // 绘制最外圈的线 (无变动)
+  g.append("path")
+      .attr("fill", "none")
+      .attr("stroke", colors.line)
+      .attr("stroke-width", 1.5)
+      .attr("d", area.lineOuterRadius(d => y((d as any).value))(data as any));
 
-  const svg = d3.select(svgContainer.value).append("svg")
-      .attr("viewBox", [-width / 2, -height / 2, width, height]);
+  // X 轴 (灾害类型) (无变动)
+  const labelRadius = outerRadius + 15;
+  g.append("g")
+    .selectAll("g")
+    .data(categories) 
+    .join("g")
+    .call(g => g.append("path")
+        .attr("stroke", colors.text) 
+        .attr("stroke-opacity", 0.15) 
+        .attr("d", d => `M${d3.pointRadial(x(d)!, innerRadius)} L${d3.pointRadial(x(d)!, outerRadius)}`))
+    .call(g => g.append("text")
+        .attr("transform", d => {
+            const [px, py] = d3.pointRadial(x(d)!, labelRadius);
+            let angle = (x(d)! * 180 / Math.PI) - 90;
+            if (angle > 90 || angle < -90) angle -= 180;
+            return `translate(${px},${py}) rotate(${angle})`;
+        })
+        .attr("dy", "0.35em")
+        .text(d => d)
+        .attr("fill", colors.textLight)
+        .attr("font-size", "11px")
+        .attr("font-weight", "500")
+    );
 
-  // ... (后续所有绘图代码, 包括 svg.append("path"), X 轴, Y 轴, Tooltip 等... ) ...
-  // ... (均无需任何改动) ...
-  // ...
-  
-  // 绘制雷达图区域
-  svg.append("path")
-      .attr("fill", colors.areaDark) 
-      .attr("fill-opacity", 0.7)
-      .attr("d", area(data as any));
+  // Y 轴 (权重指数) (无变动)
+  g.append("g")
+      .attr("text-anchor", "middle")
+    .selectAll("g") 
+    .data(y.ticks(5).reverse()) 
+    .join("g")
+      .call(g => g.append("circle")
+          .attr("fill", "none")
+          .attr("stroke", colors.text) 
+          .attr("stroke-opacity", 0.15) 
+          .attr("r", y))
+      .call(g => g.append("text")
+          .attr("y", d => -y(d)) 
+          .attr("dy", "-0.25em")
+          .attr("dx", 0)
+          .attr("stroke", colors.bg) 
+          .attr("stroke-width", 4) 
+          .attr("fill", colors.textLight) 
+          .attr("paint-order", "stroke")
+          .attr("font-size", "10px")
+          .text((val, i) => `${val.toFixed(0)}${i === 0 ? " 权重" : ""}`) 
+      );
 
-  // 绘制最外圈的线
-  svg.append("path")
-      .attr("fill", "none")
-      .attr("stroke", colors.line)
-      .attr("stroke-width", 1.5)
-      .attr("d", area.lineOuterRadius(d => y((d as any).value))(data as any));
+  // 中心朝代文本 (无变动)
+  g.append("text")
+      .attr("x", 0)
+      .attr("y", 0) 
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .attr("fill", colors.textLight) 
+      .attr("font-size", "42px") 
+      .attr("font-weight", "600")
+      .attr("opacity", 0.6) 
+      .text(selectedDynasty.value); 
+      
+  // Tooltip 事件处理
+  if (tooltipEl.node()) {
+    
+    const onMouseOver = (event: MouseEvent, d: { category: string, value: number }) => {
+      tooltipEl
+        .style("visibility", "visible")
+        .html(`
+          <strong>${d.category}</strong>
+          <br>
+          权重: ${d.value.toFixed(2)}
+        `);
+    };
+    
+    // [!! 
+    // [!! 核心修改 1: 修复 Tooltip 坐标 !!]
+    //
+    const onMouseMove = (event: MouseEvent) => {
+      // 使用 d3.pointer 获取相对于 svgContainer 的 [x, y] 坐标
+      const [px, py] = d3.pointer(event, svgContainer.value);
+      
+      tooltipEl
+        .style("top", `${py + 10}px`)
+        .style("left", `${px + 10}px`);
+    };
 
-  // X 轴 (灾害类型)
-  const labelRadius = outerRadius + 15;
-  svg.append("g")
-    .selectAll("g")
-    .data(categories) // 现在最后一个 category 不会与第一个重叠
-    .join("g")
-    .call(g => g.append("path")
-        .attr("stroke", colors.text) 
-        .attr("stroke-opacity", 0.15) 
-        .attr("d", d => `M${d3.pointRadial(x(d)!, innerRadius)} L${d3.pointRadial(x(d)!, outerRadius)}`))
-    .call(g => g.append("text")
-        .attr("transform", d => {
-            const [px, py] = d3.pointRadial(x(d)!, labelRadius);
-            let angle = (x(d)! * 180 / Math.PI) - 90;
-            if (angle > 90 || angle < -90) angle -= 180;
-            return `translate(${px},${py}) rotate(${angle})`;
-        })
-        .attr("dy", "0.35em")
-        .text(d => d)
-        .attr("fill", colors.textLight)
-        .attr("font-size", "11px")
-        .attr("font-weight", "500")
-    );
+    const onMouseOut = () => {
+      tooltipEl.style("visibility", "hidden");
+    };
+    
+    g.append("g")
+      .selectAll("circle")
+      .data(data)
+      .join("circle")
+        .attr("class", "tooltip-handle") // 添加 class (用于 zoom 过滤)
+        .attr("transform", d => {
+          const [px, py] = d3.pointRadial(x((d as any).category)!, y((d as any).value));
+          return `translate(${px},${py})`;
+        })
+        .attr("r", 5) 
+        .attr("fill", colors.line) 
+        .attr("stroke", colors.bg) 
+        .attr("stroke-width", 1.5)
+        .attr("fill-opacity", 0.8)
+        .style("cursor", "pointer")
+        .on("mouseover", onMouseOver)
+        .on("mousemove", onMouseMove)
+        .on("mouseout", onMouseOut);
+  }
 
-  // Y 轴 (权重指数)
-  svg.append("g")
-      .attr("text-anchor", "middle")
-    .selectAll("g") 
-    .data(y.ticks(5).reverse()) 
-    .join("g")
-      .call(g => g.append("circle")
-          .attr("fill", "none")
-          .attr("stroke", colors.text) 
-          .attr("stroke-opacity", 0.15) 
-          .attr("r", y))
-      .call(g => g.append("text")
-          .attr("y", d => -y(d)) 
-          .attr("dy", "-0.25em")
-          .attr("dx", 0)
-          .attr("stroke", colors.bg) 
-          .attr("stroke-width", 4) 
-          .attr("fill", colors.textLight) 
-          .attr("paint-order", "stroke")
-          .attr("font-size", "10px")
-          .text((val, i) => `${val.toFixed(0)}${i === 0 ? " 权重" : ""}`) 
-      );
-
-  // 中心朝代文本
-  svg.append("text")
-      .attr("x", 0)
-      .attr("y", 0) 
-      .attr("text-anchor", "middle")
-      .attr("dominant-baseline", "middle")
-      .attr("fill", colors.textLight) 
-      .attr("font-size", "42px") 
-      .attr("font-weight", "600")
-      .attr("opacity", 0.6) 
-      .text(selectedDynasty.value); 
-      
-  // Tooltip 事件处理
-  if (tooltipEl.node()) {
-    
-    const onMouseOver = (event: MouseEvent, d: { category: string, value: number }) => {
-      tooltipEl
-        .style("visibility", "visible")
-        .html(`
-          <strong>${d.category}</strong>
-          <br>
-          权重: ${d.value.toFixed(2)}
-        `);
-    };
-    
-    const onMouseMove = (event: MouseEvent) => {
-      tooltipEl
-        .style("top", `${event.pageY + 10}px`)
-        .style("left", `${event.pageX + 10}px`);
-    };
-
-    const onMouseOut = () => {
-      tooltipEl.style("visibility", "hidden");
-    };
-    
-    svg.append("g")
-      .selectAll("circle")
-      .data(data)
-      .join("circle")
-        .attr("transform", d => {
-          const [px, py] = d3.pointRadial(x((d as any).category)!, y((d as any).value));
-          return `translate(${px},${py})`;
-        })
-        .attr("r", 5) 
-        .attr("fill", colors.line) 
-        .attr("stroke", colors.bg) 
-        .attr("stroke-width", 1.5)
-        .attr("fill-opacity", 0.8)
-        .style("cursor", "pointer")
-        .on("mouseover", onMouseOver)
-        .on("mousemove", onMouseMove)
-        .on("mouseout", onMouseOut);
-  }
+  // [!! 
+  // [!! 核心修改 2: 修复 Zoom 冲突 !!]
+  //
+  const zoom = d3.zoom<SVGSVGElement, unknown>()
+      .scaleExtent([1, 8]) 
+      .on("zoom", (event) => {
+        g.attr("transform", event.transform.toString());
+      })
+      .filter((event) => {
+        // 允许滚轮缩放
+        if (event.type === 'wheel') {
+          return true;
+        }
+        // 检查拖动事件
+        if (event.type === 'mousedown') {
+          // 如果拖动开始于 .tooltip-handle，则 *阻止* zoom
+          return !event.target.closest('.tooltip-handle');
+        }
+        return true;
+      });
+  
+  svg.call(zoom);
 };
 
 // --- 6. Vue 生命周期与侦听器 ---
@@ -460,6 +437,16 @@ $text-mid-brown: #6d5f53;
     overflow: visible;
     background-color: v-bind('themeColors.bg');
     display: block; 
+    
+    text {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+    }
+    
+    .tooltip-handle {
+      pointer-events: all !important;
+    }
   }
 }
 
