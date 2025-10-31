@@ -10,13 +10,15 @@ import {
   LegendComponent,
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
-import CircularDynastyChart from '@/components/D3components/CircularDynastyChart.vue';
+//import CircularDynastyChart from '@/components/D3components/CircularDynastyChart.vue';
 import SequencesSunburst from '@/components/D3components/SequencesSunburst.vue';
 import GreatEvent from '~/src/components/D3components/GreatEvent.vue';
 import RadialAreaChart from '~/src/components/D3components/RadialAreaChart.vue';
 // [!! MODIFIED: 移除 MapLocation, 引入 SpikeMap !!]
 // import MapLocation from '~/src/components/D3components/MapLocation.vue';
 import SpikeMap from '~/src/components/D3components/SpikeMap.vue';
+import BubbleChart from '~/src/components/D3components/BubbleChart.vue';
+import CircularChartEvent from '~/src/components/D3components/CircularChartEvent.vue';
 
 // 注册 ECharts 组件
 echarts.use([
@@ -133,18 +135,20 @@ onMounted(() => {
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1>D3.js 和 ECharts 练习页面</h1>
+        <!-- <h1>D3.js 和 ECharts 练习页面</h1> -->
       </v-col>
     </v-row>
   </v-container>
   
     <v-container>
-    <v-row>
-      <v-col cols="6">
-        <CircularDynastyChart />
+    <v-row style="height: 550px;">
+      <v-col cols="7">
+        <!-- <CircularDynastyChart /> -->
+         <BubbleChart />
       </v-col>
-      <v-col cols="6">
-        <SequencesSunburst />
+      <v-col cols="5">
+        <!-- <SequencesSunburst /> -->
+         <CircularChartEvent />
       </v-col>
     </v-row>
 

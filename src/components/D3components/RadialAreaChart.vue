@@ -128,7 +128,7 @@ async function fetchDataAndProcess() {
     if (top10Names.has('西汉')) {
       selectedDynasty.value = '西汉';
     } else if (dynastyList.value.length > 0) {
-      selectedDynaSty.value = dynastyList.value[0]; 
+      selectedDynasty.value = dynastyList.value[0]; 
     } else {
       selectedDynasty.value = '其他';
     }
