@@ -61,79 +61,61 @@ const themeColors = computed(() => {
   const isDark = vuetifyTheme.global.current.value.dark;
   const antiqueLight = {
     bg: "#fcfaf6", text: "#5a4b40", textLight: "#6d5f53", 
-    stroke: "#a1887f", areaLight: "transparent",
-    areaDark: "rgba(161, 136, 127, 0.2)", line: "#BF360C", 
+    stroke: "#a1887f", // 描边色 (关键)
+    areaLight: "transparent", // 0频次省份的填充色 (关键)
+    areaDark: "rgba(161, 136, 127, 0.2)", // 悬浮色
+    line: "#BF360C", // 最高频次颜色
   };
   const antiqueDark = {
     bg: "#263238", text: "#D7CCC8", textLight: "#A1887F", 
-    stroke: "#A1887F", areaLight: "transparent",
-    areaDark: "rgba(161, 136, 127, 0.2)", line: "#FF8A65", 
+    stroke: "#A1887F",
+    areaLight: "transparent",
+    areaDark: "rgba(161, 136, 127, 0.2)", 
+    line: "#FF8A65", 
   };
   return isDark ? antiqueDark : antiqueLight;
 });
 
-// --- [!! 核心修改 1: 添加地名归一化函数 !!] ---
-/**
- * 将 CSV 中的地名 (如 "北京", "陕西") 转换为 GeoJSON 中的标准名称 (如 "北京市", "陕西省")
- * @param name 
- */
+// --- 地名归一化函数 (无变动) ---
 function normalizeProvinceName(name: string): string {
   if (!name || name === '未知') return '未知';
-
-  // 检查是否已经是标准名称
   const suffixes = ['省', '市', '自治区', '特别行政区'];
   if (suffixes.some(s => name.endsWith(s))) {
     return name;
   }
-
-  // 添加特定后缀
   const specialMunicipalities = ['北京', '上海', '天津', '重庆'];
   if (specialMunicipalities.includes(name)) {
     return `${name}市`;
   }
-
   const autonomousRegions: Record<string, string> = {
-    '内蒙古': '内蒙古自治区',
-    '西藏': '西藏自治区',
-    '广西': '广西壮族自治区',
-    '宁夏': '宁夏回族自治区',
-    '新疆': '新疆维吾尔自治区',
-    '香港': '香港特别行政区',
-    '澳门': '澳门特别行政区'
+    '内蒙古': '内蒙古自治区', '西藏': '西藏自治区', '广西': '广西壮族自治区',
+    '宁夏': '宁夏回族自治区', '新疆': '新疆维吾尔自治区',
+    '香港': '香港特别行政区', '澳门': '澳门特别行政区'
   };
   if (autonomousRegions[name]) {
     return autonomousRegions[name];
   }
-
-  // 默认添加 "省"
   return `${name}省`;
 }
 
-// --- 3. 计算属性 ---
+// --- 计算属性 (无变动) ---
 const dynasties = computed(() => {
   return ['全部朝代', ...Array.from(new Set(props.allEvents.map(e => e.dynasty)))];
 });
 
-// --- [!! 核心修改 2: 频次统计时使用归一化函数 !!] ---
 const provinceFrequencies = computed(() => {
   const counts = new Map<string, number>();
-  
   const filteredEvents = props.allEvents.filter(e => 
     selectedDynasty.value === '全部朝代' || e.dynasty === selectedDynasty.value
   );
-
   for (const event of filteredEvents) {
-    // [!! MODIFIED !!]
-    // 使用归一化函数处理地名
     const province = normalizeProvinceName(event.province); 
-    
     if (province && province !== '未知') {
       counts.set(province, (counts.get(province) || 0) + 1);
     }
   }
   return counts;
 });
-
 
 // --- 4. 异步数据获取 (无变动) ---
 async function loadMapData() {
@@ -153,7 +135,7 @@ async function loadMapData() {
   }
 }
 
-// --- [!! 核心修改 3: 仿照示例修改 D3 绘图函数 !!] ---
+// --- [!! 核心修改 !!] ---
 const createChart = () => {
   const geoData = chinaGeoJson.value; 
   if (!svgContainer.value) return;
@@ -178,89 +160,89 @@ const createChart = () => {
 
   const svg = d3.select(svgContainer.value).append("svg")
       .attr("viewBox", [0, 0, width, height])
-      .style("background-color", colors.bg);
+      .style("background-color", colors.bg); // 1. SVG 画布背景色
 
   const projection = d3.geoMercator();
   const path = d3.geoPath().projection(projection);
 
-  // 使用 fitSize 自动 "Contain" (无变动)
-  projection.fitSize([width, height], geoData);
-
+  // 保留手动投影设置
+  projection
+    .center([104, 35]) 
+    .scale(600)        
+    .translate([width / 2, height / 2]); 
+  
   const g = svg.append("g");
 
-  // Tooltip 事件 (无变动)
+  // [!! 核心修改 1: 创建颜色比例尺 !!]
+  const maxFreq = d3.max(Array.from(frequencies.values())) || 1;
+  
+  // 创建一个浅红色，作为渐变的起始
+  const lightRed = d3.rgb(colors.line).brighter(1.5).toString();
+
+  const colorScale = d3.scaleLinear<string>()
+    .domain([1, maxFreq]) // [!! 关键 !!] 域从 1 开始
+    .range([lightRed, colors.line]) // 范围：从浅红到深红
+    .interpolate(d3.interpolateRgb);
+
+  // [!! 核心修改 2: 修改 Tooltip 事件 !!]
   const onMouseOver = (event: MouseEvent, d: any) => {
     const name = d.properties.name || '未知区域';
     const count = frequencies.get(name) || 0;
     tooltipEl.style("visibility", "visible").html(`<strong>${name}</strong><br>事件数: ${count}`);
-    d3.select(event.currentTarget as any).style('fill', colors.areaDark);
+    
+    d3.select(event.currentTarget as any)
+      .style('fill', (d: any) => {
+        const freq = frequencies.get(d.properties.name) || 0;
+        if (freq === 0) {
+            return colors.areaDark; // 0频次：使用悬浮色
+        }
+        return d3.rgb(colorScale(freq)).darker(0.6).toString(); // 有频次：加深
+      })
+      .style("stroke-width", 1.5); // 加粗描边
   };
+
   const onMouseMove = (event: MouseEvent) => {
     tooltipEl.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`);
   };
+  
   const onMouseOut = (event: MouseEvent) => {
     tooltipEl.style("visibility", "hidden");
-    d3.select(event.currentTarget as any).style('fill', colors.areaLight);
+    // 恢复原来的颜色
+    d3.select(event.currentTarget as any)
+      .style('fill', (d: any) => {
+         const freq = frequencies.get(d.properties.name) || 0;
+         if (freq === 0) {
+             return colors.areaLight; // [!! 关键 !!] 恢复为透明
+         }
+         return colorScale(freq); // 恢复为色阶颜色
+      })
+      .style("stroke-width", 0.8); // 恢复描边
   };
 
-  // 1. 绘制底图 (无变动)
+  // [!! 核心修改 3: 绘制底图 (修改 fill 和 stroke-width) !!]
   g.selectAll('path.province')
     .data(geoData.features)
     .join('path')
     .attr('class', 'province')
     .attr('d', path as any)
-    .style('fill', colors.areaLight)
-    .style('stroke', colors.stroke)
-    .style('stroke-width', 0.5)
+    .style('fill', (d: any) => {
+      // 根据频次数据应用颜色
+      const freq = frequencies.get(d.properties.name) || 0;
+      if (freq === 0) {
+         return colors.areaLight; // 2. 0频次省份填充色 (transparent)
+      }
+      return colorScale(freq); // 频次>0，应用色阶
+    })
+    .style('stroke', colors.stroke) // 3. 始终显示描边 (e.g., #a1887f)
+    .style('stroke-width', 0.8) // [!! 关键 !!] 增加基础描边宽度
     .style('cursor', 'pointer')
     .on("mouseover", onMouseOver)
     .on("mousemove", onMouseMove)
     .on("mouseout", onMouseOut);
 
-  // [!! MODIFIED: 2. 绘制尖刺 (改为 <path> 元素) !!]
-  
-  // a. 定义尖刺 <path> 形状的辅助函数 (仿照示例)
-  const spikeWidth = 4; // 尖刺底座宽度 (像素)
-  function spike(length: number): string {
-    if (length === 0) return "";
-    // M = MoveTo (起点在质心), L = LineTo (画到左上), L = LineTo (画到右上), Z = ClosePath (闭合回起点)
-    return `M 0,0 L ${-spikeWidth / 2},${-length} L ${spikeWidth / 2},${-length} Z`;
-  }
+  // [!! 核心修改 4: 移除尖刺 (已完成) !!]
 
-  // b. 创建尖刺的高度比例尺 (无变动)
-  const maxFreq = d3.max(Array.from(frequencies.values())) || 1;
-  const spikeScale = d3.scaleLinear()
-    .domain([0, maxFreq])
-    .range([0, height / 5]); // 最大尖刺高度为容器的1/5
-
-  // c. 绘制尖刺 <path> (仿照示例)
-  g.append("g") // 创建一个组来存放所有尖刺
-      .attr("fill", colors.line)
-      .attr("fill-opacity", 0.7)
-      .attr("stroke", colors.line)
-      .attr("stroke-width", 0.5)
-    .selectAll('path.spike')
-    .data(geoData.features) // 依然绑定地理特征
-    .join('path')
-    .attr('class', 'spike')
-    .style('pointer-events', 'none')
-    .attr('transform', (d: any) => {
-      // 1. 获取省份中心点 [x, y]
-      const centroid = path.centroid(d);
-      // 2. 使用 translate 将 <path> 的起点 (0,0) 移动到该中心点
-      return `translate(${centroid[0]},${centroid[1]})`;
-    })
-    .attr('d', (d: any) => {
-      // 1. 获取省份名并查询频次
-      const provinceName = d.properties.name;
-      const freq = frequencies.get(provinceName) || 0;
-      // 2. 计算尖刺的实际高度
-      const spikeHeight = spikeScale(freq);
-      // 3. 调用辅助函数，生成 "d" 属性 (path 路径字符串)
-      return spike(spikeHeight);
-    });
-
-  // 缩放 (无变 động)
+  // 缩放 (无变动)
   const zoom = d3.zoom<SVGSVGElement, unknown>()
     .scaleExtent([1, 8])
     .on('zoom', (event) => {
@@ -358,20 +340,19 @@ $text-mid-brown: #6d5f53;
     display: block; 
     
     .province {
-      transition: fill 0.2s ease-in-out;
-    }
-    .spike {
-      transition: all 0.3s ease-in-out;
+      /* [!! 已修改 !!] */
+      transition: fill 0.2s ease-in-out, stroke-width 0.2s ease-in-out;
     }
   }
 }
 
 .chart-tooltip {
-  position: absolute; 
+  /* [!! 已修改 !!] 改为 fixed 定位 */
+  position: fixed; 
   visibility: hidden;
   padding: 8px 12px;
   border-radius: 4px;
-  z-index: 10;
+  z-index: 9999; /* [!! 已修改 !!] 提高 z-index */
   font-size: 13px;
   line-height: 1.4;
   pointer-events: none; 

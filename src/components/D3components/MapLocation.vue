@@ -3,15 +3,7 @@
     <v-card-title class="chart-title">
       {{ chartTitle }}
       
-      <v-btn
-        icon="mdi-close"
-        variant="text"
-        size="small"
-        @click="emit('close')"
-        style="position: absolute; top: 10px; right: 10px; z-index: 10;"
-      ></v-btn>
-
-    </v-card-title>
+      </v-card-title>
     
     <v-card-text class="chart-container">
       <div ref="svgContainer" class="d3-svg-container"></div>
@@ -27,14 +19,14 @@ import * as d3 from 'd3';
 import { useTheme } from 'vuetify';
 import type { FeatureCollection } from 'geojson'; 
 
-// [!! MODIFIED: 添加 props 和 emits !!]
+// [!! 已修改 !!] 移除了 emits
 const props = defineProps({
   highlightProvince: {
     type: String,
     default: ''
   }
 });
-const emit = defineEmits(['close']);
+// const emit = defineEmits(['close']); // [!! 已移除 !!]
 
 
 // --- 1. 响应式状态定义 (无变动) ---
@@ -69,10 +61,11 @@ const chartTitle = computed(() => {
   return '中国地图 · 概览';
 });
 
-// --- 4. 异步数据获取 (无变动) ---
+// --- 4. 异步数据获取 ( [!! 核心修改 !!] ) ---
 async function loadMapData() {
   try {
-    const chinaRes = await fetch('/data/maps/china_full.json'); 
+    // [!! 已修改 !!] 更改了地图文件路径
+    const chinaRes = await fetch('/data/maps/china.json'); 
     if (!chinaRes.ok) throw new Error('网络响应失败');
     chinaGeoJson.value = await chinaRes.json();
   } catch (error) {
@@ -117,13 +110,10 @@ const createChart = () => {
   const path = d3.geoPath().projection(projection);
 
   // [!! 保留您之前的自定义修改 (陕西居中) !!]
-  projection.center([108.9, 34.3]);
-  projection.translate([(width / 10)+170, height / 2]);
-  const [[x0, y0], [x1, y1]] = path.bounds(geoData);
-  const sX = width / (x1 - x0);
-  const sY = height / (y1 - y0);
-  const scale = Math.min(sX, sY) * projection.scale();
-  projection.scale(scale*6);
+  // 注意：这个居中是基于 'china_cities.json' 的，
+  // 使用 'china.json' 后，fitSize 会更通用。
+  // 我们将使用 fitSize 代替。
+  projection.fitSize([width, height], geoData);
   // [!! 自定义修改结束 !!]
 
 
@@ -143,7 +133,9 @@ const createChart = () => {
     }
   };
   const onMouseMove = (event: MouseEvent) => {
-    tooltipEl.style("top", `${event.pageY + 10}px`).style("left", `${event.pageX + 10}px`);
+    // [!! 修正 Tooltip 定位 !!]
+    const [x, y] = d3.pointer(event, document.body);
+    tooltipEl.style("top", `${y + 10}px`).style("left", `${x + 10}px`);
   };
   const onMouseOut = (event: MouseEvent, d: any) => {
     tooltipEl.style("visibility", "hidden");
@@ -166,7 +158,7 @@ const createChart = () => {
     .style('stroke', colors.stroke)
     // 高亮省份的描边更粗
     .style('stroke-width', (d: any) => {
-      return d.properties.name === props.highlightProvince ? 1.5 : 0.5;
+      return d.properties.name === props.highlightProvince ? 1.0 : 0.1;
     })
     .style('cursor', 'pointer')
     .on("mouseover", onMouseOver)
@@ -250,7 +242,7 @@ $text-mid-brown: #6d5f53;
 .chart-container {
   padding: 0;
   margin: 0;
-  height: 500px; 
+  height: 300px; /* [!! 已修改 !!] 减小高度以适应弹窗 */
   width: 100%; 
   position: relative; 
   overflow: hidden; 
@@ -272,11 +264,11 @@ $text-mid-brown: #6d5f53;
 }
 
 .chart-tooltip {
-  position: absolute; 
+  position: fixed; /* [!! 已修改 !!] 改为 fixed 以便在 v-menu 中正确定位 */
   visibility: hidden;
   padding: 8px 12px;
   border-radius: 4px;
-  z-index: 10;
+  z-index: 9999; /* [!! 已修改 !!] 确保在 v-menu 之上 */
   font-size: 13px;
   line-height: 1.4;
   pointer-events: none; 

@@ -56,7 +56,7 @@ const allEvents = ref<EventItem[]>([]);
  * 加载并处理事件数据
  */
 async function loadEventData() {
-  const data = await d3.csv('/data/events_step2_processed.csv');
+  const data = await d3.csv('/data/events_step3_modern_locations.csv');
   
   // 辅助函数 (与 GreatEvent 中一致)
   const mergeFigures = (p1: string, p2: string): string => {
@@ -94,7 +94,7 @@ async function loadEventData() {
 
     // 4. 获取朝代和地点
     const dynasty = d.dynasty_name || '未知';
-    const province = d.location || '未知'; // 使用 'location' 列
+    const province = d.location_modern || '未知'; // 使用 'location' 列
     
     const currentEvent = {
       id: 0, year, yearPrefix: prefix, dynasty, title, 

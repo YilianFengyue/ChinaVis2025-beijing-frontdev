@@ -134,10 +134,10 @@
                   <v-divider class="my-2" v-if="event.people !== '—'"></v-divider>
                   {{ event.description }}
                 </v-card-text>
-              </v-card>
+                
+                </v-card>
             </v-menu>
-
-          </v-card-actions>
+            </v-card-actions>
           </v-card>
       </v-col>
 
@@ -166,14 +166,12 @@
 </template>
 
 <script setup lang="ts">
-// [!! MODIFIED: 引入 PropType !!]
+// [!! 核心修改 !!] 移除了 MapLocation 的 import
 import { ref, computed, onMounted, type PropType } from 'vue'; 
 import * as d3 from 'd3'; 
+// import MapLocation from './MapLocation.vue'; // [!! 已移除 !!]
 
-// [!! REMOVED: emit 不再需要 !!]
-// const emit = defineEmits(['show-map']);
-
-// [!! MODIFIED: 接口定义 !!]
+// ... (接口和 Props 定义不变) ...
 interface EventItem {
   id: number;
   year: number;
@@ -185,8 +183,6 @@ interface EventItem {
   people: string;
   province: string;
 }
-
-// [!! MODIFIED: 接收 props !!]
 const props = defineProps({
   allEvents: {
     type: Array as PropType<EventItem[]>,
@@ -194,19 +190,15 @@ const props = defineProps({
   }
 });
 
-// 状态 (无修改)
+// ... (状态定义不变) ...
 const searchQuery = ref('');
 const selectedDynasty = ref('全部朝代');
 const selectedTag = ref('全部标签');
 const sortOrder = ref<'asc' | 'desc'>('asc');
 const currentPage = ref(1);
 const itemsPerPage = ref(9); 
-// const allEvents = ref<EventItem[]>([]); // [!! REMOVED: 现在是 prop !!]
 
-// [!! REMOVED: onMounted 数据加载逻辑已移至父组件 !!]
-// onMounted(async () => { ... });
-
-// --- [!! MODIFIED: 计算属性现在使用 props.allEvents !!] ---
+// ... (计算属性不变) ...
 const dynasties = computed(() => {
   return ['全部朝代', ...Array.from(new Set(props.allEvents.map(e => e.dynasty)))];
 });
@@ -214,7 +206,7 @@ const tags = computed(() => {
   return ['全部标签', ...Array.from(new Set(props.allEvents.flatMap(e => e.tags)))];
 });
 const filteredEvents = computed(() => {
-  let events = props.allEvents; // [!! MODIFIED !!]
+  let events = props.allEvents; 
   if (selectedDynasty.value !== '全部朝代') {
     events = events.filter(e => e.dynasty === selectedDynasty.value);
   }
@@ -242,6 +234,10 @@ const paginatedEvents = computed(() => {
   const endIndex = startIndex + itemsPerPage.value;
   return filteredEvents.value.slice(startIndex, endIndex);
 });
+
+// [!! 核心修改 !!] 移除了省份名称规范化函数
+// const normalizeProvinceForMap = ... // [!! 已移除 !!]
+
 
 // --- 方法 (无修改) ---
 const toggleSort = () => {
@@ -344,7 +340,6 @@ $text-light-brown: #8c7b6f;
   font-style: italic;
   max-width: 100px;
 }
-/* [!! NEW: 为地点添加样式 !!] */
 .event-location {
   color: $text-light-brown;
   font-size: 0.85rem;

@@ -46,7 +46,7 @@ const dynastyData = ref<{ value: number, name: string }[]>([]);
 // --- 数据加载 (无变动) ---
 async function loadData() {
   try {
-    const rawData = await d3.csv('/data/events_step2_processed.csv');
+    const rawData = await d3.csv('/data/events_step3_modern_locations.csv');
     const aggregatedMap = d3.rollup(
       rawData,
       v => v.length,     
