@@ -39,6 +39,7 @@ const scrollToBottom = () => {
     elevation="1"
     v-model="customizeTheme.mainSidebar"
     id="mainMenu"
+    temporary
   >
     <!-- ---------------------------------------------- -->
     <!---Top Area -->

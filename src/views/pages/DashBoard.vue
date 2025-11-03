@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import SalesCard from "@/components/dashboard/SalesCard.vue";
 import TicketsCard from "@/components/dashboard/TicketsCard.vue";
+
 </script>
 <template>
   <div class="pa-5">
@@ -27,7 +28,13 @@ import TicketsCard from "@/components/dashboard/TicketsCard.vue";
           ><tickets-card></tickets-card>
         </v-card>
       </v-col>
+      <v-col cols="12" xl="6">
+        <v-card class="card-shadow"
+          ><rivers-card></rivers-card>
+        </v-card>
+      </v-col>
     </v-row>
+
     <!-- ---------------------------------------------- -->
     <!---Second Row -->
     <!-- ---------------------------------------------- -->
@@ -36,6 +43,7 @@ import TicketsCard from "@/components/dashboard/TicketsCard.vue";
     <!---Third Row -->
     <!-- ---------------------------------------------- -->
     <v-row class="card-shadow flex-grow-0" dense> </v-row>
+
   </div>
 </template>
 <style lang="scss" scoped></style>

@@ -1,0 +1,6135 @@
+{
+  "rivers": {
+    "永定河": {
+      "displayName": "永定河",
+      "aliases": [
+        "“古无定河”",
+        "㶟水",
+        "七七哈那河",
+        "七里河",
+        "东洋河",
+        "九龙泉",
+        "乱岭关水",
+        "乳泉水",
+        "于延水",
+        "凌云口水",
+        "凤凰山水",
+        "南洋河",
+        "卢沟水",
+        "卢沟河",
+        "古称马邑川水，后称灰（恢）河，亦名蔚李河",
+        "唐泉水",
+        "四条永定河古河道",
+        "大峪河",
+        "大石峪水",
+        "小峪河",
+        "干涧水",
+        "延水",
+        "托台谷水",
+        "敦水",
+        "无定河",
+        "李峪水",
+        "桑乾水",
+        "桑乾河",
+        "沙楞河",
+        "治水",
+        "浑河",
+        "浑源河",
+        "浴水",
+        "灰（恢）河",
+        "甲石河",
+        "白土河",
+        "磁窑硖水",
+        "神泉堡水",
+        "神溪水",
+        "腊河",
+        "花山干河",
+        "苏禄计河",
+        "蒙古几河",
+        "西洋河",
+        "远望峪水",
+        "青羊渠",
+        "黄花涧水"
+      ],
+      "type": "自然河道",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "先秦",
+          "t0": -1046,
+          "t1": -221,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "辽代以前",
+          "t0": -1046,
+          "t1": 916,
+          "siltation": false,
+          "events": [
+            {
+              "action": "重开",
+              "year": 763,
+              "yearMid": 763,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "令燕州司马王安德巡渠通塞。先出幽州库物，市木造船，运米而进",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.104-105"
+            }
+          ]
+        },
+        {
+          "dynasty": "先秦",
+          "t0": -1046,
+          "t1": -221,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "先秦至隋唐间",
+          "t0": -1046,
+          "t1": 907,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "汉",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "西汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "东汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "汉",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 7,
+              "yearMid": 7,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "妫水河及其支流沽河，是延庆城的主要水源",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.295"
+            }
+          ]
+        },
+        {
+          "dynasty": "汉至宋",
+          "t0": -206,
+          "t1": 1279,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "东汉",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "汉唐时期",
+          "t0": 220,
+          "t1": 581,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 250,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它",
+                "军事"
+              ],
+              "evidence": "刘靖于嘉平二年（250）创修的戾陵遏“直截（㶟水）中流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.100-102"
+            },
+            {
+              "action": "重开",
+              "year": 262,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "至景元三年（262），派遣樊晨更制水门",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.100-102"
+            },
+            {
+              "action": "重开",
+              "year": 460,
+              "yearMid": 460,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "乃表求营造。遂躬自履行，相度水形，随力分督，未几而就，溉田百万余亩",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.100-102"
+            },
+            {
+              "action": "开凿",
+              "year": 564,
+              "yearMid": 564,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它",
+                "军事"
+              ],
+              "evidence": "又导高梁水（指古永定河）北合易京（温榆河别名），东会于潞，因以溉田",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.100-102"
+            }
+          ]
+        },
+        {
+          "dynasty": "魏、晋、北朝时期",
+          "t0": 220,
+          "t1": 581,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "北魏至隋代",
+          "t0": 220,
+          "t1": 618,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "北朝",
+          "t0": 386,
+          "t1": 581,
+          "siltation": false,
+          "events": []
+        },
+        {
+          "dynasty": "北魏时",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "北魏天兴元年",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 460,
+              "yearMid": 460,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "壶流之大有造于蔚城也",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.294"
+            }
+          ]
+        },
+        {
+          "dynasty": "北魏时",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "隋唐",
+          "t0": 581,
+          "t1": 907,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 611,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "军事"
+              ],
+              "evidence": "自桑乾河下至卢思台，去幽州八百里。逢安德还曰：‘自此之外，漕渠壅塞。’",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京燕山出版社,2005.9"
+            }
+          ]
+        },
+        {
+          "dynasty": "隋唐",
+          "t0": 581,
+          "t1": 907,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "隋代",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "隋代",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "隋唐以后",
+          "t0": 581,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1246,
+              "yearMid": 1246,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "永定河卢沟桥以下河道，在东至通州以南，南至新城、雄县的广阔扇形地域内迁移摆动",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.279-280"
+            },
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "清康熙三十七年（1698）修筑永定河大堤",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.279-280"
+            },
+            {
+              "action": "改道",
+              "year": 1778,
+              "yearMid": 1778,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "至清中后期，每当夏秋水涨，洪水常常漫堤决口，改道迁流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.279-280"
+            }
+          ]
+        },
+        {
+          "dynasty": "五代",
+          "t0": 907,
+          "t1": 960,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 934,
+              "yearMid": 934,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "赵德钧所开水运渠道，部分地利用了永济渠故道与桑乾河河道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.185"
+            }
+          ]
+        },
+        {
+          "dynasty": "宋、辽、金",
+          "t0": 916,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "大定二十六年（1186）五月，“泸沟决于上阳村，湍流成河，遂因之”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京燕山出版社,2005.9-10"
+            }
+          ]
+        },
+        {
+          "dynasty": "辽、宋、金",
+          "t0": 916,
+          "t1": 1234,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "辽",
+          "t0": 916,
+          "t1": 1125,
+          "siltation": false,
+          "events": []
+        },
+        {
+          "dynasty": "辽、宋、金时",
+          "t0": 916,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "这是大定二十六年（1186年）卢沟河决于上阳村的结果，已非宋辽时旧道",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            }
+          ]
+        },
+        {
+          "dynasty": "宋",
+          "t0": 960,
+          "t1": 1279,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "金大定间",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1175,
+              "yearMid": 1175,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "卢沟河决于显通寨，“诏发中都三百里内民夫塞之”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.105-106"
+            },
+            {
+              "action": "废弃",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "朝廷恐枉费工物，遂令且勿治",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.105-106"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "先是，决显通寨，诏发中都三百里内民夫塞之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.194-195"
+            },
+            {
+              "action": "改道",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "卢沟决于上阳村，湍流成河，遂因之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.194-195"
+            },
+            {
+              "action": "废弃",
+              "year": 1186,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "至是复决，朝廷恐枉费工物，遂令且勿治",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.194-195"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1170,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "金大定十年（1170年），议定开卢沟水通京师漕运",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.19"
+            },
+            {
+              "action": "竣工",
+              "year": 1171,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "于十一年十二月开工，翌年三月竣工",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.19"
+            },
+            {
+              "action": "废弃",
+              "year": 1171,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "因河道“地势高峻，水性浑浊……不能胜舟”而失败",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.19"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "元、明",
+          "t0": 1271,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "河水泥沙含量多，至下游淤积严重",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京燕山出版社,2005.10-12"
+            }
+          ]
+        },
+        {
+          "dynasty": "辽、金之后",
+          "t0": 1271,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1592,
+              "yearMid": 1592,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾",
+                "调控"
+              ],
+              "evidence": "事后便不惜人力物力，迅速堵塞决口",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.81-82"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1288,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "二十五年（1288）四月，“浑河决，发军筑堤捍之”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.106"
+            },
+            {
+              "action": "其他",
+              "year": 1327,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "四年（1327）三月，“浑河决，发军民万人塞之”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.106"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "清元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1319.5,
+              "yearMid": 1319.5,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "但至元末明初已淤塞了",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.198-201"
+            },
+            {
+              "action": "改道",
+              "year": 1319.5,
+              "yearMid": 1319.5,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "近年桑乾河自宛平县西南栗（立）垡村北冲决岸口，亦与清河合流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.204"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "浑河在流至宛平县看丹口（今属丰台）之后，分为了两派",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.338-339"
+            },
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "大量的泥沙便沉积下来，淤高了河床",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.338-339"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1383,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "明洪武十六年（1383），“浚桑乾河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.106-107"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "其一东南经大兴县境清润店（今作青云店），过东安县，今已淤塞",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.197-198"
+            },
+            {
+              "action": "其他",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "然下流淤塞，或遇久雨，则潦水横溢，时为民患",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.197-198"
+            },
+            {
+              "action": "改道",
+              "year": 1370,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "因浑河冲决侵蚀（东安）县治，（洪武）三年十一月移置于县东南",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.197-198"
+            },
+            {
+              "action": "改道",
+              "year": 1370,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "近年桑乾河自宛平县西南栗垡村... 冲决岸口，亦与清河合流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.197-198"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1383,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "年久湮塞，乞役民修浚。诏俟农隙为之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.204-205"
+            },
+            {
+              "action": "改道",
+              "year": 1404,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永乐二年（1404）十月，“作顺天府固安县浑河决岸”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.208-209"
+            },
+            {
+              "action": "改道",
+              "year": 1405,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永乐三年（1045），“浑河改道，于固安县北转向西南",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.205-208"
+            },
+            {
+              "action": "其他",
+              "year": 1413.5,
+              "yearMid": 1413.5,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永乐中，浑河决新城县之高从周口，冲激泥沙，遂已淤壅",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.205-208"
+            },
+            {
+              "action": "重开",
+              "year": 1431,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "请量起民丁预修理之。从之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.205-208"
+            },
+            {
+              "action": "改道",
+              "year": 1506.0,
+              "yearMid": 1506.0,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "大的改道发生在元末明初、永乐年间以及嘉靖、万历年间",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.203-204"
+            },
+            {
+              "action": "改道",
+              "year": 1522,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "嘉靖初，徙流县北十里，入永清县界",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.209-214"
+            },
+            {
+              "action": "重开",
+              "year": 1562,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "今当先浚大河，令水归故道，然后筑长堤以固之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.209-214"
+            },
+            {
+              "action": "改道",
+              "year": 1596.5,
+              "yearMid": 1596.5,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "万历中又徙县西十余里，东南流经黄垡之北",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.209-214"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1461,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "天顺间知县于壁，成化间主簿何瑛，始创濠堑",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            },
+            {
+              "action": "重开",
+              "year": 1511,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "正德六年（1511）知县周义筑垣浚濠",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            },
+            {
+              "action": "改道",
+              "year": 1756,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永定河水由东安县响水村直趋沙定淀",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            },
+            {
+              "action": "改道",
+              "year": 1779,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "四十四年（1779），再展筑新北堤，废去濒河旧堤，使河身宽展",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            },
+            {
+              "action": "其他",
+              "year": 1899,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永定河“从前下口遥堤宽四十余里，分南、北、中三洪。嗣因南、中两洪淤垫",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            },
+            {
+              "action": "改道",
+              "year": 1899,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "全由北洪穿凤（河）入运",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.254-257"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "明代",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1448,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规",
+                "其它"
+              ],
+              "evidence": "明正统十三年（1448），“凿宣府城濠，引城北山水入南城大河”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.294-295"
+            }
+          ]
+        },
+        {
+          "dynasty": "明、清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "明代浑河在看丹口以下分为两支，其中东支经今丰台柳村、鹅凤营、草桥、洋桥，接今凉水河河道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.347"
+            }
+          ]
+        },
+        {
+          "dynasty": "明代",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "明代浑河在宛平、大兴、固安、永清等县境多次改道泛滥",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "清康熙三十七年（1698）",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "巡抚于成龙疏筑兼施，自良乡老君堂口起，...浚河百四十五里，筑南北堤百八十余里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京燕山出版社,2005.12-13"
+            }
+          ]
+        },
+        {
+          "dynasty": "清康熙三十七年（1698）",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾",
+                "调控"
+              ],
+              "evidence": "决定对卢沟桥以下河段进行了大规模的治理，“疏筑兼施”，既筑河堤，又浚河床",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.82"
+            },
+            {
+              "action": "改道",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "浚河百四十五里，筑南、北堤百八十余里，赐名永定",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.82"
+            },
+            {
+              "action": "竣工",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "浚河百四十五里，筑南、北堤百八十余里，赐名永定",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.82"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "自是浑流改注东北，无迁徙者垂四十年",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.107-108"
+            },
+            {
+              "action": "开凿",
+              "year": 1700,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾",
+                "其它"
+              ],
+              "evidence": "上游壅塞，命河督王新命开新河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.107-108"
+            },
+            {
+              "action": "改道",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "自是水由调河头迳毛家洼、沙家淀达津入海",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.107-108"
+            },
+            {
+              "action": "重开",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "救弊之法，惟有疏中洪、挑下口，以畅奔流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.107-108"
+            },
+            {
+              "action": "重开",
+              "year": 1801,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "决卢沟桥东西岸石堤四、土堤十八，命侍郎那颜宝、高杞分驻堵筑，并疏浚下游",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.107-108"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1651,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "清顺治八年（1651），“从永清县界徙固安县西七十里，与白沟河合流。此第一次改道也”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.214-215"
+            },
+            {
+              "action": "改道",
+              "year": 1654,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "顺治十一年（1654），浑河“复改流（固安）县之公村西，与清水合流，西南入新城境，至霸州城南，溢为巨浸。此第二次改道”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.215"
+            },
+            {
+              "action": "改道",
+              "year": 1688,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙二十七年（1688），浑河“改道善来营，入玉带河，俗谓之霸浑河”。此第三次改道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216"
+            },
+            {
+              "action": "改道",
+              "year": 1692,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙三十一年（1692），浑河“又复永清县东北故道。此第四次改道”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216"
+            },
+            {
+              "action": "重开",
+              "year": 1692,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "直隶巡抚郭世隆建议，疏永清东北故道，使浑河顺流归淀",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216"
+            }
+          ]
+        },
+        {
+          "dynasty": "康熙三十七年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "康熙皇帝命直隶巡抚于成龙“疏、筑兼施”，“自良乡老君堂旧河口起",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216-217"
+            },
+            {
+              "action": "开凿",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "浚河百四十五里，筑南北堤百八十里，赐名永定",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216-217"
+            },
+            {
+              "action": "改道",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "《光绪顺天府志·河渠志一》称这是浑河第五次改道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.216-217"
+            }
+          ]
+        },
+        {
+          "dynasty": "康熙三十七",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1699,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙三十七年开挖的永定河尾流，第二年已多淤塞",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217"
+            },
+            {
+              "action": "开凿",
+              "year": 1700,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "于（永清）县北之郭家务别开新河，长六十里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217"
+            },
+            {
+              "action": "改道",
+              "year": 1700,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "这次永定河尾稍向西改流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217"
+            }
+          ]
+        },
+        {
+          "dynasty": "雍正四年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1725,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "遂于柳岔口少北改为下口，开新河自郭家务至长甸河，凡七十里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217-218"
+            },
+            {
+              "action": "开凿",
+              "year": 1726,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "雍正四年（1726），“于郭家务开渠七十里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217-218"
+            },
+            {
+              "action": "改道",
+              "year": 1726,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "改（永定）河东行，又开下流长甸河三十余里，引浑河之水绕王庆坨东北入三角淀。……由是浑河下流不复南注清河，沿河州县颇受其利",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.217-218"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆十六年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1751,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "即于王庆坨南开引河，导流入叶淀，以顺水性",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.218"
+            },
+            {
+              "action": "改道",
+              "year": 1751,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "这次永定河下尾自永清县东南冰窖村稍向南改道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.218"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆十九年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1754,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "洪水“决堤夺溜，经津水洼，入胜芳淀",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.218-219"
+            },
+            {
+              "action": "改道",
+              "year": 1755,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "遂改下游“由调河头入海，挑引河二十余里，加培埝身二千二百余丈”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.218-219"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆三十五、三十六年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾",
+                "调控"
+              ],
+              "evidence": "提出“救弊之法，惟有疏中洪，挑下口，以畅奔流。筑岸堤以防冲突，浚减河以分盛涨”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.219"
+            },
+            {
+              "action": "改道",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "令永定河下尾自调河头经毛家洼、沙家淀入海",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.219"
+            },
+            {
+              "action": "开凿",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "于贺尧营东、条（调）河头南，挑河东出",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.219"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆三十八年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1773,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "所有泥沙悉归条河头之旧河床中，淤成平陆",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.219-220"
+            },
+            {
+              "action": "改道",
+              "year": 1773,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "澄清之水自行另从调河头以北，散漫而下，经东安县响口村（在旧东安县城东南10里），注入沙家淀。这是永定河下流的一次自改水道",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.219-220"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆四十三年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1778,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "爰就水势改自十八号（在贺尧营南3里，见注）出口，改河稍北，仍向东流",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "嘉庆六年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1801,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "暴涨的永定河下流，“忽复徙至调河头北，沛然东下，奔注母猪泊",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "嘉庆十六年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1811,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "因永定河下流的多年淤积，在永清县东南部、东安县南部及武清县西南部，形成南高北低的微观地势",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            },
+            {
+              "action": "改道",
+              "year": 1811,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "全河大溜忽于北八工（汛）九号（在武清县西境）兜湾侧注，逼成横溜，东注母猪泊",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            },
+            {
+              "action": "重开",
+              "year": 1812,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "翌年，经直隶总督温承惠奏准，随所改道酌加修补",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光三年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1823,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永定河“由南八工（汛）堤尽决而南，直趋汪儿淀（在霸州堂二铺附近）”。“排荡而入凤河故道，以达津归海。此又永定河自改下口",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光十一年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1831,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永定河下流突由南八工（汛）之十五号（在今安次县东南70余里桃园之西），转向东北",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.220-221"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光二十四年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1844,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "自南六汛开引河，经葛渔城北鱼坝口，南入天津县，合凤河入海",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光三十年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1850,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "勘于冯家场北河湾开引河，十月竣工",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221"
+            },
+            {
+              "action": "竣工",
+              "year": 1850,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "勘于冯家场北河湾开引河，十月竣工",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221"
+            }
+          ]
+        },
+        {
+          "dynasty": "咸丰九年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1859,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "咸丰九年（1859），“（永定）河势渐形北徙，东安屡被水灾",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221-222"
+            },
+            {
+              "action": "重开",
+              "year": 1865,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "故同治三年（1865），又于柳坨地面开浚引河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221-222"
+            },
+            {
+              "action": "改道",
+              "year": 1865,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "顺天津沟汇入凤河，达津归海",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.221-222"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1724,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "筑霸州堂二铺（在州城东58里）南堤决口",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "改道",
+              "year": 1734,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "黄家湾河溜全夺，水穿永清县郭下",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "改道",
+              "year": 1737,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "夺溜由张客决口下归凤河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "重开",
+              "year": 1739,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "年久淤塞，请发帑兴修",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.244-245"
+            },
+            {
+              "action": "改道",
+              "year": 1750,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "河水骤涨，由南岸第四沟夺溜出",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "改道",
+              "year": 1755,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "今议于北岸六工改为下口",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.245-246"
+            },
+            {
+              "action": "其他",
+              "year": 1761,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "以致永定河下口二十余里之外，骤然停淤",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.246"
+            },
+            {
+              "action": "重开",
+              "year": 1773,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "将中泓河底刷深三、四尺",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.246"
+            },
+            {
+              "action": "重开",
+              "year": 1806,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "议以每年冬间挑挖河身二千余丈",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.247"
+            },
+            {
+              "action": "其他",
+              "year": 1812,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "葛渔城（在东安县东南隅）淤塞",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "改道",
+              "year": 1871,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "夺溜经良乡、涿州注大清河入海",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.223-226"
+            },
+            {
+              "action": "改道",
+              "year": 1872,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "乃于同治十一年（1861）挑挖中洪，则目今所行之道也",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.222"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "清康熙三十七年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1654,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "二书同记的有10次，即顺治十一年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "清康熙三十七年（1698年）大规模整修浑河河堤、疏浚河道之后",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙三十七、三十九年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1700,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙三十七、三十九年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1726,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "雍正四年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1751,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "乾隆十六、十九、三十七年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1754,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "乾隆十六、十九、三十七年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1772,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "乾隆十六、十九、三十七年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1801,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "嘉庆六年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1831,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "道光十一年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            },
+            {
+              "action": "改道",
+              "year": 1864,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "同治三年",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "至雍正二年",
+          "t0": 1723,
+          "t1": 1735,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1724,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "至雍正二年（1724），历经27年的淀池淤积，“永定河南阻不下，遂回流而北",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.283"
+            },
+            {
+              "action": "改道",
+              "year": 1726,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "将永定河下口于柳岔口稍北改向东去",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.283"
+            },
+            {
+              "action": "开凿",
+              "year": 1726,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "开新河自郭家务至长甸河70里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.283"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆十六年",
+          "t0": 1736,
+          "t1": 1795,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1751,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "乾隆十六年（1751），永清冰窖口以下七、八工之正河五十余里...头尾三十余里全淤",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.283-284"
+            },
+            {
+              "action": "开凿",
+              "year": 1751,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "再挖引河22里，穿过淤高的三角淀",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.283-284"
+            }
+          ]
+        },
+        {
+          "dynasty": "嘉庆十五年",
+          "t0": 1796,
+          "t1": 1820,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1810,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "南下头十一号以下，北下汛八号以下，均已断流，河身淤为平地",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.247"
+            }
+          ]
+        },
+        {
+          "dynasty": "嘉庆十八年",
+          "t0": 1796,
+          "t1": 1820,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1813,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "条（调）河头故道淤如平陆。溜势全趋北七、北八两处堤根，河滩渐次淤高",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.247-248"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光二年",
+          "t0": 1821,
+          "t1": 1850,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1822,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "水停沙积，河身因淤而增高，堤身因淤而愈矮",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.248"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光三年",
+          "t0": 1821,
+          "t1": 1850,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1823,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "每年疏浚中洪下口，但能裁弯取直、疏通梗塞",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.248-249"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光四年",
+          "t0": 1821,
+          "t1": 1850,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1824,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "今又在其上东沽港、黄亭等处（在东安县南端）废堤入淀",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.249"
+            }
+          ]
+        },
+        {
+          "dynasty": "道光年间",
+          "t0": 1821,
+          "t1": 1850,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1698,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "康熙三十七年（1698）整治永定河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.261"
+            },
+            {
+              "action": "重开",
+              "year": 1835,
+              "yearMid": 1835,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "道光年间修筑的河堤高出康熙堤一丈余",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.261"
+            }
+          ]
+        },
+        {
+          "dynasty": "同治元年",
+          "t0": 1862,
+          "t1": 1874,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1862,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "卢沟桥以下至下口百余里，中泓两旁河身均成熟地",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.249-250"
+            }
+          ]
+        },
+        {
+          "dynasty": "同治八年",
+          "t0": 1862,
+          "t1": 1874,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1869,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "河身久不开挖，而挑中泓之法废矣",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250"
+            },
+            {
+              "action": "废弃",
+              "year": 1869,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "三角淀淤成平陆，因浚下口之法废矣",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250"
+            }
+          ]
+        },
+        {
+          "dynasty": "光绪七年",
+          "t0": 1875,
+          "t1": 1908,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1881,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "永定河在雍、乾时已渐高仰，今视河底，竟高于河外民田数丈",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250-251"
+            },
+            {
+              "action": "改道",
+              "year": 1887,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "本年南七（工）漫口之水出南堤后，向南直泻，复决开老南堤",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250-251"
+            },
+            {
+              "action": "其他",
+              "year": 1887,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "中泓淤，而自双口（在武清县西南境）入凤河之路断",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250-251"
+            },
+            {
+              "action": "其他",
+              "year": 1887,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "下泓淤，而自青先（按“先”为光之误，青光在双口南十里）入清河之路又断",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.250-251"
+            }
+          ]
+        },
+        {
+          "dynasty": "光绪十六年",
+          "t0": 1875,
+          "t1": 1908,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1891,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "其中泓、北泓一带，悉淤成高阜，流行委系不畅",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.251-252"
+            },
+            {
+              "action": "其他",
+              "year": 1891,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "水势直灌凤河，上年大水，将凤河身数十里淤成平陆",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.251-252"
+            }
+          ]
+        },
+        {
+          "dynasty": "光绪二十二年",
+          "t0": 1875,
+          "t1": 1908,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1896,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "臣查永定河身久经淤垫，受病已深",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.252"
+            },
+            {
+              "action": "其他",
+              "year": 1896,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "正河分行大溜，以致河身淤垫高仰，几于堤平",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.252"
+            }
+          ]
+        },
+        {
+          "dynasty": "光绪初",
+          "t0": 1875,
+          "t1": 1908,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1863,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "至同治二年，始改河出叉（当为汊）光、二光村，不归母猪泊",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.252-253"
+            },
+            {
+              "action": "废弃",
+              "year": 1891,
+              "yearMid": 1891,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "此项遥堤，竟成无用，久废不修",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.252-253"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1924,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "1924年永定河两岸堤坝多处决口，京兆地方筹集70万元专为堵口",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1954,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "防灾"
+              ],
+              "evidence": "1954年修筑官厅水库后，清夷水（妫水河）河道自延庆城西大路村以下皆为水库淹没。官厅水库以下，就称为永定河了。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.54"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "妫川自双营南即湮塞流竭，旧道犹存",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.325"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        }
+      ],
+      "statistics": {
+        "totalSegments": 201,
+        "totalEvents": 149,
+        "timeRange": {
+          "start": -1046,
+          "end": 1949
+        },
+        "actionCounts": {
+          "其他": 36,
+          "改道": 62,
+          "重开": 26,
+          "竣工": 3,
+          "开凿": 16,
+          "废弃": 6
+        },
+        "functionCounts": {
+          "防灾": 38,
+          "运输": 6,
+          "军事": 3,
+          "调控": 8,
+          "其它": 8,
+          "城规": 4
+        },
+        "hasSiltation": true
+      }
+    },
+    "永济渠/通济渠（大运河北段）": {
+      "displayName": "永济渠/通济渠（大运河北段）",
+      "aliases": [
+        "会通河",
+        "御河",
+        "永济渠",
+        "江南河",
+        "济州新开河",
+        "漕河",
+        "齐齐尔汉河"
+      ],
+      "type": "人工开凿",
+      "systemId": "京杭大运河系统",
+      "segments": [
+        {
+          "dynasty": "隋",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 608,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "军事"
+              ],
+              "evidence": "大业四年（608年）开业永济渠却是为了征辽东、转输军资",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.75-76"
+            },
+            {
+              "action": "开凿",
+              "year": 608,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "诏发河北诸郡男女百余万永济渠，引沁水，南达于河，北通涿郡",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.75-76"
+            }
+          ]
+        },
+        {
+          "dynasty": "隋",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 610,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大业六年（610年），隋又开江南河，从与邗沟南端的江都隔江相望的京口（今镇江）至余杭（今杭州）",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.76"
+            }
+          ]
+        },
+        {
+          "dynasty": "隋",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 607,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "军事"
+              ],
+              "evidence": "大业四年（607）正月，为准备用兵辽东，隋炀帝“诏发河北诸郡男女百余万开永济渠",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.181-182"
+            },
+            {
+              "action": "竣工",
+              "year": 611,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大业七年二月，隋炀帝“自江都（今扬州）御龙舟入通济渠，遂幸于涿郡”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.181-182"
+            }
+          ]
+        },
+        {
+          "dynasty": "东汉末或三国时",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 599.5,
+              "yearMid": 599.5,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "隋炀帝时开凿的永济渠，当利用了桑乾河河道",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.86"
+            }
+          ]
+        },
+        {
+          "dynasty": "隋",
+          "t0": 581,
+          "t1": 618,
+          "siltation": null,
+          "events": [
+            {
+              "action": "竣工",
+              "year": 599,
+              "yearMid": 599,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "军事"
+              ],
+              "evidence": "永济渠开通后，从涿郡（今北京）可直接由此水路南下",
+              "source": "侯仁之.北京城市历史地理[M].北京：北京燕山出版社,2000.395-396"
+            }
+          ]
+        },
+        {
+          "dynasty": "五代",
+          "t0": 907,
+          "t1": 960,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 934,
+              "yearMid": 934,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "奏发河北数镇丁夫，开王马口至游（淤）口，以通水运，凡二百里",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.185"
+            }
+          ]
+        },
+        {
+          "dynasty": "宋、辽时代",
+          "t0": 916,
+          "t1": 1279,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "宋",
+          "t0": 960,
+          "t1": 1279,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 645,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "军事"
+              ],
+              "evidence": "令燕州司马王安德巡渠通塞。先出幽州库物，市木造船，运米而进",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.183-184"
+            },
+            {
+              "action": "其他",
+              "year": 645,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "逢安德还曰：‘自此之外，漕渠壅塞。’",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.183-184"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1280,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "至元十七年（1280年）七月，在中书省大臣阿合马的支持下，由济州官员阿八赤、姚演等人提出开凿新运河的建议",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.215"
+            },
+            {
+              "action": "竣工",
+              "year": 1283,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "经过三年的努力，在至元二十年（1283年）八月，“济州新开河成",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.215"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1289,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "在至元二十六年（1289年）正月，元朝政府调动了大量人力物力资源，开凿一条新的运河河道",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.215-216"
+            },
+            {
+              "action": "竣工",
+              "year": 1289,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "完工之后，元世祖“诏赐名会通河，置提举司，职河渠事”",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.215-216"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "会通河是元代开凿的，北接御河南达清泗",
+              "source": "吴建雍等. 北京城市发展史（明代卷）[M].北京：北京燕山出版社,2008.188-189"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1640,
+              "yearMid": 1640,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "调控",
+                "运输",
+                "防灾"
+              ],
+              "evidence": "又改凿入南城濠，这便是明代的御河。它是积水潭及三海排水的尾闾",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.190-191"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "民国",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1924,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "南段（南水关—长安街） 1924—1925年由日本使馆管理人员改为暗沟",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.130-131"
+            },
+            {
+              "action": "改道",
+              "year": 1930,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "中段（长安街—东安门） 1930—1931年由民国政府改为暗沟",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.130-131"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 17,
+        "totalEvents": 18,
+        "timeRange": {
+          "start": 581,
+          "end": 1949
+        },
+        "actionCounts": {
+          "开凿": 8,
+          "竣工": 4,
+          "重开": 2,
+          "其他": 1,
+          "改道": 3
+        },
+        "functionCounts": {
+          "军事": 4,
+          "运输": 14,
+          "城规": 2,
+          "调控": 1,
+          "防灾": 1
+        },
+        "hasSiltation": true
+      }
+    },
+    "金口河": {
+      "displayName": "金口河",
+      "aliases": [
+        "三里河",
+        "金口与金口河",
+        "金口新河",
+        "金口旧河",
+        "金口河故道"
+      ],
+      "type": "人工开凿",
+      "systemId": "中都/大都运河系统",
+      "segments": [
+        {
+          "dynasty": "辽",
+          "t0": 916,
+          "t1": 1125,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1170,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大定十年（1170），“议决卢沟以通京师漕运”。“自金口（在石景山北麓）疏导至京城北入壕",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1164,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大定四年（1164年）十月，至密云狩猎，见中都近郊运河岁久湮塞，因责令户部侍郎曹望之疏浚",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.176-177"
+            },
+            {
+              "action": "开凿",
+              "year": 1170,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大定十年（1170年）议引卢沟水（今永定河）通中都漕运",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.176-177"
+            },
+            {
+              "action": "竣工",
+              "year": 1171,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "次年（1171年）十二月复开工兴凿，计用50日而工竣",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.176-177"
+            },
+            {
+              "action": "其他",
+              "year": 1187,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "如果河水暴涨或奸人决堤，将为害不小。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.176-177"
+            },
+            {
+              "action": "废弃",
+              "year": 1187,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "金世宗纳其议，派使臣用巨石将金口堵塞，金口河最终告废。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.176-177"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1265,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它",
+                "运输"
+              ],
+              "evidence": "今若按视故迹，使水得通流，上可以致西山之利，下可以广京畿之漕",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "开凿",
+              "year": 1266,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "凿金口，导卢沟水以漕西山木石",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "其他",
+              "year": 1298,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "浑河水发为民害，大都路都水监将金口下闭闸板",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "其他",
+              "year": 1301,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "又将金口已上河身用砂石杂土尽行堵闭",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "开凿",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "创开新河一道，深五丈，广十五丈，放西山金口水东流至高丽庄",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "竣工",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "当年正月兴工，四月工毕",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            },
+            {
+              "action": "废弃",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "沙泥壅塞，船不可行。而开挑之际，毁民庐舍坟茔，夫丁死伤甚重。又费用不赀，卒以无功",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.102-104"
+            }
+          ]
+        },
+        {
+          "dynasty": "金中都、元大都",
+          "t0": 1115,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1170,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "金世宗大定十年（1170），朝臣会商导引卢沟河水以通京师漕",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.298-299"
+            },
+            {
+              "action": "开凿",
+              "year": 1171,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "翌年（1171）十二月，省臣再奏开渠引水，自金口疏导至京城北入濠",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.298-299"
+            },
+            {
+              "action": "竣工",
+              "year": 1172,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "转年三月，进一步核实结果，只需五十天即可完工",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.298-299"
+            },
+            {
+              "action": "其他",
+              "year": 1187,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "大定二十七年（1187）三月，宰臣以“孟家山（当即石景山）金口闸...若固塞之",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.298-299"
+            },
+            {
+              "action": "废弃",
+              "year": 1187,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "金世宗认为有理，便遣使将金口堵塞了。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.298-299"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1172,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "大定十二年（1172年），为解决漕运水源，开凿了金口河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.92"
+            },
+            {
+              "action": "其他",
+              "year": 1187,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "大定二十七年（1187年），世宗下令将金口河堵塞",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.92"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1174,
+              "yearMid": 1174,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "自金口疏导至京城北入濠，而东至通州之北入潞水",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.20"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "城规"
+              ],
+              "evidence": "郭守敬又曾重新挑开金口河，用来运送筑造元大都城所需要的西山（今北京西部山区）木石",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177"
+            },
+            {
+              "action": "其他",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "后复堵筑",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177"
+            },
+            {
+              "action": "重开",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "元朝末年，因通惠河淤浅难行，复开金口河以通大都漕运",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177"
+            },
+            {
+              "action": "废弃",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "但也因流湍势急，河泥壅塞，船不可行而废。从此以后，金口河就再没有开挑过。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177"
+            }
+          ]
+        },
+        {
+          "dynasty": "元至正二年",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1272,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "郭守敬曾主持重开金口河，导卢沟河水“以漕西山木石”",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.201-203"
+            },
+            {
+              "action": "其他",
+              "year": 1301,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "遂将金口以上河身用砂石杂土尽行堵闭",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.201-203"
+            },
+            {
+              "action": "重开",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "复建言重开金口，引卢沟河水至潞，导引海运至大都城内输纳",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.201-203"
+            },
+            {
+              "action": "其他",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "因流湍勢急，沙泥壅塞，船不可行",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.201-203"
+            },
+            {
+              "action": "废弃",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "卒以无功，以致建言者被诛",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.201-203"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1265,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "复凿金口是至元二年（1265）郭守敬的主意。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "开凿",
+              "year": 1266,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "于是，便有至元三年“凿金口”的工程。这项工程实际上是修建大都城的前期工程，为修建大都城创造了“漕西山木石”的有利条件。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "其他",
+              "year": 1301,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "直至大德五年（1301），因“浑河水势浩大...又将金口以上河身，用砂石杂土尽行堵闭”。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "重开",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "至正二年（1342），中书参议孛罗帖木儿、都水傅佐再次提议重开金口河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "竣工",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "丞相脱脱力排众议，务主必行，于这年正月兴工，至四月功毕。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "其他",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "待起闸放金口之水时，“流湍势急，沙泥壅塞，船不可行。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            },
+            {
+              "action": "废弃",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "又费用不赀，卒以无功。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.299-301"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "元代初年，为建大都城，一度重开金代所建金口旧河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            },
+            {
+              "action": "废弃",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "一度重开金代所建金口旧河，后废弃。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1355,
+              "yearMid": 1355,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "元末开凿金口新河，引卢沟河水至通州",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            },
+            {
+              "action": "废弃",
+              "year": 1355,
+              "yearMid": 1355,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "因水流过大，威胁城池而废弃。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1266,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "于至元三年十二月“凿金口，导卢沟水，以漕西山木石",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.21-22"
+            },
+            {
+              "action": "其他",
+              "year": 1298,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "大德二年（1298年）“浑河水发，为民害。大都路都水监将金口下闭闸板”",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.21-22"
+            },
+            {
+              "action": "其他",
+              "year": 1301,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "又将金口已上河身，用砂石杂土尽行堵闭",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.21-22"
+            },
+            {
+              "action": "开凿",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "元末为解决大都的漕运问题，于至正二年（1342年）开凿了金口新河",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.22-23"
+            },
+            {
+              "action": "废弃",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "开凿了金口新河，旋即失败",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.22-23"
+            },
+            {
+              "action": "其他",
+              "year": 1342,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "加剧了冲淤，这可能也是导致新河迅速淤废的一个原因",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.27-29"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "元大都的金口河故道因城市建设而湮废。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.96-97"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规",
+                "环境"
+              ],
+              "evidence": "明代北京内城南墙南移之后，这段河道被包入城内，并逐渐变为内城中的一处风景区",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1384,
+              "yearMid": 1384,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾",
+                "城规"
+              ],
+              "evidence": "明代初年，这段河道又曾作为内城南护城河的排水河道",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 16,
+        "totalEvents": 50,
+        "timeRange": {
+          "start": 916,
+          "end": 1912
+        },
+        "actionCounts": {
+          "重开": 11,
+          "开凿": 11,
+          "竣工": 4,
+          "其他": 13,
+          "废弃": 10,
+          "改道": 1
+        },
+        "functionCounts": {
+          "运输": 18,
+          "防灾": 10,
+          "城规": 5,
+          "其它": 1,
+          "环境": 1
+        },
+        "hasSiltation": true
+      }
+    },
+    "闸河": {
+      "displayName": "闸河",
+      "aliases": [
+        "漕河"
+      ],
+      "type": "人工开凿",
+      "systemId": "中都/大都运河系统",
+      "segments": [
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1204,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "是时议开通州漕河，诏庆寿按视，漕河成，赐银一百五十两，重币十端。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177-178"
+            },
+            {
+              "action": "竣工",
+              "year": 1204,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "漕河成，赐银一百五十两，重币十端。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177-178"
+            },
+            {
+              "action": "重开",
+              "year": 1205,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "泰和五年（1205年），因霸州漕河浅涩，征发山东、河北、河东、中都等地军夫六万余人，大事疏凿。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.177-178"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1175,
+              "yearMid": 1175,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "金朝后期，中都闸河可能已经淤废。",
+              "source": "吴建雍等. 北京城市发展史（先秦—辽金卷）[M].北京：北京燕山出版社,2008.178-179"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        }
+      ],
+      "statistics": {
+        "totalSegments": 3,
+        "totalEvents": 4,
+        "timeRange": {
+          "start": 1115,
+          "end": 1368
+        },
+        "actionCounts": {
+          "开凿": 1,
+          "竣工": 1,
+          "重开": 1,
+          "废弃": 1
+        },
+        "functionCounts": {
+          "运输": 4
+        },
+        "hasSiltation": true
+      }
+    },
+    "高梁河": {
+      "displayName": "高梁河",
+      "aliases": [
+        "南北旱河",
+        "文明河",
+        "白浮堰",
+        "白浮泉至瓮山泊的引水河道",
+        "白浮瓮山河",
+        "肖家河",
+        "长河"
+      ],
+      "type": "自然河道",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "东汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "三国",
+          "t0": 220,
+          "t1": 581,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 250,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "魏齐王嘉平二年（250），...刘靖造戾陵遏、开车箱渠、导高梁河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.8-9"
+            }
+          ]
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1175,
+              "yearMid": 1175,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "组织人力打通了万泉河水系与高梁河水系之间的分水岭——海淀台地，将西北郊的水源导引到闸河以通漕运。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            },
+            {
+              "action": "重开",
+              "year": 1175,
+              "yearMid": 1175,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "环境"
+              ],
+              "evidence": "利用高梁河河道蓄水成湖，并在湖中建琼华岛等宫苑景观。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            },
+            {
+              "action": "重开",
+              "year": 1198,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "三年，又命勿毁高梁河闸，从民灌溉。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            },
+            {
+              "action": "重开",
+              "year": 1205,
+              "yearMid": 1205,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "泰和年间（1201—1208年），韩玉建议“为闸以节高良河、白莲潭诸水，以通山东、河北之粟。”",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "开凿了白浮至瓮山泊的河道，后人统称之为白浮堰",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.108"
+            },
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "开凿由瓮山泊到大都城的河道，即今之长河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.108"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "由白浮泉至瓮山泊的引水河道在明初断流",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.110-111"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "环境"
+              ],
+              "evidence": "元代金水河、高梁河的两套引水系统被废弃",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            },
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "明代改建北京城时，将其留在北墙之外，与坝河一起构成了明北京内城的北护城河系统",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1407,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "永乐初为利用通惠河运送建筑材料，五年（1407年）五月，北京行部奏请重修白浮河道",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.74-75"
+            },
+            {
+              "action": "其他",
+              "year": 1413,
+              "yearMid": 1413,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "明初大都改为北平，此后通惠河上源白浮瓮山河因三十余年无人管理而湮塞殆尽",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.74-75"
+            },
+            {
+              "action": "废弃",
+              "year": 1476,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "这时白浮瓮山河道已湮废的完全不能用了，以后再也未见修治",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.74-75"
+            },
+            {
+              "action": "其他",
+              "year": 1476,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "这时白浮瓮山河道已湮废的完全不能用了",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.74-75"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆年间",
+          "t0": 1736,
+          "t1": 1795,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1765,
+              "yearMid": 1765,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "开凿了南北旱河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.113"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆年间",
+          "t0": 1736,
+          "t1": 1795,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1765,
+              "yearMid": 1765,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "清河上游的肖家河得到治理，部分河道增设了防洪堤",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.113"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规",
+                "环境"
+              ],
+              "evidence": "民国初年，东交民巷河段被使馆区改成暗河",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.221-222"
+            },
+            {
+              "action": "改道",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "望恩桥南段为了便利交通也改建成暗河",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.221-222"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 13,
+        "totalEvents": 18,
+        "timeRange": {
+          "start": -206,
+          "end": 1949
+        },
+        "actionCounts": {
+          "改道": 3,
+          "开凿": 5,
+          "重开": 5,
+          "废弃": 3,
+          "其他": 2
+        },
+        "functionCounts": {
+          "城规": 2,
+          "环境": 3,
+          "调控": 3,
+          "运输": 6,
+          "其它": 1,
+          "防灾": 1
+        },
+        "hasSiltation": true
+      }
+    },
+    "积水潭/白莲潭系": {
+      "displayName": "积水潭/白莲潭系",
+      "aliases": [
+        "海子",
+        "白莲潭",
+        "积水潭",
+        "西堤",
+        "西湖"
+      ],
+      "type": "自然河道",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "金",
+          "t0": 1115,
+          "t1": 1234,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1175,
+              "yearMid": 1175,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "调控",
+                "其它",
+                "运输"
+              ],
+              "evidence": "金代还在高梁河、白莲潭分别修建有闸坝系统，用以调节灌溉、航运用水。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            },
+            {
+              "action": "重开",
+              "year": 1197,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "承安二年（1197年），敕放白莲潭东闸水与百姓溉田。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.93"
+            }
+          ]
+        },
+        {
+          "dynasty": "元世祖登基前",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1174,
+              "yearMid": 1174,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "城规",
+                "调控"
+              ],
+              "evidence": "金代由白莲潭开凿五条渠道，一自西段南岸开渠，引水南流，入中都北护城河",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.296-298"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1291,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "引入大都积水潭，再由积水潭引至通州，与大运河相接。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1326,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "元泰定三年（1326年）八月，改修成石闸",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.98-99"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "向南的干渠则可排入积水潭和坝河",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.189-190"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "明代这两闸废后，在北护城河上建松林闸、铁灵闸控制进积水潭的水量",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.96-98"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1640,
+              "yearMid": 1640,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "防灾"
+              ],
+              "evidence": "它是积水潭及三海排水的尾闾",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.190-191"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "环境"
+              ],
+              "evidence": "人类活动造成的淤塞，导致水域面积大大减少",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.223"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 11,
+        "totalEvents": 9,
+        "timeRange": {
+          "start": 1115,
+          "end": 1949
+        },
+        "actionCounts": {
+          "其他": 3,
+          "开凿": 1,
+          "重开": 4,
+          "废弃": 1
+        },
+        "functionCounts": {
+          "环境": 1,
+          "运输": 4,
+          "城规": 1,
+          "调控": 4,
+          "其它": 2,
+          "防灾": 2
+        },
+        "hasSiltation": true
+      }
+    },
+    "通惠河": {
+      "displayName": "通惠河",
+      "aliases": [
+        "内、外金水河",
+        "文明闸",
+        "籍东闸",
+        "金水河",
+        "金河"
+      ],
+      "type": "自然河道",
+      "systemId": "中都/大都运河系统",
+      "segments": [
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1279,
+              "yearMid": 1279,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "其它"
+              ],
+              "evidence": "在元世祖至元年间由著名科学家郭守敬主持开凿的通惠河",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.184-185"
+            },
+            {
+              "action": "竣工",
+              "year": 1294,
+              "yearMid": 1294,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "自至元末年通惠河修成之后，其供给都城积水潭的水量",
+              "source": "吴建雍等. 北京城市发展史（元代卷）[M].北京：北京燕山出版社,2008.184-185"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "城规"
+              ],
+              "evidence": "郭守敬规划开凿的通惠河，在北京城市发展中，具有划时代的意义",
+              "source": "吴建雍等. 北京城市发展史（明代卷）[M].北京：北京燕山出版社,2008.188"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "竣工",
+              "year": 1291,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "调控"
+              ],
+              "evidence": "至元二十八年（1291年）修建通惠河...沿途各设水闸多组，以通船舶。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            },
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "开通了由大都城至通州的坝河和通惠河。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "又开金水河，引玉泉山泉水入大内",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.94-95"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1438,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "正统三年，以东便门外大通桥作为通惠河的新起点",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.99"
+            },
+            {
+              "action": "其他",
+              "year": 1524,
+              "yearMid": 1524,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "因上游水源不足、河道淤塞等原因，一直到嘉靖初年，通州至京城的货物运送大多依靠陆运。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.99"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1292,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "于至元二十九年（1292年）主持修建通惠河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.108"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1320,
+              "yearMid": 1320,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它"
+              ],
+              "evidence": "元代为保证宫廷用水，专门修建了由玉泉山至大都皇宫的金水河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.108"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1330,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "庆丰闸初建时是木闸，至顺元年（1330年）改成石闸",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.102-104"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "其它"
+              ],
+              "evidence": "耗用了巨大资金、人力开通后，对解决大都的漕运与水源发挥了重要的作用",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.170"
+            },
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "常常淤浅，总要花费很大气力，才能维持通航",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.170"
+            },
+            {
+              "action": "废弃",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "元明之际仅三十年失于治理，上源就完全湮废",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.170"
+            },
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "下淤河道也淤浅殆尽",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.170"
+            }
+          ]
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1276,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它",
+                "环境"
+              ],
+              "evidence": "水源专由玉泉山引出的金水河供给...当在至元十一年至十五年（1274～1278年）之间",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.175-179"
+            },
+            {
+              "action": "其他",
+              "year": 1319,
+              "yearMid": 1319,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "环境",
+                "调控"
+              ],
+              "evidence": "隆福宫的园林用水直接引自金水河，建四闸控制",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.175-179"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1414,
+              "yearMid": 1414,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "在皇城承天门前增加了金水河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.96-97"
+            },
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "元代金水河至明代湮废。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.96-97"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "元代的金水河则被废弃",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.110-111"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "环境"
+              ],
+              "evidence": "元代金水河、高梁河的两套引水系统被废弃",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            },
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "原来位于和义门以北的通惠河入水口被废弃",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            },
+            {
+              "action": "开凿",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "在德胜门西侧，开辟新水关",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            },
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规",
+                "环境"
+              ],
+              "evidence": "明代改建北京城时，这段通惠河河道被包入内城，遂成为明清时期北京内城里的一处很有名的风景区",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.123"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": true,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1407,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "翌年五月发民丁二十万疏浚了西湖景至通州的河道",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.110-112"
+            },
+            {
+              "action": "重开",
+              "year": 1432,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "明宣德七年（1432年）正月重建平津闸",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.104-105"
+            },
+            {
+              "action": "废弃",
+              "year": 1435,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "到宣德十年（1435年）才完全放弃了这两座闸，撤销了闸官",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.101-102"
+            },
+            {
+              "action": "开凿",
+              "year": 1438,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "明正统三年（1438年）五月，在通惠河出城处建大通桥闸",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.102-104"
+            },
+            {
+              "action": "重开",
+              "year": 1475,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "成化十一年（1475年）八月又执行七年的建议，命平江伯陈锐督漕卒疏浚通惠河",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.110-112"
+            },
+            {
+              "action": "竣工",
+              "year": 1476,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "六月丁亥浚通惠河成",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.110-112"
+            },
+            {
+              "action": "其他",
+              "year": 1478,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "不逾二载而浅涩如旧，舟不复通",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.110-112"
+            },
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "下闸是因不再修治而废毁",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.102-104"
+            },
+            {
+              "action": "其他",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "但通州至北平段运河已湮废不通",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.110-112"
+            },
+            {
+              "action": "废弃",
+              "year": 1513,
+              "yearMid": 1513,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "上闸约废于明中叶",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.105-106"
+            },
+            {
+              "action": "重开",
+              "year": 1528,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "运输"
+              ],
+              "evidence": "嘉靖七年（1528年）吴仲修复时只修了上闸",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.102-104"
+            },
+            {
+              "action": "重开",
+              "year": 1568,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "隆庆二年（1568年）三月二日至四月十八日进行过一次较大治理",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.116-117"
+            },
+            {
+              "action": "开凿",
+              "year": 1639,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "崇祯十二年（1639年）太监曹化淳又提出在京城外开河通漕",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.116-117"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1414,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "城规"
+              ],
+              "evidence": "永乐十二年（1414年）九月所凿南海东岸的日知阁下闸出流",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.179-182"
+            },
+            {
+              "action": "废弃",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "金水河断流",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.179-182"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1640,
+              "yearMid": 1640,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "使城内的通惠河无法通航",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.190-191"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1640,
+              "yearMid": 1640,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "这是由湮废的文明门外通惠河演变而来",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.191"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "西直门南水关至柳巷一段湮塞",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.191"
+            },
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "元代金水河向东流河道，明代改为宽3米的沟渠",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.191"
+            },
+            {
+              "action": "改道",
+              "year": 1778,
+              "yearMid": 1778,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "清代其上部改成不到一米宽的小沟了",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.191"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": false,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1640,
+              "yearMid": 1640,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "其它",
+                "防灾",
+                "城规"
+              ],
+              "evidence": "这些暗沟应是初建时规划好的",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.195"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1892,
+              "yearMid": 1892,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "清末，通惠河疏于治理，不再用于漕运。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.102-103"
+            },
+            {
+              "action": "其他",
+              "year": 1931,
+              "yearMid": 1931,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "民国后期通惠河逐渐淤塞断流。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.102-103"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1652,
+              "yearMid": 1652,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "调控"
+              ],
+              "evidence": "清顺治中修治石坝及通惠河上五闸，恢复了漕运",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.117"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1760,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "其它",
+                "城规"
+              ],
+              "evidence": "清乾隆二十五年（1760年）曾自“西阙门下地沟引筒子河水经午门前至东阙门外",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.179-182"
+            }
+          ]
+        },
+        {
+          "dynasty": "乾隆年间",
+          "t0": 1736,
+          "t1": 1795,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1765,
+              "yearMid": 1765,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "并疏浚了金河",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.113"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "运输",
+                "防灾"
+              ],
+              "evidence": "通惠河闸坝逐渐废毁，河道淤浅，完全成了北京向东排水的一条干渠",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.221"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 27,
+        "totalEvents": 51,
+        "timeRange": {
+          "start": 1271,
+          "end": 1949
+        },
+        "actionCounts": {
+          "开凿": 14,
+          "竣工": 3,
+          "废弃": 13,
+          "改道": 4,
+          "其他": 8,
+          "重开": 9
+        },
+        "functionCounts": {
+          "运输": 24,
+          "其它": 8,
+          "城规": 6,
+          "防灾": 2,
+          "调控": 10,
+          "环境": 4
+        },
+        "hasSiltation": true
+      }
+    },
+    "潮白河": {
+      "displayName": "潮白河",
+      "aliases": [
+        "东潞水",
+        "潞河",
+        "潮河",
+        "白河",
+        "笥沟",
+        "西潞水"
+      ],
+      "type": "自然河道",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "东汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "西汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "东汉时期",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "汉魏时期",
+          "t0": -206,
+          "t1": 581,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "汉魏时期",
+          "t0": -206,
+          "t1": 581,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "东汉末",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "东汉",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "北魏时",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 460,
+              "yearMid": 460,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "今笥沟水断，众川东注，混同一渎",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.173-180"
+            }
+          ]
+        },
+        {
+          "dynasty": "北魏时期",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "北魏时",
+          "t0": 386,
+          "t1": 534,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "辽金元时期",
+          "t0": 916,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "辽、金、元时期，",
+          "t0": 916,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "辽、金、元时期，",
+          "t0": 916,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "元",
+          "t0": 1271,
+          "t1": 1368,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明清民国时期",
+          "t0": 1368,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明嘉靖三十四年",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1555,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输",
+                "军事"
+              ],
+              "evidence": "组织了“遏潮壮白”工程，即将从密云城南向西南流的潮河改向西流，将从密云城西北向西南流的白河改向南流，使二河在密云城西不远处合流。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.89"
+            }
+          ]
+        },
+        {
+          "dynasty": "明",
+          "t0": 1368,
+          "t1": 1644,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "可能在元末明初白河河道发生了变迁，改行张家湾",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.120-122"
+            }
+          ]
+        },
+        {
+          "dynasty": "清光绪十年",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "废弃",
+              "year": 1884,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "潮白河于顺义县东南的李遂店决口，夺箭杆河（窝头河）南流，原来潮白河从李遂店向西、又转向南流的河道遂废。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.89"
+            },
+            {
+              "action": "其他",
+              "year": 1884,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "运输"
+              ],
+              "evidence": "清政府曾多次堵筑李遂店决口，但屡堵屡决，劳而无功。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.89"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1922,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "1922年在顺义苏庄修建拦河闸坝，使之重归北运河",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.220"
+            },
+            {
+              "action": "重开",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "民国以后北京政府曾连续几年拨款整修潮白河",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.220"
+            },
+            {
+              "action": "改道",
+              "year": 1939,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "1939年潮白河大水，闸被冲毁，夺南箭杆河南流，成为独立水系",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.220"
+            }
+          ]
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "民国十年",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1921,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "于李遂店南修建大型闸坝，并开挖自苏庄（在李遂店南）至通州平家疃的河道，引潮白河水向西南流向通州。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.89"
+            },
+            {
+              "action": "改道",
+              "year": 1939,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [],
+              "evidence": "民国二十八年（1939年），潮白河发大水，彻底夺箭杆河南流，河道东徙，形成潮白河如今的流势。",
+              "source": "侯仁之主编 邓辉，温宗勇，尹钧科副主编.北京历史地图集．文化生态卷[M].北京：文津出版社,2013.89"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 23,
+        "totalEvents": 10,
+        "timeRange": {
+          "start": -206,
+          "end": 1949
+        },
+        "actionCounts": {
+          "重开": 2,
+          "改道": 4,
+          "废弃": 2,
+          "其他": 1,
+          "开凿": 1
+        },
+        "functionCounts": {
+          "调控": 2,
+          "运输": 2,
+          "军事": 1
+        },
+        "hasSiltation": false
+      }
+    },
+    "凉水河/凤河": {
+      "displayName": "凉水河/凤河",
+      "aliases": [
+        "凉水河",
+        "凤河",
+        "南旱河",
+        "团河",
+        "莲花河",
+        "龙须沟"
+      ],
+      "type": "人工开凿",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "东汉",
+          "t0": -206,
+          "t1": 220,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "明、清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1765,
+              "yearMid": 1765,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾",
+                "调控"
+              ],
+              "evidence": "乾隆年间开挖了南、北旱河，以泄山洪，北旱河泄入清河，南旱河通过玉渊潭下注护城河。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.301-303"
+            },
+            {
+              "action": "重开",
+              "year": 1774,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "调控",
+                "其它",
+                "防灾"
+              ],
+              "evidence": "自凤泉至南苑，进水栅二，浚河三千余丈；又自栅口至马驹桥，浚河五千余丈。修建桥闸凡九，新建闸五，以资节宣。",
+              "source": "尹钧科、吴文涛.历史上的永定河与北京[M].北京：北京燕山出版社,2005.314-318"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "改道",
+              "year": 1506,
+              "yearMid": 1506,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "宣武门外旧有凉水河故道，明代曾引入梁家园湖中",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.193-194"
+            }
+          ]
+        },
+        {
+          "dynasty": "明清",
+          "t0": 1368,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "开凿",
+              "year": 1420,
+              "yearMid": null,
+              "inferredByDynasty": false,
+              "cityFunction": [
+                "防灾",
+                "城规"
+              ],
+              "evidence": "可能是永乐十八年（1420年）建天坛...时，为排泄先农坛以西...而开凿的",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.194-195"
+            },
+            {
+              "action": "改道",
+              "year": 1644,
+              "yearMid": 1644,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "明末三里河湮塞后，外城上述水道合为一条干渠。即龙须沟",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.194-195"
+            },
+            {
+              "action": "改道",
+              "year": 1778,
+              "yearMid": 1778,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "清代龙须沟天坛以东又向西南折",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.194-195"
+            }
+          ]
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "清",
+          "t0": 1644,
+          "t1": 1912,
+          "siltation": null,
+          "events": [
+            {
+              "action": "重开",
+              "year": 1778,
+              "yearMid": 1778,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "调控"
+              ],
+              "evidence": "将莲花池通外城护城河",
+              "source": "蔡蕃.北京古运河与城市供水研究[M].北京：北京出版社,1987.179-182"
+            }
+          ]
+        },
+        {
+          "dynasty": "民国以后",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": true,
+          "events": [
+            {
+              "action": "其他",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [],
+              "evidence": "年久失修，其淤塞淹积程度比大明濠还甚",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.171"
+            },
+            {
+              "action": "重开",
+              "year": 1930,
+              "yearMid": 1930,
+              "inferredByDynasty": true,
+              "cityFunction": [
+                "城规"
+              ],
+              "evidence": "在沟渠西部香厂地带邻近商场、公园部分繁华区域将部分沟渠改修为暗沟",
+              "source": "吴建雍等.北京城市发展史（近代卷）[M].北京：北京燕山出版社,2008.171"
+            }
+          ]
+        }
+      ],
+      "statistics": {
+        "totalSegments": 7,
+        "totalEvents": 9,
+        "timeRange": {
+          "start": -206,
+          "end": 1949
+        },
+        "actionCounts": {
+          "其他": 1,
+          "重开": 3,
+          "开凿": 2,
+          "改道": 3
+        },
+        "functionCounts": {
+          "城规": 2,
+          "防灾": 3,
+          "调控": 3,
+          "其它": 1
+        },
+        "hasSiltation": true
+      }
+    },
+    "清水河": {
+      "displayName": "清水河",
+      "aliases": [],
+      "type": "自然河道",
+      "systemId": null,
+      "segments": [
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        },
+        {
+          "dynasty": "近代",
+          "t0": 1912,
+          "t1": 1949,
+          "siltation": null,
+          "events": []
+        }
+      ],
+      "statistics": {
+        "totalSegments": 2,
+        "totalEvents": 0,
+        "timeRange": {
+          "start": 1912,
+          "end": 1949
+        },
+        "actionCounts": {},
+        "functionCounts": {},
+        "hasSiltation": false
+      }
+    }
+  },
+  "metadata": {
+    "totalRivers": 10,
+    "riverNames": [
+      "永定河",
+      "永济渠/通济渠（大运河北段）",
+      "金口河",
+      "闸河",
+      "高梁河",
+      "积水潭/白莲潭系",
+      "通惠河",
+      "潮白河",
+      "凉水河/凤河",
+      "清水河"
+    ],
+    "timeRange": [
+      -800,
+      1949
+    ],
+    "dynasties": [
+      {
+        "label": "先秦",
+        "start": -800,
+        "end": -221
+      },
+      {
+        "label": "秦汉",
+        "start": -221,
+        "end": 220
+      },
+      {
+        "label": "魏晋南北朝",
+        "start": 220,
+        "end": 581
+      },
+      {
+        "label": "隋唐五代",
+        "start": 581,
+        "end": 960
+      },
+      {
+        "label": "辽",
+        "start": 907,
+        "end": 1125
+      },
+      {
+        "label": "金",
+        "start": 1115,
+        "end": 1234
+      },
+      {
+        "label": "元",
+        "start": 1234,
+        "end": 1368
+      },
+      {
+        "label": "明",
+        "start": 1368,
+        "end": 1644
+      },
+      {
+        "label": "清",
+        "start": 1644,
+        "end": 1912
+      },
+      {
+        "label": "民国",
+        "start": 1912,
+        "end": 1949
+      }
+    ],
+    "actionTypes": [
+      "开凿",
+      "竣工",
+      "重开",
+      "改道",
+      "废弃",
+      "其他"
+    ],
+    "functionTypes": [
+      "运输",
+      "调控",
+      "环境",
+      "防灾",
+      "城规",
+      "军事",
+      "其它"
+    ],
+    "processedAt": "2025-11-03T09:27:25.837466",
+    "version": "1.0"
+  }
+}
