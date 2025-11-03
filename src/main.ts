@@ -22,11 +22,11 @@ import "vue3-lottie/dist/style.css";
 import Vue3Lottie from "vue3-lottie";
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 //自定义组件
-import mdComponents from './plugins/mdComponents';
+
 const pinia = createPinia();
 pinia.use(piniaPersist);
 const app = createApp(App);
-app.use(mdComponents) // 注册自定义组件
+
 app.use(router);
 app.use(PerfectScrollbar);
 app.use(MasonryWall);

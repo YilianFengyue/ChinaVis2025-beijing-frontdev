@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import SalesCard from "@/components/dashboard/SalesCard.vue";
 import TicketsCard from "@/components/dashboard/TicketsCard.vue";
-
+import RiversCard from "@/components/chinavis/rivers/RiversCard.vue";
 </script>
 <template>
   <div class="pa-5">
