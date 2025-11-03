@@ -19,6 +19,7 @@ import RadialAreaChart from '~/src/components/D3components/RadialAreaChart.vue';
 import SpikeMap from '~/src/components/D3components/SpikeMap.vue';
 import BubbleChart from '~/src/components/D3components/BubbleChart.vue';
 import CircularChartEvent from '~/src/components/D3components/CircularChartEvent.vue';
+import RiversCard from '~/src/components/chinavis/rivers/RiversCard.vue';
 
 // 注册 ECharts 组件
 echarts.use([
@@ -140,7 +141,7 @@ onMounted(() => {
     </v-row>
   </v-container>
   
-    <v-container>
+    <!-- <v-container> -->
     <v-row style="height: 550px;">
       <v-col cols="7">
         <!-- <CircularDynastyChart /> -->
@@ -166,8 +167,16 @@ onMounted(() => {
       <v-col cols="12">
         <RadialAreaChart />
       </v-col>
+
+      <v-col cols="12" xl="6">
+        <v-card class="card-shadow"
+          ><rivers-card></rivers-card>
+        </v-card>
+      </v-col>
     </v-row>
-  </v-container>
+
+
+  <!-- </v-container> -->
 
   </template>
 

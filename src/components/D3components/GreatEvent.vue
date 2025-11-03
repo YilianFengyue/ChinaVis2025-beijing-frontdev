@@ -1,5 +1,5 @@
 <template>
-  <v-container class="great-events-page pa-md-8 pa-4">
+  <!-- <v-container class="great-events-page pa-md-8 pa-4"> -->
     <h2 class="page-title text-center text-h4 text-md-h3 mb-6">都城纪事</h2>
 
     <v-sheet class="controls-bar pa-4 mb-6" rounded="lg">
@@ -162,7 +162,7 @@
       </v-col>
     </v-row>
 
-  </v-container>
+  <!-- </v-container> -->
 </template>
 
 <script setup lang="ts">
