@@ -1,0 +1,657 @@
+{
+  "arcs": [
+    {
+      "startYear": -308,
+      "endYear": 140,
+      "startPopulation": 175000,
+      "endPopulation": 600000,
+      "populationChange": 425000,
+      "yearSpan": 448,
+      "yearChangeRate": 0.005420918367346939,
+      "compressedRate": 0.07362688617174394,
+      "direction": "increase",
+      "dynasty": "先秦",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 140,
+      "endYear": 400,
+      "startPopulation": 600000,
+      "endPopulation": 17500,
+      "populationChange": -582500,
+      "yearSpan": 260,
+      "yearChangeRate": -0.003733974358974359,
+      "compressedRate": -0.061106254663285973,
+      "direction": "decrease",
+      "dynasty": "秦汉",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 400,
+      "endYear": 522,
+      "startPopulation": 17500,
+      "endPopulation": 320000,
+      "populationChange": 302500,
+      "yearSpan": 122,
+      "yearChangeRate": 0.14168618266978922,
+      "compressedRate": 0.3764122509560352,
+      "direction": "increase",
+      "dynasty": "魏晋南北朝",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 522,
+      "endYear": 750,
+      "startPopulation": 320000,
+      "endPopulation": 400000,
+      "populationChange": 80000,
+      "yearSpan": 228,
+      "yearChangeRate": 0.0010964912280701754,
+      "compressedRate": 0.033113308926626096,
+      "direction": "increase",
+      "dynasty": "魏晋南北朝",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 750,
+      "endYear": 781,
+      "startPopulation": 400000,
+      "endPopulation": 60000,
+      "populationChange": -340000,
+      "yearSpan": 31,
+      "yearChangeRate": -0.027419354838709678,
+      "compressedRate": -0.16558790668013676,
+      "direction": "decrease",
+      "dynasty": "隋唐五代",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 781,
+      "endYear": 945,
+      "startPopulation": 60000,
+      "endPopulation": 300000,
+      "populationChange": 240000,
+      "yearSpan": 164,
+      "yearChangeRate": 0.024390243902439025,
+      "compressedRate": 0.15617376188860607,
+      "direction": "increase",
+      "dynasty": "隋唐五代",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 945,
+      "endYear": 1057,
+      "startPopulation": 300000,
+      "endPopulation": 200000,
+      "populationChange": -100000,
+      "yearSpan": 112,
+      "yearChangeRate": -0.002976190476190476,
+      "compressedRate": -0.05455447255899809,
+      "direction": "decrease",
+      "dynasty": "辽",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 1057,
+      "endYear": 1113,
+      "startPopulation": 200000,
+      "endPopulation": 580000,
+      "populationChange": 380000,
+      "yearSpan": 56,
+      "yearChangeRate": 0.033928571428571426,
+      "compressedRate": 0.1841970994032518,
+      "direction": "increase",
+      "dynasty": "辽",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1113,
+      "endYear": 1183,
+      "startPopulation": 580000,
+      "endPopulation": 28790,
+      "populationChange": -551210,
+      "yearSpan": 70,
+      "yearChangeRate": -0.013576600985221675,
+      "compressedRate": -0.11651867225995013,
+      "direction": "decrease",
+      "dynasty": "辽",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1183,
+      "endYear": 1257,
+      "startPopulation": 28790,
+      "endPopulation": 545000,
+      "populationChange": 516210,
+      "yearSpan": 74,
+      "yearChangeRate": 0.2422997850229528,
+      "compressedRate": 0.4922395606033233,
+      "direction": "increase",
+      "dynasty": "金",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1257,
+      "endYear": 1276,
+      "startPopulation": 545000,
+      "endPopulation": 440625,
+      "populationChange": -104375,
+      "yearSpan": 19,
+      "yearChangeRate": -0.010079671656204731,
+      "compressedRate": -0.10039756797953191,
+      "direction": "decrease",
+      "dynasty": "元",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1276,
+      "endYear": 1324,
+      "startPopulation": 440625,
+      "endPopulation": 1505000,
+      "populationChange": 1064375,
+      "yearSpan": 48,
+      "yearChangeRate": 0.05032505910165485,
+      "compressedRate": 0.22433247446960247,
+      "direction": "increase",
+      "dynasty": "元",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1324,
+      "endYear": 1350,
+      "startPopulation": 1505000,
+      "endPopulation": 654500,
+      "populationChange": -850500,
+      "yearSpan": 26,
+      "yearChangeRate": -0.021735241502683363,
+      "compressedRate": -0.14742876755465115,
+      "direction": "decrease",
+      "dynasty": "元",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1350,
+      "endYear": 1388,
+      "startPopulation": 654500,
+      "endPopulation": 1032948,
+      "populationChange": 378448,
+      "yearSpan": 38,
+      "yearChangeRate": 0.015216436813960033,
+      "compressedRate": 0.12335492213106064,
+      "direction": "increase",
+      "dynasty": "元",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 1388,
+      "endYear": 1500,
+      "startPopulation": 1032948,
+      "endPopulation": 30000,
+      "populationChange": -1002948,
+      "yearSpan": 112,
+      "yearChangeRate": -0.008669258139947855,
+      "compressedRate": -0.09310885102903942,
+      "direction": "decrease",
+      "dynasty": "明",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 1500,
+      "endYear": 1625,
+      "startPopulation": 30000,
+      "endPopulation": 735000,
+      "populationChange": 705000,
+      "yearSpan": 125,
+      "yearChangeRate": 0.188,
+      "compressedRate": 0.433589667773576,
+      "direction": "increase",
+      "dynasty": "明",
+      "confidence": "medium",
+      "dataPointsCount": 4
+    },
+    {
+      "startYear": 1625,
+      "endYear": 1644,
+      "startPopulation": 735000,
+      "endPopulation": 379000,
+      "populationChange": -356000,
+      "yearSpan": 19,
+      "yearChangeRate": -0.025492302184031507,
+      "compressedRate": -0.1596630896106909,
+      "direction": "decrease",
+      "dynasty": "明",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1644,
+      "endYear": 1657,
+      "startPopulation": 379000,
+      "endPopulation": 600000,
+      "populationChange": 221000,
+      "yearSpan": 13,
+      "yearChangeRate": 0.044854881266490766,
+      "compressedRate": 0.21178971001087557,
+      "direction": "increase",
+      "dynasty": "明",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1657,
+      "endYear": 1734,
+      "startPopulation": 600000,
+      "endPopulation": 180000,
+      "populationChange": -420000,
+      "yearSpan": 77,
+      "yearChangeRate": -0.00909090909090909,
+      "compressedRate": -0.09534625892455922,
+      "direction": "decrease",
+      "dynasty": "清",
+      "confidence": "medium",
+      "dataPointsCount": 4
+    },
+    {
+      "startYear": 1734,
+      "endYear": 1798,
+      "startPopulation": 180000,
+      "endPopulation": 538333,
+      "populationChange": 358333,
+      "yearSpan": 64,
+      "yearChangeRate": 0.031105295138888888,
+      "compressedRate": 0.17636693323548178,
+      "direction": "increase",
+      "dynasty": "清",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 1798,
+      "endYear": 1853,
+      "startPopulation": 538333,
+      "endPopulation": 498000,
+      "populationChange": -40333,
+      "yearSpan": 55,
+      "yearChangeRate": -0.0013622186875544928,
+      "compressedRate": -0.03690824687728331,
+      "direction": "decrease",
+      "dynasty": "清",
+      "confidence": "medium",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1853,
+      "endYear": 1914,
+      "startPopulation": 498000,
+      "endPopulation": 737553,
+      "populationChange": 239553,
+      "yearSpan": 61,
+      "yearChangeRate": 0.007885739680031601,
+      "compressedRate": 0.08880168737153367,
+      "direction": "increase",
+      "dynasty": "清",
+      "confidence": "medium",
+      "dataPointsCount": 3
+    },
+    {
+      "startYear": 1914,
+      "endYear": 1932,
+      "startPopulation": 737553,
+      "endPopulation": 1318190,
+      "populationChange": 580637,
+      "yearSpan": 18,
+      "yearChangeRate": 0.04373599064895826,
+      "compressedRate": 0.20913151519787318,
+      "direction": "increase",
+      "dynasty": "清",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    },
+    {
+      "startYear": 1932,
+      "endYear": 2011,
+      "startPopulation": 1318190,
+      "endPopulation": 20186000,
+      "populationChange": 18867810,
+      "yearSpan": 79,
+      "yearChangeRate": 0.18118255939939124,
+      "compressedRate": 0.4256554468104352,
+      "direction": "increase",
+      "dynasty": "民国",
+      "confidence": "exact",
+      "dataPointsCount": 2
+    }
+  ],
+  "dataPoints": [
+    {
+      "year": -308,
+      "population": 175000,
+      "dynasty": "先秦",
+      "confidence": "low",
+      "merged_count": 2
+    },
+    {
+      "year": 2,
+      "population": 300000,
+      "dynasty": "秦汉",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 140,
+      "population": 600000,
+      "dynasty": "秦汉",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 280,
+      "population": 180000,
+      "dynasty": "魏晋南北朝",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 400,
+      "population": 17500,
+      "dynasty": "魏晋南北朝",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 522,
+      "population": 320000,
+      "dynasty": "魏晋南北朝",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 750,
+      "population": 400000,
+      "dynasty": "隋唐五代",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 781,
+      "population": 60000,
+      "dynasty": "隋唐五代",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 945,
+      "population": 300000,
+      "dynasty": "辽",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1000,
+      "population": 300000,
+      "dynasty": "辽",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1057,
+      "population": 200000,
+      "dynasty": "辽",
+      "confidence": "low",
+      "merged_count": 1
+    },
+    {
+      "year": 1113,
+      "population": 580000,
+      "dynasty": "辽",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1183,
+      "population": 28790,
+      "dynasty": "金",
+      "confidence": "exact",
+      "merged_count": 1
+    },
+    {
+      "year": 1257,
+      "population": 545000,
+      "dynasty": "元",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1276,
+      "population": 440625,
+      "dynasty": "元",
+      "confidence": "exact",
+      "merged_count": 4
+    },
+    {
+      "year": 1324,
+      "population": 1505000,
+      "dynasty": "元",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1350,
+      "population": 654500,
+      "dynasty": "元",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1375,
+      "population": 755276,
+      "dynasty": "明",
+      "confidence": "exact",
+      "merged_count": 3
+    },
+    {
+      "year": 1388,
+      "population": 1032948,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1446,
+      "population": 615000,
+      "dynasty": "明",
+      "confidence": "low",
+      "merged_count": 2
+    },
+    {
+      "year": 1500,
+      "population": 30000,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1560,
+      "population": 50000,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1595,
+      "population": 250000,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1625,
+      "population": 735000,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1644,
+      "population": 379000,
+      "dynasty": "明",
+      "confidence": "medium",
+      "merged_count": 4
+    },
+    {
+      "year": 1657,
+      "population": 600000,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1689,
+      "population": 463667,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 3
+    },
+    {
+      "year": 1716,
+      "population": 410000,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1734,
+      "population": 180000,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1776,
+      "population": 412500,
+      "dynasty": "清",
+      "confidence": "low",
+      "merged_count": 2
+    },
+    {
+      "year": 1798,
+      "population": 538333,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 3
+    },
+    {
+      "year": 1853,
+      "population": 498000,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 1
+    },
+    {
+      "year": 1878,
+      "population": 574700,
+      "dynasty": "清",
+      "confidence": "medium",
+      "merged_count": 2
+    },
+    {
+      "year": 1914,
+      "population": 737553,
+      "dynasty": "清",
+      "confidence": "exact",
+      "merged_count": 5
+    },
+    {
+      "year": 1932,
+      "population": 1318190,
+      "dynasty": "民国",
+      "confidence": "exact",
+      "merged_count": 7
+    },
+    {
+      "year": 2011,
+      "population": 20186000,
+      "dynasty": "现代",
+      "confidence": "exact",
+      "merged_count": 1
+    }
+  ],
+  "dynasties": [
+    {
+      "name": "先秦",
+      "startYear": -315,
+      "endYear": -221
+    },
+    {
+      "name": "秦汉",
+      "startYear": -221,
+      "endYear": 220
+    },
+    {
+      "name": "魏晋南北朝",
+      "startYear": 220,
+      "endYear": 581
+    },
+    {
+      "name": "隋唐五代",
+      "startYear": 581,
+      "endYear": 938
+    },
+    {
+      "name": "辽",
+      "startYear": 938,
+      "endYear": 1122
+    },
+    {
+      "name": "金",
+      "startYear": 1122,
+      "endYear": 1215
+    },
+    {
+      "name": "元",
+      "startYear": 1215,
+      "endYear": 1368
+    },
+    {
+      "name": "明",
+      "startYear": 1368,
+      "endYear": 1644
+    },
+    {
+      "name": "清",
+      "startYear": 1644,
+      "endYear": 1912
+    },
+    {
+      "name": "民国",
+      "startYear": 1912,
+      "endYear": 1949
+    },
+    {
+      "name": "现代",
+      "startYear": 1949,
+      "endYear": 2011
+    }
+  ],
+  "metadata": {
+    "totalArcs": 24,
+    "totalDataPoints": 36,
+    "timeSpan": "-308 - 2011",
+    "compressionFormula": "sign(x) * sqrt(|x|)"
+  }
+}

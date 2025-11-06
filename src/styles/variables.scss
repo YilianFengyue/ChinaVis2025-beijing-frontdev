@@ -7,7 +7,7 @@
 
 // Custom Variables
 $white: #fff !default;
-$font-family: "Quicksand";
+$font-family: 'Times New Roman', 'Source Han Serif SC', serif; // 'Noto Serif SC' 是 Google Fonts 上的名称
 
 // Vuetify Variables
 @forward 'vuetify/settings' with ( //elevations

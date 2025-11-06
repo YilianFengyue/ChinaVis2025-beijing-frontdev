@@ -2,6 +2,8 @@
 import SalesCard from "@/components/dashboard/SalesCard.vue";
 import TicketsCard from "@/components/dashboard/TicketsCard.vue";
 import RiversCard from "@/components/chinavis/rivers/RiversCard.vue";
+import AdminEvoSankeyCard from "~/src/components/chinavis/rivers/AdministrativeEvolution/AdminEvoSankeyCard.vue";
+import CityEvolutionCard from "~/src/components/chinavis/CityEvolutionCard.vue";
 </script>
 <template>
   <div class="pa-5">
@@ -23,9 +25,15 @@ import RiversCard from "@/components/chinavis/rivers/RiversCard.vue";
           ></sales-card>
         </v-card>
       </v-col>
-      <v-col cols="12" xl="6">
-        <v-card class="card-shadow" height="420"
-          ><tickets-card></tickets-card>
+      <v-col cols="6" xl="6">
+        <v-card class="card-shadow" height="600"
+          ><city-evolution-card></city-evolution-card>
+        </v-card>
+      </v-col>
+
+      <v-col cols="6" xl="6">
+        <v-card class="card-shadow"
+          ><admin-evo-sankey-card></admin-evo-sankey-card>
         </v-card>
       </v-col>
       <v-col cols="12" xl="6">
