@@ -1,0 +1,3146 @@
+[
+    {
+        "id": 1,
+        "dynasty": "秦汉",
+        "name": "楚汉战争",
+        "begin_year": -206,
+        "end_year": -203,
+        "place": "霸上、咸阳",
+        "place_morden": [
+            "陕西省西安市"
+        ],
+        "importance": 9,
+        "desc": "楚汉战争是刘邦与项羽为争夺天下而进行的战争，持续三四年。",
+        "relate": "刘邦 vs 项羽"
+    },
+    {
+        "id": 2,
+        "dynasty": "先秦",
+        "name": "西周亡",
+        "begin_year": -771,
+        "end_year": -771,
+        "place": "骊山",
+        "place_morden": [
+            "陕西省西安市"
+        ],
+        "importance": 8,
+        "desc": "申侯、缯侯、犬戎联合进攻周王朝，杀幽王于骊山下，西周亡。",
+        "relate": "申侯、缯侯、犬戎 vs 周幽王"
+    },
+    {
+        "id": 3,
+        "dynasty": "先秦",
+        "name": "山戎侵燕，齐桓公救燕",
+        "begin_year": -664,
+        "end_year": -664,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "山戎侵燕，齐桓公救燕，北破山戎部落联盟诸族。",
+        "relate": "齐桓公 vs 山戎"
+    },
+    {
+        "id": 4,
+        "dynasty": "先秦",
+        "name": "惠公逃亡",
+        "begin_year": -539,
+        "end_year": -539,
+        "place": "齐国",
+        "place_morden": [
+            "山东省"
+        ],
+        "importance": 4,
+        "desc": "惠公因宠姬被杀而逃亡到齐国，齐国内乱，卢蒲嫳被逐至燕。",
+        "relate": "姬宋 vs 惠公"
+    },
+    {
+        "id": 5,
+        "dynasty": "先秦",
+        "name": "晋杀涉佗，成何奔燕",
+        "begin_year": -500,
+        "end_year": -500,
+        "place": "燕",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "晋杀涉佗，成何奔燕。",
+        "relate": "晋国 vs 涉佗"
+    },
+    {
+        "id": 6,
+        "dynasty": "先秦",
+        "name": "齐攻燕",
+        "begin_year": -771,
+        "end_year": -771,
+        "place": "燕桑丘(今河北徐水西南)",
+        "place_morden": [
+            "河北省徐水市"
+        ],
+        "importance": 5,
+        "desc": "齐攻燕取桑丘，韩赵魏救燕败齐军。",
+        "relate": "齐国 vs 燕国"
+    },
+    {
+        "id": 7,
+        "dynasty": "先秦",
+        "name": "夺取十城",
+        "begin_year": -311,
+        "end_year": -311,
+        "place": "燕国",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "燕文公死，齐国进攻燕国夺十城。",
+        "relate": "齐国 vs 燕国"
+    },
+    {
+        "id": 8,
+        "dynasty": "先秦",
+        "name": "燕国内乱",
+        "begin_year": -315,
+        "end_year": -315,
+        "place": "燕国、蓟城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "燕国内乱，将军市被与太子平谋反被杀。",
+        "relate": "燕国将军市被、太子平 vs 燕国"
+    },
+    {
+        "id": 9,
+        "dynasty": "先秦",
+        "name": "破燕国都城",
+        "begin_year": -314,
+        "end_year": -314,
+        "place": "燕国、都城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "齐宣王破燕都城杀燕王哙，后被迫退兵。",
+        "relate": "齐宣王 vs 燕昭王"
+    },
+    {
+        "id": 10,
+        "dynasty": "秦汉",
+        "name": "秦引兵攻燕",
+        "begin_year": -228,
+        "end_year": -228,
+        "place": "屯中山、屯军上谷",
+        "place_morden": [
+            "河北省",
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "秦攻燕屯中山，燕与代合兵屯上谷。",
+        "relate": "秦国 vs 燕国"
+    },
+    {
+        "id": 11,
+        "dynasty": "秦汉",
+        "name": "荆轲刺秦王",
+        "begin_year": -227,
+        "end_year": -227,
+        "place": "易水",
+        "place_morden": [
+            "河北省易县"
+        ],
+        "importance": 7,
+        "desc": "秦兵临易水，荆轲刺秦王未遂，被杀。",
+        "relate": "荆轲 vs 秦王"
+    },
+    {
+        "id": 12,
+        "dynasty": "秦汉",
+        "name": "秦攻燕之战",
+        "begin_year": -227,
+        "end_year": -227,
+        "place": "易水之西",
+        "place_morden": [
+            "河北省易县"
+        ],
+        "importance": 8,
+        "desc": "秦将王翦攻燕，燕、代军败于易水之西。",
+        "relate": "秦军 vs 燕、代联军"
+    },
+    {
+        "id": 13,
+        "dynasty": "秦汉",
+        "name": "秦攻取燕都蓟城",
+        "begin_year": -226,
+        "end_year": -226,
+        "place": "燕都蓟城",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "秦将王翦攻取燕都蓟城，燕王喜奔辽东。",
+        "relate": "秦军 vs 燕军"
+    },
+    {
+        "id": 14,
+        "dynasty": "秦汉",
+        "name": "秦灭燕之战",
+        "begin_year": -222,
+        "end_year": -222,
+        "place": "辽东郡",
+        "place_moden": [
+            "辽宁省"
+        ],
+        "importance": 9,
+        "desc": "秦将王贲攻辽东，虏燕王喜，燕亡。",
+        "relate": "秦军 vs 燕军"
+    },
+    {
+        "id": 15,
+        "dynasty": "秦汉",
+        "name": "秦灭齐之战",
+        "begin_year": -221,
+        "end_year": -221,
+        "place": "临淄",
+        "place_moden": [
+            "山东省淄博市"
+        ],
+        "importance": 10,
+        "desc": "秦兵攻入临淄，俘齐王田建，齐亡。",
+        "relate": "秦军 vs 齐军"
+    },
+    {
+        "id": 16,
+        "dynasty": "秦汉",
+        "name": "秦统一六国",
+        "begin_year": -221,
+        "end_year": -221,
+        "place": "全国",
+        "place_moden": [
+            "全国"
+        ],
+        "importance": 10,
+        "desc": "秦王嬴政灭六国，完成统一大业。",
+        "relate": "秦军 vs 六国"
+    },
+    {
+        "id": 17,
+        "dynasty": "秦汉",
+        "name": "楚汉战争",
+        "begin_year": -206,
+        "end_year": -202,
+        "place": "全国",
+        "place_moden": [
+            "全国"
+        ],
+        "importance": 10,
+        "desc": "刘邦与项羽展开楚汉战争。",
+        "relate": "刘邦 vs 项羽"
+    },
+    {
+        "id": 18,
+        "dynasty": "秦汉",
+        "name": "匈奴南侵",
+        "begin_year": -198,
+        "end_year": -198,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "匈奴南渡河，侵犯燕、代，收复蒙恬所夺故地。",
+        "relate": "匈奴 vs 汉"
+    },
+    {
+        "id": 19,
+        "dynasty": "秦汉",
+        "name": "吕氏之乱",
+        "begin_year": -180,
+        "end_year": -180,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "吕肃王吕台立为燕王，诸吕作乱被平定，燕王吕通被杀。",
+        "relate": "吕氏家族 vs 汉"
+    },
+    {
+        "id": 20,
+        "dynasty": "秦汉",
+        "name": "匈奴侵汉",
+        "begin_year": -128,
+        "end_year": -128,
+        "place": "渔阳、雁门",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 7,
+        "desc": "匈奴二万骑入汉境，杀辽西太守，虏二千余人。",
+        "relate": "匈奴 vs 汉"
+    },
+    {
+        "id": 21,
+        "dynasty": "秦汉",
+        "name": "燕王定国之乱",
+        "begin_year": -127,
+        "end_year": -127,
+        "place": "渔阳、雁门、上谷",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省张家口市"
+        ],
+        "importance": 7,
+        "desc": "燕王定国与其父康王姬奸，事发自杀，国除。",
+        "relate": "燕王定国 vs 汉"
+    },
+    {
+        "id": 22,
+        "dynasty": "秦汉",
+        "name": "卫青霍去病击匈奴",
+        "begin_year": -119,
+        "end_year": -119,
+        "place": "上谷、渔阳",
+        "place_morden": [
+            "河北省张家口市",
+            "北京市",
+            "天津市"
+        ],
+        "importance": 9,
+        "desc": "卫青霍去病大败匈奴，收复秦时河南地，追至漠北。",
+        "relate": "卫青、霍去病 vs 匈奴"
+    },
+    {
+        "id": 23,
+        "dynasty": "秦汉",
+        "name": "彭宠自立为燕王",
+        "begin_year": 27,
+        "end_year": 27,
+        "place": "蓟城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "涿郡太守张丰反，彭宠占蓟城，自立为燕王。",
+        "relate": "彭宠、张丰 vs 汉"
+    },
+    {
+        "id": 24,
+        "dynasty": "秦汉",
+        "name": "鲜卑攻右北平",
+        "begin_year": 101,
+        "end_year": 101,
+        "place": "幽州、广阳、上谷、渔阳",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省张家口市",
+            "河北省唐山市"
+        ],
+        "importance": 6,
+        "desc": "鲜卑攻击东汉右北平，被郡兵击败。",
+        "relate": "鲜卑 vs 东汉"
+    },
+    {
+        "id": 25,
+        "dynasty": "秦汉",
+        "name": "鲜卑攻渔阳",
+        "begin_year": 106,
+        "end_year": 106,
+        "place": "渔阳",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "鲜卑攻击渔阳，太守张显战死。",
+        "relate": "鲜卑 vs 张显"
+    },
+    {
+        "id": 26,
+        "dynasty": "秦汉",
+        "name": "鲜卑攻居庸关",
+        "begin_year": 121,
+        "end_year": 121,
+        "place": "居庸关、幽州、广阳、渔阳、涿郡",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省张家口市",
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "鲜卑攻击居庸关，后被幽州刺史庞参所救。",
+        "relate": "鲜卑 vs 东汉"
+    },
+    {
+        "id": 27,
+        "dynasty": "秦汉",
+        "name": "黄巾起义",
+        "begin_year": 184,
+        "end_year": 184,
+        "place": "河北巨鹿(今河北宁晋南)、广阳、蓟城、幽州",
+        "place_morden": [
+            "河北省邢台市",
+            "北京市",
+            "天津市"
+        ],
+        "importance": 9,
+        "desc": "张角领导的黄巾起义，影响全国。",
+        "relate": "黄巾军 vs 东汉"
+    },
+    {
+        "id": 28,
+        "dynasty": "秦汉",
+        "name": "乌桓与鲜卑联合袁绍攻公孙瓒",
+        "begin_year": 195,
+        "end_year": 195,
+        "place": "广阳、上谷、蓟城移居易城(今河北雄县境)",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省张家口市",
+            "河北省雄安新区"
+        ],
+        "importance": 8,
+        "desc": "乌桓司马阎柔联合袁绍击败公孙瓒。",
+        "relate": "阎柔、袁绍 vs 公孙瓒"
+    },
+    {
+        "id": 29,
+        "dynasty": "秦汉",
+        "name": "赵犊之乱",
+        "begin_year": 205,
+        "end_year": 205,
+        "place": "渔阳犷平、幽州",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 6,
+        "desc": "205年，赵犊等杀幽州刺史及涿郡太守，曹操斩赵犊，乌桓逃出塞外。",
+        "relate": "曹操 vs 赵犊"
+    },
+    {
+        "id": 30,
+        "dynasty": "秦汉",
+        "name": "曹操征乌桓",
+        "begin_year": 205,
+        "end_year": 205,
+        "place": "渔阳犷平、幽州",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 6,
+        "desc": "205年，曹操领冀州牧，救犷平，乌桓逃出塞外。",
+        "relate": "曹操 vs 乌桓"
+    },
+    {
+        "id": 31,
+        "dynasty": "秦汉",
+        "name": "曹彰征讨乌桓",
+        "begin_year": 218,
+        "end_year": 218,
+        "place": "桑乾",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "218年，曹彰征讨代郡、上谷乌桓无臣氐等，大破之，北方悉平。",
+        "relate": "曹彰 vs 乌桓"
+    },
+    {
+        "id": 32,
+        "dynasty": "魏晋南北朝",
+        "name": "灭辽东公孙渊",
+        "begin_year": 238,
+        "end_year": 238,
+        "place": "(今北京顺义西南)、蓟城、幽州",
+        "place_morden": [
+            "北京市顺义区"
+        ],
+        "importance": 8,
+        "desc": "238年，司马懿率军灭辽东公孙渊，事平后，魏明帝遣使劳军于蓟城。",
+        "relate": "司马懿 vs 公孙渊"
+    },
+    {
+        "id": 33,
+        "dynasty": "魏晋南北朝",
+        "name": "轲比能攻鲜卑素利部",
+        "begin_year": 224,
+        "end_year": 224,
+        "place": "渔阳、幽、并二州",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 6,
+        "desc": "224年，轲比能攻鲜卑素利部，田豫助素利破轲比能将琐奴。",
+        "relate": "轲比能 vs 素利"
+    },
+    {
+        "id": 34,
+        "dynasty": "魏晋南北朝",
+        "name": "王浚苛政导致逃亡鲜卑",
+        "begin_year": 304,
+        "end_year": 304,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "304年，王浚苛政导致民逃亡鲜卑。",
+        "relate": "王浚 vs 鲜卑"
+    },
+    {
+        "id": 35,
+        "dynasty": "魏晋南北朝",
+        "name": "刘琨被杀事件",
+        "begin_year": 318,
+        "end_year": 318,
+        "place": "晋幽州、蓟城",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 6,
+        "desc": "晋幽州刺史段匹磾拘禁并杀害刘琨，导致段匹磾部下心涣散，段末波投靠石勒。",
+        "relate": "段匹磾 vs 刘琨"
+    },
+    {
+        "id": 36,
+        "dynasty": "魏晋南北朝",
+        "name": "攻灭代国之战",
+        "begin_year": 376,
+        "end_year": 376,
+        "place": "幽州、代国",
+        "place_morden": [
+            "北京市",
+            "内蒙古自治区"
+        ],
+        "importance": 7,
+        "desc": "苻坚遣苻洛率军攻灭代国，拓跋氏衰乱之际。",
+        "relate": "苻坚、苻洛 vs 代国鲜卑拓跋氏"
+    },
+    {
+        "id": 37,
+        "dynasty": "魏晋南北朝",
+        "name": "后燕攻蓟城之战",
+        "begin_year": 385,
+        "end_year": 385,
+        "place": "蓟城、幽、平二州",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 7,
+        "desc": "后燕带方王佐与宁朔将军平规共攻蓟城，王永、苻冲退出幽、平二州。",
+        "relate": "后燕 vs 前秦"
+    },
+    {
+        "id": 38,
+        "dynasty": "魏晋南北朝",
+        "name": "徐岩叛燕之战",
+        "begin_year": 385,
+        "end_year": 385,
+        "place": "蓟城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "后燕建节将军徐岩叛变，击败蓟城守将平规，掠夺千余户离去。",
+        "relate": "徐岩 vs 后燕"
+    },
+    {
+        "id": 39,
+        "dynasty": "魏晋南北朝",
+        "name": "卢溥起义",
+        "begin_year": 399,
+        "end_year": 399,
+        "place": "范阳、郡县、幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "范阳人卢溥起义，攻略郡县，杀北魏幽州刺史封沓干。",
+        "relate": "卢溥 vs 北魏"
+    },
+    {
+        "id": 40,
+        "dynasty": "魏晋南北朝",
+        "name": "王惠定起义",
+        "begin_year": 499,
+        "end_year": 499,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 4,
+        "desc": "幽州民王惠定起义，自称明法皇帝，后被北魏幽州刺史李肃所杀。",
+        "relate": "王惠定 vs 北魏"
+    },
+    {
+        "id": 41,
+        "dynasty": "魏晋南北朝",
+        "name": "净居国明法王起义",
+        "begin_year": 514,
+        "end_year": 514,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 3,
+        "desc": "幽州僧刘僧绍自称净居国明法王，聚众起义后被北魏所杀。",
+        "relate": "刘僧绍 vs 北魏"
+    },
+    {
+        "id": 42,
+        "dynasty": "魏晋南北朝",
+        "name": "杜洛周起义",
+        "begin_year": 526,
+        "end_year": 526,
+        "place": "蓟城、安州、(治所昌平)、(今河北固安境内)",
+        "place_moden": [
+            "北京市",
+            "天津市",
+            "河北省"
+        ],
+        "importance": 7,
+        "desc": "北魏安州戍兵起义，杜洛周联合攻占军都关，后入范阳。",
+        "relate": "杜洛周等 vs 北魏"
+    },
+    {
+        "id": 43,
+        "dynasty": "魏晋南北朝",
+        "name": "刘灵助起义",
+        "begin_year": 531,
+        "end_year": 531,
+        "place": "博陵、安困城(今河北安国东南)、冀州信都(今河北冀县)",
+        "place_moden": [
+            "河北省"
+        ],
+        "importance": 5,
+        "desc": "北魏幽州刺史刘灵助起兵于蓟，进军至博陵、安困城后被杀。",
+        "relate": "刘灵助 vs 北魏"
+    },
+    {
+        "id": 44,
+        "dynasty": "魏晋南北朝",
+        "name": "高欢起兵",
+        "begin_year": 531,
+        "end_year": 531,
+        "place": "冀州信都(今河北冀县)",
+        "place_moden": [
+            "河北省"
+        ],
+        "importance": 6,
+        "desc": "高欢起兵于冀州信都，后据蓟城。",
+        "relate": "高欢 vs 北魏"
+    },
+    {
+        "id": 45,
+        "dynasty": "隋唐五代",
+        "name": "窦建德击杀郭绚",
+        "begin_year": 616,
+        "end_year": 616,
+        "place": "涿郡",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "涿郡通守郭绚镇压起义军高士达，被窦建德击杀。",
+        "relate": "窦建德 vs 郭绚"
+    },
+    {
+        "id": 46,
+        "dynasty": "隋唐五代",
+        "name": "卢龙军内乱",
+        "begin_year": 841,
+        "end_year": 841,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 4,
+        "desc": "卢龙军将陈行泰杀史元忠，后被张绛杀，张仲武成为卢龙节度使。",
+        "relate": "陈行泰、张绛 vs 史元忠、张仲武"
+    },
+    {
+        "id": 47,
+        "dynasty": "隋唐五代",
+        "name": "卢龙节度使更迭",
+        "begin_year": 850,
+        "end_year": 850,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "卢龙节度使周琳去世，张允伸继任。",
+        "relate": "周琳 vs 张允伸"
+    },
+    {
+        "id": 48,
+        "dynasty": "隋唐五代",
+        "name": "卢龙军乱",
+        "begin_year": 875,
+        "end_year": 875,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "李茂勋逐节度使张公素，自为留后。",
+        "relate": "李茂勋 vs 张公素"
+    },
+    {
+        "id": 49,
+        "dynasty": "隋唐五代",
+        "name": "卢龙将李全忠兵袭幽州",
+        "begin_year": 885,
+        "end_year": 885,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "李全忠兵袭幽州，李可举兵败自焚死。",
+        "relate": "李全忠 vs 李可"
+    },
+    {
+        "id": 50,
+        "dynasty": "隋唐五代",
+        "name": "李可用攻幽州",
+        "begin_year": 897,
+        "end_year": 897,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "李可用攻幽州被刘仁恭击败。",
+        "relate": "李可 vs 刘仁恭"
+    },
+    {
+        "id": 51,
+        "dynasty": "隋唐五代",
+        "name": "晋王李存勖攻幽州",
+        "begin_year": 912,
+        "end_year": 912,
+        "place": "幽州、契丹、瀛州",
+        "place_morden": [
+            "北京市",
+            "河北省张家口市",
+            "河北省沧州市"
+        ],
+        "importance": 8,
+        "desc": "晋王李存勖派周德威攻幽州刘守光，契丹攻幽州劫掠而去。",
+        "relate": "李存勖、周德威 vs 刘守光"
+    },
+    {
+        "id": 52,
+        "dynasty": "隋唐五代",
+        "name": "契丹攻幽州之战",
+        "begin_year": 923,
+        "end_year": 923,
+        "place": "幽州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "契丹攻幽州，李存勖即皇帝位，建后唐。",
+        "relate": "契丹 vs 后唐"
+    },
+    {
+        "id": 53,
+        "dynasty": "隋唐五代",
+        "name": "契丹扰幽州之战",
+        "begin_year": 924,
+        "end_year": 924,
+        "place": "幽州",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "契丹扰幽州，李嗣源领兵救幽州。",
+        "relate": "契丹 vs 后唐"
+    },
+    {
+        "id": 54,
+        "dynasty": "隋唐五代",
+        "name": "卢文进复降后唐之战",
+        "begin_year": 926,
+        "end_year": 926,
+        "place": "平州、幽州",
+        "place_moden": [
+            "河北省唐山市",
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "卢文进杀李存矩后降契丹，后被唐明宗劝回中原。",
+        "relate": "卢文进 vs 契丹"
+    },
+    {
+        "id": 55,
+        "dynasty": "隋唐五代",
+        "name": "契丹扰北边之战",
+        "begin_year": 935,
+        "end_year": 935,
+        "place": "幽州",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "契丹扰北边，后唐禁军多驻幽州。",
+        "relate": "契丹 vs 后唐"
+    },
+    {
+        "id": 56,
+        "dynasty": "隋唐五代",
+        "name": "契丹援王都之战",
+        "begin_year": 928,
+        "end_year": 928,
+        "place": "幽州、蓟州",
+        "place_moden": [
+            "北京市",
+            "天津市蓟州区"
+        ],
+        "importance": 7,
+        "desc": "契丹援王都，被赵德钧击败，不敢轻犯塞。",
+        "relate": "契丹 vs 后唐"
+    },
+    {
+        "id": 57,
+        "dynasty": "辽",
+        "name": "辽世宗被杀事件",
+        "begin_year": 951,
+        "end_year": 951,
+        "place": "南京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "辽世宗被杀，耶律璟即位为穆宗，人称“睡王”。",
+        "relate": "辽世宗 vs 耶律璟"
+    },
+    {
+        "id": 58,
+        "dynasty": "辽",
+        "name": "瓦桥关之战",
+        "begin_year": 980,
+        "end_year": 980,
+        "place": "南京、莫州",
+        "place_morden": [
+            "北京市",
+            "河北省张家口市"
+        ],
+        "importance": 7,
+        "desc": "辽景宗督师攻宋，大败宋军于瓦桥关。",
+        "relate": "辽景宗、耶律休哥 vs 宋军"
+    },
+    {
+        "id": 59,
+        "dynasty": "辽",
+        "name": "雍熙之役",
+        "begin_year": 986,
+        "end_year": 986,
+        "place": "契丹、涿州、飞狐关、都山",
+        "place_morden": [
+            "北京市",
+            "河北省保定市",
+            "河北省张家口市"
+        ],
+        "importance": 8,
+        "desc": "宋军三十万伐契丹，两线作战，最终溃败。",
+        "relate": "曹彬、宋军 vs 耶律休哥、契丹"
+    },
+    {
+        "id": 60,
+        "dynasty": "辽",
+        "name": "遂城之战",
+        "begin_year": 999,
+        "end_year": 999,
+        "place": "圣宗、南京、契丹、遂城",
+        "place_morden": [
+            "北京市",
+            "河北省保定市"
+        ],
+        "importance": 7,
+        "desc": "契丹南伐，杨业之子延昭守遂城，利用天寒使城结冰，契丹兵败退。",
+        "relate": "耶律隆庆、契丹 vs 杨延昭、宋军"
+    },
+    {
+        "id": 61,
+        "dynasty": "辽",
+        "name": "澶渊之盟",
+        "begin_year": 1004,
+        "end_year": 1004,
+        "place": "南京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "圣宗耶律隆绪及皇太后率兵攻宋，后宋辽议和，形成澶渊之盟。",
+        "relate": "契丹 vs 宋"
+    },
+    {
+        "id": 62,
+        "dynasty": "辽",
+        "name": "契丹南伐",
+        "begin_year": 1041,
+        "end_year": 1041,
+        "place": "南京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "契丹欲南伐取燕京南部十县，肖孝惠及耶律重元为统帅。",
+        "relate": "契丹 vs 宋"
+    },
+    {
+        "id": 63,
+        "dynasty": "金",
+        "name": "金攻宋之战",
+        "begin_year": 1159,
+        "end_year": 1159,
+        "place": "通州、都城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "金修中都城，造战船于通州，准备攻宋。",
+        "relate": "金 vs 宋"
+    },
+    {
+        "id": 64,
+        "dynasty": "金",
+        "name": "金世宗即位与南征",
+        "begin_year": 1161,
+        "end_year": 1161,
+        "place": "中都、辽阳、扬州",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "金兵分四路南征，海陵王亲征，后被废，金世宗即位。",
+        "relate": "金 vs 宋"
+    },
+    {
+        "id": 65,
+        "dynasty": "金",
+        "name": "窝斡起义",
+        "begin_year": 1162,
+        "end_year": 1162,
+        "place": "房山、契丹、河北、中都",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "契丹人窝斡起义，接近中都，后被擒牺牲。",
+        "relate": "窝斡起义军 vs 金"
+    },
+    {
+        "id": 66,
+        "dynasty": "金",
+        "name": "蒙古军迫居庸关之战",
+        "begin_year": 1211,
+        "end_year": 1211,
+        "place": "居庸关",
+        "place_morden": [
+            "北京市昌平区"
+        ],
+        "importance": 7,
+        "desc": "蒙古军迫居庸关，金守将完颜福寿弃关遁走，蒙古左帅哲伯遂入关，金中都戒严。",
+        "relate": "蒙古军 vs 金军"
+    },
+    {
+        "id": 67,
+        "dynasty": "金",
+        "name": "中都保卫战",
+        "begin_year": 1211,
+        "end_year": 1211,
+        "place": "中都",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "蒙古骑兵攻打南顺门，完颜天骥设计巷战，引诱蒙古骑兵入城，街上布满拴马桩，城内兵民一起参战，蒙古骑兵屡攻不下，被迫撤退。",
+        "relate": "金军 vs 蒙古军"
+    },
+    {
+        "id": 68,
+        "dynasty": "金",
+        "name": "居庸关之战",
+        "begin_year": 1213,
+        "end_year": 1213,
+        "place": "居庸关",
+        "place_morden": [
+            "北京市昌平区"
+        ],
+        "importance": 7,
+        "desc": "金人冶铁关门，布铁蒺藜百余里，派精锐守城。蒙古兵取道疾驱入紫荆口，大败金军，进拔涿、易二州。哲伯再取居庸，至中都城下。",
+        "relate": "蒙古军 vs 金军"
+    },
+    {
+        "id": 69,
+        "dynasty": "金",
+        "name": "中都围困战",
+        "begin_year": 1215,
+        "end_year": 1215,
+        "place": "中都",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "金右副元帅蒲察七斤以通州降蒙古军，中都被蒙古军围困，内外不通，陷于孤立，蒙古攻下中都，焚宫室，掠妃嫔，悉辇府库财物北去。",
+        "relate": "蒙古军 vs 金军"
+    },
+    {
+        "id": 70,
+        "dynasty": "元",
+        "name": "金中都陷落之战",
+        "begin_year": 1215,
+        "end_year": 1215,
+        "place": "金中都",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "蒙古军围破金中都，宫室为乱军所焚，改金中都为燕京，又为燕京路，总管大兴府。",
+        "relate": "蒙古军 vs 金军"
+    },
+    {
+        "id": 71,
+        "dynasty": "元",
+        "name": "燕京断事官牙鲁瓦赤事件",
+        "begin_year": 1252,
+        "end_year": 1252,
+        "place": "燕京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 5,
+        "desc": "蒙哥汗令断事官牙鲁瓦赤与不只儿总天下财赋于燕京，一日杀二十八人。",
+        "relate": "蒙哥汗、牙鲁瓦赤"
+    },
+    {
+        "id": 72,
+        "dynasty": "元",
+        "name": "蒙古军大举攻宋",
+        "begin_year": 1258,
+        "end_year": 1258,
+        "place": "蒙古",
+        "place_morden": [
+            "蒙古国"
+        ],
+        "importance": 7,
+        "desc": "蒙古军大举攻宋，标志着元朝对南宋的全面进攻。",
+        "relate": "蒙古军"
+    },
+    {
+        "id": 73,
+        "dynasty": "元",
+        "name": "蒙哥之死与忽必烈北返",
+        "begin_year": 1259,
+        "end_year": 1259,
+        "place": "鄂州、燕京",
+        "place_morden": [
+            "湖北省鄂州市",
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "蒙哥死于军中，忽必烈自鄂州北返至燕京，影响元朝政权更迭。",
+        "relate": "蒙哥、忽必烈"
+    },
+    {
+        "id": 74,
+        "dynasty": "明",
+        "name": "徐达攻占大都",
+        "begin_year": 1368,
+        "end_year": 1368,
+        "place": "大都、命徙北平居民于北京(今河南开封市)、顺义县、密云",
+        "place_morden": [
+            "北京市",
+            "河南省开封市",
+            "北京市顺义区",
+            "北京市密云区"
+        ],
+        "importance": 9,
+        "desc": "徐达攻占大都，标志着元朝结束，明朝开始统治北京。",
+        "relate": "徐达、明军"
+    },
+    {
+        "id": 75,
+        "dynasty": "明",
+        "name": "冯胜征讨纳克楚",
+        "begin_year": 1387,
+        "end_year": 1387,
+        "place": "通州、北平",
+        "place_morden": [
+            "北京市通州区",
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "冯胜征讨纳克楚，维护明朝边疆安全。",
+        "relate": "冯胜、傅友德、兰玉"
+    },
+    {
+        "id": 76,
+        "dynasty": "元",
+        "name": "居庸之战",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "云中、幽州、广阳、渔阳、涿郡",
+        "place_morden": [
+            "河北省张家口市",
+            "北京市",
+            "北京市房山区",
+            "北京市密云区",
+            "河北省涿州市"
+        ],
+        "importance": 7,
+        "desc": "建光元年秋，鲜卑围攻居庸，耿夔与庞参发兵救援，成功解围。",
+        "relate": "鲜卑 vs 汉军"
+    },
+    {
+        "id": 77,
+        "dynasty": "魏晋南北朝",
+        "name": "杜洛周之乱",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "燕州、幽州、蓟城",
+        "place_morden": [
+            "北京市",
+            "北京市",
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "杜洛周反叛，孙念恒、李琚等抵抗失败，后被平定。",
+        "relate": "杜洛周 vs 孙念恒、李琚"
+    },
+    {
+        "id": 78,
+        "dynasty": "秦汉",
+        "name": "王郎之乱",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "邯郸、长安、昌平、渔阳、涿郡、中山、钜鹿、清河、河间",
+        "place_morden": [
+            "河北省邯郸市",
+            "陕西省西安市",
+            "北京市昌平区",
+            "北京市密云区",
+            "河北省涿州市",
+            "河北省定州市",
+            "河北省邢台市",
+            "河北省沧州市",
+            "河北省河间市"
+        ],
+        "importance": 9,
+        "desc": "王郎诈称成帝子起兵，耿弇等联合渔阳、上谷兵马平定。",
+        "relate": "王郎 vs 耿弇、耿况"
+    },
+    {
+        "id": 79,
+        "dynasty": "隋唐五代",
+        "name": "薛讷击契丹之战",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "定州、檀州",
+        "place_morden": [
+            "河北省定州市",
+            "北京市密云区"
+        ],
+        "importance": 7,
+        "desc": "薛讷等率军六万击契丹，于滦水山峡中大败。",
+        "relate": "唐军 vs 契丹"
+    },
+    {
+        "id": 80,
+        "dynasty": "隋唐五代",
+        "name": "隋朝大运河开凿",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "余杭（今浙江杭州）、涿郡（今北京）",
+        "place_morden": [
+            "浙江省杭州市",
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "隋炀帝开凿大运河，连接南北，加强经济和军事联系。",
+        "relate": "隋朝 vs 无"
+    },
+    {
+        "id": 81,
+        "dynasty": "隋唐五代",
+        "name": "周世宗北伐契丹",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "幽燕、契丹、大梁（今河南开封）、沧州",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河南省开封市",
+            "河北省沧州市"
+        ],
+        "importance": 7,
+        "desc": "周世宗柴荣北伐契丹，疏通永济渠以供军需。",
+        "relate": "周世宗 vs 契丹"
+    },
+    {
+        "id": 82,
+        "dynasty": "隋唐五代",
+        "name": "赵匡胤水陆并进收复关南",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "契丹、瓦桥关（今河北雄县）、瀛州",
+        "place_morden": [
+            "河北省雄县",
+            "河北省瀛州"
+        ],
+        "importance": 8,
+        "desc": "赵匡胤分水陆两路进攻契丹，收复关南地区。",
+        "relate": "赵匡胤 vs 契丹"
+    },
+    {
+        "id": 83,
+        "dynasty": "先秦",
+        "name": "武王伐纣",
+        "begin_year": -1046,
+        "end_year": -1046,
+        "place": "庸、蜀、羌、髳、微、卢、彭、濮等国、陕西临潼县",
+        "place_morden": [
+            "陕西省西安市"
+        ],
+        "importance": 10,
+        "desc": "周武王联合多国进攻商朝，商纣王自刎，西周王朝建立。",
+        "relate": "周武王 vs 商纣王"
+    },
+    {
+        "id": 84,
+        "dynasty": "先秦",
+        "name": "周初分封与燕的建立",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "陕西临潼县",
+        "place_moden": [
+            "陕西省西安市"
+        ],
+        "importance": 8,
+        "desc": "周武王克商后，实行分封制，召公奭被封于燕。",
+        "relate": "周武王 vs 召公奭"
+    },
+    {
+        "id": 85,
+        "dynasty": "先秦",
+        "name": "田单破燕与燕国灭亡",
+        "begin_year": -279,
+        "end_year": -222,
+        "place": "赵国",
+        "place_moden": [
+            "河北省"
+        ],
+        "importance": 9,
+        "desc": "田单使用反间计和火牛阵大败燕军，燕国国势衰弱最终被秦所灭。",
+        "relate": "田单 vs 燕国"
+    },
+    {
+        "id": 86,
+        "dynasty": "先秦",
+        "name": "荆轲刺秦王",
+        "begin_year": -227,
+        "end_year": -227,
+        "place": "燕国、赵国、邯郸",
+        "place_moden": [
+            "北京市",
+            "河北省"
+        ],
+        "importance": 9,
+        "desc": "荆轲刺杀秦王嬴政未遂，为燕国争取了时间。",
+        "relate": "荆轲 vs 秦王"
+    },
+    {
+        "id": 87,
+        "dynasty": "先秦",
+        "name": "秦灭燕",
+        "begin_year": -226,
+        "end_year": -222,
+        "place": "燕国",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "秦将王翦攻破燕国，燕王喜被俘，燕国灭亡。",
+        "relate": "秦军 vs 燕国"
+    },
+    {
+        "id": 88,
+        "dynasty": "秦汉",
+        "name": "郡县制下的燕国",
+        "begin_year": -221,
+        "end_year": -221,
+        "place": "燕国、广阳郡、蓟城、武阳（今河北易县）、蓟城（今北京城西南）、上谷（治沮阳，今河北省怀来县大古城）、渔阳（治渔阳，今北京市怀柔县梨园庄）、右北平（治无终，今天津市蓟州）、辽西（治阳乐，今辽宁义县）、辽东（治襄平，今辽宁辽阳）",
+        "place_moden": [
+            "北京市",
+            "天津市",
+            "河北省",
+            "辽宁省"
+        ],
+        "importance": 8,
+        "desc": "秦始皇统一六国后，实行中央集权，确立皇权，建立官僚架构，废除分封制，实行郡县制度，加强中央对地方的控制。",
+        "relate": "秦始皇 vs 燕旧贵族"
+    },
+    {
+        "id": 89,
+        "dynasty": "秦汉",
+        "name": "修驰道筑长城",
+        "begin_year": -220,
+        "end_year": -220,
+        "place": "咸阳、蓟城、恒山、邯郸",
+        "place_moden": [
+            "咸阳市",
+            "北京市",
+            "邯郸市"
+        ],
+        "importance": 9,
+        "desc": "秦始皇为加强中央集权，修建驰道和长城，统一车轨轨距，形成以咸阳为中心的交通网络，加强北部边防。",
+        "relate": "秦始皇 vs 匈奴"
+    },
+    {
+        "id": 90,
+        "dynasty": "秦汉",
+        "name": "西汉大一统下幽州地区政治",
+        "begin_year": -202,
+        "end_year": -202,
+        "place": "蓟城",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "西汉初年，刘邦建立汉朝，实行郡国并行制度，分封异姓王和同姓王，加强中央对地方的控制。",
+        "relate": "刘邦 vs 异姓诸侯王"
+    },
+    {
+        "id": 91,
+        "dynasty": "秦汉",
+        "name": "燕蓟农民起义",
+        "begin_year": -99,
+        "end_year": -99,
+        "place": "蓟城、上谷、渔阳",
+        "place_moden": [
+            "北京市",
+            "河北省",
+            "辽宁省"
+        ],
+        "importance": 6,
+        "desc": "汉武帝天汉二年，燕地发生坚卢、范主领导的农民起义，反抗沉重的徭役和赋税。",
+        "relate": "燕地农民 vs 汉朝官吏"
+    },
+    {
+        "id": 92,
+        "dynasty": "秦汉",
+        "name": "刘秀起兵称帝",
+        "begin_year": 22,
+        "end_year": 25,
+        "place": "南阳、昆阳、洛阳、幽州、上谷郡（治阻阳，今河北怀来县境）、邯郸、昌平、信都（治今河北冀县）、渔阳、涿郡、广阳、代郡、上谷、渔阳、辽西、辽东、玄菟、乐浪",
+        "place_morden": [
+            "河南省南阳市",
+            "河南省叶县",
+            "北京市",
+            "河北省",
+            "河北省张家口市怀来县",
+            "河北省邯郸市",
+            "北京市昌平区",
+            "河北省冀州市",
+            "河北省沧州市",
+            "河北省涿州市",
+            "北京市",
+            "河北省张家口市",
+            "北京市延庆区",
+            "辽宁省西部和河北省北部",
+            "辽宁省东部和南部",
+            "辽宁省新宾满族自治县"
+        ],
+        "importance": 9,
+        "desc": "刘秀起兵反抗王莽，建立东汉，国家政治中心从长安转向洛阳。",
+        "relate": "刘秀 vs 王莽"
+    },
+    {
+        "id": 93,
+        "dynasty": "秦汉",
+        "name": "彭宠张丰之乱",
+        "begin_year": 26,
+        "end_year": 29,
+        "place": "幽州、州牧、渔阳、青州、徐州、良乡、北平、上谷",
+        "place_moden": [
+            "北京市",
+            "天津市",
+            "河北省涿州市",
+            "河北省唐山市",
+            "北京市房山区"
+        ],
+        "importance": 7,
+        "desc": "彭宠、张丰反叛东汉，刘秀平定叛乱，巩固政权。",
+        "relate": "刘秀 vs 彭宠、张丰"
+    },
+    {
+        "id": 94,
+        "dynasty": "秦汉",
+        "name": "刘虞施政与公孙瓒割据",
+        "begin_year": 184,
+        "end_year": 193,
+        "place": "广阳郡、上谷、幽州、昌平、广阳、渔阳、狐奴、潞、平谷、安乐、奚、犷平、冀、青二州，冀州、青州、徐州",
+        "place_moden": [
+            "北京市",
+            "河北省张家口市",
+            "北京市",
+            "北京市昌平区",
+            "北京市",
+            "北京市房山区",
+            "北京市平谷区",
+            "北京市密云区",
+            "河北省唐山市",
+            "北京市昌平区"
+        ],
+        "importance": 8,
+        "desc": "刘虞治理幽州，公孙瓒割据，最终被刘虞击败。",
+        "relate": "刘虞 vs 公孙瓒"
+    },
+    {
+        "id": 95,
+        "dynasty": "秦汉",
+        "name": "袁绍据幽与曹操统一河北",
+        "begin_year": 195,
+        "end_year": 207,
+        "place": "幽州、渔阳、潞县之北（今北京通县东）、冀州、代郡、广阳、上谷、右北平、青州、并州、渔阳犷平（今北京密云县东北）",
+        "place_moden": [
+            "北京市",
+            "北京市密云区",
+            "北京市通州区",
+            "河北省",
+            "山西省",
+            "北京市门头沟区",
+            "河北省张家口市",
+            "河北省唐山市",
+            "山东省",
+            "山西省"
+        ],
+        "importance": 10,
+        "desc": "曹操击败袁绍，统一北方，结束了长期的军阀混战。",
+        "relate": "曹操 vs 袁绍"
+    },
+    {
+        "id": 96,
+        "dynasty": "魏晋南北朝",
+        "name": "曹魏时期对幽州的治理",
+        "begin_year": 220,
+        "end_year": 237,
+        "place": "幽州、渔阳、青龙",
+        "place_moden": [
+            "北京市",
+            "北京市密云区"
+        ],
+        "importance": 7,
+        "desc": "曹魏时期，幽州作为军事重镇，对北边防御和辽东经营有重要意义。",
+        "relate": "曹魏 vs 乌丸、鲜卑"
+    },
+    {
+        "id": 97,
+        "dynasty": "魏晋南北朝",
+        "name": "西晋对幽州的治理",
+        "begin_year": 265,
+        "end_year": 282,
+        "place": "幽州、昌黎、辽东、玄菟、带方、乐浪、平州、渔阳",
+        "place_morden": [
+            "北京市",
+            "辽宁省",
+            "河北省",
+            "天津市"
+        ],
+        "importance": 6,
+        "desc": "西晋时期，司马炎代魏建晋，重视幽州边防，派遣能臣如卫瓘、张华治理，有效控制辽东，促进地方稳定。",
+        "relate": "西晋 vs 乌桓、鲜卑"
+    },
+    {
+        "id": 98,
+        "dynasty": "魏晋南北朝",
+        "name": "晋末幽州的动荡",
+        "begin_year": 290,
+        "end_year": 306,
+        "place": "平阳、河北、洛阳、幽州、代郡、上谷、广宁、蓟城",
+        "place_moden": [
+            "山西省",
+            "河北省",
+            "河南省",
+            "北京市",
+            "内蒙古自治区"
+        ],
+        "importance": 8,
+        "desc": "晋武帝死后，晋惠帝成为傀儡，引发八王之乱，王浚据幽州，与石勒等争夺冀州，最终被石勒所杀。",
+        "relate": "王浚 vs 石勒"
+    },
+    {
+        "id": 99,
+        "dynasty": "魏晋南北朝",
+        "name": "石勒在幽州的统治",
+        "begin_year": 314,
+        "end_year": 330,
+        "place": "幽州、洛阳、襄国（今河北邢台）",
+        "place_moden": [
+            "北京市",
+            "河南省",
+            "河北省"
+        ],
+        "importance": 9,
+        "desc": "石勒袭杀王浚后，对幽州进行安抚，推行修养生息政策，稳定局势，并逐渐统一中原。",
+        "relate": "石勒 vs 王浚"
+    },
+    {
+        "id": 100,
+        "dynasty": "魏晋南北朝",
+        "name": "石虎对幽州的统治",
+        "begin_year": 333,
+        "end_year": 349,
+        "place": "幽州、大兴、辽西、北平、渔阳",
+        "place_moden": [
+            "北京市",
+            "辽宁省",
+            "河北省",
+            "天津市"
+        ],
+        "importance": 7,
+        "desc": "石虎废夺石弘之位后，对幽州进行残暴统治，与辽东慕容皝争战，使幽州百姓饱受苦难。",
+        "relate": "石虎 vs 慕容皝"
+    },
+    {
+        "id": 101,
+        "dynasty": "魏晋南北朝",
+        "name": "前燕对幽州的争夺",
+        "begin_year": 350,
+        "end_year": 350,
+        "place": "幽州、青、雍、荆州",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省",
+            "陕西省",
+            "甘肃省"
+        ],
+        "importance": 8,
+        "desc": "冉魏与前燕为争夺幽州爆发冲突，前燕最终攻占幽州，为进一步战取中原打下基础。",
+        "relate": "慕容儁 vs 冉魏"
+    },
+    {
+        "id": 102,
+        "dynasty": "魏晋南北朝",
+        "name": "前秦占据幽州",
+        "begin_year": 350,
+        "end_year": 350,
+        "place": "幽州、邺城、河北、蓟城",
+        "place_moden": [
+            "北京市",
+            "河北省",
+            "河南省"
+        ],
+        "importance": 7,
+        "desc": "前秦取代前燕统治幽州，利用幽州为基地统一中原。",
+        "relate": "苻坚 vs 前燕"
+    },
+    {
+        "id": 103,
+        "dynasty": "魏晋南北朝",
+        "name": "后燕夺取幽州",
+        "begin_year": 383,
+        "end_year": 384,
+        "place": "洛阳、邺都、蓟城",
+        "place_moden": [
+            "河南省洛阳市",
+            "河北省临漳县",
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "后燕慕容垂攻占幽州，为进一步战取中原打下基础。",
+        "relate": "慕容垂 vs 前秦"
+    },
+    {
+        "id": 104,
+        "dynasty": "魏晋南北朝",
+        "name": "后燕在幽州的恢复措施",
+        "begin_year": 385,
+        "end_year": 385,
+        "place": "邺城、幽州、龙城",
+        "place_moden": [
+            "河北省临漳县",
+            "北京市",
+            "辽宁省朝阳市"
+        ],
+        "importance": 6,
+        "desc": "后燕在幽州实施恢复措施，促进当地经济复苏。",
+        "relate": "慕容垂 vs 无"
+    },
+    {
+        "id": 105,
+        "dynasty": "魏晋南北朝",
+        "name": "北魏平定幽州",
+        "begin_year": 396,
+        "end_year": 397,
+        "place": "幽州、范阳、渔阳、京师、龙城",
+        "place_moden": [
+            "北京市",
+            "河北省涿州市",
+            "天津市蓟州区",
+            "北京市",
+            "辽宁省朝阳市"
+        ],
+        "importance": 9,
+        "desc": "北魏拓跋珪攻占幽州，结束后燕在该地区的统治。",
+        "relate": "拓跋珪 vs 后燕"
+    },
+    {
+        "id": 106,
+        "dynasty": "魏晋南北朝",
+        "name": "北魏在幽州的统治政策",
+        "begin_year": 431,
+        "end_year": 431,
+        "place": "幽州、范阳、清河、荥阳、太原",
+        "place_morden": [
+            "北京市",
+            "河北省保定市",
+            "河北省邢台市",
+            "河南省郑州市",
+            "山西省太原市"
+        ],
+        "importance": 7,
+        "desc": "北魏拓跋氏入主中原，推行汉化政策，稳定幽州局势，形成士族门阀政治。",
+        "relate": "拓跋氏 vs 幽州士族"
+    },
+    {
+        "id": 107,
+        "dynasty": "魏晋南北朝",
+        "name": "北魏后期幽州的动荡",
+        "begin_year": 446,
+        "end_year": 446,
+        "place": "上谷、于河、幽州、蓟城",
+        "place_moden": [
+            "河北省张家口市",
+            "北京市",
+            "天津市"
+        ],
+        "importance": 8,
+        "desc": "北魏后期政治腐败，幽州百姓困苦，引发多次起义反抗。",
+        "relate": "幽州百姓 vs 北魏官吏"
+    },
+    {
+        "id": 108,
+        "dynasty": "魏晋南北朝",
+        "name": "东魏对幽州的短暂统治",
+        "begin_year": 534,
+        "end_year": 534,
+        "place": "幽、安、定三州",
+        "place_moden": [
+            "北京市",
+            "河北省保定市",
+            "河北省张家口市"
+        ],
+        "importance": 6,
+        "desc": "东魏初年幽州经济有所恢复，但边患严重，柔然侵扰频繁。",
+        "relate": "东魏 vs 柔然"
+    },
+    {
+        "id": 109,
+        "dynasty": "魏晋南北朝",
+        "name": "北齐统治下的幽州",
+        "begin_year": 550,
+        "end_year": 550,
+        "place": "幽州、契丹",
+        "place_moden": [
+            "北京市",
+            "辽宁省"
+        ],
+        "importance": 8,
+        "desc": "北齐时期幽州频遭侵扰，御敌不暇，构筑军事防御，兵力强盛。",
+        "relate": "北齐 vs 契丹、突厥"
+    },
+    {
+        "id": 110,
+        "dynasty": "魏晋南北朝",
+        "name": "北周统治下的幽州",
+        "begin_year": 577,
+        "end_year": 577,
+        "place": "邺都、蓟城、营州、契丹",
+        "place_moden": [
+            "河北省邯郸市",
+            "北京市",
+            "辽宁省朝阳市",
+            "辽宁省"
+        ],
+        "importance": 9,
+        "desc": "北周攻下邺都后，幽州纳入北周治下，但统治不稳定，面临多方侵扰。",
+        "relate": "北周 vs 高保宁、高绍义、突厥"
+    },
+    {
+        "id": 111,
+        "dynasty": "隋唐五代",
+        "name": "隋初幽州防御突厥的战争",
+        "begin_year": 581,
+        "end_year": 582,
+        "place": "幽州、营州、契丹",
+        "place_morden": [
+            "北京市",
+            "辽宁省",
+            "河北省"
+        ],
+        "importance": 8,
+        "desc": "隋朝建立之初，幽州作为军事重镇，抵御突厥和高宝宁势力的进攻，对隋朝政权的巩固起到关键作用。",
+        "relate": "隋王朝 vs 突厥、高宝宁"
+    },
+    {
+        "id": 112,
+        "dynasty": "隋唐五代",
+        "name": "炀帝对幽州的经营",
+        "begin_year": 607,
+        "end_year": 608,
+        "place": "幽州、涿郡、江淮",
+        "place_moden": [
+            "北京市",
+            "河北省涿州市",
+            "江苏省"
+        ],
+        "importance": 9,
+        "desc": "炀帝时期，幽州作为边防和对辽东征伐的基地，其经营体现了隋朝对边疆控制和统一国家的努力。",
+        "relate": "隋王朝 vs 高句丽、突厥"
+    },
+    {
+        "id": 113,
+        "dynasty": "隋唐五代",
+        "name": "幽州政治势力的变化",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "幽州、范阳、东晋、西魏、北齐、燕国、上谷",
+        "place_moden": [
+            [
+                "北京市"
+            ],
+            [
+                "北京市房山区"
+            ],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "importance": 6,
+        "desc": "隋朝削弱幽州地方豪族势力，加强中央集权，幽州世家大族如范阳卢氏等势力衰减，政治中心转向中央。",
+        "relate": "隋王朝 vs 幽州豪族"
+    },
+    {
+        "id": 114,
+        "dynasty": "隋唐五代",
+        "name": "幽州与唐初政局",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "幽州、营州、奚、霫、契丹、靺鞨",
+        "place_moden": [
+            "北京市",
+            "辽宁省",
+            [],
+            [],
+            [],
+            [],
+            []
+        ],
+        "importance": 7,
+        "desc": "唐初幽州在李唐争夺河北及对抗突厥支持的势力中扮演关键角色，后逐渐由中央控制，地位有所下降。",
+        "relate": "李唐 vs 窦建德、高开道、刘黑闼"
+    },
+    {
+        "id": 115,
+        "dynasty": "隋唐五代",
+        "name": "幽州对蕃族的战争",
+        "begin_year": 696,
+        "end_year": 699,
+        "place": "幽州、契丹、渔阳",
+        "place_moden": [
+            "北京市",
+            "辽宁省",
+            "天津市蓟州区"
+        ],
+        "importance": 8,
+        "desc": "武后时期，幽州面临蕃族叛乱和攻击，唐王朝重建幽州军事防御，但蕃族攻击愈演愈烈。",
+        "relate": "唐王朝 vs 契丹、奚、突厥"
+    },
+    {
+        "id": 116,
+        "dynasty": "隋唐五代",
+        "name": "幽州节度使对蕃族的战争",
+        "begin_year": 732,
+        "end_year": 733,
+        "place": "幽州、契丹、渔阳",
+        "place_moden": [
+            "北京市",
+            "辽宁省",
+            "天津市蓟州区"
+        ],
+        "importance": 9,
+        "desc": "幽州节度使张守珪在开元年间对蕃族取得重大胜利，改变了唐王朝东北防御不振的局面，加强了幽州节度的势力。",
+        "relate": "唐王朝 vs 契丹、奚"
+    },
+    {
+        "id": 117,
+        "dynasty": "隋唐五代",
+        "name": "幽州藩镇兵乱",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "幽州",
+        "place_morden": [],
+        "importance": 7,
+        "desc": "幽州藩镇兵乱频繁，帅位更替迅速，与幽州节帅出身及对军士控制有很大关系。",
+        "relate": "幽州节帅 vs 军士"
+    },
+    {
+        "id": 118,
+        "dynasty": "隋唐五代",
+        "name": "幽州藩镇兵乱",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "幽州",
+        "place_moden": [],
+        "importance": 7,
+        "desc": "幽州藩镇以土著汉人为节帅，蕃兵势力衰弱，胡汉之间存在分歧。",
+        "relate": "幽州藩镇 vs 蕃兵"
+    },
+    {
+        "id": 119,
+        "dynasty": "隋唐五代",
+        "name": "幽州藩镇的叛乱战争",
+        "begin_year": 781,
+        "end_year": 0,
+        "place": "幽州藩镇、成德、魏博、淄青、范阳",
+        "place_moden": [],
+        "importance": 8,
+        "desc": "幽州藩镇在河朔藩镇中表现出被动性，往往在邻藩叛逆活动鼓动下加入叛乱。",
+        "relate": "幽州藩镇 vs 唐王朝"
+    },
+    {
+        "id": 120,
+        "dynasty": "隋唐五代",
+        "name": "幽州藩镇的叛乱战争",
+        "begin_year": 782,
+        "end_year": 0,
+        "place": "幽州藩镇、成德、魏博、淄青、范阳",
+        "place_moden": [],
+        "importance": 8,
+        "desc": "朱滔与王武俊、田悦、李纳四镇结盟，各自称王，推朱滔为盟主，仿制中央。",
+        "relate": "朱滔等 vs 唐王朝"
+    },
+    {
+        "id": 121,
+        "dynasty": "辽",
+        "name": "辽在南京的统治危机",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "契丹、南京、平州、涞水县、燕京",
+        "place_moden": [],
+        "importance": 9,
+        "desc": "辽朝积极防守南京，注重对南京的经营，抵制北宋的进攻，南京成为辽中后期政治要地。",
+        "relate": "辽 vs 北宋"
+    },
+    {
+        "id": 122,
+        "dynasty": "辽",
+        "name": "辽在南京的统治危机",
+        "begin_year": 1117,
+        "end_year": 0,
+        "place": "契丹、南京、平州、涞水县、燕京",
+        "place_moden": [],
+        "importance": 7,
+        "desc": "南京爆发以董庞儿为首的起义，起义队伍迅速发展，后投降女真。",
+        "relate": "董庞儿 vs 辽"
+    },
+    {
+        "id": 123,
+        "dynasty": "辽",
+        "name": "辽宋争夺幽燕的和战",
+        "begin_year": 963,
+        "end_year": 1122,
+        "place": "幽州、南京、契丹、定州、京师、蔚州、燕京",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省",
+            "山西省"
+        ],
+        "importance": 8,
+        "desc": "辽宋之间为争夺幽燕地区进行的长期和战，涉及多次战役和议和，最终以辽的灭亡告终。",
+        "relate": "辽 vs 北宋"
+    },
+    {
+        "id": 124,
+        "dynasty": "金",
+        "name": "金军南下与辽朝的败亡",
+        "begin_year": 1115,
+        "end_year": 1125,
+        "place": "江州（今吉林扶余东）、河店（今黑龙江肇源西南）、鲁古城（今吉林前郭尔罗斯蒙古族自治县的塔虎城）、大捷及护步答冈（今黑龙江五常西）、辽东京（今辽宁辽阳）",
+        "place_moden": [
+            "吉林省",
+            "黑龙江省",
+            "辽宁省"
+        ],
+        "importance": 9,
+        "desc": "金军南下攻辽，辽朝败亡，金朝崛起，标志着东北政局的重大变化。",
+        "relate": "金 vs 辽"
+    },
+    {
+        "id": 125,
+        "dynasty": "金",
+        "name": "北宋经营燕山府及其失败",
+        "begin_year": 1122,
+        "end_year": 1127,
+        "place": "辽上京、辽中京、辽西京、燕京、涿州（今河北涿州市）、燕京、居庸关、汴京",
+        "place_moden": [
+            "北京市",
+            "天津市",
+            "河北省",
+            "山西省"
+        ],
+        "importance": 7,
+        "desc": "北宋试图收复燕云十六州但失败，金朝攻占燕京后，宋朝未能有效经营，最终导致北宋的覆灭。",
+        "relate": "北宋 vs 金"
+    },
+    {
+        "id": 126,
+        "dynasty": "金",
+        "name": "辽、宋降臣的政治作用及其影响",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "西京（今山西大同）、汴京（今河南开封）",
+        "place_moden": [
+            "山西省",
+            "河南省"
+        ],
+        "importance": 6,
+        "desc": "金朝收纳和任用辽朝和宋朝的政治人才，对金朝的发展和对宋政策产生重要影响。",
+        "relate": "辽/宋降臣 vs 金"
+    },
+    {
+        "id": 127,
+        "dynasty": "金",
+        "name": "燕京行台的作用及影响",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "燕京、契丹",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "燕京在宋、辽、金三朝争斗中的焦点地位，对金朝政治和军事行动产生重大影响。",
+        "relate": "宋/辽/金"
+    },
+    {
+        "id": 128,
+        "dynasty": "金",
+        "name": "金海陵王南侵",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "南京（即宋朝的汴京）",
+        "place_morden": [
+            "河南省开封市"
+        ],
+        "importance": 8,
+        "desc": "金海陵王企图统一天下的大规模南侵活动，因内部矛盾和南宋抵抗而失败。",
+        "relate": "金海陵王 vs 南宋"
+    },
+    {
+        "id": 129,
+        "dynasty": "元",
+        "name": "蒙古军攻占金中都",
+        "begin_year": 1211,
+        "end_year": 1215,
+        "place": "金中都",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "蒙古军队攻占金中都，标志着蒙古国向中原地区扩张势力的开始。",
+        "relate": "蒙古军 vs 金朝"
+    },
+    {
+        "id": 130,
+        "dynasty": "元",
+        "name": "元宪宗征川蜀",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "川蜀",
+        "place_moden": [
+            "四川省"
+        ],
+        "importance": 7,
+        "desc": "元宪宗亲率大军出征川蜀，企图绕过长江天险，但因宋军顽强抵抗而失败。",
+        "relate": "元宪宗 vs 南宋"
+    },
+    {
+        "id": 131,
+        "dynasty": "元",
+        "name": "元世祖南伐灭宋",
+        "begin_year": 1267,
+        "end_year": 1276,
+        "place": "襄阳、樊城",
+        "place_moden": [
+            "湖北省襄阳市",
+            "湖北省樊城区"
+        ],
+        "importance": 10,
+        "desc": "元世祖采纳刘整建议，突破长江天险，最终攻灭南宋，统一天下。",
+        "relate": "元世祖 vs 南宋"
+    },
+    {
+        "id": 132,
+        "dynasty": "元",
+        "name": "忽必烈与阿里不哥的皇位争夺",
+        "begin_year": 1260,
+        "end_year": 1264,
+        "place": "燕京、和林",
+        "place_moden": [
+            "北京市",
+            "蒙古国"
+        ],
+        "importance": 9,
+        "desc": "忽必烈与阿里不哥为争夺皇位发生内战，忽必烈最终胜利并称帝。",
+        "relate": "忽必烈 vs 阿里不哥"
+    },
+    {
+        "id": 133,
+        "dynasty": "元",
+        "name": "平定山东军阀李璮叛乱",
+        "begin_year": 1271,
+        "end_year": 1271,
+        "place": "山东",
+        "place_morden": [
+            "山东省"
+        ],
+        "importance": 7,
+        "desc": "元世祖平定山东军阀李璮叛乱，巩固元朝统治。",
+        "relate": "元世祖 vs 李璮"
+    },
+    {
+        "id": 134,
+        "dynasty": "元",
+        "name": "平定东北宗王乃颜叛乱",
+        "begin_year": 1271,
+        "end_year": 1271,
+        "place": "东北",
+        "place_moden": [],
+        "importance": 7,
+        "desc": "元世祖击败东北宗王乃颜的侵扰，维护边疆安全。",
+        "relate": "元世祖 vs 乃颜"
+    },
+    {
+        "id": 135,
+        "dynasty": "元",
+        "name": "攻灭南宋",
+        "begin_year": 1276,
+        "end_year": 1279,
+        "place": "南宋",
+        "place_moden": [
+            "浙江省",
+            "江苏省",
+            "安徽省"
+        ],
+        "importance": 10,
+        "desc": "元世祖攻灭南宋，完成全国统一。",
+        "relate": "元世祖 vs 南宋"
+    },
+    {
+        "id": 136,
+        "dynasty": "元",
+        "name": "东侵日本",
+        "begin_year": 1281,
+        "end_year": 1281,
+        "place": "日本",
+        "place_moden": [
+            "日本"
+        ],
+        "importance": 8,
+        "desc": "元世祖东侵日本，但遭遇失败。",
+        "relate": "元世祖 vs 日本"
+    },
+    {
+        "id": 137,
+        "dynasty": "元",
+        "name": "南征安南",
+        "begin_year": 1281,
+        "end_year": 1288,
+        "place": "安南",
+        "place_moden": [
+            "越南"
+        ],
+        "importance": 8,
+        "desc": "元世祖南征安南，但未能成功。",
+        "relate": "元世祖 vs 安南"
+    },
+    {
+        "id": 138,
+        "dynasty": "元",
+        "name": "元成宗死后皇位争夺战",
+        "begin_year": 1307,
+        "end_year": 1307,
+        "place": "大都",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "元成宗死后，蒙古贵族在大都城展开皇位争夺战。",
+        "relate": "卜鲁罕皇后、阿难答 vs 海山兄弟"
+    },
+    {
+        "id": 139,
+        "dynasty": "元",
+        "name": "和世㻋叛乱",
+        "begin_year": 1316,
+        "end_year": 1316,
+        "place": "云南",
+        "place_moden": [
+            "云南省"
+        ],
+        "importance": 6,
+        "desc": "元仁宗立硕德八剌为皇太子后，和世㻋发动叛乱。",
+        "relate": "和世㻋 vs 元仁宗"
+    },
+    {
+        "id": 140,
+        "dynasty": "元",
+        "name": "南坡之变",
+        "begin_year": 1323,
+        "end_year": 1323,
+        "place": "上都",
+        "place_moden": [],
+        "importance": 9,
+        "desc": "御史大夫铁失等人发动叛乱，弑杀元英宗。",
+        "relate": "铁失、也孙铁木儿 vs 元英宗"
+    },
+    {
+        "id": 141,
+        "dynasty": "元",
+        "name": "两都之战",
+        "begin_year": 1328,
+        "end_year": 1328,
+        "place": "大都、上都",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "元代中期最重大的政治事件，元武宗旧臣与泰定帝旧臣争夺皇位。",
+        "relate": "燕铁木儿、图帖睦尔 vs 倒剌沙、阿速吉八"
+    },
+    {
+        "id": 142,
+        "dynasty": "元",
+        "name": "元顺帝的政治斗争",
+        "begin_year": 1330,
+        "end_year": 1365,
+        "place": "蒙古国",
+        "place_moden": [
+            "蒙古国"
+        ],
+        "importance": 8,
+        "desc": "元顺帝即位后，面临燕铁木儿和伯颜的权势斗争。",
+        "relate": "元顺帝 vs 燕铁木儿、伯颜"
+    },
+    {
+        "id": 143,
+        "dynasty": "元",
+        "name": "红巾军北伐",
+        "begin_year": 1357,
+        "end_year": 1358,
+        "place": "中原、上都、大都",
+        "place_moden": [
+            "河南省",
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "红巾军三路北伐，对元朝政府构成巨大威胁。",
+        "relate": "韩林儿、刘福通 vs 元朝"
+    },
+    {
+        "id": 144,
+        "dynasty": "元",
+        "name": "大明军北伐与元朝灭亡",
+        "begin_year": 1367,
+        "end_year": 1368,
+        "place": "大都",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "明太祖北伐，元朝灭亡，明朝建立。",
+        "relate": "明太祖 vs 元朝"
+    },
+    {
+        "id": 145,
+        "dynasty": "明",
+        "name": "嘉靖庚戌之变",
+        "begin_year": 1550,
+        "end_year": 1550,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "蒙古俺答汗围攻北京，导致嘉靖帝下令修筑外城。",
+        "relate": "俺答 vs 嘉靖帝"
+    },
+    {
+        "id": 146,
+        "dynasty": "明",
+        "name": "武宗皇位继承危机",
+        "begin_year": 1521,
+        "end_year": 1521,
+        "place": "京师",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "明武宗无嗣，由堂弟朱厚熜继位，引发大礼仪事件。",
+        "relate": "朱厚熜 vs 武宗旧臣"
+    },
+    {
+        "id": 147,
+        "dynasty": "明",
+        "name": "刘瑾掌权与倒台",
+        "begin_year": 1506,
+        "end_year": 1510,
+        "place": "京师",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "宦官刘瑾掌权，结党营私，最终被处死。",
+        "relate": "刘瑾 vs 朝中官员"
+    },
+    {
+        "id": 148,
+        "dynasty": "明",
+        "name": "河北民变",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "河北",
+        "place_moden": [
+            "河北省"
+        ],
+        "importance": 6,
+        "desc": "刘六、刘七在河北起事。",
+        "relate": "刘六、刘七 vs 明军"
+    },
+    {
+        "id": 149,
+        "dynasty": "明",
+        "name": "四川民变",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "四川",
+        "place_moden": [
+            "四川省"
+        ],
+        "importance": 6,
+        "desc": "蓝廷瑞、鄢本恕在四川起事。",
+        "relate": "蓝廷瑞、鄢本恕 vs 明军"
+    },
+    {
+        "id": 150,
+        "dynasty": "明",
+        "name": "宁夏安化王之乱",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "宁夏",
+        "place_moden": [
+            "宁夏回族自治区"
+        ],
+        "importance": 6,
+        "desc": "安化王寊鐇在宁夏反叛。",
+        "relate": "安化王寊鐇 vs 明军"
+    },
+    {
+        "id": 151,
+        "dynasty": "明",
+        "name": "宁王之乱",
+        "begin_year": 1519,
+        "end_year": 1521,
+        "place": "江西",
+        "place_moden": [
+            "江西省"
+        ],
+        "importance": 7,
+        "desc": "宁王宸濠在江西反叛，被平定。",
+        "relate": "宁王宸濠 vs 明军"
+    },
+    {
+        "id": 152,
+        "dynasty": "清",
+        "name": "杨起隆北京起义",
+        "begin_year": 0,
+        "end_year": 0,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "杨起隆自称朱三太子，在北京起义反清。",
+        "relate": "杨起隆 vs 清军"
+    },
+    {
+        "id": 153,
+        "dynasty": "清",
+        "name": "大沽口之战",
+        "begin_year": 1858,
+        "end_year": 1858,
+        "place": "大沽",
+        "place_moden": [
+            "天津市"
+        ],
+        "importance": 9,
+        "desc": "英法联军攻击大沽口，清军抵抗。",
+        "relate": "清军 vs 英法联军"
+    },
+    {
+        "id": 154,
+        "dynasty": "清",
+        "name": "天津议和破裂",
+        "begin_year": 1859,
+        "end_year": 1859,
+        "place": "天津",
+        "place_moden": [
+            "天津市"
+        ],
+        "importance": 9,
+        "desc": "英法联军再次攻击大沽口，天津议和破裂。",
+        "relate": "清军 vs 英法联军"
+    },
+    {
+        "id": 155,
+        "dynasty": "清",
+        "name": "通州之战",
+        "begin_year": 1860,
+        "end_year": 1860,
+        "place": "通州",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "英法联军直逼通州，清军僧格林沁部队与之对峙。",
+        "relate": "清军 vs 英法联军"
+    },
+    {
+        "id": 156,
+        "dynasty": "清",
+        "name": "八里桥之战",
+        "begin_year": 1860,
+        "end_year": 1860,
+        "place": "八里桥",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "清军在八里桥英勇抵抗英法联军。",
+        "relate": "清军 vs 英法联军"
+    },
+    {
+        "id": 157,
+        "dynasty": "清",
+        "name": "联军攻占北京",
+        "begin_year": 1860,
+        "end_year": 1860,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "英法联军攻占北京，洗劫圆明园。",
+        "relate": "清军 vs 英法联军"
+    },
+    {
+        "id": 158,
+        "dynasty": "清",
+        "name": "英法联军火烧圆明园",
+        "begin_year": 1860,
+        "end_year": 1860,
+        "place": "圆明园",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "英法联军火烧圆明园，造成无法估量的文明损失。",
+        "relate": "英法联军 vs 清政府"
+    },
+    {
+        "id": 159,
+        "dynasty": "清",
+        "name": "《北京条约》的签订",
+        "begin_year": 1860,
+        "end_year": 1860,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "《北京条约》签订，结束了第二次鸦片战争。",
+        "relate": "清政府 vs 英法联军"
+    },
+    {
+        "id": 160,
+        "dynasty": "清",
+        "name": "光绪帝对变法的推动与迅速动摇",
+        "begin_year": 1898,
+        "end_year": 1898,
+        "place": "颐和园、天津",
+        "place_morden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 8,
+        "desc": "光绪帝推动变法维新，后因慈禧干预而动摇。",
+        "relate": "光绪帝、维新派 vs 慈禧、守旧派"
+    },
+    {
+        "id": 161,
+        "dynasty": "清",
+        "name": "义和团进占涿州威逼京师",
+        "begin_year": 1900,
+        "end_year": 1900,
+        "place": "涿州",
+        "place_morden": [
+            "涿州市"
+        ],
+        "importance": 7,
+        "desc": "义和团进占涿州，形成威逼京师的态势。",
+        "relate": "义和团 vs 清政府"
+    },
+    {
+        "id": 162,
+        "dynasty": "清",
+        "name": "义和团的“反教灭洋”斗争",
+        "begin_year": 1900,
+        "end_year": 1900,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "义和团在北京地区开展“反教灭洋”斗争。",
+        "relate": "义和团 vs 外国势力"
+    },
+    {
+        "id": 163,
+        "dynasty": "清",
+        "name": "义和团廊坊大捷",
+        "begin_year": 1900,
+        "end_year": 1900,
+        "place": "廊坊",
+        "place_morden": [
+            "廊坊市"
+        ],
+        "importance": 8,
+        "desc": "义和团在廊坊狙击八国联军，取得廊坊大捷。",
+        "relate": "义和团、清军 vs 八国联军"
+    },
+    {
+        "id": 164,
+        "dynasty": "清",
+        "name": "联军侵占北京",
+        "begin_year": 1900,
+        "end_year": 1900,
+        "place": "通州、紫禁城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "八国联军攻占北京，导致北京沦陷，义和团和清军英勇抵抗。",
+        "relate": "八国联军 vs 清军、义和团"
+    },
+    {
+        "id": 165,
+        "dynasty": "清",
+        "name": "联军的暴行",
+        "begin_year": 1900,
+        "end_year": 1900,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "八国联军在北京进行大规模屠杀和抢劫。",
+        "relate": "八国联军 vs 北京市民、义和团"
+    },
+    {
+        "id": 166,
+        "dynasty": "清",
+        "name": "义和团的继续反抗",
+        "begin_year": 1900,
+        "end_year": 1901,
+        "place": "北京郊区",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 8,
+        "desc": "八国联军侵占北京后，义和团继续在北京郊区进行反抗。",
+        "relate": "义和团 vs 八国联军"
+    },
+    {
+        "id": 167,
+        "dynasty": "清",
+        "name": "武昌首义对北京的冲击",
+        "begin_year": 1911,
+        "end_year": 1911,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "武昌首义后，北京出现恐慌和混乱，清政府采取措施应对。",
+        "relate": "革命党人 vs 清政府"
+    },
+    {
+        "id": 168,
+        "dynasty": "清",
+        "name": "北京起义",
+        "begin_year": 1911,
+        "end_year": 1911,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "革命党人在北京发动起义，但因袁世凯和汪精卫的破坏而失败。",
+        "relate": "革命党人 vs 清军"
+    },
+    {
+        "id": 169,
+        "dynasty": "清",
+        "name": "东华门之役",
+        "begin_year": 1912,
+        "end_year": 1912,
+        "place": "东华门、东安门和丁字街（今王府井八面槽）",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "袁世凯在东华门遭遇刺杀未遂，革命党人黄之萌、杨禹昌、张先培和严伯勋参与行动。",
+        "relate": "革命党人 vs 袁世凯"
+    },
+    {
+        "id": 170,
+        "dynasty": "清",
+        "name": "红罗厂事件",
+        "begin_year": 1912,
+        "end_year": 1912,
+        "place": "北京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "彭家珍在红罗厂刺杀宗社党魁良弼，导致清朝末代皇帝宣布退位。",
+        "relate": "彭家珍 vs 良弼"
+    },
+    {
+        "id": 171,
+        "dynasty": "民国",
+        "name": "北京政府统治的确立",
+        "begin_year": 1912,
+        "end_year": 1913,
+        "place": "南京、天津",
+        "place_moden": [
+            "南京市",
+            "天津市"
+        ],
+        "importance": 8,
+        "desc": "孙中山让位袁世凯，北京成为民国政府所在地，国会选举和总统选举相继进行。",
+        "relate": "孙中山 vs 袁世凯"
+    },
+    {
+        "id": 172,
+        "dynasty": "民国",
+        "name": "袁世凯的改制与称帝",
+        "begin_year": 1913,
+        "end_year": 1916,
+        "place": "云南",
+        "place_moden": [
+            "云南省"
+        ],
+        "importance": 10,
+        "desc": "袁世凯解散国民党，废除《临时约法》，宣布恢复帝制，引发全国反抗。",
+        "relate": "袁世凯 vs 国民党"
+    },
+    {
+        "id": 173,
+        "dynasty": "民国",
+        "name": "府院之争与张勋复辟",
+        "begin_year": 1917,
+        "end_year": 1917,
+        "place": "徐州",
+        "place_moden": [
+            "徐州市"
+        ],
+        "importance": 8,
+        "desc": "张勋在段祺瑞与黎元洪的府院之争中复辟清朝，最终失败。",
+        "relate": "张勋 vs 黎元洪"
+    },
+    {
+        "id": 174,
+        "dynasty": "民国",
+        "name": "北方军阀混战",
+        "begin_year": 1927,
+        "end_year": 1928,
+        "place": "北京、保定、天津",
+        "place_morden": [
+            "北京市",
+            "保定市",
+            "天津市"
+        ],
+        "importance": 8,
+        "desc": "1927年大革命失败后，北方成为军阀角逐的战场，1928年国民党进占北方主要城市，开始了对北方的统治。",
+        "relate": "蒋介石、冯玉祥、阎锡山、白崇禧 vs 北方军阀"
+    },
+    {
+        "id": 175,
+        "dynasty": "民国",
+        "name": "长城抗战",
+        "begin_year": 1933,
+        "end_year": 1933,
+        "place": "长城、石门寨、秦皇岛、昌黎、滦西、怀柔、通县、顺义",
+        "place_moden": [
+            "河北省",
+            "秦皇岛市",
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "长城抗战是中国军队在华北地区抗击日军的战役，展现了全国抗日热情和军队的抵抗精神。",
+        "relate": "中国军队 vs 日军"
+    },
+    {
+        "id": 176,
+        "dynasty": "民国",
+        "name": "北平学生的爱国运动",
+        "begin_year": 1931,
+        "end_year": 1935,
+        "place": "东北、平津、涿州、石家庄、南口、唐山、上海、南京、武汉、广州、杭州、长沙、重庆",
+        "place_moden": [
+            [
+                "黑龙江省",
+                "吉林省",
+                "辽宁省"
+            ],
+            [
+                "北京市",
+                "天津市"
+            ],
+            [
+                "石家庄市",
+                "涿州市"
+            ],
+            [
+                "上海市",
+                "南京市",
+                "武汉市",
+                "广州市",
+                "杭州市",
+                "长沙市",
+                "重庆市"
+            ]
+        ],
+        "importance": 7,
+        "desc": "北平学生在九一八事变后积极抗日反蒋，通过游行示威、宣传等活动，推动了抗日救亡运动的发展。",
+        "relate": "北平学生 vs 国民政府、日本帝国主义"
+    },
+    {
+        "id": 177,
+        "dynasty": "民国",
+        "name": "卢沟桥事变的背景",
+        "begin_year": 1936,
+        "end_year": 1937,
+        "place": "日本、丰台、北平、宛平、卢沟桥镇",
+        "place_moden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 10,
+        "desc": "日本扩大侵华战争，企图灭亡中国，卢沟桥事变成为日本军国主义推行“大陆政策”的必然结果。",
+        "relate": "日本 vs 中国"
+    },
+    {
+        "id": 178,
+        "dynasty": "民国",
+        "name": "卢沟桥抗战",
+        "begin_year": 1937,
+        "end_year": 1937,
+        "place": "天津、日本、丰台、宛平、平津",
+        "place_moden": [
+            "天津市",
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "卢沟桥事变标志着日本全面侵华战争的爆发，中国军队奋起抵抗，展现了中华民族的抗战精神。",
+        "relate": "中国军队 vs 日军"
+    },
+    {
+        "id": 179,
+        "dynasty": "民国",
+        "name": "北平沦陷",
+        "begin_year": 1937,
+        "end_year": 1937,
+        "place": "北平",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "日军制造卢沟桥事变，占领平津、控制华北，北平沦陷。",
+        "relate": "日军 vs 二十九军"
+    },
+    {
+        "id": 180,
+        "dynasty": "民国",
+        "name": "南口战役",
+        "begin_year": 1937,
+        "end_year": 1937,
+        "place": "南口",
+        "place_moden": [
+            "北京市昌平区"
+        ],
+        "importance": 8,
+        "desc": "中日两军在南口镇激战，打乱了日本侵略者的战略计划。",
+        "relate": "中国守军 vs 日军"
+    },
+    {
+        "id": 181,
+        "dynasty": "民国",
+        "name": "反美抗暴运动",
+        "begin_year": 1946,
+        "end_year": 1946,
+        "place": "北平",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "北平学生发起反美抗暴斗争，抗议美军暴行。",
+        "relate": "北平学生 vs 美军"
+    },
+    {
+        "id": 182,
+        "dynasty": "民国",
+        "name": "平津战役",
+        "begin_year": 1948,
+        "end_year": 1949,
+        "place": "平津地区",
+        "place_moden": [
+            "北京市",
+            "天津市"
+        ],
+        "importance": 10,
+        "desc": "解放军迅速分割包围平津地区的国民党军，为和平解放北平创造条件。",
+        "relate": "解放军 vs 国民党军"
+    },
+    {
+        "id": 183,
+        "dynasty": "宋",
+        "name": "宋金联合攻辽",
+        "begin_year": 1120,
+        "end_year": 1122,
+        "place": "燕京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "宋金联合攻辽，企图收复燕京。",
+        "relate": "宋军、金军 vs 辽军"
+    },
+    {
+        "id": 184,
+        "dynasty": "宋",
+        "name": "宋军攻燕京",
+        "begin_year": 1122,
+        "end_year": 1122,
+        "place": "燕京",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "郭药师率宋军攻入燕京，但因援军未至而被辽军击败。",
+        "relate": "宋军 vs 辽军"
+    },
+    {
+        "id": 185,
+        "dynasty": "宋",
+        "name": "燕京之战",
+        "begin_year": 1126,
+        "end_year": 1126,
+        "place": "燕京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 7,
+        "desc": "宋军攻入燕京，辽官员开门接应，人民响应，但宋军因内部腐败未能攻克燕京。",
+        "relate": "宋军 vs 辽军"
+    },
+    {
+        "id": 186,
+        "dynasty": "金",
+        "name": "胡沙虎政变",
+        "begin_year": 1213,
+        "end_year": 1213,
+        "place": "北京",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "胡沙虎杀死完颜永济，立完颜珣为帝，后被部下将领杀死。",
+        "relate": "胡沙虎、完颜珣 vs 完颜永济"
+    },
+    {
+        "id": 187,
+        "dynasty": "金",
+        "name": "高梁河之战",
+        "begin_year": 1213,
+        "end_year": 1213,
+        "place": "易州、中都",
+        "place_morden": [
+            "河北省易县",
+            "北京市"
+        ],
+        "importance": 6,
+        "desc": "胡沙虎在高梁河桥上战胜蒙军。",
+        "relate": "胡沙虎 vs 蒙军"
+    },
+    {
+        "id": 188,
+        "dynasty": "金",
+        "name": "中都之围",
+        "begin_year": 1215,
+        "end_year": 1215,
+        "place": "中都、燕京、河北、河东、山东",
+        "place_moden": [
+            "北京市",
+            "河北省",
+            "山西省",
+            "山东省"
+        ],
+        "importance": 8,
+        "desc": "蒙军包围中都，城内缺粮，金统治集团内部大乱。",
+        "relate": "蒙军 vs 金军"
+    },
+    {
+        "id": 189,
+        "dynasty": "唐",
+        "name": "安禄山叛乱",
+        "begin_year": 755,
+        "end_year": 763,
+        "place": "幽州、云州",
+        "place_moden": [
+            "北京市",
+            "山西省大同市"
+        ],
+        "importance": 10,
+        "desc": "安禄山叛乱导致唐朝由盛转衰，最终导致五代十国的分裂局面。",
+        "relate": "安禄山 vs 唐朝"
+    },
+    {
+        "id": 190,
+        "dynasty": "五代",
+        "name": "石敬瑭割让燕云十六州",
+        "begin_year": 936,
+        "end_year": 938,
+        "place": "幽州、云州",
+        "place_moden": [
+            "北京市",
+            "山西省大同市"
+        ],
+        "importance": 10,
+        "desc": "石敬瑭割让燕云十六州给契丹，导致北方边疆地区丧失，影响深远。",
+        "relate": "石敬瑭 vs 契丹"
+    },
+    {
+        "id": 191,
+        "dynasty": "金",
+        "name": "女真人的入侵",
+        "begin_year": 1115,
+        "end_year": 1125,
+        "place": "幽州城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "女真首领完颜阿骨打建国称帝，国号为金，与北宋结盟抗辽，攻占辽南京城，北宋灭亡后继续南下。",
+        "relate": "女真 vs 辽"
+    },
+    {
+        "id": 192,
+        "dynasty": "金",
+        "name": "金军攻占辽中京",
+        "begin_year": 1122,
+        "end_year": 1122,
+        "place": "夹山（今内蒙古萨拉齐县西北）",
+        "place_morden": [
+            "内蒙古自治区萨拉齐县"
+        ],
+        "importance": 7,
+        "desc": "金军攻占辽中京，辽天祚帝西逃，宋军北伐迟缓，金军继续南下占领燕云地区。",
+        "relate": "金 vs 辽"
+    },
+    {
+        "id": 193,
+        "dynasty": "金",
+        "name": "金朝末年农民起义",
+        "begin_year": 1215,
+        "end_year": 1234,
+        "place": "山东、河南、陕西",
+        "place_morden": [
+            "山东省",
+            "河南省",
+            "陕西省"
+        ],
+        "importance": 8,
+        "desc": "金代后期政治腐败，北方社会经济凋敝，农民起义席卷北方，金朝军队腐朽，蒙古骑兵攻入中都城。",
+        "relate": "金朝 vs 蒙古"
+    },
+    {
+        "id": 194,
+        "dynasty": "元",
+        "name": "元末农民大起义",
+        "begin_year": 1351,
+        "end_year": 1368,
+        "place": "",
+        "place_morden": [],
+        "importance": 10,
+        "desc": "元末农民大起义席卷全国，红巾军起义坚持13年，朱元璋势力壮大，明军进占大都，元朝统治结束。",
+        "relate": "朱元璋 vs 蒙古统治者"
+    },
+    {
+        "id": 195,
+        "dynasty": "隋唐五代",
+        "name": "隋朝与突厥的冲突",
+        "begin_year": 607,
+        "end_year": 607,
+        "place": "内蒙古自治区清水河县境、榆林（郡治在今内蒙古自治区准格尔旗东北、黄河南岸）",
+        "place_morden": [
+            "内蒙古自治区清水河县",
+            "内蒙古自治区准格尔旗"
+        ],
+        "importance": 6,
+        "desc": "隋朝时突厥民族势力强盛，经常南下烧杀抢掠，隋文帝将义成公主许嫁于染干，启民可汗率部落南迁至朔州大利城。",
+        "relate": "隋文帝 vs 突厥"
+    },
+    {
+        "id": 196,
+        "dynasty": "先秦",
+        "name": "阪泉之战",
+        "begin_year": -2700,
+        "end_year": -2700,
+        "place": "阪泉之野",
+        "place_morden": [
+            "河北省张家口市"
+        ],
+        "importance": 8,
+        "desc": "黄帝与炎帝的战争，确立了黄帝的领导地位",
+        "relate": "黄帝 vs 炎帝"
+    },
+    {
+        "id": 197,
+        "dynasty": "先秦",
+        "name": "涿鹿之战",
+        "begin_year": -2700,
+        "end_year": -2700,
+        "place": "涿鹿之野",
+        "place_moden": [
+            "河北省张家口市"
+        ],
+        "importance": 9,
+        "desc": "黄帝与蚩尤的决战，黄帝擒杀蚩尤",
+        "relate": "黄帝 vs 蚩尤"
+    },
+    {
+        "id": 198,
+        "dynasty": "先秦",
+        "name": "山戎侵燕",
+        "begin_year": -7000,
+        "end_year": -7000,
+        "place": "清夷水（妫水河）流域",
+        "place_moden": [
+            "河北省张家口市"
+        ],
+        "importance": 6,
+        "desc": "春秋时期山戎侵燕，齐桓公率军伐山戎",
+        "relate": "齐桓公 vs 山戎"
+    },
+    {
+        "id": 199,
+        "dynasty": "秦汉",
+        "name": "汉高祖讨伐韩王信",
+        "begin_year": -200,
+        "end_year": -200,
+        "place": "广武以南，至晋阳",
+        "place_moden": [
+            "山西省太原市"
+        ],
+        "importance": 7,
+        "desc": "汉高祖亲率大军讨伐投归匈奴的韩王信",
+        "relate": "汉高祖 vs 韩王信"
+    },
+    {
+        "id": 200,
+        "dynasty": "辽",
+        "name": "契丹南侵，杨家将抗辽",
+        "begin_year": 902,
+        "end_year": 986,
+        "place": "陈家谷",
+        "place_moden": [
+            "河北省张家口市"
+        ],
+        "importance": 9,
+        "desc": "杨家将抗辽，杨业、杨延昭等名将涌现",
+        "relate": "杨业、杨延昭 vs 契丹"
+    },
+    {
+        "id": 201,
+        "dynasty": "金",
+        "name": "太祖阿骨打征辽",
+        "begin_year": 1122,
+        "end_year": 1123,
+        "place": "化州（今宣化）、圣州（今涿鹿）",
+        "place_moden": [
+            "河北省张家口市"
+        ],
+        "importance": 8,
+        "desc": "金太祖阿骨打亲自征辽，攻占多个州城",
+        "relate": "金太祖 vs 辽"
+    },
+    {
+        "id": 202,
+        "dynasty": "金",
+        "name": "皇帝亲自统兵南下伐金",
+        "begin_year": 1211,
+        "end_year": 1212,
+        "place": "野狐岭（在万全县北）、大水泺、丰利等县（在大同北塞外）、乌沙堡（在张北县西）、宣平（在张家口西）、德兴府（今涿鹿）、金西京（大同）、密谷口（在阳高县西北）、金宣德府（今宣化）、五回岭（在今易县西）",
+        "place_morden": [
+            "河北省张家口市",
+            "河北省大同市",
+            "河北省张北县",
+            "河北省张家口市万全县",
+            "河北省涿鹿县",
+            "山西省大同市",
+            "山西省阳高县",
+            "河北省宣化县",
+            "河北省易县"
+        ],
+        "importance": 8,
+        "desc": "成吉思汗六年起，蒙古军连续攻陷金朝多地，包括野狐岭、大水泺、丰利等县、乌沙堡、宣平、德兴府、金西京、密谷口、金宣德府、五回岭等地，对金朝造成沉重打击。",
+        "relate": "成吉思汗 vs 金军"
+    },
+    {
+        "id": 203,
+        "dynasty": "民国",
+        "name": "蒙古瓦剌也先寇大同，参将吴浩战死",
+        "begin_year": 1449,
+        "end_year": 1449,
+        "place": "鸡鸣山（宣化东南）",
+        "place_moden": [
+            "河北省张家口市宣化区"
+        ],
+        "importance": 7,
+        "desc": "1449年，蒙古瓦剌部首领也先率军进攻大同，明军参将吴浩战死。明英宗在太监王振挟持下亲征，结果在土木堡被瓦剌军包围，明军大败，英宗被俘，史称'土木之变'。",
+        "relate": "明英宗、吴浩 vs 瓦剌也先"
+    },
+    {
+        "id": 204,
+        "dynasty": "元",
+        "name": "蒙古始伐金",
+        "begin_year": 1211,
+        "end_year": 1234,
+        "place": "中都城",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "1211年，成吉思汗率军开始攻打金朝，中都城遭焚毁。1234年，金朝灭亡。1260年，忽必烈即位，建立元朝，将都城从开平迁至燕京，改名大都，开启了元朝统治。",
+        "relate": "成吉思汗、窝阔台、忽必烈 vs 金朝"
+    },
+    {
+        "id": 205,
+        "dynasty": "民国",
+        "name": "“五四”爱国运动",
+        "begin_year": 1919,
+        "end_year": 1919,
+        "place": "天安门广场",
+        "place_moden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "1919年，北京爆发'五四'爱国运动，反对帝国主义和封建主义，揭开了中国新民主主义革命的序幕。",
+        "relate": "北京学生、市民 vs 帝国主义、封建势力"
+    },
+    {
+        "id": 206,
+        "dynasty": "民国",
+        "name": "“九一八”事变后的抗日救国运动",
+        "begin_year": 1931,
+        "end_year": 1935,
+        "place": "东北三省、北平",
+        "place_moden": [
+            "辽宁省",
+            "吉林省",
+            "黑龙江省",
+            "北京市"
+        ],
+        "importance": 9,
+        "desc": "1931年'九一八'事变后，日本侵占中国东北三省。1935年12月9日，北平学生在共产党领导下举行抗日救国示威游行，反对华北自治，要求停止内战、一致对外，掀起全国抗日救亡运动新高潮。",
+        "relate": "北平学生 vs 日本帝国主义"
+    },
+    {
+        "id": 207,
+        "dynasty": "民国",
+        "name": "卢沟桥事变",
+        "begin_year": 1937,
+        "end_year": 1937,
+        "place": "卢沟桥宛平城",
+        "place_morden": [
+            "北京市"
+        ],
+        "importance": 10,
+        "desc": "1937年7月7日，日本侵略军向中国军队发动进攻，中国军队英勇反击，标志着中国全面抗战开始。",
+        "relate": "中国军队 vs 日本侵略军"
+    },
+    {
+        "id": 208,
+        "dynasty": "民国",
+        "name": "国民党在长城内外抗击日寇",
+        "begin_year": 1937,
+        "end_year": 1937,
+        "place": "北平城郊、长城内外、北平西山、平西、冀北、冀东、门头沟",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省张家口市"
+        ],
+        "importance": 8,
+        "desc": "国民党军在北平城郊和长城内外抗击日寇，为抗日战争作出贡献。",
+        "relate": "国民党军 vs 日寇"
+    },
+    {
+        "id": 209,
+        "dynasty": "民国",
+        "name": "平津战役",
+        "begin_year": 1948,
+        "end_year": 1949,
+        "place": "北平（北京）、天津、塘沽、唐山、张家口",
+        "place_morden": [
+            "北京市",
+            "天津市",
+            "河北省唐山市",
+            "河北省张家口市"
+        ],
+        "importance": 10,
+        "desc": "平津战役是解放战争时期决定中国前途和命运的三大战役之一，战场在永定河上下游流域。",
+        "relate": "中国人民解放军 vs 国民党军"
+    }
+]
