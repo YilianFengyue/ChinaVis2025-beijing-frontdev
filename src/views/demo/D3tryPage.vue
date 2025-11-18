@@ -24,6 +24,9 @@ import MainView from '~/src/components/D3components/MainView.vue';
 import MainViewImport from '~/src/components/D3components/MainViewImport.vue';
 import MainViewVegetation from '~/src/components/D3components/MainViewVegetation.vue';
 
+import CombinedRadialChart from '~/src/components/D3components/CombinedRadialChart.vue';
+
+
 // 注册 ECharts 组件
 echarts.use([
   TitleComponent,
@@ -193,7 +196,11 @@ onMounted(() => {
 
     </v-row>
 
-    
+    <v-row>
+      <v-col cols="12">
+        <CombinedRadialChart />
+      </v-col>
+    </v-row>
 
 
   <!-- </v-container> -->
