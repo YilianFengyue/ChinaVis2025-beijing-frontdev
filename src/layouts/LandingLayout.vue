@@ -29,7 +29,7 @@ const customizeTheme = useCustomizeThemeStore();
   >
     <!-- <GlobalLoading /> -->
     <!-- <ToolBox /> -->
-    <div class="flex-fill">
+    <div class="flex-fill content-wrapper">
       <slot></slot>
     </div>
   </v-main>
@@ -43,5 +43,11 @@ const customizeTheme = useCustomizeThemeStore();
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.content-wrapper {
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto;
 }
 </style>

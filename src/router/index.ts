@@ -17,6 +17,52 @@ export const routes = [
     },
     component: () => import("@/views/pages/DashBoard.vue"),
   },
+  // T1生态环境长期演化
+  {
+    path: "/ecology",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/GeoEnvView.vue"),
+  },
+  // T1生态环境长期演化
+  {
+    path: "/ecology",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/GeoEnvView.vue"),
+  },
+  // T2冲击事件与大事件
+  {
+    path: "/events",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/EventsView.vue"),
+  },
+  // T3内部机制
+  {
+    path: "/urban",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/UrbanView.vue"),
+  },
+  // T4制度经济
+  {
+    path: "/society",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/SocietyView.vue"),
+  },
+
   {
     path: "/D3",
     meta: {
@@ -34,14 +80,7 @@ export const routes = [
     component: () => import("@/views/pages/LandingPage.vue"),
   },
 
-  {
-      path: "/Card",
-      meta: {
-        requiresAuth: true,
-        layout: "landing",
-      },
-      component: () => import("@/views/pages/CardPage.vue"),
-    },
+  
 
 
 

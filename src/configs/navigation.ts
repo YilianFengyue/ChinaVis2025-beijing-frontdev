@@ -14,7 +14,31 @@ export default {
           link: "/dashboard",
           icon: "mdi-view-dashboard-outline",
         },
-        
+        {
+
+          text: "T1生态环境长期演化",
+          link: "/ecology",
+          icon: "mdi-earth",
+        },
+        {
+
+          text: "T2事件演化",
+          link: "/events",
+          icon: "mdi-history",
+        },
+        {
+
+          text: "T3城市演化",
+          link: "/urban",
+          icon: "mdi-city-variant",
+        },
+        {
+
+          text: "T4制度经济",
+          link: "/society",
+          icon: "mdi-account-group",
+        },
+
       ],
     },
 
