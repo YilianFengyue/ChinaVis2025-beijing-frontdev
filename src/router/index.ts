@@ -25,7 +25,23 @@ export const routes = [
     },
     component: () => import("@/views/demo/D3tryPage.vue"),
   },
+  {
+    path: "/Landing",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/LandingPage.vue"),
+  },
 
+  {
+      path: "/Card",
+      meta: {
+        requiresAuth: true,
+        layout: "landing",
+      },
+      component: () => import("@/views/pages/CardPage.vue"),
+    },
 
 
 

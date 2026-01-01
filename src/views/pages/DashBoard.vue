@@ -51,11 +51,11 @@ import CityCloudCard from "~/src/components/chinavis/CityCloudCard.vue";
     <!-- ---------------------------------------------- -->
     <!---Third Row -->
     <!-- ---------------------------------------------- -->
-    <v-row class="card-shadow flex-grow-0" dense> 
+    <v-row class="card-shadow flex-grow-0" dense>
 
       <v-col cols="6" xl="12">
         <city-cloud-card></city-cloud-card>
-      </v-col>  
+      </v-col>
     </v-row>
 
   </div>

@@ -1,6 +1,6 @@
 
 ```
-ChinaVis2025-beijing-frontdev
+ChinaVis2025-Beijing
 ├─ .browserslistrc
 ├─ .dockerignore
 ├─ .editorconfig
@@ -20,7 +20,8 @@ ChinaVis2025-beijing-frontdev
 │  │  │  ├─ china.json
 │  │  │  ├─ china_cities.json
 │  │  │  └─ china_full.json
-│  │  └─ merged_disaster_events.json
+│  │  ├─ merged_disaster_events.json
+│  │  └─ rivers
 │  ├─ favicon.ico
 │  ├─ favicon.png
 │  ├─ images
@@ -29,10 +30,11 @@ ChinaVis2025-beijing-frontdev
 │  │  ├─ centerC.jpg
 │  │  └─ texas.png
 │  ├─ masks
-│  │  ├─ 京.svg
-│  │  ├─ 北.svg
-│  │  └─ 北京市.svg
+│  │  ├─ Bei.png
+│  │  ├─ BeijingMap.png
+│  │  └─ Jing.png
 │  └─ _redirects
+├─ README.md
 ├─ README.zh-CN.md
 ├─ src
 │  ├─ App.vue
@@ -109,6 +111,7 @@ ChinaVis2025-beijing-frontdev
 │  │  ├─ GlobalLoading.vue
 │  │  ├─ ImagePreview.vue
 │  │  ├─ LoadingView.vue
+│  │  ├─ material
 │  │  ├─ navigation
 │  │  │  ├─ MainMenu.vue
 │  │  │  └─ MainSidebar.vue
@@ -213,7 +216,9 @@ ChinaVis2025-beijing-frontdev
 │     │     │  └─ Toolbar5.vue
 │     │     └─ ToolbarPage.vue
 │     ├─ pages
-│     │  └─ DashBoard.vue
+│     │  ├─ CardPage.vue
+│     │  ├─ DashBoard.vue
+│     │  └─ LandingPage.vue
 │     └─ ui
 │        └─ LottieAnimationPage.vue
 ├─ tsconfig.json
