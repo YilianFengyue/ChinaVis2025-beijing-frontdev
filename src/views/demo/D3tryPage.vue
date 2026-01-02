@@ -20,6 +20,12 @@ import SpikeMap from '~/src/components/D3components/SpikeMap.vue';
 import BubbleChart from '~/src/components/D3components/BubbleChart.vue';
 import CircularChartEvent from '~/src/components/D3components/CircularChartEvent.vue';
 import RiversCard from '~/src/components/chinavis/rivers/RiversCard.vue';
+import MainView from '~/src/components/D3components/MainView.vue';
+import MainViewImport from '~/src/components/D3components/MainViewImport.vue';
+import MainViewVegetation from '~/src/components/D3components/MainViewVegetation.vue';
+
+import CombinedRadialChart from '~/src/components/D3components/CombinedRadialChart.vue';
+
 
 // 注册 ECharts 组件
 echarts.use([
@@ -141,6 +147,20 @@ onMounted(() => {
     </v-row>
   </v-container>
   
+    <v-row>
+      <v-col cols="12" style="min-height: 450px;"> 
+        <MainView />
+      </v-col>
+
+      <v-col cols="12" style="min-height: 450px;"> 
+        <MainViewImport />
+      </v-col>
+
+      <v-col cols="12" style="min-height: 450px;"> 
+        <MainViewVegetation />
+      </v-col>
+    </v-row>
+
     <!-- <v-container> -->
     <v-row style="height: 550px;">
       <v-col cols="7">
@@ -172,6 +192,13 @@ onMounted(() => {
         <v-card class="card-shadow"
           ><rivers-card></rivers-card>
         </v-card>
+      </v-col>
+
+    </v-row>
+
+    <v-row>
+      <v-col cols="12">
+        <CombinedRadialChart />
       </v-col>
     </v-row>
 
