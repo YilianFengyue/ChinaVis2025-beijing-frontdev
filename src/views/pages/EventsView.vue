@@ -11,6 +11,10 @@ import {
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 
+// 引入新增的 D3 可视化组件
+import CombinedRadialChart from '@/components/D3components/CombinedRadialChart.vue';
+import RadialAreaChart from '@/components/D3components/RadialAreaChart.vue';
+
 // 注册 ECharts 组件
 echarts.use([
   TitleComponent,
@@ -62,7 +66,7 @@ const itemsPerPage = ref(9);
 const detailDialog = ref(false);
 const currentEvent = ref<EventItem | null>(null);
 
-// 计算属性处理 v-model 绑定
+// 计算属性处理 v-model 绑定 (修复之前的 Bug)
 const isOverlayVisible = computed({
   get: () => !!pendingDynasty.value,
   set: (val) => {
@@ -70,16 +74,14 @@ const isOverlayVisible = computed({
   }
 });
 
-// ECharts 实例
+// ECharts 实例 (左侧条形图)
 const chartRef = ref<HTMLElement | null>(null);
 let myChart: echarts.ECharts | null = null;
 
-// 【核心修复】增加 selected 为空的判断
+// 核心匹配逻辑 (带空值检查)
 const matchDynasty = (eventDynasty: string, selected: string | null) => {
-  // 1. 如果 selected 为 null/undefined (比如弹窗关闭瞬间)，直接返回 false
   if (!selected || !eventDynasty) return false;
   
-  // 2. 正常匹配逻辑
   if (eventDynasty === selected) return true;
   
   if (selected === '未知' && (eventDynasty === '未知' || eventDynasty === 'Unknown')) return true;
@@ -90,9 +92,7 @@ const matchDynasty = (eventDynasty: string, selected: string | null) => {
   if (selected === '清朝' && eventDynasty.includes('清')) return true;
   if (selected === '民国时期' && (eventDynasty.includes('民国') || eventDynasty.includes('中华民国'))) return true;
   
-  // 3. 模糊匹配 (确保 selected 是字符串后再调用 includes)
   if (selected.includes(eventDynasty) || eventDynasty.includes(selected)) return true;
-  
   return false;
 };
 
@@ -166,16 +166,14 @@ async function loadEventData() {
   }
 }
 
-// 5. 图表逻辑
+// 5. 条形图逻辑
 const initChart = () => {
   if (!chartRef.value) return;
   
   if (myChart) myChart.dispose();
   myChart = echarts.init(chartRef.value);
 
-  // 统计每个标准朝代的事件数
   const counts = dynastyConfig.map(d => {
-    // 这里的 matchDynasty 调用是安全的，因为 d.label 必定是字符串
     const count = allEvents.value.filter(e => matchDynasty(e.dynasty, d.label)).length;
     return { name: d.label, value: count };
   });
@@ -220,13 +218,9 @@ const initChart = () => {
 
   myChart.setOption(option);
 
-  // 点击事件
   myChart.on('click', (params: any) => {
     const clickedDynasty = params.name;
-    
-    if (selectedDynasty.value === clickedDynasty && showEventList.value) {
-      return; 
-    }
+    if (selectedDynasty.value === clickedDynasty && showEventList.value) return; 
 
     pendingDynasty.value = clickedDynasty;
     updateChartColor();
@@ -252,9 +246,6 @@ const updateChartColor = () => {
 const confirmViewDetails = () => {
   if (pendingDynasty.value) {
     selectedDynasty.value = pendingDynasty.value;
-    // 关键点：这里设为 null 后，Vue 会触发 computed 重算
-    // 此时模板中的 matchDynasty(..., pendingDynasty) 会传入 null
-    // 因此 matchDynasty 必须能处理 null
     pendingDynasty.value = null; 
     showEventList.value = true;
     currentPage.value = 1;
@@ -268,7 +259,6 @@ const confirmViewDetails = () => {
   }
 };
 
-// 取消查看
 const cancelView = () => {
   pendingDynasty.value = null; 
   updateChartColor(); 
@@ -351,44 +341,56 @@ onUnmounted(() => {
 
 <template>
   <div class="pa-5">
-    <h2 class="text-h4 mb-6 text-center font-weight-bold">都城纪事统计</h2>
+    <h2 class="text-h4 mb-6 text-center font-weight-bold">都城纪事与环境综合分析</h2>
 
-    <v-card class="card-shadow mb-6 pa-4 position-relative" elevation="0">
-      <v-card-title class="text-h6 font-weight-bold mb-2">
-        <v-icon start color="primary">mdi-chart-bar</v-icon>
-        各朝代大事件统计
-      </v-card-title>
-      <v-card-subtitle>
-        点击下方柱状图选择朝代查看详情
-      </v-card-subtitle>
+    <v-row class="mb-6">
+      <v-col cols="12">
+        <CombinedRadialChart />
+      </v-col>
+    </v-row>
+
+    <v-row class="mb-6" align="stretch">
       
-      <div ref="chartRef" style="width: 100%; height: 350px;"></div>
+      <v-col cols="12" md="6">
+        <v-card class="card-shadow pa-4 position-relative h-100" elevation="0" variant="outlined">
+          <v-card-title class="chart-title">
+            各朝代大事件统计 (交互入口)
+          </v-card-title>
+          
+          <div ref="chartRef" style="width: 100%; height: 500px;"></div>
 
-      <v-overlay
-        v-model="isOverlayVisible"
-        contained
-        class="align-center justify-center"
-        scrim="rgba(255,255,255,0.8)"
-        persistent
-      >
-        <v-card class="elevation-4 text-center pa-6" min-width="300">
-          <v-icon size="large" color="primary" class="mb-3">mdi-eye-circle-outline</v-icon>
-          <div class="text-h6 font-weight-bold mb-2">
-            查看 {{ pendingDynasty }} 详情?
-          </div>
-          <div class="text-body-2 text-medium-emphasis mb-4">
-            该朝代共有 {{ allEvents.filter(e => matchDynasty(e.dynasty, pendingDynasty || '')).length }} 条记录
-          </div>
-          <div class="d-flex justify-center gap-4">
-            <v-btn variant="outlined" color="grey" @click="cancelView">取消</v-btn>
-            <v-btn color="primary" variant="flat" @click="confirmViewDetails">
-              确认查看
-              <v-icon end>mdi-arrow-down</v-icon>
-            </v-btn>
-          </div>
+          <v-overlay
+            v-model="isOverlayVisible"
+            contained
+            class="align-center justify-center"
+            scrim="rgba(255,255,255,0.8)"
+            persistent
+          >
+            <v-card class="elevation-4 text-center pa-6" min-width="300">
+              <v-icon size="large" color="primary" class="mb-3">mdi-eye-circle-outline</v-icon>
+              <div class="text-h6 font-weight-bold mb-2">
+                查看 {{ pendingDynasty }} 详情?
+              </div>
+              <div class="text-body-2 text-medium-emphasis mb-4">
+                该朝代共有 {{ allEvents.filter(e => matchDynasty(e.dynasty, pendingDynasty || '')).length }} 条记录
+              </div>
+              <div class="d-flex justify-center gap-4">
+                <v-btn variant="outlined" color="grey" @click="cancelView">取消</v-btn>
+                <v-btn color="primary" variant="flat" @click="confirmViewDetails">
+                  确认查看
+                  <v-icon end>mdi-arrow-down</v-icon>
+                </v-btn>
+              </div>
+            </v-card>
+          </v-overlay>
         </v-card>
-      </v-overlay>
-    </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <RadialAreaChart class="h-100" />
+      </v-col>
+
+    </v-row>
 
     <v-expand-transition>
       <div v-if="showEventList" id="event-list-section">
@@ -516,6 +518,17 @@ onUnmounted(() => {
   -webkit-line-clamp: 8; 
   -webkit-box-orient: vertical;
   white-space: normal;
+}
+
+.chart-title {
+  font-weight: 600;
+  color: #5a4b40;
+  padding: 16px;
+  text-align: center;
+  
+  .v-theme--dark & {
+    color: #D7CCC8;
+  }
 }
 
 .gap-4 {
