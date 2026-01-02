@@ -43,6 +43,11 @@ const customizeTheme = useCustomizeThemeStore();
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .content-wrapper {

@@ -1,137 +1,133 @@
 <template>
-  <v-card flat class="rivers-card pa-4">
-    <!-- 标题和搜索 -->
-    <v-row align="center" class="mb-2" dense>
-      <v-col cols="auto">
-        <h2 class="card-title">生命之河</h2>
-      </v-col>
-      <v-col cols="auto">
-        <v-text-field
-          v-model="searchText"
-          density="compact"
-          variant="outlined"
-          placeholder="输入河流名称..."
-          prepend-inner-icon="mdi-magnify"
-          hide-details
-          class="search-field"
-          @input="handleSearch"
-        ></v-text-field>
-      </v-col>
+  <v-card flat class="arch-panel">
+    <div class="panel-header">
+      <v-row align="center" dense no-gutters>
+        <v-col cols="auto" class="d-flex align-center mr-10">
+          <div class="header-block"></div>
+          <div class="header-text-group">
+            <h2 class="panel-title">生命之河</h2>
+            <span class="panel-subtitle">RIVER CHRONICLE</span>
+          </div>
+        </v-col>
 
-      <!-- 重置按钮 -->
-      <v-col cols="auto" v-if="selectedDynasty">
-        <v-btn
-          size="large"
-          variant="text"
-          class="reset-btn"
-          @click="resetView"
-        >
-          <v-icon start size="large">mdi-refresh</v-icon>
-          重置视图
-        </v-btn>
-      </v-col>
-    </v-row>
+        <v-col cols="auto">
+          <div class="arch-input-wrapper">
+            <span class="input-label">REF.</span>
+            <input 
+              v-model="searchText"
+              type="text" 
+              placeholder="SEARCH..." 
+              class="arch-input"
+              @input="handleSearch"
+            >
+            <v-icon size="small" color="#666" class="search-icon">mdi-magnify</v-icon>
+          </div>
+        </v-col>
 
-    <!-- 图例 - 更紧凑 -->
-    <v-row dense class="mb-2 legend-row">
-      <!-- 行为类型 -->
-      <v-col cols="auto" class="legend-group">
-        <span class="legend-label">行为类型</span>
-        <span class="legend-item" v-for="(color, name) in COLORS.actions" :key="name">
-          <span class="dot" :style="{background: color}"></span>
-          {{ name }}
-        </span>
-      </v-col>
+        <v-spacer></v-spacer>
 
-      <!-- 城市功能 -->
-      <v-col cols="auto" class="legend-group">
-        <span class="legend-label">城市功能</span>
-        <span class="legend-item" v-for="(color, name) in COLORS.functions" :key="name">
-          <span class="line-dot" :style="{background: color}"></span>
-          {{ name }}
-        </span>
-      </v-col>
+        <v-col cols="auto" v-if="selectedDynasty">
+          <button class="arch-btn" @click="resetView">
+            [ RESET VIEW ]
+          </button>
+        </v-col>
+      </v-row>
 
-      <!-- 河道类型 -->
-      <v-col cols="auto" class="legend-group">
-        <span class="legend-label">河道类型</span>
-        <span class="legend-item">
-          <span class="line-solid"></span>
-          自然河道
-        </span>
-        <span class="legend-item">
-          <span class="line-dashed"></span>
-          人工开凿
-        </span>
-      </v-col>
+      <div class="legend-bar">
+        <div class="legend-group">
+          <span class="legend-head">ACTION</span>
+          <div class="legend-items">
+            <span class="l-item" v-for="(color, name) in COLORS.actions" :key="name">
+              <span class="dot-circle" :style="{background: color}"></span>
+              {{ name }}
+            </span>
+          </div>
+        </div>
+        
+        <div class="legend-sep">/</div>
 
-      <!-- 淤积 -->
-      <v-col cols="auto" class="legend-group">
-        <span class="legend-label">淤积</span>
-        <span class="legend-item">
-          <span class="silt-block"></span>
-          淤积段
-        </span>
-      </v-col>
-    </v-row>
+        <div class="legend-group">
+          <span class="legend-head">FUNC</span>
+          <div class="legend-items">
+            <span class="l-item" v-for="(color, name) in COLORS.functions" :key="name">
+              <span class="line-mark" :style="{background: color}"></span>
+              {{ name }}
+            </span>
+          </div>
+        </div>
 
-    <!-- 甘特图 -->
+        <div class="legend-sep">/</div>
+
+        <div class="legend-group">
+          <span class="legend-head">STATE</span>
+          <div class="legend-items">
+            <span class="l-item">
+              <span class="line-solid-mark"></span>
+              自然
+            </span>
+            <span class="l-item">
+              <span class="line-dashed-mark"></span>
+              人工
+            </span>
+            <span class="l-item">
+              <span class="block-mark"></span>
+              淤积
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div ref="chartContainer" class="chart-container">
       <svg ref="svgChart"></svg>
     </div>
 
-    <!-- 底部：年代块 + 时间轴 -->
     <div ref="timelineWrapper" class="timeline-wrapper">
       <div ref="dynastyBar" class="dynasty-bar"></div>
       <div ref="timeAxis" class="time-axis"></div>
     </div>
 
-    <!-- 自定义 Tooltip 卡片（高层级） -->
     <Teleport to="body">
-      <v-card
-        v-if="tooltip.show"
-        :style="{
-          position: 'fixed',
-          left: tooltip.x + 'px',
-          top: tooltip.y + 'px',
-          zIndex: 99999,
-          maxWidth: '360px',
-        }"
-        elevation="8"
-        class="river-tooltip-card"
-      >
-        <v-card-title class="tooltip-header">
-          <strong>{{ tooltip.data.river }}</strong>
-        </v-card-title>
-        <v-card-text class="tooltip-body">
-          <div class="tooltip-content">
-            <div v-if="tooltip.data.alias" class="tooltip-row">
-              <span class="tooltip-label">别名</span>
-              <span class="tooltip-value">{{ tooltip.data.alias }}</span>
+      <Transition name="fade-up">
+        <div
+          v-if="tooltip.show"
+          class="arch-tooltip"
+          :style="{
+            left: tooltip.x + 20 + 'px', 
+            top: tooltip.y + 'px'
+          }"
+        >
+          <div class="tt-header">
+            <div class="tt-title-row">
+              <span class="tt-name">{{ tooltip.data.river }}</span>
+              <span class="tt-id">No.{{ tooltip.data.year || '----' }}</span>
             </div>
-            <div class="tooltip-row">
-              <span class="tooltip-label">时期</span>
-              <span class="tooltip-value">{{ tooltip.data.period }}</span>
-            </div>
-            <div class="tooltip-row">
-              <span class="tooltip-label">行为</span>
-              <span class="tooltip-value">{{ tooltip.data.action }}</span>
-            </div>
-            <div v-if="tooltip.data.year" class="tooltip-row">
-              <span class="tooltip-label">年份</span>
-              <span class="tooltip-value">{{ tooltip.data.year }}年</span>
-            </div>
-            <div v-if="tooltip.data.functions" class="tooltip-row">
-              <span class="tooltip-label">功能</span>
-              <span class="tooltip-value">{{ tooltip.data.functions }}</span>
-            </div>
-            <div v-if="tooltip.data.note" class="tooltip-note">
-              <span class="tooltip-label">摘要</span>
-              <p class="tooltip-evidence">{{ tooltip.data.note }}</p>
+            <div class="tt-sub-row">
+              <span class="tt-alias" v-if="tooltip.data.alias">{{ tooltip.data.alias }}</span>
             </div>
           </div>
-        </v-card-text>
-      </v-card>
+
+          <div class="tt-grid">
+            <div class="tt-item">
+              <span class="tt-label">PERIOD</span>
+              <span class="tt-value">{{ tooltip.data.period.split('（')[0] }}</span>
+            </div>
+            <div class="tt-item">
+              <span class="tt-label">ACTION</span>
+              <span class="tt-value highlight-gold">{{ tooltip.data.action }}</span>
+            </div>
+            <div class="tt-item full">
+              <span class="tt-label">FUNCTION</span>
+              <span class="tt-value">{{ tooltip.data.functions || 'N/A' }}</span>
+            </div>
+          </div>
+
+          <div v-if="tooltip.data.note" class="tt-note">
+            <div class="tt-note-label">ARCHIVE RECORD:</div>
+            <p class="tt-note-text">{{ tooltip.data.note }}</p>
+          </div>
+        </div>
+      </Transition>
     </Teleport>
   </v-card>
 </template>
@@ -142,33 +138,37 @@ import * as d3 from 'd3';
 // 导入真实数据
 import riverData from '@/data/rivers_merged.json';
 
-// 🎨 高级灰古风配色
+// 🎨 终末地·武陵图纸配色方案
+// 🎨 建筑图纸配色方案 (Architectural Blueprint)
 const COLORS = {
   actions: {
-    '开凿': '#8B5A2B',
-    '竣工': '#D4C4B0',
-    '重开': '#BFA88A',
-    '改道': '#A67B5B',
-    '废弃': '#6B4423',
-    '其他': '#4A3728',
+    '开凿': '#2C3E50', // 深蓝灰 - 强调 (墨)
+    '竣工': '#EFD160', // 古金 - 关键节点 (金)
+    '重开': '#5D7A8C', // 蓝黛 - 重启
+    '改道': '#D98E5F', // 赭石 - 变迁
+    '废弃': '#7F8C8D', // 混凝土灰
+    '其他': '#95A5A6', 
   },
   functions: {
-    '运输': '#9DB4C0',
-    '调控': '#5C8A97',
-    '环境': '#7BA3B0',
-    '防灾': '#3D7A8C',
-    '城规': '#2E6171',
-    '军事': '#1D4E5E',
-    '其它': '#4A6670',
+    '运输': '#546E7A', // 蓝灰
+    '调控': '#BDBD3F', // 青黛 - 活力 (青)
+    '环境': '#81C784', // 植被绿 (低饱和)
+    '防灾': '#D4A373', // 陶土色
+    '城规': '#5D4037', // 熟褐
+    '军事': '#455A64', // 战术灰
+    '其它': '#B0BEC5',
   },
-  siltation: '#C9B99A',
-  dynasty: '#6B5B4F',
-  dynastyHover: '#8B7B6F',
-  background: '#FAFAF8',
-  laneBackground: '#FFFFFF',
-  laneBorder: '#E8E4DE',
-  text: '#3A3632',
-  textMuted: '#7A756E',
+  siltation: '#BCAAA4',  // 淤积 - 浅褐
+  
+  // 核心交互与背景
+  dynasty: '#424242',    // 朝代条 - 深灰
+  dynastyHover: '#EFD160', // ⚠ 修正：Hover 改为古金
+  
+  background: '#E9E9E9', // 全局背景 - 建筑灰
+  laneBackground: '#FFFFFF', // 泳道 - 纯白 (为了在灰底上更清晰)
+  laneBorder: '#D1D1D1', // 泳道框 - 铅笔线
+  text: '#212121',       // 主字 - 碳黑
+  textMuted: '#616161',  // 辅字 - 铅笔灰
 };
 
 // 朝代配置
@@ -325,7 +325,7 @@ const drawChart = (animate: boolean = false) => {
   const duration = animate ? 600 : 0;
   isTransitioning.value = animate;
 
-  const margin = { top: 8, right: 60, bottom: 8, left: 100 };
+  const margin = { top: 8, right: 60, bottom: 8, left: 130 }; // 增加左边距防止长名称溢出
   const width = chartContainer.value.clientWidth - margin.left - margin.right;
   const rowHeight = 24; // 更紧凑的泳道高度
   const height = filteredRivers.value.length * rowHeight;
@@ -341,10 +341,42 @@ const drawChart = (animate: boolean = false) => {
   }
   g.attr('transform', `translate(${margin.left},${margin.top})`);
 
-  // 比例尺
-  const xScale = d3.scaleLinear()
-    .domain([timeRange.value.start, timeRange.value.end])
-    .range([0, width]);
+  // 🔥 非线性比例尺：1000年为分界点
+  // 1000年前（-800~1000）占 30% 宽度，1000年后（1000~1949）占 70% 宽度
+  const BREAK_YEAR = 1000;
+  const EARLY_RATIO = 0.30; // 前期占 30%
+  
+  // 创建分段线性比例尺函数
+  const createPiecewiseScale = (domainStart: number, domainEnd: number, rangeWidth: number) => {
+    // 如果是选中单个朝代（时间跨度小），使用普通线性
+    if (domainEnd - domainStart < 300) {
+      return d3.scaleLinear().domain([domainStart, domainEnd]).range([0, rangeWidth]);
+    }
+    
+    // 计算分界点在当前域中的位置
+    const breakInDomain = Math.max(domainStart, Math.min(domainEnd, BREAK_YEAR));
+    
+    // 如果分界点在域外，使用普通线性
+    if (breakInDomain <= domainStart || breakInDomain >= domainEnd) {
+      return d3.scaleLinear().domain([domainStart, domainEnd]).range([0, rangeWidth]);
+    }
+    
+    // 分段比例尺
+    const earlyWidth = rangeWidth * EARLY_RATIO;
+    const lateWidth = rangeWidth * (1 - EARLY_RATIO);
+    
+    return (year: number) => {
+      if (year <= breakInDomain) {
+        // 前期：-800 到 1000 映射到 0 到 earlyWidth
+        return ((year - domainStart) / (breakInDomain - domainStart)) * earlyWidth;
+      } else {
+        // 后期：1000 到 1949 映射到 earlyWidth 到 rangeWidth
+        return earlyWidth + ((year - breakInDomain) / (domainEnd - breakInDomain)) * lateWidth;
+      }
+    };
+  };
+  
+  const xScale = createPiecewiseScale(timeRange.value.start, timeRange.value.end, width) as any;
 
   const yScale = d3.scaleBand()
     .domain(filteredRivers.value)
@@ -384,8 +416,7 @@ const drawChart = (animate: boolean = false) => {
         .attr('height', h)
         .attr('fill', COLORS.laneBackground)
         .attr('stroke', COLORS.laneBorder)
-        .attr('stroke-width', 0.5)
-        .attr('rx', 2);
+        .attr('stroke-width', 0.5);
 
       // 过滤当前时间范围内的segments
       const segmentsInRange = riverInfo.segments.filter(seg =>
@@ -415,8 +446,7 @@ const drawChart = (animate: boolean = false) => {
           .attr('width', xScale(range.end) - xScale(range.start))
           .attr('height', h - 4)
           .attr('fill', COLORS.siltation)
-          .attr('opacity', 0.4)
-          .attr('rx', 2);
+          .attr('opacity', 0.4);
       });
 
       // 画功能线
@@ -442,7 +472,7 @@ const drawChart = (animate: boolean = false) => {
               .attr('stroke-linecap', 'round');
 
             if (isArtificial) {
-              line.attr('stroke-dasharray', '6,3');
+              line.attr('stroke-dasharray', '10,6'); // 更大的虚线间隔
             }
           });
         } else {
@@ -455,7 +485,7 @@ const drawChart = (animate: boolean = false) => {
             .attr('stroke', COLORS.textMuted)
             .attr('stroke-width', 1.5)
             .attr('opacity', 0.4 * baseOpacity)
-            .attr('stroke-linecap', 'round');
+            .attr('stroke-linecap', 'square');
 
           if (isArtificial) {
             line.attr('stroke-dasharray', '6,3');
@@ -654,34 +684,51 @@ const drawTimeAxis = (xScale: any, margin: any, chartWidth: number, duration: nu
   // 清除旧内容
   g.selectAll('*').remove();
 
-  let tickValues;
+  // 根据视图选择刻度值
+  let tickValues: number[];
   if (!selectedDynasty.value) {
-    tickValues = [-800, -400, 0, 400, 800, 1200, 1600, 1949];
+    // 全局视图：前期稀疏，后期正常
+    tickValues = [-800, -400, 0, 400, 800, 1000, 1200, 1400, 1600, 1800, 1949];
   } else {
     const range = timeRange.value.end - timeRange.value.start;
     const step = range > 200 ? 50 : (range > 100 ? 25 : 10);
     tickValues = d3.range(timeRange.value.start, timeRange.value.end + 1, step);
   }
 
-  const axis = d3.axisBottom(xScale)
-    .tickValues(tickValues)
-    .tickSize(4)
-    .tickFormat((d: any) => d + '年');
+  // 绘制刻度线
+  const tickLine = g.append('line')
+    .attr('x1', 0)
+    .attr('x2', chartWidth)
+    .attr('y1', 0)
+    .attr('y2', 0)
+    .attr('stroke', COLORS.laneBorder);
 
-  const axisGroup = g.append('g')
-    .attr('class', 'time-axis-ticks')
-    .call(axis)
-    .call(g => g.select('.domain').attr('stroke', COLORS.laneBorder))
-    .call(g => g.selectAll('.tick line').attr('stroke', COLORS.laneBorder));
+  // 手动绘制每个刻度
+  tickValues.forEach(year => {
+    const x = xScale(year);
+    if (x >= 0 && x <= chartWidth) {
+      // 刻度线
+      g.append('line')
+        .attr('x1', x)
+        .attr('x2', x)
+        .attr('y1', 0)
+        .attr('y2', 4)
+        .attr('stroke', COLORS.laneBorder);
 
-  axisGroup.selectAll('text')
-    .style('font-size', '9px')
-    .style('fill', COLORS.textMuted)
-    .style('font-family', '"Source Han Serif SC", serif')
-    .attr('y', 8);
+      // 刻度文字
+      g.append('text')
+        .attr('x', x)
+        .attr('y', 14)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '9px')
+        .style('fill', COLORS.textMuted)
+        .style('font-family', '"Source Han Serif SC", serif')
+        .text(year + '年');
+    }
+  });
 
   if (duration > 0) {
-    axisGroup.style('opacity', 0)
+    g.style('opacity', 0)
       .transition()
       .duration(duration)
       .style('opacity', 1);
@@ -703,175 +750,318 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.rivers-card {
-  background: linear-gradient(180deg, #FAFAF8 0%, #F5F3EF 100%);
-  border: 1px solid #E8E4DE;
-  font-family: "Source Han Serif SC", "Noto Serif SC", serif;
+/* ==================== 核心字体定义 ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+/* 引入思源宋体 (假设本地或CDN已加载，这里定义font-family栈) */
+
+.arch-panel {
+  /* 英文用 Product Sans，中文强制用思源宋体 */
+  --font-en: "Product Sans", "Helvetica Neue", "Roboto", sans-serif;
+  --font-cn: "Source Han Serif SC", "Noto Serif SC", "SimSun", serif; 
+  
+  --bg-color: #E9E9E9; /* 建筑灰背景 */
+  --tooltip-bg: rgba(40, 40, 40, 0.98); /* ⚠ 修正：几乎不透明的深色 */
+  --highlight-gold: #EFD160; /* 古金 */
+  --highlight-cyan: #BDBD3F; /* 青黛 */
 }
 
-.card-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #3A3632;
+/* ==================== 面板容器 ==================== */
+.arch-panel {
+  background: var(--bg-color);
+  font-family: var(--font-cn); /* 全局中文宋体 */
+  border: none;
+  border-radius: 0;
+  position: relative;
+  color: #333;
+}
+
+/* ==================== 头部设计 ==================== */
+.panel-header {
+  padding: 20px 30px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+  border-bottom: 1px solid #CCC;
+}
+
+.header-block {
+  width: 6px;
+  height: 32px;
+  background: #2C3E50; 
+  margin-right: 12px;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  font-family: var(--font-cn);
+  font-size: 24px;
+  font-weight: 900;
+  color: #222;
   letter-spacing: 2px;
+  line-height: 1;
 }
 
-.search-field {
-  width: 180px;
-  font-size: 12px;
+.panel-subtitle {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  color: #666;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
 }
 
-.search-field :deep(.v-field) {
-  background: #FFFFFF;
-  border-color: #E8E4DE;
+/* ==================== 搜索框 ==================== */
+.arch-input-wrapper {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #666;
+  padding-bottom: 2px;
+  margin-left: 20px;
+  width: 200px;
 }
 
-.reset-btn {
-  color: #6B5B4F;
-  font-size: 11px;
+.input-label {
+  font-family: var(--font-en);
+  font-size: 9px;
+  color: #888;
+  margin-right: 8px;
+  font-weight: 700;
 }
 
-/* 图例样式 */
-.legend-row {
-  border-bottom: 1px solid #E8E4DE;
-  padding-bottom: 8px;
+.arch-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  color: #333;
+  font-family: var(--font-cn);
+  flex: 1;
+}
+
+.arch-btn {
+  font-family: var(--font-en);
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  background: transparent;
+  border: 1px solid #BBB;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.arch-btn:hover {
+  background: #333;
+  color: #FFF;
+  border-color: #333;
+}
+
+/* ==================== 图例栏 (修正版) ==================== */
+.legend-bar {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  gap: 16px;
 }
 
 .legend-group {
   display: flex;
   align-items: center;
-  gap: 4px;
-  margin-right: 16px;
 }
 
-.legend-label {
-  font-size: 11px;
-  color: #7A756E;
-  margin-right: 6px;
+.legend-head {
+  font-family: var(--font-en);
+  font-size: 9px;
+  color: #888;
+  font-weight: 700;
+  margin-right: 10px;
+  letter-spacing: 0.5px;
 }
 
-.legend-item {
-  display: inline-flex;
-  align-items: center;
+.legend-sep {
+  color: #CCC;
   font-size: 10px;
-  color: #5A5650;
-  margin-right: 8px;
 }
 
-.dot {
+.legend-items {
+  display: flex;
+  gap: 12px;
+}
+
+.l-item {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  color: #444;
+  font-family: var(--font-cn);
+}
+
+.dot-circle {
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  margin-right: 3px;
+  border-radius: 50%; /* 圆点 */
+  margin-right: 5px;
 }
 
-.line-dot {
-  width: 14px;
-  height: 3px;
-  border-radius: 1px;
-  margin-right: 3px;
-}
-
-.line-solid {
+.line-mark {
   width: 14px;
   height: 2px;
-  background: #6B5B4F;
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
-.line-dashed {
+/* 补全：河道状态图例样式 */
+.line-solid-mark {
+  width: 14px;
+  height: 2px;
+  background: #555;
+  margin-right: 5px;
+}
+
+.line-dashed-mark {
   width: 14px;
   height: 0;
-  border-top: 2px dashed #6B5B4F;
-  margin-right: 3px;
+  border-top: 2px dashed #555;
+  margin-right: 5px;
 }
 
-.silt-block {
+.block-mark {
   width: 14px;
-  height: 8px;
-  background: #C9B99A;
-  opacity: 0.6;
-  border-radius: 2px;
-  margin-right: 3px;
+  height: 6px;
+  background: #BCAAA4; /* 淤积色 */
+  margin-right: 5px;
 }
 
-/* 图表容器 */
+/* ==================== 图表与时间轴 ==================== */
 .chart-container {
   width: 100%;
-  margin: 8px 0;
-  overflow: hidden;
+  background: var(--bg-color); 
 }
 
-.chart-container svg {
-  display: block;
-}
-
-/* 时间轴 */
 .timeline-wrapper {
-  margin-top: 4px;
+  background: linear-gradient(0deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+  border-top: 1px solid #CCC;
+  padding: 10px 0;
 }
 
-.dynasty-bar {
-  height: 26px;
+/* ⚠ 修正 Hover 颜色 (CSS辅助D3交互) */
+:deep(.dynasty-group rect:hover) {
+  fill: var(--highlight-gold) !important; /* 强制覆盖 */
+  transition: fill 0.2s ease;
 }
 
-.time-axis {
-  height: 22px;
+/* ==================== Tooltip (修复可见性) ==================== */
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: all 0.2s ease-out;
+}
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(5px);
 }
 
-/* Tooltip 样式 */
-.river-tooltip-card {
-  background: #FAFAF8 !important;
-  border: 1px solid #E8E4DE;
-  border-radius: 6px !important;
-  box-shadow: 0 4px 20px rgba(58, 54, 50, 0.15) !important;
+.arch-tooltip {
+  position: fixed;
+  z-index: 99999;
+  width: 280px;
+  /* ⚠ 背景修正：浅灰色不透明 */
+  background: #E8E6E2; /* 浅灰色背景 */
+  color: #333; /* 深色文字 */
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-left: 3px solid var(--highlight-gold); /* 金色左边框 */
+  pointer-events: none;
+  font-family: var(--font-en);
 }
 
-.tooltip-header {
-  background: linear-gradient(90deg, #6B5B4F 0%, #8B7B6F 100%);
-  color: #FAFAF8 !important;
-  font-size: 13px;
-  padding: 8px 12px !important;
-  border-radius: 5px 5px 0 0;
+.tt-header {
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.tooltip-body {
-  padding: 10px 12px !important;
-}
-
-.tooltip-content {
-  font-size: 11px;
-  line-height: 1.6;
-}
-
-.tooltip-row {
+.tt-title-row {
   display: flex;
-  margin-bottom: 4px;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.tooltip-label {
-  color: #7A756E;
-  width: 40px;
-  flex-shrink: 0;
+.tt-name {
+  font-family: var(--font-cn);
+  font-size: 18px;
+  font-weight: 600;
+  color: #333; /* 深色文字 */
 }
 
-.tooltip-value {
-  color: #3A3632;
-  font-weight: 500;
-}
-
-.tooltip-note {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #E8E4DE;
-}
-
-.tooltip-evidence {
-  color: #5A5650;
-  margin: 4px 0 0 0;
+.tt-id {
   font-size: 10px;
+  color: #666;
+  font-family: var(--font-en);
+}
+
+.tt-alias {
+  font-size: 11px;
+  color: #666;
+  font-family: var(--font-cn);
+}
+
+.tt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.tt-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tt-item.full {
+  grid-column: span 2;
+}
+
+.tt-label {
+  font-size: 9px;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 2px;
+  font-weight: 600;
+  font-family: 'Product Sans', sans-serif;
+}
+
+.tt-value {
+  font-size: 13px;
+  color: #333; /* 深色文字 */
+  font-family: var(--font-cn);
+}
+
+.highlight-gold {
+  color: var(--highlight-gold);
+  font-weight: 600;
+}
+
+.tt-note {
+  background: rgba(0,0,0,0.05); /* 稍微暗一点的背景 */
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.tt-note-label {
+  font-size: 9px;
+  color: #666;
+  margin-bottom: 4px;
+  font-family: 'Product Sans', sans-serif;
+}
+
+.tt-note-text {
+  font-size: 11px;
   line-height: 1.5;
-  max-height: 80px;
-  overflow-y: auto;
+  color: #444; /* 深色文字，更清晰 */
+  font-family: var(--font-cn);
+  text-align: justify;
 }
 </style>
