@@ -6,10 +6,8 @@
         <h2 class="text-h5 font-weight-bold" style="color: #7C6B59;">
           历代商业手工业 · 生产网络
         </h2>
-        <div class="d-flex align-center gap-2">
-          <v-btn size="small" variant="text" icon="mdi-information-outline" 
-                 @click="showHelp = !showHelp"></v-btn>
-        </div>
+        <v-btn size="small" variant="text" icon="mdi-information-outline" 
+               @click="showHelp = !showHelp"></v-btn>
       </div>
       <p class="text-body-2 text-grey-darken-1">
         分析制度逻辑如何驱动经济重心迁移
@@ -21,9 +19,10 @@
       <v-alert v-if="showHelp" type="info" variant="tonal" closable @click:close="showHelp = false" class="mb-4">
         <div class="text-body-2">
           <strong>数据说明：</strong><br>
-          • 展示夏商周至民国各朝代的产业类型分布<br>
+          • 展示夏商周至民国各朝代的产业类型分布（宏观分类）<br>
           • 气候关联分析产业活动与温度变化的相关性<br>
-          • 经济中心分布体现各朝代经济活动的地理重心<br>
+          • 产业变化趋势体现北京历代商业手工业发展脉络<br>
+          • 官营与私营比例反映各朝代手工业经营模式<br>
           • 点击朝代筛选器可过滤特定时期数据
         </div>
       </v-alert>
@@ -46,18 +45,16 @@
             @click="togglePeriod(period)"
             class="period-chip"
           >
-            <v-icon v-if="selectedPeriod === period" size="14" start>mdi-check</v-icon>
             {{ period }}
           </v-chip>
           <v-chip
             size="small"
-            variant="outlined"
+            variant="text"
             color="#C2B190"
             @click="selectedPeriod = null"
             v-if="selectedPeriod"
             class="clear-chip"
           >
-            <v-icon size="14" start>mdi-close-circle</v-icon>
             重置
           </v-chip>
         </div>
@@ -83,28 +80,27 @@
     </v-row>
 
     <v-row>
-      <!-- 左侧：产业类型演变堆叠图 -->
+      <!-- 左侧：产业类型演变堆叠图（宏观分类） -->
       <v-col cols="12" md="8">
         <div class="pa-4 bg-white rounded-lg chart-card" style="border: 1px solid #DCD3C5; height: 100%;">
           <h3 class="text-subtitle-2 mb-4 font-weight-bold" style="color: #7C6B59;">
             <v-icon size="small" color="#CF794D" class="mr-1">mdi-chart-bar</v-icon>
             各时期产业类型分布
-            <v-chip size="x-small" variant="flat" color="#F1EEE8" class="ml-2">
-              {{ filteredIndustryData.periods.length }} 个时期
-            </v-chip>
+            <span class="text-caption font-weight-regular ml-2" style="color: #C2B190;">
+              {{ filteredIndustryData.periods.length }} 个时期 · 宏观分类
+            </span>
           </h3>
           <div ref="industryChartRef" style="width: 100%; height: 480px;"></div>
         </div>
       </v-col>
       
-      <!-- 右侧：气候关联 + 高频区域 -->
+      <!-- 右侧：气候关联饼图 -->
       <v-col cols="12" md="4">
-        <!-- 气候关联饼图 -->
-        <div class="pa-4 bg-white rounded-lg mb-4" style="border: 1px solid #DCD3C5;">
+        <div class="pa-4 bg-white rounded-lg" style="border: 1px solid #DCD3C5; height: 100%;">
           <h3 class="text-subtitle-2 mb-3 font-weight-bold" style="color: #7C6B59;">
             产业活动与气候关联
           </h3>
-          <div ref="climateChartRef" style="width: 100%; height: 200px;"></div>
+          <div ref="climateChartRef" style="width: 100%; height: 280px;"></div>
           <div class="d-flex justify-center gap-4 mt-2">
             <div class="d-flex align-center">
               <div class="legend-dot mr-2" style="background-color: #CF794D;"></div>
@@ -120,59 +116,35 @@
             </div>
           </div>
         </div>
-        
-        <!-- 高频生产区域 -->
-        <div class="pa-4 bg-white rounded-lg" style="border: 1px solid #DCD3C5;">
-          <h3 class="text-subtitle-2 mb-3 font-weight-bold" style="color: #7C6B59;">
-            高频生产区域 Top 5
-          </h3>
-          <v-list density="compact" class="bg-transparent">
-            <v-list-item 
-              v-for="(item, index) in topLocations" 
-              :key="index"
-              class="px-0 location-item"
-            >
-              <template v-slot:prepend>
-                <v-avatar size="28" :color="getRankColor(index)" class="text-white text-xs font-weight-bold">
-                  {{ index + 1 }}
-                </v-avatar>
-              </template>
-              <v-list-item-content>
-                <v-list-item-title class="text-sm font-weight-medium">
-                  {{ item.name }}
-                </v-list-item-title>
-                <v-list-item-subtitle class="text-xs">
-                  {{ item.count }} 次产业活动
-                </v-list-item-subtitle>
-              </v-list-item-content>
-              <template v-slot:append>
-                <div style="width: 80px;">
-                  <v-progress-linear 
-                    :model-value="(item.count / topLocations[0].count) * 100" 
-                    height="4" 
-                    rounded 
-                    :color="getRankColor(index)"
-                  ></v-progress-linear>
-                </div>
-              </template>
-            </v-list-item>
-          </v-list>
-        </div>
       </v-col>
     </v-row>
 
-    <!-- 📍 新增：历代经济活动中心分布 -->
+    <!-- 📍 北京历代商业手工业变化 -->
     <v-row class="mt-4">
-      <v-col cols="12">
+      <v-col cols="12" md="6">
         <div class="pa-4 bg-white rounded-lg chart-card" style="border: 1px solid #DCD3C5;">
           <h3 class="text-subtitle-2 mb-4 font-weight-bold" style="color: #7C6B59;">
-            <v-icon size="small" color="#8BAB8D" class="mr-1">mdi-map-marker-multiple</v-icon>
-            历代经济活动中心分布
-            <v-chip size="x-small" variant="flat" color="#F1EEE8" class="ml-2" v-if="selectedPeriod">
+            <v-icon size="small" color="#8BAB8D" class="mr-1">mdi-chart-line</v-icon>
+            北京历代商业手工业变化
+            <span class="text-caption font-weight-regular ml-2" style="color: #C2B190;" v-if="selectedPeriod">
               筛选: {{ selectedPeriod }}
-            </v-chip>
+            </span>
           </h3>
-          <div ref="economicCentersChartRef" style="width: 100%; height: 400px;"></div>
+          <div ref="industryTrendChartRef" style="width: 100%; height: 320px;"></div>
+        </div>
+      </v-col>
+
+      <!-- � 各朝代官营与私营手工业比例 -->
+      <v-col cols="12" md="6">
+        <div class="pa-4 bg-white rounded-lg chart-card" style="border: 1px solid #DCD3C5;">
+          <h3 class="text-subtitle-2 mb-4 font-weight-bold" style="color: #7C6B59;">
+            <v-icon size="small" color="#D99964" class="mr-1">mdi-chart-donut</v-icon>
+            各朝代官营与私营手工业比例
+            <span class="text-caption font-weight-regular ml-2" style="color: #C2B190;">
+              已标注 {{ ownershipData.totalLabeled }} 条
+            </span>
+          </h3>
+          <div ref="ownershipChartRef" style="width: 100%; height: 320px;"></div>
         </div>
       </v-col>
     </v-row>
@@ -186,13 +158,14 @@ import industryDataRaw from '@/data/14_industry_processed.json';
 // 引用定义
 const industryChartRef = ref<HTMLElement | null>(null);
 const climateChartRef = ref<HTMLElement | null>(null);
-const economicCentersChartRef = ref<HTMLElement | null>(null);
+const industryTrendChartRef = ref<HTMLElement | null>(null);
+const ownershipChartRef = ref<HTMLElement | null>(null);
 const showHelp = ref(false);
 const selectedPeriod = ref<string | null>(null);
 
-//  朝代列表
+// 朝代列表
 const availablePeriods = [
-  '先秦', '秦汉', '魏晋南北朝', '隗唐五代',
+  '先秦', '秦汉', '魏晋南北朝', '隋唐五代',
   '辽金', '元', '明', '清', '民国'
 ];
 
@@ -201,23 +174,8 @@ const togglePeriod = (period: string) => {
   selectedPeriod.value = selectedPeriod.value === period ? null : period;
 };
 
-// 总活动次数
-const totalActivities = computed(() => {
-  return industryDataRaw.industry_data?.length || 0;
-});
-
-// 颜色配置（与AdminEvoSankey保持一致+适配更多产业类型）
-const colorPalette = {
-  // 基础产业类型
-  青铜冶炼: '#CF794D',
-  铸造技术: '#D99964',
-  石器: '#CDA756',
-  骨器: '#C2B190',
-  陶器: '#8BAB8D',
-  蚌器: '#7C6B59',
-  装饰品: '#A67C52',
-  装饰艺术品: '#92816D',
-  // 宏观产业类型
+// 颜色配置（宏观产业类型）
+const colorPalette: Record<string, string> = {
   商业: '#CF794D',
   金融业: '#D99964',
   冶铸业: '#CDA756',
@@ -226,27 +184,29 @@ const colorPalette = {
   粮食加工业: '#7C6B59',
   酿酒业: '#A67C52',
   纺织业: '#92816D',
-  丝织业: '#E1E0DD',
-  麻布业: '#F1EEE8',
-  皮革业: '#CF794D',
-  新式工业: '#D99964',
-  家具业: '#CDA756',
-  工艺品: '#C2B190',
-  采煤业: '#8BAB8D',
-  矿冶业: '#7C6B59',
-  燃料: '#A67C52',
-  制盐业: '#92816D',
-  制陶业: '#E1E0DD',
-  陶瓷业: '#F1EEE8',
-  营造业: '#CF794D',
-  石雕业: '#D99964',
-  印刷业: '#CDA756',
-  杂项手工业: '#C2B190',
-  工具业: '#8BAB8D',
-  制药业: '#7C6B59'
+  丝织业: '#B8860B',
+  麻布业: '#708090',
+  皮革业: '#CD853F',
+  新式工业: '#4682B4',
+  家具业: '#8B4513',
+  工艺品: '#DAA520',
+  采煤业: '#2F4F4F',
+  矿冶业: '#556B2F',
+  燃料: '#8B0000',
+  制盐业: '#5F9EA0',
+  制陶业: '#BC8F8F',
+  陶瓷业: '#4169E1',
+  营造业: '#6B8E23',
+  石雕业: '#808080',
+  印刷业: '#9932CC',
+  杂项手工业: '#778899',
+  工具业: '#2E8B57',
+  制药业: '#20B2AA',
+  石器业: '#A0522D',
+  骨器业: '#DEB887'
 };
 
-// 1. 数据处理：产业类型统计（拆分；分隔的类型+适配无史前数据）
+// 1. 数据处理：产业类型统计（使用宏观分类 main_period_categories）
 const industryTypeData = computed(() => {
   const rawData = industryDataRaw.industry_data || [];
   const periodMap: Record<string, Record<string, number>> = {};
@@ -256,10 +216,8 @@ const industryTypeData = computed(() => {
     const period = item.period;
     if (!period) return;
 
-    const types = (item.industry_types || '')
-      .split('；')
-      .map(t => t.trim())
-      .filter(Boolean);
+    // 使用宏观分类
+    const types = item.main_period_categories || [];
 
     if (!periodMap[period]) {
       periodMap[period] = {};
@@ -272,15 +230,8 @@ const industryTypeData = computed(() => {
   });
 
   const historicalOrder = [
-    '先秦',
-    '秦汉',
-    '魏晋南北朝',
-    '隗唐五代',
-    '辽金',
-    '元',
-    '明',
-    '清',
-    '民国'
+    '先秦', '秦汉', '魏晋南北朝', '隋唐五代',
+    '辽金', '元', '明', '清', '民国'
   ];
 
   const periods = historicalOrder.filter(p => p in periodMap);
@@ -291,11 +242,11 @@ const industryTypeData = computed(() => {
       type: 'bar',
       stack: 'total',
       itemStyle: {
-        color: colorPalette[type as keyof typeof colorPalette] || '#E1E0DD'
+        color: colorPalette[type] || '#E1E0DD'
       },
       data: periods.map(period => periodMap[period]?.[type] || 0)
     }))
-    .filter(s => s.data.some(v => v > 0)); // 过滤掉所有值为0的系列
+    .filter(s => s.data.some(v => v > 0));
 
   return { periods, series };
 });
@@ -313,7 +264,6 @@ const filteredIndustryData = computed(() => {
     return { periods, series };
   }
   
-  // 只显示选中的朝代
   const filteredPeriods = [selectedPeriod.value];
   const filteredSeries = series.map(s => ({
     ...s,
@@ -333,8 +283,9 @@ const summaryStats = computed(() => {
   rawData.forEach(item => {
     if (selectedPeriod.value && item.period !== selectedPeriod.value) return;
     
-    const types = (item.industry_types || '').split('；').filter(Boolean);
-    types.forEach(t => allTypes.add(t.trim()));
+    // 使用宏观分类统计
+    const types = item.main_period_categories || [];
+    types.forEach(t => allTypes.add(t));
     
     (item.locations || []).forEach(loc => {
       if (loc.trim()) allLocations.add(loc.trim());
@@ -359,7 +310,7 @@ const summaryStats = computed(() => {
     {
       title: '产业类型',
       value: allTypes.size,
-      subtitle: '种',
+      subtitle: '种（宏观）',
       icon: 'mdi-chart-pie',
       color: '#D99964'
     },
@@ -403,103 +354,104 @@ const climateData = computed(() => {
   ];
 });
 
-// 3. 数据处理：高频区域统计
-const topLocations = computed(() => {
+// 3. 数据处理：北京历代商业手工业变化趋势
+const industryTrendData = computed(() => {
   const rawData = industryDataRaw.industry_data || [];
-  const locationMap: Record<string, number> = {};
-
-  // 统计所有归一化后的地点出现次数
-  rawData.forEach(item => {
-    (item.locations || []).forEach(loc => {
-      const location = loc.trim();
-      if (location) {
-        locationMap[location] = (locationMap[location] || 0) + 1;
-      }
-    });
-  });
-
-  // 排序并取前5
-  return Object.entries(locationMap)
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 5);
-});
-
-// 工具函数：获取排名颜色
-const getRankColor = (index: number) => {
-  const colors = ['#CF794D', '#D99964', '#CDA756', '#C2B190', '#8BAB8D'];
-  return colors[index] || '#E1E0DD';
-};
-
-// 4. 数据处理：历代经济活动中心分布
-const economicCentersData = computed(() => {
-  const rawData = industryDataRaw.industry_data || [];
-  const periodLocationMap: Record<string, Record<string, number>> = {};
+  const periodCount: Record<string, number> = {};
 
   const historicalOrder = [
-    '先秦', '秦汉', '魏晋南北朝', '隗唐五代',
+    '先秦', '秦汉', '魏晋南北朝', '隋唐五代',
     '辽金', '元', '明', '清', '民国'
   ];
 
-  // 统计每个朝代的地点产业活动次数
+  // 初始化
+  historicalOrder.forEach(p => { periodCount[p] = 0; });
+
+  // 统计每个朝代的产业活动次数
+  rawData.forEach(item => {
+    const period = item.period;
+    if (period && historicalOrder.includes(period)) {
+      periodCount[period]++;
+    }
+  });
+
+  const periods = historicalOrder.filter(p => periodCount[p] > 0);
+  const counts = periods.map(p => periodCount[p]);
+
+  return { periods, counts };
+});
+
+// 4. 数据处理：各朝代官营与私营手工业比例（显示所有朝代+双Y轴）
+const ownershipData = computed(() => {
+  const rawData = industryDataRaw.industry_data || [];
+  const periodOwnership: Record<string, { 官营: number; 私营: number }> = {};
+
+  const historicalOrder = [
+    '先秦', '秦汉', '魏晋南北朝', '隋唐五代',
+    '辽金', '元', '明', '清', '民国'
+  ];
+
+  // 初始化所有朝代
+  historicalOrder.forEach(p => {
+    periodOwnership[p] = { 官营: 0, 私营: 0 };
+  });
+
+  let totalLabeled = 0;
+
+  // 直接使用 ownership 字段识别官营/私营
   rawData.forEach(item => {
     const period = item.period;
     if (!period || !historicalOrder.includes(period)) return;
 
-    if (!periodLocationMap[period]) {
-      periodLocationMap[period] = {};
+    const ownership = (item.ownership || '').trim();
+    
+    if (ownership === '官营') {
+      periodOwnership[period].官营++;
+      totalLabeled++;
+    } else if (ownership === '私营') {
+      periodOwnership[period].私营++;
+      totalLabeled++;
     }
-
-    (item.locations || []).forEach(loc => {
-      const location = loc.trim();
-      if (location) {
-        periodLocationMap[period][location] = (periodLocationMap[period][location] || 0) + 1;
-      }
-    });
   });
 
-  // 获取所有独特地点
-  const allLocations = new Set<string>();
-  Object.values(periodLocationMap).forEach(locMap => {
-    Object.keys(locMap).forEach(loc => allLocations.add(loc));
+  // 显示所有朝代（不过滤）
+  const periods = historicalOrder;
+
+  // 计算官私比例（官营/(官营+私营)*100，无数据时为null）
+  const 官私比例 = periods.map(p => {
+    const total = periodOwnership[p].官营 + periodOwnership[p].私营;
+    if (total === 0) return null;
+    return Math.round((periodOwnership[p].官营 / total) * 100);
   });
 
-  // 构建系列数据（每个朝代取Top 3地点）
-  const seriesData = historicalOrder.map(period => {
-    if (!periodLocationMap[period]) return { period, data: [] };
-    
-    const topLocations = Object.entries(periodLocationMap[period])
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([name, count]) => ({ name, count }));
-    
-    return { period, data: topLocations };
-  });
-
-  return seriesData;
+  return {
+    periods,
+    官营: periods.map(p => periodOwnership[p].官营),
+    私营: periods.map(p => periodOwnership[p].私营),
+    官私比例,
+    totalLabeled
+  };
 });
+
 
 // 初始化图表
 const initCharts = () => {
   const { periods, series } = filteredIndustryData.value;
 
-  // 1. 产业类型堆叠柱状图（修正朝代顺序+Tooltip过滤无效数据）
+  // 1. 产业类型堆叠柱状图（宏观分类）
   if (industryChartRef.value) {
     const chart = echarts.init(industryChartRef.value);
 
     chart.setOption({
       backgroundColor: 'transparent',
-      // 核心修改2：Tooltip格式化，仅显示当前朝代存在的产业（数值>0）
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'shadow' },
         textStyle: { color: '#7C6B59' },
         formatter: (params: any) => {
-          // 获取当前朝代名称
           const periodName = params[0].name;
           let tooltipHtml = `<div style="font-weight: bold; margin-bottom: 4px;">${periodName}</div>`;
           
-          // 过滤数值为0的产业，仅保留存在的（value>0）
           params.forEach((item: any) => {
             if (item.value > 0) {
               tooltipHtml += `<div style="display: flex; align-items: center; margin: 2px 0;">
@@ -511,24 +463,20 @@ const initCharts = () => {
           return tooltipHtml;
         }
       },
-      // 滚动图例：解决图例过多重叠问题
       legend: {
         type: 'scroll',
         top: 'top',
         left: 'center',
         textStyle: { color: '#7C6B59', fontSize: 11 },
-        formatter: (name) => `  ${name}  `,
         itemWidth: 10,
         itemHeight: 10,
-        pageButtonItemGap: 5,
-        pageButtonsPosition: 'end',
         pageIconSize: 10
       },
       grid: {
         left: '10%',
         right: '5%',
         bottom: '15%',
-        top: '20%', // 增加顶部间距，避免图例遮挡
+        top: '18%',
         containLabel: true
       },
       xAxis: {
@@ -562,7 +510,6 @@ const initCharts = () => {
       series: series
     });
 
-    // 响应式调整
     window.addEventListener('resize', () => chart.resize());
   }
 
@@ -580,7 +527,7 @@ const initCharts = () => {
       },
       series: [{
         type: 'pie',
-        radius: ['60%', '80%'],
+        radius: ['50%', '75%'],
         center: ['50%', '50%'],
         avoidLabelOverlap: false,
         label: {
@@ -606,83 +553,35 @@ const initCharts = () => {
       }]
     });
 
-    // 响应式调整
     window.addEventListener('resize', () => chart.resize());
   }
 
-  // 3. 历代经济活动中心分布图
-  if (economicCentersChartRef.value) {
-    const chart = echarts.init(economicCentersChartRef.value);
-    const data = economicCentersData.value;
-
-    // 准备数据
-    const periods = data.map(d => d.period);
-    const allLocations = new Set<string>();
-    data.forEach(d => d.data.forEach(loc => allLocations.add(loc.name)));
-
-    // 为每个地点创建一个系列
-    const locationColors: Record<string, string> = {
-      '北京': '#CF794D',
-      '洛阳': '#D99964',
-      '长安': '#CDA756',
-      '开封': '#C2B190',
-      '南京': '#8BAB8D',
-      '杭州': '#7C6B59'
-    };
-
-    const series = Array.from(allLocations).map(location => {
-      const locationData = periods.map(period => {
-        const periodData = data.find(d => d.period === period);
-        const locData = periodData?.data.find(l => l.name === location);
-        return locData?.count || 0;
-      });
-
-      return {
-        name: location,
-        type: 'bar',
-        data: locationData,
-        itemStyle: {
-          color: locationColors[location] || '#E1E0DD'
-        }
-      };
-    });
+  // 3. 北京历代商业手工业变化趋势
+  if (industryTrendChartRef.value) {
+    const chart = echarts.init(industryTrendChartRef.value);
+    const { periods: trendPeriods, counts } = industryTrendData.value;
 
     chart.setOption({
       backgroundColor: 'transparent',
       tooltip: {
         trigger: 'axis',
-        axisPointer: { type: 'shadow' },
         textStyle: { color: '#7C6B59' },
         formatter: (params: any) => {
-          const periodName = params[0].name;
-          let tooltipHtml = `<div style="font-weight: bold; margin-bottom: 4px;">${periodName}</div>`;
-          
-          params.forEach((item: any) => {
-            if (item.value > 0) {
-              tooltipHtml += `<div style="display: flex; align-items: center; margin: 2px 0;">
-                <span style="display: inline-block; width: 10px; height: 10px; background: ${item.color}; margin-right: 6px; border-radius: 2px;"></span>
-                <span>${item.seriesName}: ${item.value} 次</span>
-              </div>`;
-            }
-          });
-          return tooltipHtml;
+          const item = params[0];
+          return `<div style="font-weight: bold;">${item.name}</div>
+                  <div>产业活动: ${item.value} 次</div>`;
         }
       },
-      legend: {
-        top: 'top',
-        left: 'center',
-        textStyle: { color: '#7C6B59', fontSize: 11 }
-      },
       grid: {
-        left: '8%',
-        right: '5%',
-        bottom: '12%',
-        top: '15%',
+        left: '10%',
+        right: '8%',
+        bottom: '15%',
+        top: '10%',
         containLabel: true
       },
       xAxis: {
         type: 'category',
-        data: periods,
+        data: trendPeriods,
         axisLabel: {
           color: '#7C6B59',
           fontSize: 10,
@@ -694,7 +593,7 @@ const initCharts = () => {
       },
       yAxis: {
         type: 'value',
-        name: '产业活动次数',
+        name: '活动次数',
         nameTextStyle: { color: '#7C6B59', fontSize: 10 },
         axisLabel: {
           color: '#7C6B59',
@@ -707,10 +606,171 @@ const initCharts = () => {
           lineStyle: { color: '#F1EEE8' }
         }
       },
-      series: series
+      series: [{
+        type: 'line',
+        data: counts,
+        smooth: true,
+        symbol: 'circle',
+        symbolSize: 8,
+        lineStyle: {
+          color: '#8BAB8D',
+          width: 3
+        },
+        itemStyle: {
+          color: '#8BAB8D',
+          borderColor: '#fff',
+          borderWidth: 2
+        },
+        areaStyle: {
+          color: {
+            type: 'linear',
+            x: 0,
+            y: 0,
+            x2: 0,
+            y2: 1,
+            colorStops: [
+              { offset: 0, color: 'rgba(139, 171, 141, 0.4)' },
+              { offset: 1, color: 'rgba(139, 171, 141, 0.05)' }
+            ]
+          }
+        }
+      }]
     });
 
-    // 响应式调整
+    window.addEventListener('resize', () => chart.resize());
+  }
+
+  // 4. 各朝代官营与私营手工业比例（双Y轴：左侧比例、右侧数量）
+  if (ownershipChartRef.value) {
+    const chart = echarts.init(ownershipChartRef.value);
+    const { periods: ownerPeriods, 官营, 私营, 官私比例 } = ownershipData.value;
+
+    chart.setOption({
+      backgroundColor: 'transparent',
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
+        textStyle: { color: '#7C6B59' },
+        formatter: (params: any) => {
+          const periodName = params[0].name;
+          let tooltipHtml = `<div style="font-weight: bold; margin-bottom: 4px;">${periodName}</div>`;
+          
+          params.forEach((item: any) => {
+            if (item.value !== null && item.value !== undefined) {
+              const unit = item.seriesName === '官私比例' ? '%' : ' 条';
+              tooltipHtml += `<div style="display: flex; align-items: center; margin: 2px 0;">
+                <span style="display: inline-block; width: 10px; height: 10px; background: ${item.color}; margin-right: 6px; border-radius: 2px;"></span>
+                <span>${item.seriesName}: ${item.value}${unit}</span>
+              </div>`;
+            }
+          });
+          return tooltipHtml;
+        }
+      },
+      legend: {
+        top: 'top',
+        left: 'center',
+        textStyle: { color: '#7C6B59', fontSize: 11 },
+        itemWidth: 10,
+        itemHeight: 10
+      },
+      grid: {
+        left: '12%',
+        right: '12%',
+        bottom: '15%',
+        top: '18%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        data: ownerPeriods,
+        axisLabel: {
+          color: '#7C6B59',
+          fontSize: 10,
+          rotate: 30
+        },
+        axisLine: {
+          lineStyle: { color: '#DCD3C5' }
+        }
+      },
+      yAxis: [
+        {
+          type: 'value',
+          name: '官私比例',
+          position: 'left',
+          min: 0,
+          max: 100,
+          nameTextStyle: { color: '#CDA756', fontSize: 10 },
+          axisLabel: {
+            color: '#CDA756',
+            fontSize: 10,
+            formatter: '{value}%'
+          },
+          axisLine: {
+            show: true,
+            lineStyle: { color: '#CDA756' }
+          },
+          splitLine: {
+            lineStyle: { color: '#F1EEE8' }
+          }
+        },
+        {
+          type: 'value',
+          name: '数量',
+          position: 'right',
+          nameTextStyle: { color: '#7C6B59', fontSize: 10 },
+          axisLabel: {
+            color: '#7C6B59',
+            fontSize: 10
+          },
+          axisLine: {
+            show: true,
+            lineStyle: { color: '#7C6B59' }
+          },
+          splitLine: {
+            show: false
+          }
+        }
+      ],
+      series: [
+        {
+          name: '官营',
+          type: 'bar',
+          yAxisIndex: 1,
+          stack: 'ownership',
+          data: 官营,
+          itemStyle: { color: '#CF794D' }
+        },
+        {
+          name: '私营',
+          type: 'bar',
+          yAxisIndex: 1,
+          stack: 'ownership',
+          data: 私营,
+          itemStyle: { color: '#8BAB8D' }
+        },
+        {
+          name: '官私比例',
+          type: 'line',
+          yAxisIndex: 0,
+          data: 官私比例,
+          smooth: true,
+          symbol: 'circle',
+          symbolSize: 6,
+          connectNulls: false,
+          lineStyle: {
+            color: '#CDA756',
+            width: 2
+          },
+          itemStyle: {
+            color: '#CDA756',
+            borderColor: '#fff',
+            borderWidth: 1
+          }
+        }
+      ]
+    });
+
     window.addEventListener('resize', () => chart.resize());
   }
 };
@@ -730,18 +790,6 @@ watch(selectedPeriod, () => {
   border-radius: 50%;
 }
 
-.location-item {
-  transition: background-color 0.2s ease;
-}
-
-.location-item:hover {
-  background-color: #F8F6F0;
-}
-
-.v-progress-linear {
-  --v-progress-linear-height: 4px !important;
-}
-
 .gap-2 { gap: 8px; }
 .gap-3 { gap: 12px; }
 .gap-4 { gap: 16px; }
@@ -749,7 +797,6 @@ watch(selectedPeriod, () => {
 /* 📊 统计卡片 */
 .stat-card {
   transition: all 0.3s ease;
-  cursor: pointer;
   border: 1px solid #DCD3C5;
 }
 
@@ -777,33 +824,26 @@ watch(selectedPeriod, () => {
   box-shadow: 0 2px 8px rgba(124, 107, 89, 0.08);
 }
 
-/* 🎨 朝代筛选芯片 */
+/* 🎨 朝代筛选芯片 - 简洁样式 */
 .period-chip {
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   font-weight: 500;
 }
 
 .period-chip:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(124, 107, 89, 0.2);
+  opacity: 0.85;
 }
 
-.period-chip:active {
-  transform: translateY(0);
-}
-
-/* 清除按钮 */
+/* 清除按钮 - 简洁文本样式 */
 .clear-chip {
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
   font-weight: 500;
 }
 
 .clear-chip:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(194, 177, 144, 0.3);
-  background-color: rgba(194, 177, 144, 0.1);
+  opacity: 0.7;
 }
 
 /* 📈 图表卡片 */

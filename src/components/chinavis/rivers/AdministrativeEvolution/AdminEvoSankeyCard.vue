@@ -16,9 +16,9 @@
       </p>
     </div>
 
-    <div class="mt-4 pa-4 bg-white rounded" style="border: 1px solid #DCD3C5;">
+    <div class="mt-4 pa-4 rounded legend-panel">
       <div class="d-flex align-center justify-space-between flex-wrap gap-3">
-        <div class="text-caption font-weight-bold text-grey-darken-2">图例 / LEGEND</div>
+        <div class="text-caption font-weight-bold" style="color: #7C6B59;">图例 / LEGEND</div>
         <div class="d-flex flex-wrap gap-3">
           <div 
             v-for="legend in legends" 
@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed, reactive } from 'vue';
+import { ref, onMounted, onUnmounted, reactive } from 'vue';
 import * as echarts from 'echarts/core';
 import { SankeyChart } from 'echarts/charts';
 import {
@@ -119,6 +119,59 @@ const categories = {
   城市职能: ['政治行政','军事防卫','经济贸易','文化教育','市政管理','交通枢纽']
 };
 
+// 🎯 机构节点详细信息映射
+const institutionDetails: Record<string, { setup: string; leader: string; functions: string }> = {
+  '燕侯府': { setup: '周初分封', leader: '燕侯', functions: '封地治理、诸侯朝贡' },
+  '相国府': { setup: '战国设立', leader: '相国', functions: '辅佐君主、总理政务' },
+  '将军府': { setup: '战国设立', leader: '将军', functions: '统率军队、边境防御' },
+  '都署': { setup: '秦代设立', leader: '都尉', functions: '郡级军事长官' },
+  '都卫府': { setup: '西汉设立', leader: '都尉', functions: '首都治安、宫廷守卫' },
+  '护乌桓校尉': { setup: '东汉设立', leader: '校尉', functions: '管理乌桓事务、边境安抚' },
+  '刺史部': { setup: '汉武帝设立', leader: '刺史', functions: '监察州郡、考核官员' },
+  '行台尚书省': { setup: '北魏设立', leader: '尚书令', functions: '地方行政、战时决策' },
+  '都督府': { setup: '魏晋设立', leader: '都督', functions: '统辖军政、镇守要地' },
+  '郡太守府': { setup: '秦汉设立', leader: '太守', functions: '郡级行政长官、民政军事' },
+  '幽州都督府': { setup: '北朝设立', leader: '都督', functions: '幽州军政、边防统筹' },
+  '节度使府': { setup: '唐代设立', leader: '节度使', functions: '地方军政、财赋管理' },
+  '南京留守司': { setup: '辽代设立', leader: '留守', functions: '南京治理、陪都管理' },
+  '南枢密院南京分院': { setup: '辽代设立', leader: '知院事', functions: '军机处理、南面军务' },
+  '南京三司使司': { setup: '辽代设立', leader: '三司使', functions: '财政税收、盐铁管理' },
+  '西南面招讨司': { setup: '辽代设立', leader: '招讨使', functions: '西南军务、民族事务' },
+  '尚书省': { setup: '隋唐设立', leader: '尚书令', functions: '中央行政、政令执行' },
+  '御史台': { setup: '隋唐设立', leader: '御史大夫', functions: '监察百官、纠察违法' },
+  '殿前都点检司': { setup: '后周设立', leader: '都点检', functions: '禁军统帅、京师卫戍' },
+  '武卫军都指挥司': { setup: '五代设立', leader: '都指挥使', functions: '禁军指挥、宫廷守卫' },
+  '都元帅府': { setup: '金元设立', leader: '都元帅', functions: '全国军务、战时指挥' },
+  '南京邮驿司': { setup: '辽代设立', leader: '使', functions: '驿站管理、文书传递' },
+  '国子监': { setup: '隋唐设立', leader: '祭酒', functions: '最高学府、教育管理' },
+  '弘文院': { setup: '唐代设立', leader: '学士', functions: '宫廷藏书、文学侍从' },
+  '中都路转运司': { setup: '金代设立', leader: '转运使', functions: '漕运财赋、物资调配' },
+  '大兴府衙': { setup: '金代设立', leader: '府尹', functions: '首府行政、京畿治理' },
+  '猛安谋克司': { setup: '金代设立', leader: '猛安/谋克', functions: '女真军政、部族管理' },
+  '中书省': { setup: '元代设立', leader: '中书令', functions: '中央政务、政令制定' },
+  '大都留守司': { setup: '元代设立', leader: '留守', functions: '大都治理、京师守卫' },
+  '枢密院': { setup: '宋元设立', leader: '枢密使', functions: '全国军务、边防调度' },
+  '都指挥使司': { setup: '明代设立', leader: '都指挥使', functions: '卫所军务、边防管理' },
+  '大都路总管府': { setup: '元代设立', leader: '总管', functions: '路级行政、地方治理' },
+  '内阁': { setup: '明代设立', leader: '大学士', functions: '辅政决策、票拟奏章' },
+  '六部': { setup: '隋唐定制', leader: '尚书', functions: '分掌政务、执行政令' },
+  '都察院': { setup: '明代设立', leader: '都御史', functions: '监察百官、巡按天下' },
+  '通政使司': { setup: '明代设立', leader: '通政使', functions: '章奏传达、文书管理' },
+  '五军都督府': { setup: '明代设立', leader: '都督', functions: '统辖卫所、军队管理' },
+  '锦衣卫': { setup: '明代设立', leader: '指挥使', functions: '皇帝侍卫、特务缉捕' },
+  '顺天府': { setup: '明清设立', leader: '府尹', functions: '首都行政、京畿治理' },
+  '五城兵马指挥司': { setup: '明代设立', leader: '指挥', functions: '京师治安、巡防缉捕' },
+  '军机处': { setup: '清代设立', leader: '军机大臣', functions: '军国机要、辅助决策' },
+  '翰林院': { setup: '唐代设立', leader: '掌院学士', functions: '文学侍从、编修典籍' },
+  '八旗都统衙门': { setup: '清代设立', leader: '都统', functions: '八旗管理、旗务统筹' },
+  '步军统领衙门': { setup: '清代设立', leader: '步军统领', functions: '京师治安、九门守卫' },
+  '京师警察厅': { setup: '清末设立', leader: '总监督', functions: '首都治安、警察管理' },
+  '京兆尹公署': { setup: '民国设立', leader: '京兆尹', functions: '京兆地区行政' },
+  '税局等': { setup: '民国设立', leader: '局长', functions: '税收征管、财政收入' },
+  '国立与私立大学': { setup: '民国设立', leader: '校长', functions: '高等教育、人才培养' },
+  '平绥铁路局/平汉铁路局等/市政府': { setup: '民国设立', leader: '局长/市长', functions: '交通运输、市政管理' }
+};
+
 // 🎯 图例配置
 const legends = [
   { key: '朝代', label: '朝代', color: colors.朝代 },
@@ -132,8 +185,9 @@ const legends = [
 const chartRef = ref<HTMLElement>();
 let chartInstance: echarts.ECharts | null = null;
 const showHelp = ref(false);
-const showNodeDetail = ref(false);
-const hoveredNode = ref<any>(null);
+
+// 📌 点击固定节点的状态
+const pinnedNodes = ref<string[]>([]);
 
 // 📌 图层可见性控制 (参考一等奖的交互)
 const visibleLayers = reactive({
@@ -150,14 +204,6 @@ const getNodeCategory = (name: string): string => {
     if ((arr as string[]).includes(name)) return k;
   }
   return '朝代';
-};
-
-const getLegendColor = (name: string): string => {
-  return colors[getNodeCategory(name)] || colors.字体;
-};
-
-const getLegendLabel = (name: string): string => {
-  return getNodeCategory(name);
 };
 
 // 🎛️ 切换图层显示
@@ -347,7 +393,7 @@ const updateChart = () => {
 
   const { nodes, links } = buildChartData();
 
-  const option: echarts.EChartsOption = {
+  const option: any = {
     backgroundColor: '#F8F6F0',
     tooltip: {
       trigger: 'item', triggerOn: 'mousemove',
@@ -358,6 +404,16 @@ const updateChart = () => {
           return `<div style="padding:8px 12px;"><div style="font-weight:bold;margin-bottom:4px;">${p.data.source} → ${p.data.target}</div><div style="font-size:12px;color:#999;">演变路径</div></div>`
         } else {
           const cat = getNodeCategory(p.name)
+          // 如果是机构节点且有详细信息，显示详细信息
+          if (cat === '机构' && institutionDetails[p.name]) {
+            const detail = institutionDetails[p.name]
+            return `<div style="padding:10px 14px; max-width: 280px;">
+              <div style="font-weight:bold;margin-bottom:8px;font-size:15px;border-bottom:1px solid #E5E5E5;padding-bottom:6px;">${p.name}</div>
+              <div style="margin-bottom:6px;"><span style="color:#999;font-size:12px;">机构设置：</span><span style="font-size:13px;">${detail.setup}</span></div>
+              <div style="margin-bottom:6px;"><span style="color:#999;font-size:12px;">长　　官：</span><span style="font-size:13px;">${detail.leader}</span></div>
+              <div><span style="color:#999;font-size:12px;">核心职能：</span><span style="font-size:13px;">${detail.functions}</span></div>
+            </div>`
+          }
           return `<div style="padding:8px 12px;"><div style="font-weight:bold;margin-bottom:4px;font-size:14px;">${p.name}</div><div style="font-size:12px;color:#999;">类别：${cat}</div></div>`
         }
       }
@@ -389,6 +445,55 @@ const updateChart = () => {
   };
 
   chartInstance.setOption(option);
+  
+  // 🎯 添加点击事件：固定节点并显示连线
+  chartInstance.off('click'); // 先移除旧的监听器
+  chartInstance.on('click', (params: any) => {
+    if (params.dataType === 'node') {
+      const nodeName = params.name;
+      const index = pinnedNodes.value.indexOf(nodeName);
+      
+      if (index > -1) {
+        // 如果已固定，则取消固定
+        pinnedNodes.value.splice(index, 1);
+      } else {
+        // 固定节点
+        pinnedNodes.value.push(nodeName);
+      }
+      
+      // 重新渲染图表以显示高亮
+      highlightPinnedNodes();
+    }
+  });
+};
+
+// 🎯 高亮固定的节点及其连线
+const highlightPinnedNodes = () => {
+  if (!chartInstance || pinnedNodes.value.length === 0) {
+    // 如果没有固定的节点，恢复默认状态
+    if (chartInstance) {
+      chartInstance.dispatchAction({
+        type: 'downplay',
+        seriesIndex: 0
+      });
+    }
+    return;
+  }
+  
+  // 先取消所有高亮
+  chartInstance.dispatchAction({
+    type: 'downplay',
+    seriesIndex: 0
+  });
+  
+  // 高亮所有固定的节点
+  pinnedNodes.value.forEach(nodeName => {
+    chartInstance!.dispatchAction({
+      type: 'highlight',
+      seriesIndex: 0,
+      name: nodeName
+    });
+  });
 };
 
 // 🔧 响应式调整
@@ -408,6 +513,12 @@ onUnmounted(() => {
 <style scoped>
 .gap-2 { gap: 8px; }
 .gap-3 { gap: 12px; }
+
+.legend-panel {
+  background: rgba(255, 250, 240, 0.6);
+  border: 1px solid rgba(220, 211, 197, 0.5);
+  backdrop-filter: blur(4px);
+}
 
 .legend-item {
   cursor: pointer;
