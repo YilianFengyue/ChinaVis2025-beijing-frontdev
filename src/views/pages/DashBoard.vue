@@ -3,6 +3,7 @@ import SalesCard from "@/components/dashboard/SalesCard.vue";
 import TicketsCard from "@/components/dashboard/TicketsCard.vue";
 import RiversCard from "@/components/chinavis/rivers/RiversCard.vue";
 import AdminEvoSankeyCard from "~/src/components/chinavis/rivers/AdministrativeEvolution/AdminEvoSankeyCard.vue";
+import CommerceDistribution from "@/components/chinavis/InstitutionalEconomy/CommerceDistribution.vue";
 import CityEvolutionCard from "~/src/components/chinavis/CityEvolutionCard.vue";
 import CityCloudCard from "~/src/components/chinavis/CityCloudCard.vue";
 </script>
@@ -55,6 +56,12 @@ import CityCloudCard from "~/src/components/chinavis/CityCloudCard.vue";
 
       <v-col cols="6" xl="12">
         <city-cloud-card></city-cloud-card>
+      </v-col>
+
+      <v-col cols="12">
+        <v-card class="card-shadow">
+          <commerce-distribution></commerce-distribution>
+        </v-card>
       </v-col>
     </v-row>
 
