@@ -33,8 +33,9 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@data": fileURLToPath(new URL("./src/data", import.meta.url)),
     },
-    extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue"],
+    extensions: [".js", ".json", ".jsx", ".mjs", ".ts", ".tsx", ".vue", ".geojson"],
   },
+  assetsInclude: ["**/*.geojson"],
   server: {
     port: 4399,
     proxy: {

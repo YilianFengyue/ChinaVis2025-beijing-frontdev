@@ -9,3 +9,19 @@ declare interface ImportMeta {
     readonly VITE_TTS_REGION: string;
   };
 }
+
+// GeoJSON 类型声明
+declare module '*.geojson' {
+  const value: {
+    type: string;
+    features: Array<{
+      type: string;
+      properties: Record<string, any>;
+      geometry: {
+        type: string;
+        coordinates: any;
+      };
+    }>;
+  };
+  export default value;
+}

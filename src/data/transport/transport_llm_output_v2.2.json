@@ -1,0 +1,2298 @@
+[
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "安南",
+    "transport_type": "陆路",
+    "evidence": "元代前期著名文士陈孚奉命出使安南（今越南等地），就作有多首诗歌以纪其行。《出顺承门》一诗曰：“...五云回首是都门。”"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "从大都南下的驿站沿途景观...《过卢沟桥》、《良乡县早行》"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "福建省",
+    "transport_type": "陆路",
+    "evidence": "由于农民起义军阻断京杭大运河的漕运，导致大都缺粮，大臣贡师泰奉命前往福建征调粮食，就是使用的驿站系统。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "另一条是从大都城向东，出齐化门（今朝阳门），到通州，坐船沿京杭大运河南下...河西务是从通州至直沽（今天津入海口）的中转水站"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "陆路自大都东接蓟州，递运繁冗。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "中都迤南系四方官员、客旅朝会经行驿程正路...良乡县南十三里有旧来经由留里河桥官道，南至涿州六十里"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "诗中所称“辇路”，又往往被称为“御路”，是元朝帝王每年巡幸上都的必经之路，也是最重要的一条驿路"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "北京通往东北方向的交通主干线是通往辽阳与努尔干都司的大道。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "北京通往东北方向的交通主干线是通往辽阳与努尔干都司的大道。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "往北主要通往宣化，及西去大同及河套以外地方"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "往北主要通往宣化，及西去大同及河套以外地方"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "往北主要通往宣化，及西去大同及河套以外地方"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "往东南的交通要道与大运河并行，从北京经天津一路往南通往山东、徐州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "从北京经天津一路往南通往山东、徐州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "再向南分两路：一道东南方向通往扬州、杭州乃至福建；一道通往安徽凤阳、合肥再至南京"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "再向南分两路：一道东南方向通往扬州、杭州乃至福建"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "福建省",
+    "transport_type": "陆路",
+    "evidence": "再向南分两路：一道东南方向通往扬州、杭州乃至福建"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "安徽省",
+    "transport_type": "陆路",
+    "evidence": "一道通往安徽凤阳、合肥再至南京"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "广东省",
+    "transport_type": "陆路",
+    "evidence": "由合肥经江西通往广州。其中通往广州的道路，则为明代贯穿南北的主干线。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "广西壮族自治区",
+    "transport_type": "陆路",
+    "evidence": "往南的干线有从北京经真定、卫辉、汝宁、长沙至广西"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "贵州省",
+    "transport_type": "陆路",
+    "evidence": "从卫辉经襄阳、荆州、辰州则可达贵州、云南。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "云南省",
+    "transport_type": "陆路",
+    "evidence": "从卫辉经襄阳、荆州、辰州则可达贵州、云南。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "往西南的方向亦经过卫辉，再西去潼关、平凉，再向南通往凤翔、汉中并进入四川。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "甘肃省",
+    "transport_type": "陆路",
+    "evidence": "往西南的方向亦经过卫辉，再西去潼关、平凉"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "四川省",
+    "transport_type": "陆路",
+    "evidence": "再向南通往凤翔、汉中并进入四川。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "由大通桥东下，抵通州高丽庄，与白河合，至直沽，会卫河入海"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山东省",
+    "transport_type": "水路",
+    "evidence": "明代水路除运河之外，还可经海道到达南方各省。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "江苏省",
+    "transport_type": "水路",
+    "evidence": "明代水路除运河之外，还可经海道到达南方各省。"
+  },
+  {
+    "input_dynasty": "清后期",
+    "standard_dynasty": "清",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路自正阳门东车站开始，出东便门，向西南奔向丰台，再转向东南，至杨村渡北运河到达天津"
+  },
+  {
+    "input_dynasty": "清后期",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路...随后东折出山海关，到达沈阳为终点站，是沟通北京与东北地区的重要交通要道。"
+  },
+  {
+    "input_dynasty": "19世纪末",
+    "standard_dynasty": "清",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "1905年，北京至汉口铁路通车"
+  },
+  {
+    "input_dynasty": "19世纪末",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "1909年，北京至张家口铁路通车"
+  },
+  {
+    "input_dynasty": "19世纪末",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "随着京奉线、京汉线、京张线、津浦线等铁路的先后建成"
+  },
+  {
+    "input_dynasty": "19世纪末",
+    "standard_dynasty": "清",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路段中由天津通达京师西南卢沟桥的津卢铁路"
+  },
+  {
+    "input_dynasty": "19世纪末",
+    "standard_dynasty": "清",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "随着京奉线、京汉线、京张线、津浦线等铁路的先后建成"
+  },
+  {
+    "input_dynasty": "1922年",
+    "standard_dynasty": "民国",
+    "target_province": "上海市",
+    "transport_type": "航线",
+    "evidence": "1922年开辟北京至上海航线"
+  },
+  {
+    "input_dynasty": "1922年",
+    "standard_dynasty": "民国",
+    "target_province": "江苏省",
+    "transport_type": "航线",
+    "evidence": "以后又陆续开辟北京至南京、北京至洛阳等地的航线"
+  },
+  {
+    "input_dynasty": "1922年",
+    "standard_dynasty": "民国",
+    "target_province": "河南省",
+    "transport_type": "航线",
+    "evidence": "以后又陆续开辟北京至南京、北京至洛阳等地的航线"
+  },
+  {
+    "input_dynasty": "1919年",
+    "standard_dynasty": "民国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "1919年后北京还陆续开辟了至高丽营、通县、三河、玉田、丰润等地区的远途汽车"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "法国",
+    "transport_type": "陆路",
+    "evidence": "1907年4月30日，世界早期汽车赛中重要赛事——北京至巴黎的汽车拉力赛在北京举行。参赛汽车从德胜门出发"
+  },
+  {
+    "input_dynasty": "周",
+    "standard_dynasty": "先秦",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "燕侯定期前往国都镐京（今陕西西安市西）朝觐纳贡，周王则遣使往来燕地，蓟城通往镐京的道路应当颇为通畅。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "燕国与齐的往来无疑是十分频繁的。燕齐之间的道路，应沿渤海西岸延伸。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "朝鲜",
+    "transport_type": "陆路",
+    "evidence": "苏秦将为从，北说燕文侯曰：“燕东有朝鲜、辽东，北有林胡、楼烦，西有云中、九原，南有呼沱、易水。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "苏秦将为从，北说燕文侯曰：“燕东有朝鲜、辽东，北有林胡、楼烦，西有云中、九原，南有呼沱、易水。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "苏秦将为从，北说燕文侯曰：“燕东有朝鲜、辽东，北有林胡、楼烦，西有云中、九原，南有呼沱、易水。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "苏秦将为从，北说燕文侯曰：“燕东有朝鲜、辽东，北有林胡、楼烦，西有云中、九原，南有呼沱、易水。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "卢龙塞是北京通往东北平原和蒙古高原的要道，往东可达大凌河流域（位于辽宁西部...)"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "古北口...是北京经承德通往蒙古高原东部和东北平原的重要隘口。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "从军都关经延庆，可达河北省张家口。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "飞狐陉...是北京通往山西高原与蒙古高原的又一重要通道。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "穿过这条隘道[井陉]，可到达山西太原，再向西南可到西安、咸阳。"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "沿着太行山东麓高地南下的道路，大致经今北京房山...进入河南省。再经安阳、鹤壁、新乡，过黄河抵达郑州"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "还有到山东的支线，即经山东德州东通济南、淄博等地。"
+  },
+  {
+    "input_dynasty": "秦",
+    "standard_dynasty": "秦汉",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "夫燕亦勃（渤海）、碣之间一都会也。南通齐、赵，东北边胡。"
+  },
+  {
+    "input_dynasty": "秦",
+    "standard_dynasty": "秦汉",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "夫燕亦勃（渤海）、碣之间一都会也。南通齐、赵，东北边胡。"
+  },
+  {
+    "input_dynasty": "秦",
+    "standard_dynasty": "秦汉",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "夫燕亦勃（渤海）、碣之间一都会也。南通齐、赵，东北边胡。上谷至辽东"
+  },
+  {
+    "input_dynasty": "秦",
+    "standard_dynasty": "秦汉",
+    "target_province": "朝鲜",
+    "transport_type": "陆路",
+    "evidence": "北邻乌桓、夫馀，东绾秽貉、朝鲜、真番之利。"
+  },
+  {
+    "input_dynasty": "秦",
+    "standard_dynasty": "秦汉",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "概而言之，当时从燕地通往咸阳的主要干道有两条，一是沿着太行山东麓的驰道入函谷关到咸阳"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "蒙古",
+    "transport_type": "陆路",
+    "evidence": "汉武帝时卫青率军从上谷出击匈奴，最后抵达龙城。龙城为匈奴单于召集部落祭天的所在，大致在今蒙古的乌兰巴托。"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "一为幽州通雁门、代郡之路，并由此远及云中、九原等西北塞上诸郡"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "一为幽州通雁门、代郡之路，并由此远及云中、九原等西北塞上诸郡"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "东汉末年群雄割据，幽州与长安的联系就依靠居庸关至西北的通道。"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "宁夏回族自治区",
+    "transport_type": "陆路",
+    "evidence": "畴乃归，自选其家客与年少之勇壮慕从者二十骑俱往...出塞，傍北方，直趣朔方...遂至长安致命。"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "由居庸关出入，向西通往雁门郡，取飞狐口（今河北涞源县北）入雁门，这是由幽州地区通西北的另一重要道路。"
+  },
+  {
+    "input_dynasty": "汉晋",
+    "standard_dynasty": "秦汉",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "由居庸关出入，向西通往雁门郡，取飞狐口（今河北涞源县北）入雁门，这是由幽州地区通西北的另一重要道路。"
+  },
+  {
+    "input_dynasty": "汉",
+    "standard_dynasty": "秦汉",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "曹操由幽州蓟城出兵至无终...东指柳城"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "由幽州入并州的道路之一是井陉道。"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "帝发幽州，掳仁恭父子以行。甲申，次定州，舍于关城。"
+  },
+  {
+    "input_dynasty": "隋唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "隋唐之时幽州通往长安的道路，一路是从幽州西南取道太行山东麓，经代州去往长安。"
+  },
+  {
+    "input_dynasty": "隋唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "出居庸关经妫州（今延庆），向西南行经蔚州至灵丘县"
+  },
+  {
+    "input_dynasty": "隋唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "出居庸关经妫州（今延庆），向西南行经蔚州至灵丘县，沿着滹沱河河谷下行...到雁门"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "乃诏庆礼及太子詹事姜师度、左骁卫将军邵宏等充使，更于柳城筑营州城...追拔幽州及渔阳、淄青等户"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "临渝关道是隋军从涿郡出兵必经之路"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "贞观十八年“七月甲午，营州都督张俭率幽、营兵及契丹、奚以伐高丽。”"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "其详细路线，由幽州东行六十里经潞县（今通州东）、三河县（今县东南）、蓟州治所渔阳县（今蓟县）。"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "其详细路线，由幽州东行六十里经潞县（今通州东）、三河县（今县东南）、蓟州治所渔阳县（今蓟县）。"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "其一是由幽州向北经顺州、檀州密云县、燕乐县古北口，向北行可达奚境。"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "另一道路是由幽州经潞县、蓟州渔阳县（今蓟县）、石门峡（今遵化县西），过松亭关...到奚、契丹王帐。"
+  },
+  {
+    "input_dynasty": "隋唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "从幽州西南至易州，再至定州，西南行至恒州（镇州，今正定县）或南行至赵州"
+  },
+  {
+    "input_dynasty": "隋唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "从幽州西南...继续南行至邢州、磁州、相州（今安阳）、卫州，再至河阳，过黄河达东都洛阳。"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "辽金时期幽州地区陆路交通的主干，往南通达两宋都城"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "辽金时期幽州地区陆路交通的主干，往南通达两宋都城"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "往北则与辽金的重要城市相接。辽始都临潢（今内蒙古巴林左旗），称上京...设中京（今内蒙古宁城县）"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "往北则与辽金的重要城市相接...东京（今辽阳）"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "往北则与辽金的重要城市相接...西京（今山西大同）"
+  },
+  {
+    "input_dynasty": "辽",
+    "standard_dynasty": "辽",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "往北则与辽金的重要城市相接...金初建都会宁府（今黑龙江省阿城南白城），称上京"
+  },
+  {
+    "input_dynasty": "北宋",
+    "standard_dynasty": "宋",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "再从南京出古北口至辽中京...出燕京北门...九十里至古北口...二十里至中京大定府。"
+  },
+  {
+    "input_dynasty": "北宋",
+    "standard_dynasty": "宋",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "自幽州西北入居庸关...又行三日、遂至上京，所谓西楼也。"
+  },
+  {
+    "input_dynasty": "北宋",
+    "standard_dynasty": "宋",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "自幽州由歧路出松亭关，走中京五百里。"
+  },
+  {
+    "input_dynasty": "北宋",
+    "standard_dynasty": "宋",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "自幽州东趋营平路，甚平坦"
+  },
+  {
+    "input_dynasty": "北宋",
+    "standard_dynasty": "宋",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "西至平川蓟州，有柜安、燕氐二山口，通车马。"
+  },
+  {
+    "input_dynasty": "宋",
+    "standard_dynasty": "宋",
+    "target_province": "北京市",
+    "transport_type": "陆路",
+    "evidence": "自燕山府八十里至潞县。"
+  },
+  {
+    "input_dynasty": "辽金",
+    "standard_dynasty": "金",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "设置了起自金、南宋边境泗州，经南京（开封）、中都（北京）至上京（今黑龙江阿城南）的重要驿道"
+  },
+  {
+    "input_dynasty": "辽金",
+    "standard_dynasty": "金",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "设置了起自金、南宋边境泗州，经南京（开封）、中都（北京）至上京（今黑龙江阿城南）的重要驿道"
+  },
+  {
+    "input_dynasty": "辽金",
+    "standard_dynasty": "金",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "设置了起自金、南宋边境泗州，经南京（开封）、中都（北京）至上京（今黑龙江阿城南）的重要驿道"
+  },
+  {
+    "input_dynasty": "金",
+    "standard_dynasty": "金",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "金中都往南通往中原的道路，以太行山东麓大道为主干。"
+  },
+  {
+    "input_dynasty": "咸丰年间",
+    "standard_dynasty": "清",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "萧太后河是从辽南京城东南的迎春门南下...在通州张家湾入北运河。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "从大都东行过通州，经蓟州通辽阳行省驿道。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "朝鲜",
+    "transport_type": "陆路",
+    "evidence": "从大都东行...这条驿路有一条大道过鸭绿江通往朝鲜半岛"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "从大都北行经宣德通上都（开平）民用大道"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "从大都出居庸关经大同通往河套地区"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "从大都出居庸关经大同通往河套地区"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "新疆维吾尔自治区",
+    "transport_type": "陆路",
+    "evidence": "从大都出居庸关...再西向通新疆伊州（哈密）"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "从大都之东的通州出发，经天津、德州、徐州、扬州"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "从大都之东的通州出发，经天津、德州、徐州、扬州，向西联通江宁（今南京）"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "从大都之东的通州出发...向南过江通往苏杭、福州"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "福建省",
+    "transport_type": "陆路",
+    "evidence": "从大都之东的通州出发...向南过江通往苏杭、福州"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "另一路是出大都向西南经涿州，向西通往太原"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "大都与上都之间的通道可以分为东、西两路"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "由大都东北行，过顺州（今顺义）、檀州（今密云），出古北口后...经内蒙古多伦到达上都。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "元代皇帝往返于大都与上都之间，更多选择西出居庸关的西路。从大都健德门（今北土城西路健德门桥附近）西北行"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "向东北去的一路由岔道村经延庆县城东...转而向北进入河北省赤城县（元代称“云州”）境内"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "由大都去上都时...途经鸡鸣驿、宣化、张家口的御路偏西。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "蒙古国",
+    "transport_type": "陆路",
+    "evidence": "这条路的南半段也是由大都通往元旧都和林（在今蒙古国鄂尔浑河上游的哈尔和林）的必经之路。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "北京在东北方的交通主干线是通往辽阳与奴儿干都司的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "北京在东北方的交通主干线是通往辽阳与奴儿干都司的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "北京往北的交通干线是通宣化坝上高原"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "北京往北的交通干线是...西去大同及河套以外之地"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "北京往北的交通干线是...西去大同及河套以外之地"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "往东南的交通干线与大运河并行，从北京经天津下行山东"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山东省",
+    "transport_type": "水路",
+    "evidence": "往东南的交通干线与大运河并行，从北京经天津下行山东、徐州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "江苏省",
+    "transport_type": "水路",
+    "evidence": "从北京经天津下行山东、徐州，由此分道，一道往扬州、杭州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "浙江省",
+    "transport_type": "水路",
+    "evidence": "从北京经天津下行山东、徐州，由此分道，一道往扬州、杭州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "福建省",
+    "transport_type": "水路",
+    "evidence": "一道往扬州、杭州，通福建"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "安徽省",
+    "transport_type": "陆路",
+    "evidence": "一道往安徽凤阳、合肥至南京"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "江西省",
+    "transport_type": "陆路",
+    "evidence": "亦可自合肥往江西通广州"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "广东省",
+    "transport_type": "陆路",
+    "evidence": "亦可自合肥往江西通广州。通广州的道路，是明代贯穿南北的主干线。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "往南的干线有从北京经真定、卫辉、汝宁"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "湖南省",
+    "transport_type": "陆路",
+    "evidence": "往南的干线有从北京经真定、卫辉、汝宁、长沙至广西的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "广西壮族自治区",
+    "transport_type": "陆路",
+    "evidence": "往南的干线有从北京经真定、卫辉、汝宁、长沙至广西的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "从卫辉往襄阳、荆州、辰州可达贵州、云南的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "贵州省",
+    "transport_type": "陆路",
+    "evidence": "从卫辉往襄阳、荆州、辰州可达贵州、云南的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "云南省",
+    "transport_type": "陆路",
+    "evidence": "从卫辉往襄阳、荆州、辰州可达贵州、云南的大道"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "往西南的干线也经卫辉，再西去潼关、平凉"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "甘肃省",
+    "transport_type": "陆路",
+    "evidence": "往西南的干线也经卫辉，再西去潼关、平凉"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "四川省",
+    "transport_type": "陆路",
+    "evidence": "继续向南经凤翔、汉中可入四川"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "经居庸关通宣府的道路，是北京通往西北的干道。…师出北京。…十八日发泥河，午次宣府。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "师出北京。…七月初一日，发威信戍，午次武平镇。初二日，发武平镇，晚次开平。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "从北京南过良乡，经易州出紫荆关，是通往军事重镇大同府的一条要道。"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "明代自京城南去的道路...出北京西南经卢沟桥、良乡、琉璃河、涿州南下的一段"
+  },
+  {
+    "input_dynasty": "上古时期",
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "由北京出山海关进入东北的大道"
+  },
+  {
+    "input_dynasty": "上古时期",
+    "standard_dynasty": "先秦",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "从北京向西北出居庸关到内蒙古高原的大道"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "作为由北京向西北通往内蒙古高原、向北连接塞外的干线，这两条大道在清代仍然延续了以往的功能。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "作为由北京向西北通往内蒙古高原、向北连接塞外的干线，这两条大道在清代仍然延续了以往的功能。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "京师至江南数千余里，行旅络绎。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "京师至江南数千余里，行旅络绎。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "至于从北京出山海关至东北的道路，自吴三桂引领清兵入关后在历史上更加著名，它也是清朝皇帝来往于北京至盛京（沈阳）的必由之路。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "在原来的古北口大道的基础上，开辟了一条由北京通往承德避暑山庄与木兰围场的道路。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "北京朝阳门—通州—三河—蓟县—遵化马兰峪—东陵，是这条路线上的主要站点。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "当泰陵修建之时，从北京到易州的沿途桥梁已经维修完备。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "以北京为中心的全国陆上交通，向东经过通州、蓟州，从山海关到达辽宁的盛京（沈阳）"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "从北京以北的昌平与西北的宣化，经过山西能够到达陕西"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "从北京以北的昌平与西北的宣化，经过山西能够到达陕西"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "从北京...西北出张家口到达长城以外的蒙古等地"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "南下的道路经过良乡与涿州后，东南一支从直隶的河间可以到达山东以及东南沿海各省"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "西南一支由直隶的保定历经正定、顺德（邢台）、广平（永年）、大名四府，经过河南以靠近山西、陕西"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "再向南经过湖北、湖南一直到云南、贵州一带"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "湖南省",
+    "transport_type": "陆路",
+    "evidence": "再向南经过湖北、湖南一直到云南、贵州一带"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "云南省",
+    "transport_type": "陆路",
+    "evidence": "再向南经过湖北、湖南一直到云南、贵州一带"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "贵州省",
+    "transport_type": "陆路",
+    "evidence": "再向南经过湖北、湖南一直到云南、贵州一带"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "谈迁在顺治十三年二月乙卯（1656年3月1日）搭乘回空漕船返回故里，他首先骑驴出东便门...三十里登舟...丁卯，大雾，午泊天津而晴。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "夏季一般要赶着骆驼到口外去放牧，行话称为“做场”。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "清末北京有名的“窝脖儿匠”范茂贵，仅用四天时间就能把六十斤重的铜狮子“窝”到遵化县马兰峪的慈禧太后陵墓去"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "江苏省",
+    "transport_type": "水路",
+    "evidence": "康熙、乾隆皇帝南巡，有时也乘龙舟沿运河而下。"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "浙江省",
+    "transport_type": "水路",
+    "evidence": "康熙、乾隆皇帝南巡，有时也乘龙舟沿运河而下。"
+  },
+  {
+    "input_dynasty": "光绪十三年（1887）",
+    "standard_dynasty": "清",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路自正阳门东车站开始...再转东南，至杨村渡北运河以达天津"
+  },
+  {
+    "input_dynasty": "光绪十三年（1887）",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路自正阳门东车站开始...最后到达沈阳"
+  },
+  {
+    "input_dynasty": "农历甲午年",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "京汉铁路自正阳门西站出发...纵贯直隶、河南、湖北三省"
+  },
+  {
+    "input_dynasty": "农历甲午年",
+    "standard_dynasty": "清",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "京汉铁路自正阳门西站出发...纵贯直隶、河南、湖北三省"
+  },
+  {
+    "input_dynasty": "农历甲午年",
+    "standard_dynasty": "清",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "京汉铁路自正阳门西站出发...抵达华中重镇汉口"
+  },
+  {
+    "input_dynasty": "宣统元年",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "南起北京丰台、经八达岭隧道至张家口的京张铁路"
+  },
+  {
+    "input_dynasty": "宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "1912年底继续修建，经过山西大同出长城"
+  },
+  {
+    "input_dynasty": "宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "1919年再次续修，1921年终于抵达绥远"
+  },
+  {
+    "input_dynasty": "宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "河北省",
+    "transport_type": "航线",
+    "evidence": "1914年3月11日，该校三架飞机首次试航，从南苑机场飞往保定"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "天津市",
+    "transport_type": "航线",
+    "evidence": "1920年2月成立北京航空署，5月至次年6月，北京至天津、济南试航成功"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "山东省",
+    "transport_type": "航线",
+    "evidence": "1920年2月成立北京航空署，5月至次年6月，北京至天津、济南试航成功"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "上海市",
+    "transport_type": "航线",
+    "evidence": "1922年开辟了北京至上海的航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "河南省",
+    "transport_type": "航线",
+    "evidence": "1933年，北平至洛阳通航"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "山西省",
+    "transport_type": "航线",
+    "evidence": "以后又开辟了北平至太原、汉口、广州的航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "湖北省",
+    "transport_type": "航线",
+    "evidence": "以后又开辟了北平至太原、汉口、广州的航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "广东省",
+    "transport_type": "航线",
+    "evidence": "以后又开辟了北平至太原、汉口、广州的航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "江苏省",
+    "transport_type": "航线",
+    "evidence": "恢复或新辟了北平至济南、南京、上海、汉口、西安、重庆等地的民用航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "陕西省",
+    "transport_type": "航线",
+    "evidence": "恢复或新辟了北平至济南、南京、上海、汉口、西安、重庆等地的民用航线"
+  },
+  {
+    "input_dynasty": "清宣统元年",
+    "standard_dynasty": "民国",
+    "target_province": "重庆市",
+    "transport_type": "航线",
+    "evidence": "恢复或新辟了北平至济南、南京、上海、汉口、西安、重庆等地的民用航线"
+  },
+  {
+    "input_dynasty": "民国以后",
+    "standard_dynasty": "民国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "同年秋天，长途汽车行增加到6家，共有汽车8辆，由市区到达通县、三河、玉田、丰润等县。"
+  },
+  {
+    "input_dynasty": "抗战胜利后",
+    "standard_dynasty": "民国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "驱使民工修筑北平至通州、塘沽、怀柔、长辛店、南苑、西郊飞机场等处的郊区公路。"
+  },
+  {
+    "input_dynasty": "19268",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "这条铁路从北京丰台至河北怀来县沙城，是詹天佑修建京张铁路时曾经踏勘过的路线。"
+  },
+  {
+    "input_dynasty": "20637",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "1956年7月，京承铁路（北京东便门至河北承德）怀柔至承德鹰手营子段开工，到1959年11月通车。"
+  },
+  {
+    "input_dynasty": "24047",
+    "standard_dynasty": "新中国",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "1965年11月，京原铁路（北京至山西原平）石景山至山西灵丘段开工，1971年10月全线贯通。"
+  },
+  {
+    "input_dynasty": "1981年9月至1983年12月",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "1981年9月至1983年12月，建成了从北京双桥站到秦皇岛的京秦铁路。"
+  },
+  {
+    "input_dynasty": "1993年5月至1995年11月建成、1996年9月1日",
+    "standard_dynasty": "新中国",
+    "target_province": "九龙",
+    "transport_type": "陆路",
+    "evidence": "1996年9月1日通车的京九铁路（北京至九龙），是我国与京广铁路并行的南北运输大动脉。"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "乘高速列车从北京出发一小时内到达天津、石家庄、唐山、秦皇岛、张家口、承德"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "两小时可以到达沈阳、济南、郑州、太原，三小时能到达长春、大连"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "两小时可以到达沈阳、济南、郑州、太原"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "两小时可以到达沈阳、济南、郑州、太原"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "两小时可以到达沈阳、济南、郑州、太原"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "吉林省",
+    "transport_type": "陆路",
+    "evidence": "三小时能到达长春、大连、南京、合肥、呼和浩特"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "三小时能到达长春、大连、南京、合肥、呼和浩特"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "安徽省",
+    "transport_type": "陆路",
+    "evidence": "三小时能到达长春、大连、南京、合肥、呼和浩特"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "三小时能到达长春、大连、南京、合肥、呼和浩特"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "四小时能到达哈尔滨、西安、上海、杭州、武汉等城市。"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "陕西省",
+    "transport_type": "陆路",
+    "evidence": "四小时能到达哈尔滨、西安、上海、杭州、武汉等城市。"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "上海市",
+    "transport_type": "陆路",
+    "evidence": "四小时能到达哈尔滨、西安、上海、杭州、武汉等城市。"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "四小时能到达哈尔滨、西安、上海、杭州、武汉等城市。"
+  },
+  {
+    "input_dynasty": "1997年以后",
+    "standard_dynasty": "新中国",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "四小时能到达哈尔滨、西安、上海、杭州、武汉等城市。"
+  },
+  {
+    "input_dynasty": "1960至1970年代",
+    "standard_dynasty": "新中国",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "修建了京原（山西原平）、京兰（兰州）、昌赤（昌平—赤城）等山区公路"
+  },
+  {
+    "input_dynasty": "1960至1970年代",
+    "standard_dynasty": "新中国",
+    "target_province": "甘肃省",
+    "transport_type": "陆路",
+    "evidence": "修建了京原（山西原平）、京兰（兰州）、昌赤（昌平—赤城）等山区公路"
+  },
+  {
+    "input_dynasty": "34547",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "改建了京密（密云）、京张、京开、京保、京塘（天津塘沽）等一级公路"
+  },
+  {
+    "input_dynasty": "34547",
+    "standard_dynasty": "新中国",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "改建了京密（密云）、京张、京开、京保、京塘（天津塘沽）等一级公路"
+  },
+  {
+    "input_dynasty": "34547",
+    "standard_dynasty": "新中国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "改建了京密（密云）、京张、京开、京保、京塘（天津塘沽）等一级公路"
+  },
+  {
+    "input_dynasty": "18445",
+    "standard_dynasty": "新中国",
+    "target_province": "赤塔",
+    "transport_type": "航线",
+    "evidence": "以北京西郊机场为基地，开辟了北京至赤塔、阿拉木图、伊尔库茨克的3条航空运输线。"
+  },
+  {
+    "input_dynasty": "18445",
+    "standard_dynasty": "新中国",
+    "target_province": "阿拉木图",
+    "transport_type": "航线",
+    "evidence": "以北京西郊机场为基地，开辟了北京至赤塔、阿拉木图、伊尔库茨克的3条航空运输线。"
+  },
+  {
+    "input_dynasty": "18445",
+    "standard_dynasty": "新中国",
+    "target_province": "伊尔库茨克",
+    "transport_type": "航线",
+    "evidence": "以北京西郊机场为基地，开辟了北京至赤塔、阿拉木图、伊尔库茨克的3条航空运输线。"
+  },
+  {
+    "input_dynasty": "19207",
+    "standard_dynasty": "新中国",
+    "target_province": "湖北省",
+    "transport_type": "航线",
+    "evidence": "中国人民航空公司1952年8月开辟了北京—汉口—重庆航线；"
+  },
+  {
+    "input_dynasty": "19207",
+    "standard_dynasty": "新中国",
+    "target_province": "重庆市",
+    "transport_type": "航线",
+    "evidence": "中国人民航空公司1952年8月开辟了北京—汉口—重庆航线；"
+  },
+  {
+    "input_dynasty": "19480",
+    "standard_dynasty": "新中国",
+    "target_province": "河南省",
+    "transport_type": "航线",
+    "evidence": "1953年5月开辟北京—开封—宜昌—重庆航线"
+  },
+  {
+    "input_dynasty": "19480",
+    "standard_dynasty": "新中国",
+    "target_province": "湖北省",
+    "transport_type": "航线",
+    "evidence": "1953年5月开辟北京—开封—宜昌—重庆航线"
+  },
+  {
+    "input_dynasty": "19480",
+    "standard_dynasty": "新中国",
+    "target_province": "重庆市",
+    "transport_type": "航线",
+    "evidence": "1953年5月开辟北京—开封—宜昌—重庆航线，北京—西安—重庆航线；北京—太原—西安—重庆航线。"
+  },
+  {
+    "input_dynasty": "19480",
+    "standard_dynasty": "新中国",
+    "target_province": "陕西省",
+    "transport_type": "航线",
+    "evidence": "北京—西安—重庆航线；北京—太原—西安—重庆航线。"
+  },
+  {
+    "input_dynasty": "19480",
+    "standard_dynasty": "新中国",
+    "target_province": "山西省",
+    "transport_type": "航线",
+    "evidence": "北京—太原—西安—重庆航线。"
+  },
+  {
+    "input_dynasty": "19725",
+    "standard_dynasty": "新中国",
+    "target_province": "新疆维吾尔自治区",
+    "transport_type": "航线",
+    "evidence": "1954年1月，中苏民航公司开辟了北京—乌鲁木齐航线。"
+  },
+  {
+    "input_dynasty": "1955年后",
+    "standard_dynasty": "新中国",
+    "target_province": "缅甸",
+    "transport_type": "航线",
+    "evidence": "1955年后增加了到缅甸、越南的国际航线。"
+  },
+  {
+    "input_dynasty": "1955年后",
+    "standard_dynasty": "新中国",
+    "target_province": "越南",
+    "transport_type": "航线",
+    "evidence": "1955年后增加了到缅甸、越南的国际航线。"
+  },
+  {
+    "input_dynasty": "23802",
+    "standard_dynasty": "新中国",
+    "target_province": "四川省",
+    "transport_type": "航线",
+    "evidence": "1965年3月1日，北京—成都—拉萨航线开通"
+  },
+  {
+    "input_dynasty": "23802",
+    "standard_dynasty": "新中国",
+    "target_province": "西藏自治区",
+    "transport_type": "航线",
+    "evidence": "1965年3月1日，北京—成都—拉萨航线开通"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "莫斯科",
+    "transport_type": "航线",
+    "evidence": "1974年1月北京—莫斯科"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "上海市",
+    "transport_type": "航线",
+    "evidence": "9月北京—上海—大阪—东京"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "大阪",
+    "transport_type": "航线",
+    "evidence": "9月北京—上海—大阪—东京"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "东京",
+    "transport_type": "航线",
+    "evidence": "9月北京—上海—大阪—东京"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "卡拉奇",
+    "transport_type": "航线",
+    "evidence": "10月北京—卡拉奇—巴黎"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "巴黎",
+    "transport_type": "航线",
+    "evidence": "10月北京—卡拉奇—巴黎"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "德黑兰",
+    "transport_type": "航线",
+    "evidence": "11月北京—德黑兰—布加勒斯特—地拉那"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "布加勒斯特",
+    "transport_type": "航线",
+    "evidence": "11月北京—德黑兰—布加勒斯特—地拉那"
+  },
+  {
+    "input_dynasty": "1974年",
+    "standard_dynasty": "新中国",
+    "target_province": "地拉那",
+    "transport_type": "航线",
+    "evidence": "11月北京—德黑兰—布加勒斯特—地拉那"
+  },
+  {
+    "input_dynasty": "28550",
+    "standard_dynasty": "新中国",
+    "target_province": "亚的斯亚贝巴",
+    "transport_type": "航线",
+    "evidence": "1978年3月，北京—卡拉奇—亚的斯亚贝巴"
+  },
+  {
+    "input_dynasty": "28550",
+    "standard_dynasty": "新中国",
+    "target_province": "新疆维吾尔自治区",
+    "transport_type": "航线",
+    "evidence": "5月北京—乌鲁木齐—贝尔格莱德—苏黎世航线相继开通"
+  },
+  {
+    "input_dynasty": "28550",
+    "standard_dynasty": "新中国",
+    "target_province": "贝尔格莱德",
+    "transport_type": "航线",
+    "evidence": "5月北京—乌鲁木齐—贝尔格莱德—苏黎世航线相继开通"
+  },
+  {
+    "input_dynasty": "28550",
+    "standard_dynasty": "新中国",
+    "target_province": "苏黎世",
+    "transport_type": "航线",
+    "evidence": "5月北京—乌鲁木齐—贝尔格莱德—苏黎世航线相继开通"
+  },
+  {
+    "input_dynasty": "29587",
+    "standard_dynasty": "新中国",
+    "target_province": "旧金山",
+    "transport_type": "航线",
+    "evidence": "1981年1月北京—上海—旧金山"
+  },
+  {
+    "input_dynasty": "1982年",
+    "standard_dynasty": "新中国",
+    "target_province": "洛杉矶",
+    "transport_type": "航线",
+    "evidence": "1982年北京—上海—旧金山—洛杉矶航线通航"
+  },
+  {
+    "input_dynasty": "30926",
+    "standard_dynasty": "新中国",
+    "target_province": "广东省",
+    "transport_type": "航线",
+    "evidence": "1984年9月开辟的北京—广州—悉尼航线"
+  },
+  {
+    "input_dynasty": "30926",
+    "standard_dynasty": "新中国",
+    "target_province": "悉尼",
+    "transport_type": "航线",
+    "evidence": "1984年9月开辟的北京—广州—悉尼航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "新加坡",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "科威特",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "罗马",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "福冈",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "东京",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "伊斯坦布尔",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "柏林",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "温哥华",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1984年底",
+    "standard_dynasty": "新中国",
+    "target_province": "斯德哥尔摩",
+    "transport_type": "航线",
+    "evidence": "陆续增加了北京至新加坡、科威特、罗马、福冈、东京、伊斯坦布尔、柏林、温哥华、斯德哥尔摩等城市的航线"
+  },
+  {
+    "input_dynasty": "1990年代",
+    "standard_dynasty": "新中国",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "它们与北京通往沈阳、石家庄、开封、天津等地的高速公路一起，构成了环线加放射线的城市路网骨架。"
+  },
+  {
+    "input_dynasty": "1990年代",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "它们与北京通往沈阳、石家庄、开封、天津等地的高速公路一起，构成了环线加放射线的城市路网骨架。"
+  },
+  {
+    "input_dynasty": "1990年代",
+    "standard_dynasty": "新中国",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "它们与北京通往沈阳、石家庄、开封、天津等地的高速公路一起，构成了环线加放射线的城市路网骨架。"
+  },
+  {
+    "input_dynasty": "1990年代",
+    "standard_dynasty": "新中国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "它们与北京通往沈阳、石家庄、开封、天津等地的高速公路一起，构成了环线加放射线的城市路网骨架。"
+  },
+  {
+    "input_dynasty": "2006—2010年",
+    "standard_dynasty": "新中国",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "京包高速（六环路至德胜口段）等高速公路建成通车，全市高速公路通车里程累计790公里。"
+  },
+  {
+    "input_dynasty": "奥运会之后",
+    "standard_dynasty": "新中国",
+    "target_province": "上海市",
+    "transport_type": "陆路",
+    "evidence": "全国第一条高速铁路—京津城际铁路之外，京沪高速铁路和京石客运专线也已开工建设。"
+  },
+  {
+    "input_dynasty": "金世宗大定十二年",
+    "standard_dynasty": "金",
+    "target_province": "河北省",
+    "transport_type": "水路",
+    "evidence": "金世宗大定十二年（1172年），为解决漕运水源，开凿了金口河，引卢沟河水至中都城北，入护城河，然后东流，一直到通州北入潞河。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "水路",
+    "evidence": "元世祖至元三十年秋（1294年），郭守敬主持建成通惠河，连接起元大都至通州的漕运要道。"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "先秦",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "一条是太行山东麓大道，连接北京与中原"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "先秦",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "一条是居庸关大道，连接北京与蒙古高原"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "一条是古北口大道，连接北京与辽西山地"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "一条是滨海走廊，连接北京与辽东"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "大都与上都之间有多条道路相通。东路从大都经顺州、密云，出古北口至上都。"
+  },
+  {
+    "input_dynasty": "光绪十五年",
+    "standard_dynasty": "清",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "光绪十五年（1889）筹建卢汉铁路（卢沟桥至汉口）"
+  },
+  {
+    "input_dynasty": "光绪十五年",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "光绪三十三年（1907）京奉铁路建成通车。"
+  },
+  {
+    "input_dynasty": "光绪十五年",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "宣统元年（1909），中国自主设计的京张铁路建成。"
+  },
+  {
+    "input_dynasty": "清末民国",
+    "standard_dynasty": "民国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "民国间，北京地区还有京张、京承、京津、京保等多条长途公路。"
+  },
+  {
+    "input_dynasty": "清末民国",
+    "standard_dynasty": "民国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "民国间，北京地区还有京张、京承、京津、京保等多条长途公路。"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "清",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "沿西山古道可远达山西，供商旅往来、煤炭运输等。"
+  },
+  {
+    "input_dynasty": "远古",
+    "standard_dynasty": "先秦",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "生活在今北京地区的远古先民...向西北，穿过居庸孔道，可上蒙古高原"
+  },
+  {
+    "input_dynasty": "远古",
+    "standard_dynasty": "先秦",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "生活在今北京地区的远古先民...向东北，出古北口可去燕山腹地"
+  },
+  {
+    "input_dynasty": "远古",
+    "standard_dynasty": "先秦",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "向东，紧傍燕山南麓，经喜峰口或山海关，便抵辽西、辽东各地及以远"
+  },
+  {
+    "input_dynasty": "春秋战国",
+    "standard_dynasty": "先秦",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "沟通燕国（都蓟）和齐国（都临淄）的一条大道已经踏辟出来了"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "历史悠久的由蓟城出居庸关而通往西北草原的大道，在隋世又得到进一步的发展和强化"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "辽",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "出燕京北门，至望京馆...二十里至中京大定府"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "辽",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "自燕山府80里至潞县。第六程：自潞县七十里至三河县。第七程：自三河县60里至蓟州"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "金",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "由燕京往北，经过交亭...才到达金上京会宁府"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "金",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "若以燕京为中心，向南则经卢沟河铺...到达泗州"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "金",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "若以燕京为中心，向南则经...相州……汤阴……滑州……封邱"
+  },
+  {
+    "input_dynasty": "宋辽",
+    "standard_dynasty": "辽",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "自幽州西北入居庸关，经可汗州（治怀来旧城）、鸡鸣山、归化州（治今宣化）等地"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "元代大都与上都之间的道路...东路：由大都向东北，经顺州...出古北口...而至上都"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "西路：由大都向西北...经鸡鸣驿、宣德府（今宣化），出今张家口"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "往东...一路正东至遵化，转东北至北京（...元初改置北京路总管府...即今内蒙古自治区宁城县西大明城）"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "往南和西南...一路东南由平原渡河至徐州"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "往南和西南...一路正东偏南至益都"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "由北京通往蓟州、宣府、大同等边镇的道路却益加重要起来"
+  },
+  {
+    "input_dynasty": "明",
+    "standard_dynasty": "明",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "由北京通往蓟州、宣府、大同等边镇的道路却益加重要起来"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "山海关大道是京师与盛京（沈阳）间往来的主要通途"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "山东省",
+    "transport_type": "陆路",
+    "evidence": "康熙、乾隆等帝...多次巡游山东、江浙各地，也三番五次地访游五台山，这些活动多取道卢沟桥"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "江苏省",
+    "transport_type": "陆路",
+    "evidence": "康熙、乾隆等帝...多次巡游山东、江浙各地...多取道卢沟桥"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "浙江省",
+    "transport_type": "陆路",
+    "evidence": "康熙、乾隆等帝...多次巡游山东、江浙各地...多取道卢沟桥"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "山西省",
+    "transport_type": "陆路",
+    "evidence": "康熙、乾隆等帝...三番五次地访游五台山，这些活动多取道卢沟桥"
+  },
+  {
+    "input_dynasty": "清",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "出北京朝阳门，东经通州、三河、蓟州，到遵化州昌瑞山清东陵"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "甘肃省",
+    "transport_type": "陆路",
+    "evidence": "中国要路有二...北路由京师东通盛京，西达甘肃"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "臣以为宜自京城外之卢沟桥起，经河南达于湖北汉口镇"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "湖北省",
+    "transport_type": "陆路",
+    "evidence": "臣以为宜自京城外之卢沟桥起，经河南达于湖北汉口镇"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "京奉铁路。从北京至奉天（沈阳），长2246里"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "广东省",
+    "transport_type": "陆路",
+    "evidence": "光绪三十二年（1906年）至民国二十五年（1936年），粤汉铁路筑成，由北京便可直达广州了"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "京张铁路。从北京丰台至张家口，长546里"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "再修筑张家口至归绥（今呼和浩特市）的张绥铁路...合京绥、张绥铁路为一，统称京绥铁路"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "京古铁路，由北京至古北口，途经通县、顺义、怀柔、密云等地。"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "辽宁省",
+    "transport_type": "陆路",
+    "evidence": "京古铁路...是北京通往东北地区的又一交通干线。"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "吉林省",
+    "transport_type": "陆路",
+    "evidence": "京古铁路...是北京通往东北地区的又一交通干线。"
+  },
+  {
+    "input_dynasty": "清末",
+    "standard_dynasty": "清",
+    "target_province": "黑龙江省",
+    "transport_type": "陆路",
+    "evidence": "京古铁路...是北京通往东北地区的又一交通干线。"
+  },
+  {
+    "input_dynasty": "东汉",
+    "standard_dynasty": "秦汉",
+    "target_province": "河北省",
+    "transport_type": "水路",
+    "evidence": "曹操为征三郡乌丸而开凿的平虏渠、泉州渠和新河...形成河北平原东部的水路交通网络...与幽州相通。"
+  },
+  {
+    "input_dynasty": "东汉",
+    "standard_dynasty": "秦汉",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "泉州渠的开凿，便利了幽州通河海运漕的水路交通。"
+  },
+  {
+    "input_dynasty": "东汉",
+    "standard_dynasty": "秦汉",
+    "target_province": "辽宁省",
+    "transport_type": "水路",
+    "evidence": "魏武欲用兵三郡乌丸...其战略出发地却是幽州...新河...目的就是便于向辽东、辽西转运军粮。"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "江苏省",
+    "transport_type": "水路",
+    "evidence": "永济渠开通后，从涿郡（今北京）可直接由此水路南下，抵达黄河；过河后，接前已开通的通济渠和邗沟，到达长江岸边的江都。……把南北运道延伸至江南。"
+  },
+  {
+    "input_dynasty": "隋",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "浙江省",
+    "transport_type": "水路",
+    "evidence": "永济渠开通后，从涿郡（今北京）可直接由此水路南下，抵达黄河；过河后，接前已开通的通济渠和邗沟，到达长江岸边的江都。……把南北运道延伸至江南。"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "辽宁省",
+    "transport_type": "水路",
+    "evidence": "韦挺是从幽州向辽东转运粮饷，所以顺桑乾河而下至卢思台"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "天津市",
+    "transport_type": "水路",
+    "evidence": "此事反映了唐初自幽州至卢思台间仍存在着一条曲屈800里的水路"
+  },
+  {
+    "input_dynasty": "五代",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "河北省",
+    "transport_type": "水路",
+    "evidence": "幽州赵德钧奏：“新开东南河，自王马口至淤口，长一百六十五里，阔六十五步，深一丈二尺，以通漕运"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "通过大都向上都转运的物资，走大都和上都之间的驿路。"
+  },
+  {
+    "input_dynasty": "近代",
+    "standard_dynasty": "新中国",
+    "target_province": "天津市",
+    "transport_type": "陆路",
+    "evidence": "市外线：首都国际机场还分别开通了至天津和秦皇岛的专线"
+  },
+  {
+    "input_dynasty": "近代",
+    "standard_dynasty": "新中国",
+    "target_province": "河北省",
+    "transport_type": "陆路",
+    "evidence": "市外线：首都国际机场还分别开通了至天津和秦皇岛的专线"
+  },
+  {
+    "input_dynasty": "近代",
+    "standard_dynasty": "新中国",
+    "target_province": "朝鲜",
+    "transport_type": "陆路",
+    "evidence": "并有开往平壤、乌兰巴托、莫斯科等地区的国际和国际联运旅客列车。"
+  },
+  {
+    "input_dynasty": "近代",
+    "standard_dynasty": "新中国",
+    "target_province": "乌兰巴托",
+    "transport_type": "陆路",
+    "evidence": "并有开往平壤、乌兰巴托、莫斯科等地区的国际和国际联运旅客列车。"
+  },
+  {
+    "input_dynasty": "近代",
+    "standard_dynasty": "新中国",
+    "target_province": "莫斯科",
+    "transport_type": "陆路",
+    "evidence": "并有开往平壤、乌兰巴托、莫斯科等地区的国际和国际联运旅客列车。"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "辽",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "十日，自幽州北行至孙侯馆五十里...路振就是通过顺州、檀州出古北口去往辽京的"
+  },
+  {
+    "input_dynasty": null,
+    "standard_dynasty": "金",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "中都西北方的通道，有居庸关口隘。自古以来，居庸关即作为燕薊地区通向边外的孔道。"
+  },
+  {
+    "input_dynasty": "金",
+    "standard_dynasty": "金",
+    "target_province": "河南省",
+    "transport_type": "陆路",
+    "evidence": "贞祐二年（公元1214年），车驾迁汴，发中都，至良乡。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "北京市",
+    "transport_type": "水路",
+    "evidence": "新河从丽正门开始“东南至董村、高丽庄、李二寺运粮河口相合...入张家湾白河”。"
+  },
+  {
+    "input_dynasty": "金",
+    "standard_dynasty": "金",
+    "target_province": "北京市",
+    "transport_type": "水路",
+    "evidence": "是时议开通州漕河...所改凿的重点应是中都至通州的运河，也就是“金闸河”。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "北京市",
+    "transport_type": "水路",
+    "evidence": "后来扩建成著名的坝河，与通惠河并为大都至通州的南北二条重要运道，一直使用到元末。"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "北京市",
+    "transport_type": "水路",
+    "evidence": "为解决中都至通州的漕运...郭守敬...建议是：“中都旧漕河东至通州，权以玉泉水引入行舟，岁可省僦车费六万缗。”"
+  },
+  {
+    "input_dynasty": "元",
+    "standard_dynasty": "元",
+    "target_province": "内蒙古自治区",
+    "transport_type": "陆路",
+    "evidence": "元代是大都通往上都的咽喉。"
+  },
+  {
+    "input_dynasty": "唐",
+    "standard_dynasty": "隋唐五代",
+    "target_province": "辽宁省",
+    "transport_type": "水路",
+    "evidence": "唐代永济渠畅通，贞观十八、十九年（644～645年）征辽东，又以幽州蓟城为集结点，由幽州再向东的水运利用了一段永定河"
+  }
+]
