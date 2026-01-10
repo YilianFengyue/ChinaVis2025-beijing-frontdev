@@ -69,7 +69,6 @@ interface FlatData {
 }
 
 // 重要度数据 (中圈 - 保持不变，作为综合国力/重要性指标)
-// 这里的 dynasty 列表也作为主键列表
 interface ImportanceData {
   dynasty: string;
   minVal: number;
@@ -119,7 +118,6 @@ const resizeObserver = ref<ResizeObserver | null>(null);
 
 // --- 2. 辅助逻辑 ---
 
-// 朝代映射表 (将 JSON 中的朝代映射到 importanceData 的标准朝代)
 const dynastyMap: Record<string, string> = {
   '先秦': '先秦',
   '秦汉': '秦汉',
@@ -162,7 +160,7 @@ const processWarData = (rawData: any[]) => {
   return processed;
 };
 
-// 主题配色 (仿古风格)
+// 【关键修改1】主题配色 (仿古风格) - 将 tooltipBg 改为纯色 Hex 代码
 const themeColors = computed(() => {
   const isDark = vuetifyTheme.global.current.value.dark;
   
@@ -173,7 +171,7 @@ const themeColors = computed(() => {
     stroke: "#dcd3c5",
     bandFill: "#BF360C",
     bandLine: "#8D6E63",
-    tooltipBg: "rgba(252, 250, 246, 0.95)",
+    tooltipBg: "#FCFAF6", // 改为 Hex 纯色，对应原来的 rgba(252, 250, 246)
     tooltipBorder: "#dcd3c5"
   };
 
@@ -184,7 +182,7 @@ const themeColors = computed(() => {
     stroke: "#4E342E",
     bandFill: "#FF8A65",
     bandLine: "#D7CCC8",
-    tooltipBg: "rgba(38, 50, 56, 0.95)",
+    tooltipBg: "#263238", // 改为 Hex 纯色，对应原来的 rgba(38, 50, 56)
     tooltipBorder: "#4E342E"
   };
   
@@ -250,6 +248,7 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
     animation: true,
     animationDuration: 1000,
     animationEasing: 'cubicOut',
+    // 【关键修改2】ECharts Tooltip 强制添加不透明度样式
     tooltip: {
       trigger: 'item',
       formatter: (params: any) => {
@@ -270,7 +269,8 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
         color: themeColors.value.text,
       },
       padding: 12,
-      extraCssText: 'backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);'
+      // 强制 opacity 1 和移除滤镜
+      extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 1; backdrop-filter: none;'
     },
     series: [
       {
@@ -758,12 +758,19 @@ $border-color: #dcd3c5;
   }
 }
 
+// 【关键修改3】强制 D3 Tooltip 不透明
 .chart-tooltip {
   position: absolute;
   top: 0;
   left: 0;
   display: none;
-  background-color: rgba(250, 246, 240, 0.95);
+  
+  // 改为 Hex 纯色
+  background-color: #FCFAF6; 
+  // 强制不透明且移除滤镜
+  opacity: 1 !important;
+  backdrop-filter: none !important;
+
   border: 1px solid $border-color;
   border-radius: 6px;
   padding: 8px 12px;
@@ -773,11 +780,11 @@ $border-color: #dcd3c5;
   pointer-events: none;
   white-space: nowrap;
   z-index: 100;
-  backdrop-filter: blur(4px); 
   transition: opacity 0.2s, transform 0.1s;
   
   .v-theme--dark & {
-    background-color: rgba(38, 50, 56, 0.95);
+    // 改为 Hex 纯色 (深色模式)
+    background-color: #263238; 
     border-color: #4E342E;
     color: #D7CCC8;
   }

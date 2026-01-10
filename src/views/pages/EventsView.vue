@@ -1,4 +1,7 @@
 <script setup lang="ts">
+
+import AxonometricBeijing from "@/components/UrbanMorphology/AxonometricBeijing.vue";
+
 import { ref, computed, onMounted, nextTick, onUnmounted } from 'vue';
 import * as d3 from 'd3';
 import * as echarts from 'echarts/core';
@@ -349,6 +352,17 @@ onUnmounted(() => {
       </v-col>
     </v-row>
 
+    <div class="pa-5">
+    <v-row class="flex-grow-0 mb-4" dense>
+      <v-col cols="12">
+        <div style="height: 500px;">
+          <AxonometricBeijing />
+        </div>
+      </v-col>
+    </v-row>
+
+    </div>
+
     <v-row class="mb-6" align="stretch">
       
       <v-col cols="12" md="6">
@@ -508,6 +522,7 @@ onUnmounted(() => {
       </v-card>
     </v-dialog>
   </div>
+  
 </template>
 
 <style scoped lang="scss">
