@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import RiversCard from "@/components/GeoEnvironment/RiversCard.vue";
-import ClimateCard from "@/components/UrbanMorphology/ClimateCard.vue";
-import EcolndexCard from "@/components/UrbanMorphology/EcoIndexCard.vue"
+import ClimateCard from "@/components/GeoEnvironment/ClimateCard.vue";
+import EcolndexCard from "@/components/GeoEnvironment/EcoIndexCard.vue"
 </script>
 
 <template>
