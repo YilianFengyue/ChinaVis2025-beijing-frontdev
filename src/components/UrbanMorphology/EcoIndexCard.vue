@@ -43,8 +43,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as d3 from 'd3'
+import { useClimateLinkageStore } from '@/stores/climateLinkageStore'
+
+// 气候联动 Store
+const climateLinkageStore = useClimateLinkageStore()
 
 // ==================== 数据定义 ====================
 
@@ -58,6 +62,14 @@ const ecoIndexData = [
   { label: "明",       start: 1368, end: 1644, mid: 1506, veg: 2, climate: 3, water: 3 },
   { label: "清",       start: 1644, end: 1912, mid: 1778, veg: 1, climate: 2, water: 3 },
 ]
+
+// 气候适宜度映射（用于联动匹配）
+// climate >= 4 为暖期适宜，climate <= 2 为冷期适宜
+const getClimateType = (climateScore) => {
+  if (climateScore >= 4) return 'warm'
+  if (climateScore <= 2) return 'cold'
+  return 'stable'
+}
 
 // 植被事件点（从植被.json提取的关键信息）
 const vegetationEvents = [
@@ -390,14 +402,111 @@ const drawChart = () => {
   bindAreaEvents(interactAreas, xScale, yScale)
 }
 
+// ==================== 联动高亮更新 ====================
+const updateHighlight = () => {
+  if (!chartContainer.value) return
+  
+  const highlightClimate = climateLinkageStore.highlightClimate
+  const highlightPeriod = climateLinkageStore.highlightPeriod
+  
+  // 没有高亮时恢复原样
+  if (!highlightClimate && !highlightPeriod) {
+    d3.select(chartContainer.value)
+      .selectAll('.interact-area')
+      .transition()
+      .duration(300)
+      .attr('fill', 'transparent')
+    
+    d3.select(chartContainer.value)
+      .selectAll('.area-layer')
+      .transition()
+      .duration(300)
+      .attr('opacity', 0.8)
+    
+    d3.select(chartContainer.value)
+      .selectAll('.dynasty-label')
+      .transition()
+      .duration(300)
+      .attr('font-weight', 'normal')
+      .attr('fill', colors.text)
+    return
+  }
+  
+  // 有高亮时根据条件更新
+  d3.select(chartContainer.value)
+    .selectAll('.interact-area')
+    .each(function(d) {
+      let isHighlighted = false
+      
+      // 检查气候类型匹配
+      if (highlightClimate) {
+        const type = getClimateType(d.climate)
+        if (type === highlightClimate) isHighlighted = true
+      }
+      
+      // 检查朝代匹配
+      if (highlightPeriod) {
+        if (d.label.includes(highlightPeriod) || 
+            (highlightPeriod === '元' && d.label === '元') ||
+            (highlightPeriod === '明' && d.label === '明') ||
+            (highlightPeriod === '清' && d.label === '清')) {
+          isHighlighted = true
+        }
+      }
+      
+      d3.select(this)
+        .transition()
+        .duration(300)
+        .attr('fill', isHighlighted ? 'rgba(255, 107, 53, 0.2)' : 'transparent')
+    })
+  
+  // 同时更新朝代标签
+  d3.select(chartContainer.value)
+    .selectAll('.dynasty-label')
+    .each(function(d) {
+      let isHighlighted = false
+      
+      if (highlightClimate) {
+        const type = getClimateType(d.climate)
+        if (type === highlightClimate) isHighlighted = true
+      }
+      
+      if (highlightPeriod) {
+        if (d.label.includes(highlightPeriod) || 
+            (highlightPeriod === '元' && d.label === '元') ||
+            (highlightPeriod === '明' && d.label === '明') ||
+            (highlightPeriod === '清' && d.label === '清')) {
+          isHighlighted = true
+        }
+      }
+      
+      d3.select(this)
+        .transition()
+        .duration(300)
+        .attr('font-weight', isHighlighted ? 'bold' : 'normal')
+        .attr('fill', isHighlighted ? '#FF6B35' : colors.text)
+    })
+}
+
+// 监听联动状态变化
+watch(
+  () => [climateLinkageStore.highlightClimate, climateLinkageStore.highlightPeriod],
+  () => {
+    updateHighlight()
+  },
+  { immediate: true }
+)
+
 // ==================== 生命周期 ====================
 onMounted(() => {
   setTimeout(() => {
     drawChart()
+    updateHighlight()
   }, 100)
   
   resizeObserver = new ResizeObserver(() => {
     drawChart()
+    updateHighlight()
   })
   if (chartContainer.value) {
     resizeObserver.observe(chartContainer.value)

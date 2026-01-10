@@ -154,6 +154,10 @@
 import { ref, onMounted, computed, watch } from 'vue';
 import * as echarts from 'echarts';
 import industryDataRaw from '@/data/14_industry_processed.json';
+import { useClimateLinkageStore } from '@/stores/climateLinkageStore';
+
+// 气候联动 Store
+const climateLinkageStore = useClimateLinkageStore();
 
 // 引用定义
 const industryChartRef = ref<HTMLElement | null>(null);
@@ -169,9 +173,12 @@ const availablePeriods = [
   '辽金', '元', '明', '清', '民国'
 ];
 
-// 切换朝代筛选
+// 切换朝代筛选 + 联动触发
 const togglePeriod = (period: string) => {
-  selectedPeriod.value = selectedPeriod.value === period ? null : period;
+  const newPeriod = selectedPeriod.value === period ? null : period;
+  selectedPeriod.value = newPeriod;
+  // 触发联动：更新 store
+  climateLinkageStore.setPeriodHighlight(newPeriod);
 };
 
 // 颜色配置（宏观产业类型）
@@ -513,7 +520,7 @@ const initCharts = () => {
     window.addEventListener('resize', () => chart.resize());
   }
 
-  // 2. 气候关联饼图
+  // 2. 气候关联饼图（带联动点击）
   if (climateChartRef.value) {
     const chart = echarts.init(climateChartRef.value);
     const data = climateData.value;
@@ -549,8 +556,31 @@ const initCharts = () => {
           name: item.name,
           value: item.value,
           itemStyle: { color: item.color }
-        }))
+        })),
+        selectedMode: 'single', // 允许单选
+        select: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowColor: 'rgba(0, 0, 0, 0.3)'
+          }
+        }
       }]
+    });
+
+    // 点击饼图扇区触发联动
+    chart.on('click', (params: any) => {
+      const name = params.name;
+      let climate: 'warm' | 'cold' | 'stable' | null = null;
+      if (name === '暖期') climate = 'warm';
+      else if (name === '冷期') climate = 'cold';
+      else if (name === '平稳期') climate = 'stable';
+      
+      // 切换选中状态
+      if (climateLinkageStore.highlightClimate === climate) {
+        climateLinkageStore.setClimateHighlight(null);
+      } else {
+        climateLinkageStore.setClimateHighlight(climate);
+      }
     });
 
     window.addEventListener('resize', () => chart.resize());

@@ -38,7 +38,12 @@ export default {
           link: "/society",
           icon: "mdi-account-group",
         },
+        {
 
+          text: "北京地区可视化总览",
+          link: "/mapbox",
+          icon: "mdi-account-group",
+        },
       ],
     },
 

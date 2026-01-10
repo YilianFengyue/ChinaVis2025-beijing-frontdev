@@ -32,8 +32,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 import * as d3 from 'd3'
+import { useClimateLinkageStore } from '@/stores/climateLinkageStore'
+
+// 气候联动 Store
+const climateLinkageStore = useClimateLinkageStore()
 
 // ==================== 数据定义 ====================
 
@@ -49,6 +53,19 @@ const dynastyData = [
   { id: 'ming', label: '明', start: 1368, end: 1644, climate: 'cold' },
   { id: 'qing', label: '清', start: 1644, end: 1912, climate: 'cold' },
 ]
+
+// 朝代名称映射（用于联动匹配）
+const periodToClimateMap = {
+  '先秦': 'warm',
+  '秦汉': 'warm',
+  '魏晋南北朝': 'cold',
+  '隋唐五代': 'warm',
+  '辽金': 'warm', // 辽是暖，金是冷，这里简化
+  '元': 'cold',
+  '明': 'cold',
+  '清': 'cold',
+  '民国': 'cold',
+}
 
 // 气候事件（从气候.json提取）
 const climateEvents = [
@@ -265,16 +282,82 @@ const drawChart = () => {
     .text(d => d < 0 ? `前${Math.abs(d)}` : d)
 }
 
+// ==================== 联动高亮更新 ====================
+const updateHighlight = () => {
+  if (!chartContainer.value) return
+  
+  const highlightClimate = climateLinkageStore.highlightClimate
+  const highlightPeriod = climateLinkageStore.highlightPeriod
+  
+  // 没有高亮时恢复原样
+  if (!highlightClimate && !highlightPeriod) {
+    d3.select(chartContainer.value)
+      .selectAll('.dynasty-band rect')
+      .transition()
+      .duration(300)
+      .style('opacity', 0.85)
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1)
+    return
+  }
+  
+  // 有高亮时根据条件更新
+  d3.select(chartContainer.value)
+    .selectAll('.dynasty-band')
+    .each(function(d) {
+      const rect = d3.select(this).select('rect')
+      let isHighlighted = false
+      
+      // 检查气候类型匹配
+      if (highlightClimate) {
+        if (highlightClimate === 'warm' && d.climate === 'warm') isHighlighted = true
+        if (highlightClimate === 'cold' && d.climate === 'cold') isHighlighted = true
+      }
+      
+      // 检查朝代匹配
+      if (highlightPeriod) {
+        const periodClimate = periodToClimateMap[highlightPeriod]
+        if (periodClimate && d.climate === periodClimate) isHighlighted = true
+        // 直接匹配朝代名
+        if (d.label === highlightPeriod || 
+            (highlightPeriod === '先秦' && d.label === '先秦') ||
+            (highlightPeriod === '秦汉' && d.label === '秦汉') ||
+            (highlightPeriod === '元' && d.label === '元') ||
+            (highlightPeriod === '明' && d.label === '明') ||
+            (highlightPeriod === '清' && d.label === '清')) {
+          isHighlighted = true
+        }
+      }
+      
+      rect.transition()
+        .duration(300)
+        .style('opacity', isHighlighted ? 1 : 0.3)
+        .attr('stroke', isHighlighted ? '#FF6B35' : '#fff')
+        .attr('stroke-width', isHighlighted ? 3 : 1)
+    })
+}
+
+// 监听联动状态变化
+watch(
+  () => [climateLinkageStore.highlightClimate, climateLinkageStore.highlightPeriod],
+  () => {
+    updateHighlight()
+  },
+  { immediate: true }
+)
+
 // ==================== 生命周期 ====================
 onMounted(() => {
   // 延迟绑定确保容器已渲染
   setTimeout(() => {
     drawChart()
+    updateHighlight() // 初始化时检查是否有高亮
   }, 100)
   
   // 监听容器大小变化
   resizeObserver = new ResizeObserver(() => {
     drawChart()
+    updateHighlight()
   })
   if (chartContainer.value) {
     resizeObserver.observe(chartContainer.value)

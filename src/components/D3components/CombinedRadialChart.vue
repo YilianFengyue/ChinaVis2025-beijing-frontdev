@@ -248,9 +248,11 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
     animation: true,
     animationDuration: 1000,
     animationEasing: 'cubicOut',
-    // 【关键修改2】ECharts Tooltip 强制添加不透明度样式
+    // 【关键修改2】ECharts Tooltip - 恢复原有配色风格
     tooltip: {
       trigger: 'item',
+      appendToBody: true, // 关键：将tooltip添加到body，避免被容器层遮挡
+      confine: false, // 允许tooltip超出容器边界
       formatter: (params: any) => {
         const data = params.data as { name: string; summary: string; condition: string };
         if (!data.name) return '';
@@ -258,7 +260,7 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
           <div style="max-width: 240px; white-space: normal; line-height: 1.5; font-family: serif;">
             <div style="font-size: 1.1em; color: ${params.color}; font-weight: bold; margin-bottom: 4px;">${data.name}</div>
             <div style="font-size: 0.9em; color: ${isDark ? '#ccc' : '#666'};"><strong>状况:</strong> ${data.condition}</div>
-            <div style="font-size: 0.85em; margin-top: 4px;">${data.summary}</div>
+            <div style="font-size: 0.85em; margin-top: 4px; color: ${isDark ? '#bbb' : '#555'};">${data.summary}</div>
           </div>
         `;
       },
@@ -269,8 +271,7 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
         color: themeColors.value.text,
       },
       padding: 12,
-      // 强制 opacity 1 和移除滤镜
-      extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 1; backdrop-filter: none;'
+      extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 6px; z-index: 99999 !important;'
     },
     series: [
       {
@@ -788,5 +789,17 @@ $border-color: #dcd3c5;
     border-color: #4E342E;
     color: #D7CCC8;
   }
+}
+
+// 【关键修改4】全局样式：确保 ECharts tooltip 显示在最上层
+:global(div[class*="echarts"]) {
+  // 提高 tooltip 的 z-index，确保显示在 D3 层之上
+  & > div:not(canvas) {
+    z-index: 9999 !important;
+  }
+}
+
+:global(.echarts-tooltip) {
+  z-index: 9999 !important;
 }
 </style>
