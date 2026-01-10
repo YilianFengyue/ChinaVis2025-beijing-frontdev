@@ -15,7 +15,7 @@
 
         <v-col cols="auto">
           <div class="source-tag">
-            <span class="source-icon">📖</span>
+
             <span class="source-text">《老北京实用指南》</span>
           </div>
         </v-col>
@@ -112,23 +112,29 @@ const totalCount = computed(() => {
 });
 
 // ==================== 绘制 Treemap ====================
+// ==================== 绘制 Treemap ====================
 const drawTreemap = () => {
   if (!treemapSvg.value || !treemapContainer.value) return;
 
   const container = treemapContainer.value;
-  const width = container.clientWidth;
-  const height = container.clientHeight || 240;
+  const { width, height } = container.getBoundingClientRect();
+  
+  // 安全检查：如果宽度异常小，可能是尚未渲染，稍后重试
+  if (width < 50) {
+    setTimeout(drawTreemap, 100);
+    return;
+  }
 
   const svg = d3.select(treemapSvg.value)
     .attr('width', width)
-    .attr('height', height);
+    .attr('height', height || 240);
 
   svg.selectAll('*').remove();
 
   // 构建层次数据
   const hierarchyData = {
     name: 'root',
-    children: CLASS_ORDER.filter(cls => categoryStats.value[cls].count > 0).map(cls => ({
+    children: CLASS_ORDER.filter(cls => categoryStats.value[cls]?.count > 0).map(cls => ({
       name: cls,
       children: categoryStats.value[cls].items.map(item => ({
         name: item.name,
@@ -142,10 +148,12 @@ const drawTreemap = () => {
     .sum((d: any) => d.value || 0)
     .sort((a, b) => (b.value || 0) - (a.value || 0));
 
+  // 更紧凑的布局
   const treemap = d3.treemap<any>()
-    .size([width, height])
-    .padding(2)
-    .paddingOuter(4)
+    .size([width, height || 240])
+    .paddingInner(1)
+    .paddingOuter(0)
+    .paddingTop(0)
     .round(true);
 
   treemap(root);
@@ -166,22 +174,22 @@ const drawTreemap = () => {
       const category = d.data.category;
       const baseColor = d3.color(CLASS_COLORS[category])!;
       const hsl = d3.hsl(baseColor);
-      // 根据值大小微调亮度
       const maxValue = d3.max(root.leaves(), leaf => leaf.value) || 1;
       const ratio = (d.value || 0) / maxValue;
-      hsl.l = Math.max(0.4, Math.min(0.75, hsl.l + (1 - ratio) * 0.15));
+      // 调整亮度范围，使其看起来更有质感
+      hsl.l = Math.max(0.45, Math.min(0.7, hsl.l + (1 - ratio) * 0.1));
       return hsl.toString();
     })
     .attr('opacity', 0)
-    .attr('stroke', 'rgba(255,255,255,0.4)')
-    .attr('stroke-width', 1)
+    .attr('stroke', 'rgba(255,255,255,0.3)')
+    .attr('stroke-width', 0.5)
     .style('cursor', 'pointer')
     .on('mouseenter', function(event, d) {
       d3.select(this)
-        .transition().duration(120)
-        .attr('opacity', 0.95)
-        .attr('stroke', 'rgba(255,255,255,0.8)')
-        .attr('stroke-width', 2);
+        .interrupt()
+        .attr('opacity', 1)
+        .attr('stroke', '#fff')
+        .attr('stroke-width', 1.5);
 
       tooltip.value = {
         show: true,
@@ -200,56 +208,57 @@ const drawTreemap = () => {
     })
     .on('mouseleave', function() {
       d3.select(this)
-        .transition().duration(120)
-        .attr('opacity', 0.78)
-        .attr('stroke', 'rgba(255,255,255,0.4)')
-        .attr('stroke-width', 1);
+        .transition().duration(200)
+        .attr('opacity', 0.85)
+        .attr('stroke', 'rgba(255,255,255,0.3)')
+        .attr('stroke-width', 0.5);
       tooltip.value.show = false;
     })
     .transition()
-    .duration(450)
-    .delay((d, i) => i * 15)
-    .ease(d3.easeCubicOut)
-    .attr('opacity', 0.78);
+    .duration(600)
+    .delay((d, i) => i * 5) // Faster staggered animation
+    .attr('opacity', 0.85);
 
-  // 文字标签（只在足够大的矩形上显示）
+  // 文字标签优化
   leaves.each(function(d) {
     const w = d.x1 - d.x0;
     const h = d.y1 - d.y0;
     
-    if (w > 35 && h > 20) {
+    // 只在空间足够时显示
+    if (w > 24 && h > 14) {
       const g = d3.select(this);
+      
+      const fontSize = Math.min(11, Math.max(9, w / 5));
       
       // 名称
       g.append('text')
-        .attr('x', 4)
-        .attr('y', 14)
-        .style('font-size', w > 60 ? '11px' : '9px')
+        .attr('x', 3)
+        .attr('y', 11)
+        .style('font-size', fontSize + 'px')
         .style('fill', '#fff')
         .style('font-family', '"Source Han Serif SC", serif')
         .style('font-weight', '500')
         .style('pointer-events', 'none')
-        .style('text-shadow', '0 1px 2px rgba(0,0,0,0.3)')
         .style('opacity', 0)
-        .text(d.data.name.length > 4 && w < 50 ? d.data.name.slice(0, 3) + '…' : d.data.name)
+        .text(d.data.name)
         .transition()
-        .delay(300)
+        .delay(400)
         .duration(300)
         .style('opacity', 0.95);
 
-      // 数量（只在更大的矩形显示）
-      if (w > 45 && h > 32) {
+      // 数量 (更大的空间)
+      if (w > 40 && h > 28) {
         g.append('text')
-          .attr('x', 4)
-          .attr('y', h > 40 ? 28 : h - 4)
-          .style('font-size', '9px')
-          .style('fill', 'rgba(255,255,255,0.7)')
+          .attr('x', 3)
+          .attr('y', h - 4)
+          .style('font-size', '8px')
+          .style('fill', 'rgba(255,255,255,0.8)')
           .style('font-family', '"Product Sans", sans-serif')
           .style('pointer-events', 'none')
           .style('opacity', 0)
           .text(d.value)
           .transition()
-          .delay(400)
+          .delay(500)
           .duration(300)
           .style('opacity', 1);
       }
@@ -258,12 +267,24 @@ const drawTreemap = () => {
 };
 
 onMounted(() => {
+  // Use ResizeObserver for robust sizing
+  const ro = new ResizeObserver(() => {
+    requestAnimationFrame(drawTreemap);
+  });
+  if (treemapContainer.value) {
+    ro.observe(treemapContainer.value);
+  }
+  
+  // Cleanup on unmount (scoped variable workaround)
+  (window as any)._treemapRO = ro; 
+  
   nextTick(() => drawTreemap());
-  window.addEventListener('resize', drawTreemap);
 });
 
 onUnmounted(() => {
-  window.removeEventListener('resize', drawTreemap);
+  if ((window as any)._treemapRO) {
+    (window as any)._treemapRO.disconnect();
+  }
 });
 </script>
 
@@ -273,6 +294,9 @@ onUnmounted(() => {
   --font-cn: "Source Han Serif SC", "Noto Serif SC", serif;
   background: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 头部 */

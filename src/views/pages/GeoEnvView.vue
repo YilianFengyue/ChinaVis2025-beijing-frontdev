@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import RiversCard from "@/components/GeoEnvironment/RiversCard.vue";
+import ClimateCard from "@/components/UrbanMorphology/ClimateCard.vue";
+import EcolndexCard from "@/components/UrbanMorphology/EcoIndexCard.vue"
 </script>
 
 <template>
@@ -14,16 +16,16 @@ import RiversCard from "@/components/GeoEnvironment/RiversCard.vue";
           <rivers-card></rivers-card>
         </v-card>
       </v-col>
-      <v-col cols="12" md="6" xl="4">
+      <v-col cols="6" md="6" xl="4">
         <!-- Activity Card -->
         <v-card class="card-shadow" height="420">
-          <activity-card></activity-card>
+          <climate-card></climate-card>
         </v-card>
       </v-col>
-      <v-col cols="12" md="6" xl="4">
+      <v-col cols="6" md="6" xl="4">
         <!-- Trafiic Card-->
         <v-card class="card-shadow h-full" height="420">
-          <sources-card></sources-card>
+          <ecolndex-card></ecolndex-card>
         </v-card>
       </v-col>
     </v-row>

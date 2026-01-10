@@ -12,9 +12,9 @@ import MinguoMarketDonut from "~/src/components/UrbanMorphology/MinguoMarketDonu
     <v-row class="flex-0" dense>
       <!-- 左侧：交通舆图 (高 700) -->
       <v-col cols="6" xl="6">
-        <v-card class="card-shadow" height="700">
+        <div class="h-100" style="height: 700px;">
           <TransportMapCard />
-        </v-card>
+        </div>
       </v-col>
 
       <!-- 右侧：物产 & 民国 (垂直排列) -->
@@ -22,16 +22,16 @@ import MinguoMarketDonut from "~/src/components/UrbanMorphology/MinguoMarketDonu
         <v-row dense>
           <!-- 上：物产结构 (高 320) -->
           <v-col cols="12">
-            <v-card class="card-shadow" height="320">
+            <div style="height: 320px;">
               <PropertyDonut />
-            </v-card>
+            </div>
           </v-col>
           
           <!-- 下：民国商业 (高 380) -->
-          <v-col cols="6">
-            <v-card class="card-shadow" height="380">
+          <v-col cols="12">
+            <div style="height: 380px;">
               <MinguoMarketDonut />
-            </v-card>
+            </div>
           </v-col>
         </v-row>
       </v-col>

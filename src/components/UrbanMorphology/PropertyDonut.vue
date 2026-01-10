@@ -159,7 +159,8 @@ const drawDonut = () => {
   if (!donutSvg.value || !donutContainer.value || !currentData.value) return;
 
   const container = donutContainer.value;
-  const size = Math.min(container.clientWidth, container.clientHeight);
+  const { width, height } = container.getBoundingClientRect();
+  const size = Math.min(width, height);
   const radius = size / 2 - 20;
 
   const svg = d3.select(donutSvg.value)
@@ -214,11 +215,7 @@ const drawDonut = () => {
       if (d.data.realValue <= 0 || isEmptyDynasty) return;
       d3.select(this)
         .transition().duration(150)
-        .attr('opacity', 0.92)
-        .attr('transform', () => {
-          const [x, y] = arc.centroid(d);
-          return `translate(${x * 0.04}, ${y * 0.04})`;
-        });
+        .attr('opacity', 0.95);
 
       tooltip.value = {
         show: true,
@@ -239,8 +236,7 @@ const drawDonut = () => {
       const baseOpacity = selectedClass.value && selectedClass.value !== d.data.name ? 0.2 : 0.72;
       d3.select(this)
         .transition().duration(150)
-        .attr('opacity', d.data.realValue > 0 ? baseOpacity : 0.06)
-        .attr('transform', 'translate(0,0)');
+        .attr('opacity', d.data.realValue > 0 ? baseOpacity : 0.06);
       tooltip.value.show = false;
     })
     .on('click', (event, d) => {
@@ -408,70 +404,20 @@ onUnmounted(() => {
   background: rgba(255, 255, 255, 0.3) !important;
   backdrop-filter: none;
   overflow: hidden;
-}
-
-/* 头部 */
-.panel-header {
-  padding: 12px 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-.header-block {
-  width: 4px;
-  height: 22px;
-  background: #777;
-  margin-right: 10px;
-}
-
-.header-text-group {
+  height: 100%; /* Force fill parent div */
   display: flex;
   flex-direction: column;
 }
 
-.panel-title {
-  font-family: var(--font-cn);
-  font-size: 15px;
-  font-weight: 700;
-  color: #333;
-  letter-spacing: 1px;
-}
-
-.panel-subtitle {
-  font-family: var(--font-en);
-  font-size: 8px;
-  color: #999;
-  letter-spacing: 1px;
-}
-
-.dynasty-selector {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.selector-label {
-  font-family: var(--font-en);
-  font-size: 8px;
-  color: #aaa;
-  font-weight: 600;
-}
-
-.arch-select {
-  border: none;
-  border-bottom: 1px solid #aaa;
-  background: transparent;
-  padding: 2px 6px;
-  font-size: 12px;
-  font-family: var(--font-cn);
-  color: #444;
-  cursor: pointer;
-  outline: none;
-}
+/* ... existing code ... */
 
 /* 主体布局 */
 .chart-body {
   display: flex;
-  min-height: 200px;
+  flex: 1; /* Take remaining height */
+  height: 0; /* Important for scroll/overflow calculation */
+  min-height: 0; /* Override default min-height */
+  overflow: hidden;
 }
 
 .donut-section {
@@ -481,7 +427,9 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 8px;
+  height: 100%; /* Fill chart-body */
 }
+
 
 .center-info {
   position: absolute;
