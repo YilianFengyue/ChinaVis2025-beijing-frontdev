@@ -15,8 +15,18 @@ const { xs } = useDisplay()
 
 // 组件状态
 const dialog = ref(false)
-const currentCategory = ref("all")
-const searchKeyword = ref("")
+const currentCategory = ref('all')
+const searchKeyword = ref('')
+
+// AI分析状态
+const aiLoading = ref(false)
+const aiError = ref('')
+const aiResults = ref<Array<{id: string, title: string, content: string, timestamp: number}>>([])  
+const currentTab = ref('clues')
+
+// 详情弹窗状态
+const detailDialog = ref(false)
+const detailItem = ref<any>(null)
 
 // 从 store 获取数据
 const categories = computed(() => inspirationStore.categories)
@@ -100,20 +110,11 @@ const clearAll = () => {
     inspirationStore.clearAll()
 }
 
-// 查看详情
+// 查看详情 - 改为弹窗
 const viewDetail = (item: any) => {
   console.log('查看详情:', item)
-  
-  // 如果是线索类型，显示原始数据详情
-  if (item.type.startsWith('clue_') && item.metadata?.raw) {
-    alert(`【${item.title}】\n\n${item.content}\n\n原始数据：\n${JSON.stringify(item.metadata.raw, null, 2)}`)
-    return
-  }
-  
-  // 如果有原始URL，可以跳转
-  if (item.sourceUrl) {
-    window.open(item.sourceUrl, '_blank')
-  }
+  detailItem.value = item
+  detailDialog.value = true
 }
 
 // 分享功能
@@ -155,6 +156,96 @@ const importData = (event: Event) => {
 onMounted(() => {
   inspirationStore.loadFromLocalStorage()
 })
+
+// AI分析系统提示词
+const AI_SYSTEM_PROMPT = `你是一位ChinaVis历史人文赛道专家。分析用户提供的线索卡片(JSON)，生成简洁分析报告。
+判定规则：
+- 强关联：构建因果链条，揭示演化规律
+- 无关联：分别解读每条线索的独立意义
+输出要求：严谨学术风格，引用sourceType来源，严禁牵强附会。`
+
+// AI分析函数
+const runAiAnalysis = async () => {
+  if (inspirationItems.value.length === 0) {
+    aiError.value = '请先收集一些线索数据'
+    return
+  }
+
+  const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY
+  if (!apiKey || apiKey === 'your_api_key_here') {
+    aiError.value = '请在.env文件中配置VITE_OPENROUTER_API_KEY'
+    return
+  }
+
+  aiLoading.value = true
+  aiError.value = ''
+
+  try {
+    const cluesData = inspirationItems.value.map(item => ({
+      title: item.title,
+      dynasty: item.metadata?.raw?.dynasty || '未知',
+      content: item.content,
+      sourceType: item.sourceType
+    }))
+
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'google/gemini-3-pro-preview',
+        messages: [
+          { role: 'system', content: AI_SYSTEM_PROMPT },
+          { role: 'user', content: JSON.stringify(cluesData, null, 2) }
+        ]
+      })
+    })
+
+    if (!response.ok) throw new Error(`API请求失败: ${response.status}`)
+
+    const result = await response.json()
+    const aiContent = result.choices?.[0]?.message?.content || '分析失败'
+
+    aiResults.value.unshift({
+      id: Date.now().toString(),
+      title: `AI分析报告 (${new Date().toLocaleTimeString()})`,
+      content: aiContent,
+      timestamp: Date.now()
+    })
+
+    currentTab.value = 'ai'
+  } catch (error: any) {
+    aiError.value = error.message || 'AI分析请求失败'
+  } finally {
+    aiLoading.value = false
+  }
+}
+
+// 删除AI分析结果
+const deleteAiResult = (id: string) => {
+  aiResults.value = aiResults.value.filter(r => r.id !== id)
+}
+
+// 简单markdown渲染
+const renderMarkdown = (text: string): string => {
+  if (!text) return ''
+  return text
+    // 标题
+    .replace(/^### (.+)$/gm, '<h4 class="text-subtitle-1 font-weight-bold mt-3 mb-1">$1</h4>')
+    .replace(/^## (.+)$/gm, '<h3 class="text-h6 font-weight-bold mt-4 mb-2">$1</h3>')
+    .replace(/^# (.+)$/gm, '<h2 class="text-h5 font-weight-bold mt-4 mb-2">$1</h2>')
+    // 粗体和斜体
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>')
+    // 列表
+    .replace(/^- (.+)$/gm, '<li style="margin-left: 16px;">$1</li>')
+    .replace(/^\d+\. (.+)$/gm, '<li style="margin-left: 16px;">$1</li>')
+    // 换行
+    .replace(/\n\n/g, '<br/><br/>')
+    .replace(/\n/g, '<br/>')
+}
 </script>
 
 <template>
@@ -216,8 +307,32 @@ onMounted(() => {
         
         <!-- 操作栏 -->
         <v-card-actions class="px-5 py-3">
-          <!-- 分类筛选 -->
+          <!-- Tab切换 -->
           <v-btn-toggle
+            v-model="currentTab"
+            variant="outlined"
+            density="compact"
+            color="primary"
+            mandatory
+            class="mr-3"
+          >
+            <v-btn value="clues" size="small">
+              <v-icon size="16" class="mr-1">mdi-pin</v-icon>
+              线索
+              <v-chip size="x-small" class="ml-1">{{ inspirationItems.length }}</v-chip>
+            </v-btn>
+            <v-btn value="ai" size="small">
+              <v-icon size="16" class="mr-1">mdi-robot</v-icon>
+              AI分析
+              <v-chip size="x-small" class="ml-1" v-if="aiResults.length">{{ aiResults.length }}</v-chip>
+            </v-btn>
+          </v-btn-toggle>
+
+          <v-spacer></v-spacer>
+
+          <!-- 分类筛选(仅线索tab显示) -->
+          <v-btn-toggle
+            v-if="currentTab === 'clues'"
             v-model="currentCategory"
             variant="outlined"
             density="compact"
@@ -232,13 +347,8 @@ onMounted(() => {
               size="small"
             >
               {{ cat.label }}
-              <v-chip size="x-small" class="ml-1" v-if="cat.count">
-                {{ cat.count }}
-              </v-chip>
             </v-btn>
           </v-btn-toggle>
-
-          <v-spacer></v-spacer>
 
           <!-- 清空按钮 -->
           <v-btn
@@ -255,8 +365,8 @@ onMounted(() => {
 
         <v-divider />
 
-        <!-- 搜索栏 -->
-        <div class="pa-3">
+        <!-- 搜索栏(仅线索tab显示) -->
+        <div class="pa-3" v-if="currentTab === 'clues'">
           <v-text-field
             v-model="searchKeyword"
             placeholder="搜索收藏内容..."
@@ -267,10 +377,16 @@ onMounted(() => {
             clearable
           />
         </div>
+        <!-- AI错误提示 -->
+        <v-alert v-if="aiError" type="error" density="compact" closable class="mx-3" @click:close="aiError = ''">
+          {{ aiError }}
+        </v-alert>
 
         <!-- 内容区域 -->
         <v-card-text class="flex-grow-1 pa-0">
           <perfect-scrollbar class="inspiration-container">
+            <!-- 线索Tab内容 -->
+            <template v-if="currentTab === 'clues'">
             <!-- 空状态 -->
             <div v-if="searchedItems.length === 0" class="empty-state">
               <v-icon size="64" color="grey-lighten-2">
@@ -391,11 +507,91 @@ onMounted(() => {
                 </v-card-actions>
               </v-card>
             </div>
+            </template>
+
+            <!-- AI分析Tab内容 -->
+            <template v-else>
+              <!-- AI一键分析按钮(block) -->
+              <div class="pa-3">
+                <v-btn
+                  block
+                  variant="tonal"
+                  color="deep-purple"
+                  :loading="aiLoading"
+                  :disabled="inspirationItems.length === 0"
+                  @click="runAiAnalysis"
+                >
+                  <v-icon class="mr-2">mdi-auto-fix</v-icon>
+                  AI一键分析当前线索
+                </v-btn>
+              </div>
+              <!-- AI空状态 -->
+              <div v-if="aiResults.length === 0" class="empty-state">
+                <v-icon size="64" color="grey-lighten-2">mdi-robot-outline</v-icon>
+                <p class="text-grey-lighten-1 mt-4">还没有AI分析结果</p>
+                <p class="text-caption text-grey-lighten-2">先收集一些线索，然后点击「AI一键分析」</p>
+              </div>
+              <!-- AI结果卡片 -->
+              <div v-else class="pa-3">
+                <v-card
+                  v-for="result in aiResults"
+                  :key="result.id"
+                  class="inspiration-card mb-3"
+                  variant="outlined"
+                  hover
+                >
+                  <div class="d-flex align-center pa-3 pb-2">
+                    <v-icon icon="mdi-robot" color="deep-purple" size="20" class="mr-2" />
+                    <span class="text-subtitle-2 font-weight-bold">{{ result.title }}</span>
+                    <v-spacer />
+                    <v-btn icon size="x-small" variant="text" @click="deleteAiResult(result.id)">
+                      <v-icon size="16">mdi-close</v-icon>
+                    </v-btn>
+                  </div>
+                  <v-card-text class="pt-0">
+                    <div class="ai-markdown" v-html="renderMarkdown(result.content)"></div>
+                  </v-card-text>
+                  <v-card-actions class="pt-0">
+                    <span class="text-caption text-grey">{{ formatTime(result.timestamp) }}</span>
+                    <v-spacer />
+                    <CopyBtn :text="result.content" size="small" />
+                  </v-card-actions>
+                </v-card>
+              </div>
+            </template>
           </perfect-scrollbar>
         </v-card-text>
       </v-card>
     </transition>
   </teleport>
+
+  <!-- 详情弹窗 -->
+  <v-dialog v-model="detailDialog" max-width="600">
+    <v-card v-if="detailItem">
+      <v-card-title class="d-flex align-center">
+        <v-icon :icon="getTypeIcon(detailItem.type)" :color="getTypeColor(detailItem.type)" size="24" class="mr-2" />
+        <span>{{ detailItem.title }}</span>
+        <v-spacer />
+        <v-btn icon="mdi-close" variant="text" size="small" @click="detailDialog = false" />
+      </v-card-title>
+      <v-divider />
+      <v-card-text>
+        <div v-if="detailItem.subtitle" class="text-subtitle-2 text-grey mb-2">{{ detailItem.subtitle }}</div>
+        <div class="mb-3" style="white-space: pre-wrap;">{{ detailItem.content }}</div>
+        <v-divider class="my-3" />
+        <div v-if="detailItem.sourceType" class="text-caption text-grey mb-2">来源：{{ detailItem.sourceType }}</div>
+        <div v-if="detailItem.metadata?.raw" class="text-caption">
+          <strong>原始数据：</strong>
+          <pre style="background: #f5f5f5; padding: 8px; border-radius: 4px; overflow: auto; max-height: 200px; font-size: 11px;">{{ JSON.stringify(detailItem.metadata.raw, null, 2) }}</pre>
+        </div>
+      </v-card-text>
+      <v-card-actions>
+        <CopyBtn :text="detailItem.content" />
+        <v-spacer />
+        <v-btn color="primary" variant="text" @click="detailDialog = false">关闭</v-btn>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <style scoped lang="scss">
