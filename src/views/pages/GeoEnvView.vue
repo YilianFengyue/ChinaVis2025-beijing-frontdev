@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import RiversCard from "@/components/GeoEnvironment/RiversCard.vue";
-import ClimateCard from "@/components/GeoEnvironment/ClimateCard.vue";
-import EcolndexCard from "@/components/GeoEnvironment/EcoIndexCard.vue"
+import ClimateCard from "@/components/UrbanMorphology/ClimateCard.vue";
+import EcolndexCard from "@/components/UrbanMorphology/EcoIndexCard.vue"
 </script>
 
 <template>
@@ -26,6 +26,11 @@ import EcolndexCard from "@/components/GeoEnvironment/EcoIndexCard.vue"
         <!-- Trafiic Card-->
         <v-card class="card-shadow h-full" height="420">
           <ecolndex-card></ecolndex-card>
+        </v-card>
+      </v-col>
+      <v-col cols="12" xl="6">
+        <v-card class="card-shadow">
+          <commerce-distribution></commerce-distribution>
         </v-card>
       </v-col>
     </v-row>

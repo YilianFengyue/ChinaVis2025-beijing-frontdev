@@ -7,6 +7,8 @@ declare interface ImportMeta {
     readonly VITE_OPENAI_API_KEY: string;
     readonly VITE_TTS_KEY: string;
     readonly VITE_TTS_REGION: string;
+    // Mapbox
+    readonly VITE_MAPBOX_ACCESS_TOKEN: string;
   };
 }
 

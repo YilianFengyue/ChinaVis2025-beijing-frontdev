@@ -82,7 +82,6 @@ interface FlatData {
 }
 
 // 重要度数据 (中圈 - 保持不变，作为综合国力/重要性指标)
-// 这里的 dynasty 列表也作为主键列表
 interface ImportanceData {
   dynasty: string;
   minVal: number;
@@ -139,7 +138,6 @@ const resizeObserver = ref<ResizeObserver | null>(null);
 
 // --- 2. 辅助逻辑 ---
 
-// 朝代映射表 (将 JSON 中的朝代映射到 importanceData 的标准朝代)
 const dynastyMap: Record<string, string> = {
   '先秦': '先秦',
   '秦汉': '秦汉',
@@ -182,7 +180,7 @@ const processWarData = (rawData: any[]) => {
   return processed;
 };
 
-// 主题配色 (仿古风格)
+// 【关键修改1】主题配色 (仿古风格) - 将 tooltipBg 改为纯色 Hex 代码
 const themeColors = computed(() => {
   const isDark = vuetifyTheme.global.current.value.dark;
   
@@ -203,26 +201,14 @@ const themeColors = computed(() => {
 
   // 🌙【暗模式：夜间博物馆/拓片风】
   const antiqueDark = {
-     
-    
-    // 字体：米白/骨色，不刺眼
-    text: "#E6DACE",         
-    // 次要字体：灰褐，融入背景
-    textLight: "#8D7B6F",    
-    
-    // 线条：深褐木色，低调的结构感
-    stroke: "#5D4037",       
-    
-    // 国力带状图基调：稍亮的红陶色，在深色背景中透出来
-    bandFill: "#8D4E3C",     
-    
-    // 中心虚线：浅骨色
-    bandLine: "#D7CCC8",     
-    
-    // Tooltip：更深的黑褐背景
-    tooltipBg: "rgba(30, 26, 23, 0.95)", 
-    tooltipBorder: "rgba(141, 110, 99, 0.3)",
-    tooltipText: "#D7CCC8"
+    bg: "transparent", 
+    text: "#D7CCC8", 
+    textLight: "#A1887F", 
+    stroke: "#4E342E",
+    bandFill: "#FF8A65",
+    bandLine: "#D7CCC8",
+    tooltipBg: "rgba(38, 50, 56, 0.95)",
+    tooltipBorder: "#4E342E"
   };
   
   return isDark ? antiqueDark : antiqueLight;
@@ -293,8 +279,11 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
     animation: true,
     animationDuration: 1000,
     animationEasing: 'cubicOut',
+    // 【关键修改2】ECharts Tooltip - 恢复原有配色风格
     tooltip: {
       trigger: 'item',
+      appendToBody: true, // 关键：将tooltip添加到body，避免被容器层遮挡
+      confine: false, // 允许tooltip超出容器边界
       formatter: (params: any) => {
         const data = params.data as { name: string; summary: string; condition: string };
         if (!data.name) return '';
@@ -302,7 +291,7 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
           <div style="max-width: 240px; white-space: normal; line-height: 1.5; font-family: serif;">
             <div style="font-size: 1.1em; color: ${params.color}; font-weight: bold; margin-bottom: 4px;">${data.name}</div>
             <div style="font-size: 0.9em; color: ${isDark ? '#ccc' : '#666'};"><strong>状况:</strong> ${data.condition}</div>
-            <div style="font-size: 0.85em; margin-top: 4px;">${data.summary}</div>
+            <div style="font-size: 0.85em; margin-top: 4px; color: ${isDark ? '#bbb' : '#555'};">${data.summary}</div>
           </div>
         `;
       },
@@ -313,7 +302,7 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
         color: themeColors.value.text,
       },
       padding: 12,
-      extraCssText: 'backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);'
+      extraCssText: 'box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 6px; z-index: 99999 !important;'
     },
     series: [
       {
@@ -850,156 +839,50 @@ watch(themeColors, () => {
   height: 100%;
   z-index: 2;
   pointer-events: none !important;
-}
-
-/* 必须保留 pointer-events 穿透设置 */
-.d3-layer :deep(svg) {
-  pointer-events: none !important;
-}
-.d3-layer :deep(g path), 
-.d3-layer :deep(g text) {
-  pointer-events: auto;
-}
-
-/* ==================== Tooltip (建筑文档风格·高可视度版) ==================== */
-.fade-up-enter-active,
-.fade-up-leave-active {
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.fade-up-enter-from,
-.fade-up-leave-to {
-  opacity: 0;
-  transform: translateY(8px);
-}
-
-.arch-tooltip {
-  position: fixed;
-  z-index: 99999;
-  width: 260px;
   
-  /* 核心修改：改为高亮磨砂白背景 */
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
-  
-  /* 边框：极细的灰线 */
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  /* 左侧强调线：保留，但颜色加深一点以便识别 */
-  border-left: 3px solid #D4AF37; 
-  
-  /* 投影：加深投影，让它“浮”在图表之上 */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
-  
-  padding: 16px;
-  pointer-events: none;
-  font-family: var(--font-en);
-  border-radius: 2px;
+  svg {
+    pointer-events: none !important;
+    
+    g path, g text {
+      pointer-events: auto;
+    }
+  }
 }
 
-.tt-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  padding-bottom: 8px;
-  margin-bottom: 10px;
-}
-
-.tt-title-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.tt-name {
-  font-family: var(--font-cn);
-  font-size: 16px; /* 稍微调小一点，更精致 */
-  font-weight: 800;
-  color: #1a1a1a; /* 纯黑偏灰，极高对比度 */
-  letter-spacing: 1px;
-}
-
-.tt-id {
-  font-size: 11px;
-  color: #999;
-  font-weight: 600;
-}
-
-.tt-sub-row {
-  margin-top: 2px;
-}
-
-.tt-alias {
-  font-size: 11px;
-  color: #666;
-  font-family: var(--font-cn);
-  background: #F0F0F0;
-  padding: 1px 4px;
-  border-radius: 2px;
-}
-
-.tt-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 16px; /* 增加列间距 */
-  margin-bottom: 12px;
-}
-
-.tt-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.tt-item.full {
-  grid-column: span 2;
-}
-
-.tt-label {
-  font-size: 9px;
-  color: #888; /* 标签用浅灰 */
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 3px;
-  font-weight: 700;
-}
-
-.tt-value {
+.chart-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: rgba(250, 246, 240, 0.95);
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 8px 12px;
   font-size: 12px;
-  color: #333; /* 数值用深灰 */
-  font-family: var(--font-cn);
-  font-weight: 500;
-  line-height: 1.4;
+  color: $text-dark-brown;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 100;
+  backdrop-filter: blur(4px); 
+  transition: opacity 0.2s, transform 0.1s;
+  
+  .v-theme--dark & {
+    background-color: rgba(38, 50, 56, 0.95);
+    border-color: #4E342E;
+    color: #D7CCC8;
+  }
 }
 
-/* 核心修改：金色的文字在白底上看不清，改为“古铜色” */
-.tt-value.highlight-gold {
-  color: #9C7C13; /* 深古铜金，在白底上清晰可见 */
-  font-weight: 700;
-  background: rgba(239, 209, 96, 0.15); /* 淡金背景衬托 */
-  padding: 0 4px;
-  border-radius: 2px;
-  display: inline-block;
+// 【关键修改4】全局样式：确保 ECharts tooltip 显示在最上层
+:global(div[class*="echarts"]) {
+  // 提高 tooltip 的 z-index，确保显示在 D3 层之上
+  & > div:not(canvas) {
+    z-index: 9999 !important;
+  }
 }
 
-.tt-note {
-  /* 核心修改：Note区域改为浅灰底，与白底区分 */
-  background: #F7F7F7;
-  border: 1px solid #EDEDED;
-  padding: 8px 10px;
-  border-radius: 2px;
-  margin-top: 8px;
-}
-
-.tt-note-label {
-  font-size: 8px;
-  color: #999;
-  margin-bottom: 4px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.tt-note-text {
-  font-size: 11px;
-  line-height: 1.6;
-  color: #555; /* 正文深灰 */
-  font-family: var(--font-cn);
-  text-align: justify;
-  margin: 0;
+:global(.echarts-tooltip) {
+  z-index: 9999 !important;
 }
 </style>

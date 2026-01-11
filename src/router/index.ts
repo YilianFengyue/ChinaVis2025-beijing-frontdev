@@ -80,7 +80,15 @@ export const routes = [
     component: () => import("@/views/pages/LandingPage.vue"),
   },
 
-  
+  // MapBox制作
+  {
+    path: "/mapbox",
+    meta: {
+      requiresAuth: true,
+      layout: "landing",
+    },
+    component: () => import("@/views/pages/MapBoxPage.vue"),
+  },
 
 
 
