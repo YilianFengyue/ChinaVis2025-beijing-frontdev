@@ -284,11 +284,58 @@ function initChart() {
   gMain = svg.append('g')
     .attr('transform', `translate(${margin.left}, ${margin.top})`)
 
-  // 创建比例尺
-  const yearExtent = d3.extent(populationArcs.flatMap((d: any) => [d.startYear, d.endYear]))
-  xScale = d3.scaleLinear()
-    .domain(yearExtent)
-    .range([0, width])
+  // 创建分段比例尺（辽代以前压缩，辽代以后拉伸）
+  const yearExtent = d3.extent(populationArcs.flatMap((d: any) => [d.startYear, d.endYear])) as [number, number]
+  const breakPoint = 1000 // 辽代开始约907年，用1000作为分界点
+  const earlyRatio = 0.25 // 早期（辽代以前）占屏幕25%
+  const breakX = width * earlyRatio
+  
+  // 自定义分段比例尺函数
+  const scaleFunc = (year: number) => {
+    if (year <= breakPoint) {
+      const t = (year - yearExtent[0]) / (breakPoint - yearExtent[0])
+      return t * breakX
+    } else {
+      const t = (year - breakPoint) / (yearExtent[1] - breakPoint)
+      return breakX + t * (width - breakX)
+    }
+  }
+  
+  xScale = scaleFunc as any
+  
+  // 添加 invert 方法
+  xScale.invert = (x: number) => {
+    if (x <= breakX) {
+      const t = x / breakX
+      return yearExtent[0] + t * (breakPoint - yearExtent[0])
+    } else {
+      const t = (x - breakX) / (width - breakX)
+      return breakPoint + t * (yearExtent[1] - breakPoint)
+    }
+  }
+  
+  // 添加 domain 和 range 方法
+  xScale.domain = () => yearExtent
+  xScale.range = () => [0, width]
+  
+  // 添加 ticks 方法（D3轴需要）
+  xScale.ticks = (count: number = 10) => {
+    const ticks: number[] = []
+    // 早期部分的刻度（较少）
+    const earlyTicks = Math.max(2, Math.floor(count * earlyRatio))
+    for (let i = 0; i <= earlyTicks; i++) {
+      ticks.push(yearExtent[0] + (breakPoint - yearExtent[0]) * i / earlyTicks)
+    }
+    // 后期部分的刻度（较多）
+    const lateTicks = count - earlyTicks
+    for (let i = 1; i <= lateTicks; i++) {
+      ticks.push(breakPoint + (yearExtent[1] - breakPoint) * i / lateTicks)
+    }
+    return ticks
+  }
+  
+  // 添加 copy 方法（缩放需要）
+  xScale.copy = () => xScale
 
   // 人口比例尺（双向，中心为0）
   const maxPopRate = d3.max(populationArcs, (d: any) => Math.abs(d.compressedRate)) || 1

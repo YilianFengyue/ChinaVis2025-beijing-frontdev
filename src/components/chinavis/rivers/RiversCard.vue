@@ -132,65 +132,19 @@
       <svg ref="svgChart" style="width: 100%;"></svg>
 
       <!-- Tooltip卡片 -->
-      <v-card
-        v-if="tooltip.show"
-        :style="{
-          position: 'fixed',
-          left: tooltip.x + 'px',
-          top: tooltip.y + 'px',
-          zIndex: 9999,
-          pointerEvents: tooltip.pinned ? 'auto' : 'none',
-          maxWidth: '400px'
-        }"
-        elevation="12"
-        color="white"
-      >
-        <v-card-title class="text-subtitle-2 py-2 px-4" style="background: #FFF8E1; border-bottom: 2px solid #FFD54F;">
-          <strong>河流：{{ tooltip.data.river }}</strong>
-          <v-btn
-            v-if="tooltip.pinned"
-            icon="mdi-close"
-            size="x-small"
-            variant="text"
-            style="float: right;"
-            @click="tooltip.show = false"
-          ></v-btn>
-        </v-card-title>
-        <v-card-text class="pa-4">
-          <div class="text-body-2" style="line-height: 1.8;">
-            <div v-if="tooltip.data.alias" class="mb-2">
-              <span style="color: #666;">别名：</span>
-              <strong>{{ tooltip.data.alias }}</strong>
-            </div>
-            <div class="mb-2">
-              <span style="color: #666;">时期：</span>
-              <strong>{{ tooltip.data.period }}</strong>
-            </div>
-            <div class="mb-2">
-              <span style="color: #666;">行为：</span>
-              <strong>{{ tooltip.data.action }}</strong>
-            </div>
-            <div v-if="tooltip.data.year" class="mb-2">
-              <span style="color: #666;">年份：</span>
-              <strong>{{ tooltip.data.year }}年</strong>
-            </div>
-            <div v-if="tooltip.data.functions" class="mb-2">
-              <span style="color: #666;">城市功能：</span>
-              <strong>{{ tooltip.data.functions }}</strong>
-            </div>
-            <div v-if="tooltip.data.siltation" class="mb-2">
-              <span style="color: #666;">淤积：</span>
-              <strong>{{ tooltip.data.siltation }}</strong>
-            </div>
-            <div v-if="tooltip.data.note" style="border-top: 1px solid #E0E0E0; padding-top: 8px; margin-top: 8px;">
-              <span style="color: #666;">摘要：</span>
-              <div style="margin-top: 4px; max-height: 150px; overflow-y: auto;">
-                {{ tooltip.data.note }}
-              </div>
-            </div>
-          </div>
-        </v-card-text>
-      </v-card>
+      <ChartTooltip
+        :show="tooltip.show"
+        :x="tooltip.x"
+        :y="tooltip.y"
+        :pinned="tooltip.pinned"
+        title-label="河流："
+        :title="tooltip.data.river || ''"
+        :subtitle="tooltip.data.alias"
+        subtitle-label="别名"
+        :fields="tooltipFields"
+        :note="tooltip.data.note"
+        @close="closeTooltip"
+      />
     </div>
 
     <!-- 底部：年代块 + 时间轴 -->
@@ -206,6 +160,7 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import * as d3 from 'd3';
 // 导入真实数据
 import riverData from '@/data/rivers_merged.json';
+import ChartTooltip from '@/components/toolbar/ChartTooltip.vue';
 
 // 颜色配置
 const COLORS = {
@@ -258,6 +213,19 @@ const tooltip = ref({
   y: 0,
   data: {} as any,
   pinned: false,
+});
+
+const tooltipFields = computed(() => {
+  const data = tooltip.value.data || {};
+  const fields: { label: string; value: string | number | null | undefined }[] = [];
+
+  if (data.period) fields.push({ label: '时期', value: data.period });
+  if (data.action) fields.push({ label: '行为', value: data.action });
+  if (data.year) fields.push({ label: '年份', value: `${data.year}年` });
+  if (data.functions) fields.push({ label: '城市功能', value: data.functions });
+  if (data.siltation) fields.push({ label: '淤积', value: data.siltation });
+
+  return fields;
 });
 
 // 计算属性：过滤后的河流列表
@@ -363,7 +331,13 @@ const resetView = () => {
   selectedDynasty.value = null;
   searchText.value = '';
   tooltip.value.show = false;
+  tooltip.value.pinned = false;
   drawChart();
+};
+
+const closeTooltip = () => {
+  tooltip.value.show = false;
+  tooltip.value.pinned = false;
 };
 
 const handleDynastyClick = (dynasty: any, isRightClick: boolean = false) => {

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-4" :style="{ background: '#F6F5F0' }">
+    <v-card class="pa-4 glass-card" flat color="transparent">
     <!-- 标题 + 说明 tooltip -->
     <div class="d-flex align-center justify-space-between mb-3">
       <div class="d-flex align-center">
@@ -423,4 +423,6 @@ onBeforeUnmount(() => {
   height: 100%;
   z-index: 2;  /* 词云在背景图之上 */
 }
+
+
 </style>

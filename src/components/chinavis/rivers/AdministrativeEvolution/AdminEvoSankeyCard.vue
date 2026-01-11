@@ -1,45 +1,50 @@
 <template>
-  <v-card flat class="pa-6" style="background-color: #F8F6F0;">
-    <!-- 🎯 标题与说明 -->
-    <div class="mb-4">
-      <div class="d-flex align-center justify-space-between mb-2">
-        <h2 class="text-h5 font-weight-bold" style="color: #7C6B59;">
-          建制沿革演变 · 制度桑基图
-        </h2>
-        <div class="d-flex gap-2">
-          <v-btn size="small" variant="text" icon="mdi-information-outline" 
-                 @click="showHelp = !showHelp"></v-btn>
-        </div>
-      </div>
-      <p class="text-body-2 text-grey-darken-1">
-        从朝代到城市职能的五层演变：朝代 → 制度 → 行政区划 → 机构 → 城市职能
-      </p>
-    </div>
+  <v-card flat class="sankey-card">
+    <!-- 🎯 标题栏（与CityEvolutionCard统一风格） -->
+    <div class="panel-header">
+      <v-row align="center" dense no-gutters>
+        <v-col cols="auto" class="d-flex align-center">
+          <div class="header-block"></div>
+          <div class="header-text-group">
+            <h2 class="panel-title">建制沿革演变 · 制度桑基图</h2>
+            <span class="panel-subtitle">ADMINISTRATIVE EVOLUTION SANKEY</span>
+          </div>
+        </v-col>
 
-    <div class="mt-4 pa-4 rounded legend-panel">
-      <div class="d-flex align-center justify-space-between flex-wrap gap-3">
-        <div class="text-caption font-weight-bold" style="color: #7C6B59;">图例 / LEGEND</div>
-        <div class="d-flex flex-wrap gap-3">
-          <div 
-            v-for="legend in legends" 
-            :key="legend.key"
-            class="legend-item d-flex align-center gap-2"
-            :class="{ 'legend-disabled': !visibleLayers[legend.key] }"
-            @click="toggleLayer(legend.key)"
-          >
-            <div class="legend-color" :style="{ backgroundColor: legend.color }"></div>
-            <span class="text-caption">{{ legend.label }}</span>
-            <v-icon size="x-small" :color="visibleLayers[legend.key] ? 'success' : 'grey'">
-              {{ visibleLayers[legend.key] ? 'mdi-eye' : 'mdi-eye-off' }}
-            </v-icon>
+        <v-spacer></v-spacer>
+
+        <div class="legend-bar">
+          <span class="legend-head">图例 / LEGEND</span>
+          <div class="legend-items">
+            <v-chip
+              v-for="legend in legends"
+              :key="legend.key"
+              label
+              size="small"
+              class="legend-chip"
+              :class="{ 'is-off': !visibleLayers[legend.key] }"
+              :color="legend.color"
+              :variant="visibleLayers[legend.key] ? 'elevated' : 'outlined'"
+              @click="toggleLayer(legend.key)"
+            >
+              {{ legend.label }}
+            </v-chip>
           </div>
         </div>
-      </div>
+
+        <v-btn
+          icon="mdi-information-outline"
+          size="small"
+          variant="text"
+          class="ml-2"
+          @click="showHelp = !showHelp"
+        ></v-btn>
+      </v-row>
     </div>
 
     <!-- ❓ 帮助说明 (可折叠) -->
     <v-expand-transition>
-      <v-alert v-if="showHelp" type="info" variant="tonal" closable @click:close="showHelp = false" class="mb-4">
+      <v-alert v-if="showHelp" type="info" variant="tonal" closable @click:close="showHelp = false" class="mx-4 mt-2">
         <div class="text-body-2">
           <strong>交互提示：</strong><br>
           • 点击<strong>图例色块</strong>可隐藏/显示对应层级<br>
@@ -49,12 +54,10 @@
       </v-alert>
     </v-expand-transition>
 
-    <!-- 📊 主图表区域 (添加横向滚动以增加列间距) -->
-    <div style="width: 100%; overflow-x: auto;">
-      <div ref="chartRef" style="min-width: 900px; height: 960px;"></div>
+    <!-- 📊 主图表区域（内容区可滚动） -->
+    <div class="card-content">
+      <div ref="chartRef" class="chart-area"></div>
     </div>
-
-    
   </v-card>
 </template>
 
@@ -394,7 +397,7 @@ const updateChart = () => {
   const { nodes, links } = buildChartData();
 
   const option: any = {
-    backgroundColor: '#F8F6F0',
+    backgroundColor: '#E9E9E9',
     tooltip: {
       trigger: 'item', triggerOn: 'mousemove',
       backgroundColor: 'rgba(255,255,255,0.95)', borderColor: colors.字体, borderWidth: 1,
@@ -421,7 +424,7 @@ const updateChart = () => {
 
     series: [{
       type: 'sankey',
-      top: 80,
+      top: 20,
       left: 24,
       right: 24,
       layoutIterations: 0,
@@ -511,36 +514,60 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.gap-2 { gap: 8px; }
-.gap-3 { gap: 12px; }
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
 
-.legend-panel {
-  background: rgba(255, 250, 240, 0.6);
-  border: 1px solid rgba(220, 211, 197, 0.5);
-  backdrop-filter: blur(4px);
+.sankey-card {
+  --font-en: "Product Sans", sans-serif;
+  --font-cn: "Source Han Serif SC", "SimSun", serif;
+
+  height: 600px;
+  background: #E9E9E9;
+  font-family: var(--font-cn);
+  border-radius: 0;
+  color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
-.legend-item {
-  cursor: pointer;
-  padding: 4px 12px;
-  border-radius: 4px;
-  transition: all 0.2s;
-  border: 1px solid transparent;
+.panel-header {
+  padding: 12px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+  border-bottom: 1px solid #DCDCDC;
+  flex-shrink: 0;
 }
 
-.legend-item:hover {
-  background-color: rgba(0,0,0,0.05);
-  border-color: #DCD3C5;
-}
+.header-block { width: 5px; height: 28px; background: #7C6B59; margin-right: 10px; }
+.panel-title { font-size: 18px; font-weight: 900; color: #212121; letter-spacing: 1px; margin: 0; }
+.panel-subtitle { font-family: var(--font-en); font-size: 9px; letter-spacing: 1px; color: #616161; }
 
-.legend-disabled {
-  opacity: 0.4;
-}
+.legend-bar { display: flex; align-items: center; gap: 12px; font-family: var(--font-en); }
+.legend-head { font-size: 9px; color: #999; font-weight: 700; margin-right: 8px; }
+.legend-items { display: flex; gap: 6px; }
 
-.legend-color {
-  width: 20px;
-  height: 8px;
+/* Vuetify 自带 Chip（方形 label） */
+:deep(.legend-chip.v-chip) {
+  font-family: var(--font-cn);
+  font-size: 10px;
+  font-weight: 600;
   border-radius: 2px;
+  height: 20px;
+}
+
+:deep(.legend-chip.is-off) {
+  opacity: 0.35;
+  filter: grayscale(0.4);
+}
+
+.card-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 8px 16px 16px 16px;
+}
+
+.chart-area {
+  min-width: 900px;
+  height: 960px;
 }
 
 :deep(*) { 
