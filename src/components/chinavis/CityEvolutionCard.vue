@@ -123,6 +123,10 @@
 <script lang="ts" setup>
 import { ref, reactive, onMounted, onUnmounted, watch } from 'vue'
 import * as d3 from 'd3'
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector'
+
+const { collectClue } = useClueCollector()
 
 // 配色
 const colors = {
@@ -518,6 +522,20 @@ function drawPopulationArcs() {
       d3.select(this).attr('opacity', 0.75).attr('stroke-width', 0.5)
       closeTooltip()
     })
+    .on('dblclick', function() {
+      // 双击收集人口变化线索
+      const popChange = arc.populationChange
+      const sign = popChange >= 0 ? '+' : ''
+      const formatted = Math.abs(popChange) >= 10000
+        ? `${sign}${(popChange / 10000).toFixed(2)}万人`
+        : `${sign}${popChange}人`
+      collectClue({
+        title: '人口变化',
+        dynasty: arc.dynasty ?? '',
+        content: `${formatYear(arc.startYear)} - ${formatYear(arc.endYear)}, 变化: ${formatted}`,
+        subLabel: `${arc.dynasty ?? ''} · 人口`
+      }, 'clue_city', '城势流变')
+    })
   })
 }
 
@@ -584,6 +602,17 @@ function drawAreaArcs() {
     .on('mouseout', function() {
       d3.select(this).attr('opacity', 0.7).attr('stroke-width', 0.5)
       closeTooltip()
+    })
+    .on('dblclick', function() {
+      // 双击收集面积变化线索
+      const sign = arc.areaChange >= 0 ? '+' : ''
+      collectClue({
+        title: '面积变化',
+        dynasty: arc.dynasty ?? '',
+        content: `${formatYear(arc.startYear)} - ${formatYear(arc.endYear)}, 变化: ${sign}${Number(arc.areaChange ?? 0).toFixed(2)} km²`,
+        subLabel: `${arc.dynasty ?? ''} · 面积`,
+        description: arc.areaNarrative
+      }, 'clue_city', '城势流变')
     })
   })
 }

@@ -43,6 +43,10 @@
 import { ref, onMounted, onUnmounted, computed, watch, nextTick, shallowRef } from 'vue';
 import * as d3 from 'd3'; 
 import * as echarts from 'echarts/core';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 import { PieChart } from 'echarts/charts';
 import {
   TitleComponent,
@@ -625,6 +629,15 @@ const drawChart = () => {
         .attr("fill-opacity", 0.85)
         .attr("transform", "scale(1)");
       tooltip.value!.style.display = 'none';
+    })
+    .on("dblclick", function(event, d: any) {
+      // 双击收集战争线索
+      collectClue({
+        title: `${d.dynasty} · ${d.category}`,
+        dynasty: d.dynasty,
+        content: `事件次数: ${d.count}`,
+        subLabel: d.category
+      }, 'clue_event', '历代战争');
     });
 
   // 绘制标签

@@ -80,6 +80,18 @@
             </div>
           </template>
         </v-card-text>
+        <v-card-actions>
+          <v-btn
+            color="amber-darken-3"
+            variant="tonal"
+            prepend-icon="mdi-pin-outline"
+            @click="collectActivePerson"
+          >
+            收集人物
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn color="primary" variant="text" @click="showPerson = false">关闭</v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-card>
@@ -90,6 +102,10 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import * as echarts from 'echarts'
 import 'echarts-wordcloud'
 import wordcloud from '@/data/wordcloud_data.json'
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector'
+
+const { collectClue } = useClueCollector()
 
 type WordItem = { name: string; value: number; detail?: any }
 
@@ -103,6 +119,18 @@ let yearChart: echarts.ECharts | null = null
 
 const showPerson = ref(false)
 const activePerson = ref<WordItem | null>(null)
+
+// 收集当前人物到线索板
+const collectActivePerson = () => {
+  if (!activePerson.value) return
+  const p = activePerson.value
+  collectClue({
+    title: p.name,
+    content: p.detail?.introduction || p.detail?.activity || '无详细介绍',
+    subLabel: p.detail?.period || '历史人物'
+  }, 'clue_event', '史海人物')
+  showPerson.value = false
+}
 
 /** 加载并反色处理mask图片（黑色主体->白色主体，用于maskImage） */
 function loadAndInvertMask(

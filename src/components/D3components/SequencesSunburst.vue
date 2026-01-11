@@ -2,6 +2,10 @@
 import { ref, onMounted, watch, nextTick, computed } from 'vue';
 import * as d3 from 'd3';
 import { useTheme } from 'vuetify';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 
 // 类型定义
 interface SunburstNode {
@@ -205,6 +209,16 @@ const initSunburst = () => {
       path.attr("fill-opacity", 1);
       tooltip.style("opacity", 0)
              .style("display", "none");
+    })
+    .on("dblclick", (event, d) => {
+      // 双击收集旭日图扇形
+      const ancestors = d.ancestors().reverse().slice(1);
+      const pathStr = ancestors.map((a: any) => a.data.name).join(' > ');
+      collectClue({
+        title: d.data.name,
+        content: `占比: ${d.value}, 路径: ${pathStr}`,
+        subLabel: d.depth === 1 ? d.data.name : ancestors[0]?.data.name || ''
+      }, 'clue_event', '物产旭日图');
     });
 };
 

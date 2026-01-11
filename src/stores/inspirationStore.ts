@@ -4,7 +4,7 @@ import { useSnackbarStore } from '@/stores/snackbarStore'
 
 export interface InspirationItem {
   id: string
-  type: 'herb' | 'paper' | 'chart' | 'text' | 'video'
+  type: 'herb' | 'paper' | 'chart' | 'text' | 'video' | 'clue_river' | 'clue_climate' | 'clue_eco' | 'clue_event' | 'clue_city'
   title: string
   subtitle?: string
   content: string
@@ -30,18 +30,24 @@ export const useInspirationStore = defineStore('inspiration', {
         return acc
       }, {} as Record<string, number>)
 
+      // 计算线索总数
+      const clueTotal = (counts.clue_river || 0) + (counts.clue_climate || 0) +
+        (counts.clue_eco || 0) + (counts.clue_event || 0) + (counts.clue_city || 0)
+
       return [
         { label: "全部", value: "all", count: state.items.length },
-        { label: "药材", value: "herb", count: counts.herb || 0 },
-        { label: "文献", value: "paper", count: counts.paper || 0 },
-        { label: "图表", value: "chart", count: counts.chart || 0 }
+        { label: "河流", value: "clue_river", count: counts.clue_river || 0 },
+        { label: "气候", value: "clue_climate", count: counts.clue_climate || 0 },
+        { label: "生态", value: "clue_eco", count: counts.clue_eco || 0 },
+        { label: "事件", value: "clue_event", count: counts.clue_event || 0 },
+        { label: "城势", value: "clue_city", count: counts.clue_city || 0 },
       ]
     },
 
     // 检查是否已收藏
     isCollected: (state) => {
       return (title: string, type: string) => {
-        return state.items.some(item => 
+        return state.items.some(item =>
           item.title === title && item.type === type
         )
       }
@@ -60,13 +66,13 @@ export const useInspirationStore = defineStore('inspiration', {
     // 添加收藏
     async addItem(data: Partial<InspirationItem>) {
       const snackbarStore = useSnackbarStore()
-      
+
       try {
         // 检查是否已存在
-        const exists = this.items.some(item => 
+        const exists = this.items.some(item =>
           item.title === data.title && item.type === data.type
         )
-        
+
         if (exists) {
           snackbarStore.showWarningMessage('已经收藏过此内容')
           return false
@@ -89,10 +95,10 @@ export const useInspirationStore = defineStore('inspiration', {
 
         this.items.unshift(newItem) // 新收藏的放在最前面
         this.saveToLocalStorage()
-        
+
         snackbarStore.showSuccessMessage(`已收藏「${newItem.title}」`)
         return true
-        
+
       } catch (error) {
         console.error('收藏失败:', error)
         snackbarStore.showErrorMessage('收藏失败，请重试')
@@ -104,7 +110,7 @@ export const useInspirationStore = defineStore('inspiration', {
     removeItem(id: string) {
       const snackbarStore = useSnackbarStore()
       const index = this.items.findIndex(item => item.id === id)
-      
+
       if (index > -1) {
         const item = this.items[index]
         this.items.splice(index, 1)
@@ -172,11 +178,11 @@ export const useInspirationStore = defineStore('inspiration', {
         version: '1.0',
         items: this.items
       }
-      
+
       const blob = new Blob([JSON.stringify(data, null, 2)], {
         type: 'application/json'
       })
-      
+
       const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
@@ -188,11 +194,11 @@ export const useInspirationStore = defineStore('inspiration', {
     // 导入数据
     async importData(file: File) {
       const snackbarStore = useSnackbarStore()
-      
+
       try {
         const text = await file.text()
         const data = JSON.parse(text)
-        
+
         if (data.items && Array.isArray(data.items)) {
           this.items = [...this.items, ...data.items]
           this.saveToLocalStorage()

@@ -33,6 +33,10 @@
 import { ref, onMounted, computed, watch } from 'vue';
 import * as d3 from 'd3';
 import { useTheme } from 'vuetify';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 
 // --- 1. 响应式状态定义 ---
 const svgContainer = ref<HTMLElement | null>(null);
@@ -371,7 +375,16 @@ const updateChart = () => {
       const [px, py] = d3.pointer(event, svgContainer.value);
       tooltipEl.style("top", `${py + 10}px`).style("left", `${px + 10}px`);
     })
-    .on("mouseout", () => tooltipEl.style("visibility", "hidden"));
+    .on("mouseout", () => tooltipEl.style("visibility", "hidden"))
+    .on("dblclick", (event, d: any) => {
+      // 双击收集线索
+      collectClue({
+        title: d.category,
+        dynasty: selectedDynasty.value,
+        content: `${selectedDynasty.value}服权重: ${d.value.toFixed(2)}`,
+        subLabel: `${selectedDynasty.value} · ${d.category}`
+      }, 'clue_event', '灾害权图');
+    });
 
   // Zoom 逻辑
   const zoom = d3.zoom<SVGSVGElement, unknown>()

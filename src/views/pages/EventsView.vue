@@ -15,6 +15,10 @@ import { CanvasRenderer } from 'echarts/renderers';
 import CombinedRadialChart from '@/components/D3components/CombinedRadialChart.vue';
 import RadialAreaChart from '@/components/D3components/RadialAreaChart.vue';
 import AxonometricBeijing from '@/components/D3components/AxonometricBeijing.vue';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 // 注册 ECharts 组件
 echarts.use([
   TitleComponent,
@@ -327,6 +331,20 @@ const getTagColor = (tag: string) => {
   return colors[tag] || 'primary';
 };
 
+// 收集当前事件到线索板
+const collectCurrentEvent = () => {
+  if (!currentEvent.value) return;
+  const e = currentEvent.value;
+  collectClue({
+    title: e.title,
+    dynasty: e.dynasty,
+    year: e.year,
+    content: e.description,
+    subLabel: `${e.yearPrefix}${e.year !== 0 ? e.year : ''} · ${e.dynasty}`
+  }, 'clue_event', '大事件');
+  detailDialog.value = false;
+};
+
 // 生命周期
 onMounted(() => {
   loadEventData();
@@ -505,6 +523,14 @@ onUnmounted(() => {
           </div>
         </v-card-text>
         <v-card-actions>
+          <v-btn
+            color="amber-darken-3"
+            variant="tonal"
+            prepend-icon="mdi-pin-outline"
+            @click="collectCurrentEvent"
+          >
+            收集线索
+          </v-btn>
           <v-spacer></v-spacer>
           <v-btn color="primary" variant="text" @click="detailDialog = false">关闭</v-btn>
         </v-card-actions>

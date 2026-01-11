@@ -254,6 +254,19 @@
             </div>
           </div>
         </v-card-text>
+        <v-card-actions class="pa-3 pt-0">
+          <v-btn
+            color="amber-darken-3"
+            variant="tonal"
+            size="small"
+            prepend-icon="mdi-pin-outline"
+            @click="collectEvidenceDialog"
+          >
+            收集线索
+          </v-btn>
+          <v-spacer></v-spacer>
+          <v-btn color="grey" variant="text" size="small" @click="evidenceDialog.show = false">关闭</v-btn>
+        </v-card-actions>
       </v-card>
     </v-dialog>
   </v-card>
@@ -276,6 +289,10 @@ import {
   type TransportRecord,
   type InternationalDestination,
 } from './transportUtils'
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector'
+
+const { collectClue } = useClueCollector()
 
 // ==================== 状态 ====================
 
@@ -364,6 +381,19 @@ const toggleExpand = (name: string) => {
 const truncateEvidence = (text: string): string => {
   if (!text) return '暂无详细记录'
   return text.length > 80 ? text.slice(0, 80) + '...' : text
+}
+
+// 收集弹窗内的交通线路线索
+const collectEvidenceDialog = () => {
+  const d = evidenceDialog.value.data
+  if (!d) return
+  collectClue({
+    title: `北京 → ${d.province}`,
+    dynasty: d.dynasty || '多朝代',
+    content: `${d.type} · 记录数: ${d.count}`,
+    subLabel: `${d.type} · ${d.dynasty || '全部'}`
+  }, 'clue_event', '朝代舆图')
+  evidenceDialog.value.show = false
 }
 
 const loadGeoData = async () => {

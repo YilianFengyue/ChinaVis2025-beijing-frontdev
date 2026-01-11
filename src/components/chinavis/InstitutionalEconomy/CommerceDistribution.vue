@@ -139,6 +139,10 @@ import { ref, onMounted, computed, watch, onUnmounted, nextTick } from 'vue';
 import * as echarts from 'echarts';
 import * as d3 from 'd3';
 import industryDataRaw from '@/data/14_industry_processed.json';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 
 // 引用定义
 const treemapContainer = ref<HTMLElement | null>(null);
@@ -502,6 +506,15 @@ const drawTreemap = () => {
         .attr('stroke-width', 0.5);
       tooltip.value.show = false;
     })
+    .on('dblclick', function(event, d) {
+      // 双击收集产业类型线索
+      collectClue({
+        title: d.data.name,
+        dynasty: selectedPeriod.value || '多朝代',
+        content: `出现次数: ${d.value}`,
+        subLabel: `产业图谱 · ${d.data.category}`
+      }, 'clue_event', '产业图谱');
+    })
     .transition()
     .duration(600)
     .delay((d, i) => i * 5)
@@ -784,6 +797,20 @@ const initOwnershipChart = () => {
         itemStyle: { color: '#B5A995', borderColor: '#fff', borderWidth: 1 }
       }
     ]
+  });
+
+  // 双击收集官私比例线索
+  ownershipChart.on('dblclick', (params: any) => {
+    if (!params.name) return;
+    const idx = ownershipData.value.periods.indexOf(params.name);
+    if (idx < 0) return;
+    const data = ownershipData.value;
+    collectClue({
+      title: `${params.name} · 官私比例`,
+      dynasty: params.name,
+      content: `官营: ${data.官营[idx]}条, 私营: ${data.私营[idx]}条, 官私比例: ${data.官私比例[idx] ?? '-'}%`,
+      subLabel: '官私比例'
+    }, 'clue_event', '官私比例');
   });
 };
 

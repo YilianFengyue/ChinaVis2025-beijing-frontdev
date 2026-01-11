@@ -137,6 +137,10 @@ import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue';
 import * as d3 from 'd3';
 // 导入真实数据
 import riverData from '@/data/rivers_merged.json';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 
 // 🎨 终末地·武陵图纸配色方案
 // 🎨 建筑图纸配色方案 (Architectural Blueprint)
@@ -529,6 +533,11 @@ const drawChart = (animate: boolean = false) => {
           .on('mouseleave', function() {
             d3.select(this).transition().duration(150).attr('r', radius);
             tooltip.value.show = false;
+          })
+          .on('dblclick', function() {
+            // 双击收集线索
+            const data = buildTooltipData(event, riverInfo, event.segment);
+            collectClue(data, 'clue_river', '生命之河');
           });
       });
 

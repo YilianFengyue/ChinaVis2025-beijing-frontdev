@@ -63,6 +63,7 @@
                     :style="getEventDotStyle(event)"
                     @mouseenter.stop="onEventEnter($event, event, layer)"
                     @mouseleave.stop="onEventLeave"
+                    @dblclick.stop="onEventDblClick(event, layer)"
                     @click.stop
                   >
                     <span class="ripple"></span>
@@ -124,6 +125,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import eventsData from '../../data/beijing_layers_events_top30_v1_1.json';
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector';
+
+const { collectClue } = useClueCollector();
 
 // ---------------- 数据配置 ----------------
 const rawLayers = [
@@ -189,6 +194,17 @@ const onEventEnter = (e: MouseEvent, eventData: any, layer: any) => {
 const onEventLeave = () => {
   hoveredEventId.value = null;
   tooltip.value.show = false;
+};
+
+// 双击收集线索
+const onEventDblClick = (eventData: any, layer: any) => {
+  collectClue({
+    title: eventData.title,
+    year: eventData.year_display,
+    dynasty: layer.name,
+    content: eventData.hover || eventData.impact_tags,
+    subLabel: `${layer.name} · ${eventData.year_display}`
+  }, 'clue_city', '城垣演变');
 };
 
 // ---------------- 布局计算 ----------------

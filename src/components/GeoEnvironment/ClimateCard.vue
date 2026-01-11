@@ -98,6 +98,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as d3 from 'd3'
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector'
+
+const { collectClue } = useClueCollector()
 
 // ==================== 1. 完整详实的数据源 ====================
 
@@ -445,6 +449,16 @@ const drawChart = () => {
         .attr('r', 5)
         .attr('fill', colors.event)
         .attr('stroke', '#fff')
+    })
+    .on('dblclick', (event, d) => {
+      // 双击收集气候事件线索
+      collectClue({
+        title: d.title,
+        dynasty: d.dynasty,
+        year: d.year,
+        content: d.content,
+        subLabel: d.year > 0 ? `${Math.floor(d.year)}年` : `前${Math.abs(d.year)}年`
+      }, 'clue_climate', '气候演变')
     })
   
   // --- 5. 时间轴刻度 ---

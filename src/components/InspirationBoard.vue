@@ -1,7 +1,7 @@
 <!--
 * @Component: InspirationBoard
 * @Maintainer: J.K. Yang
-* @Description: 灵感整理板 - 收藏药材、文献、图表等内容
+* @Description: 线索整理板 - 收集可视化图表中的关键线索信息
 -->
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
@@ -44,23 +44,33 @@ const searchedItems = computed(() => {
 
 // 获取类型图标
 const getTypeIcon = (type: string) => {
-  const icons = {
+  const icons: Record<string, string> = {
+    clue_river: "mdi-waves",
+    clue_climate: "mdi-weather-partly-cloudy",
+    clue_eco: "mdi-tree",
+    clue_event: "mdi-calendar-star",
+    clue_city: "mdi-city",
     herb: "mdi-leaf",
     paper: "mdi-file-document",
     chart: "mdi-chart-scatter-plot",
     text: "mdi-text",
     video: "mdi-play-circle"
   }
-  return icons[type] || "mdi-bookmark"
+  return icons[type] || "mdi-pin"
 }
 
 // 获取类型颜色
 const getTypeColor = (type: string) => {
-  const colors = {
-    herb: "green",
-    paper: "blue", 
-    chart: "orange",
-    text: "purple",
+  const colors: Record<string, string> = {
+    clue_river: "blue",
+    clue_climate: "orange",
+    clue_eco: "green",
+    clue_event: "purple",
+    clue_city: "brown",
+    herb: "teal",
+    paper: "indigo", 
+    chart: "amber",
+    text: "grey",
     video: "red"
   }
   return colors[type] || "grey"
@@ -92,8 +102,13 @@ const clearAll = () => {
 
 // 查看详情
 const viewDetail = (item: any) => {
-  // 这里可以实现详情查看功能
   console.log('查看详情:', item)
+  
+  // 如果是线索类型，显示原始数据详情
+  if (item.type.startsWith('clue_') && item.metadata?.raw) {
+    alert(`【${item.title}】\n\n${item.content}\n\n原始数据：\n${JSON.stringify(item.metadata.raw, null, 2)}`)
+    return
+  }
   
   // 如果有原始URL，可以跳转
   if (item.sourceUrl) {
@@ -144,11 +159,11 @@ onMounted(() => {
 
 <template>
   <v-btn size="50" @click="dialog = !dialog">
-    <v-icon size="30">mdi-lightbulb-outline</v-icon>
+    <v-icon size="30">mdi-pin-outline</v-icon>
     <v-tooltip
       activator="parent"
       location="left"
-      text="灵感整理板"
+      text="线索整理板"
     ></v-tooltip>
   </v-btn>
 
@@ -164,12 +179,12 @@ onMounted(() => {
         <v-card-title>
           <span class="flex-fill d-flex align-center">
             <v-avatar size="40" class="mr-3">
-              <v-icon size="24" color="primary">mdi-lightbulb</v-icon>
+              <v-icon size="24" color="primary">mdi-pin</v-icon>
             </v-avatar>
             <div>
-              <div class="text-h6">灵感整理板</div>
+              <div class="text-h6">线索整理板</div>
               <div class="text-caption text-grey">
-                共 {{ inspirationItems.length }} 项收藏
+                共 {{ inspirationItems.length }} 条线索
               </div>
             </div>
           </span>
@@ -262,10 +277,10 @@ onMounted(() => {
                 {{ searchKeyword ? 'mdi-file-search-outline' : 'mdi-bookmark-outline' }}
               </v-icon>
               <p class="text-grey-lighten-1 mt-4">
-                {{ searchKeyword ? '未找到匹配内容' : '还没有收藏任何内容' }}
+                {{ searchKeyword ? '未找到匹配内容' : '还没有收集任何线索' }}
               </p>
               <p class="text-caption text-grey-lighten-2">
-                {{ searchKeyword ? '尝试其他关键词' : '在页面中悬停药材卡片并点击收藏按钮' }}
+                {{ searchKeyword ? '尝试其他关键词' : '在图表中双击感兴趣的数据点即可收集' }}
               </p>
             </div>
 

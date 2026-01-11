@@ -66,6 +66,10 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import * as d3 from 'd3'
+// 导入线索收集器
+import { useClueCollector } from '@/composables/useClueCollector'
+
+const { collectClue } = useClueCollector()
 
 // ==================== 数据定义 ====================
 
@@ -299,6 +303,16 @@ const bindEvents = (eventDots, xScale) => {
         .attr('r', 5)
         .attr('fill', d => d.type === 'positive' ? colors.eventPositive : colors.eventNegative)
         .attr('stroke', '#fff')
+    })
+    .on('dblclick', (event, d) => {
+      // 双击收集生态线索
+      collectClue({
+        title: d.title,
+        dynasty: d.dynasty,
+        year: d.year,
+        content: d.content,
+        subLabel: `${d.dynasty} · ${d.year < 0 ? `前${Math.abs(d.year)}` : d.year}年`
+      }, 'clue_eco', '生态贡献')
     })
 }
 
