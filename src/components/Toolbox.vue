@@ -5,7 +5,12 @@
 -->
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-
+// import { useChatGPTStore } from "@/stores/chatGPTStore";
+// const chatGPTStore = useChatGPTStore();
+// import ApiKeyDialog from "@/components/ApiKeyDialog.vue";
+// import ChatAssistant from "@/components/ai/ChatAssistant.vue";
+// import TranslationAssistant from "@/components/ai/TranslationAssistant.vue";
+import InspirationBoard from "@/components/InspirationBoard.vue";
 const toolboxShow = ref(false);
 </script>
 
@@ -16,7 +21,9 @@ const toolboxShow = ref(false);
     size="50"
     color="white"
   >
-    <Icon width="30" icon="ri:openai-fill" />
+    <!-- <Icon width="30" icon="ri:openai-fill" /> -->
+     <!-- 支持Deepseek -->
+    <v-icon size="30">mdi-pin</v-icon>
   </v-btn>
 
   <transition name="slide-y">
@@ -26,27 +33,39 @@ const toolboxShow = ref(false);
       class="d-flex flex-column mb-1 toolbox"
     >
       <!-- ---------------------------------------------- -->
-      <!-- Code Assistant -->
+      <!-- ApiKey -->
       <!-- ---------------------------------------------- -->
-      <v-btn size="50" @click="">
-        <v-icon size="30">mdi-code-tags</v-icon>
+      <v-btn
+        @click="chatGPTStore.configDialog = true"
+        variant="text"
+        size="50"
+        color="blue"
+      >
+        <v-icon size="30">mdi-key-outline</v-icon>
         <v-tooltip
           activator="parent"
           location="left"
-          text="代码助手"
+          :text="$t('toolbox.chatgptConfig.title')"
         ></v-tooltip>
       </v-btn>
+      <ApiKeyDialog />
+      <v-divider />
       <!-- ---------------------------------------------- -->
-      <!-- Code Assistant -->
+      <!-- Chat Assistant -->
       <!-- ---------------------------------------------- -->
-      <v-btn size="50" @click="">
-        <v-icon size="30">mdi-seesaw</v-icon>
-        <v-tooltip
-          activator="parent"
-          location="left"
-          text="PlayGround"
-        ></v-tooltip>
-      </v-btn>
+      <ChatAssistant />
+      <v-divider />
+       <!-- ---------------------------------------------- -->
+      <!-- Translation Assistant -->
+      <!-- ---------------------------------------------- -->
+      <TranslationAssistant />
+      <v-divider />
+       <!-- ---------------------------------------------- -->
+        <!-- Inspiration Board -->
+      <!-- ---------------------------------------------- -->
+      <InspirationBoard />
+      <v-divider />
+      <!-- ---------------------------------------------- -->
     </v-card>
   </transition>
 </template>

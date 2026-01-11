@@ -28,7 +28,7 @@ const customizeTheme = useCustomizeThemeStore();
     }"
   >
     <!-- <GlobalLoading /> -->
-    <!-- <ToolBox /> -->
+    <ToolBox />
     <div class="flex-fill content-wrapper">
       <slot></slot>
     </div>

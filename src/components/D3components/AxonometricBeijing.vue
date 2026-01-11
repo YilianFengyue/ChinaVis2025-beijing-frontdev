@@ -53,20 +53,23 @@
               <div class="slab-face" :style="{ borderColor: layer.color }">
                 <img :src="layer.image" :alt="layer.name" class="layer-image" />
                 
-                 <!-- Event Dots Layer -->
+                <div class="slab-overlay" :class="{ 'active': hoveredLayerId && hoveredLayerId !== layer.id }"></div>
+                
+                <!-- Event Dots Layer - 放在最后确保在最上层 -->
                 <div class="events-layer">
                   <div 
                     v-for="event in layer.events"
                     :key="event.event_id"
                     class="event-dot"
+                    :class="{ 'is-hovered': hoveredEventId === event.event_id }"
                     :style="getEventDotStyle(event)"
-                    @mouseenter="showTooltip($event, event, layer)"
-                    @mouseleave="hideTooltip"
+                    @mouseenter.stop="onEventEnter($event, event, layer)"
+                    @mouseleave.stop="onEventLeave"
                     @click.stop
-                  ></div>
+                  >
+                    <span class="ripple"></span>
+                  </div>
                 </div>
-
-                <div class="slab-overlay" :class="{ 'active': hoveredLayerId && hoveredLayerId !== layer.id }"></div>
               </div>
               <div class="slab-side front" :style="{ background: layer.color }"></div>
               <div class="slab-side right" :style="{ background: layer.color }"></div>
@@ -146,6 +149,7 @@ const layersWithEvents = computed(() => {
 
 const explodeFactor = ref(80);
 const hoveredLayerId = ref<string | null>(null);
+const hoveredEventId = ref<number | null>(null);
 
 // Tooltip State
 const tooltip = ref({
@@ -159,6 +163,35 @@ const tooltip = ref({
   impact: '',
   note: ''
 });
+
+// 事件点交互
+const onEventEnter = (e: MouseEvent, eventData: any, layer: any) => {
+  hoveredEventId.value = eventData.event_id;
+  
+  let targetX = e.clientX + 15;
+  let targetY = e.clientY - 100;
+
+  // 边界检查
+  if (targetX + 300 > window.innerWidth) targetX -= 320;
+  if (targetY < 0) targetY = 10;
+
+  tooltip.value = {
+    show: true,
+    x: targetX,
+    y: targetY,
+    title: eventData.title,
+    year: eventData.year_display,
+    type: eventData.type_main,
+    location: eventData.location_raw,
+    impact: eventData.impact_tags,
+    note: eventData.hover
+  };
+};
+
+const onEventLeave = () => {
+  hoveredEventId.value = null;
+  tooltip.value.show = false;
+};
 
 // ---------------- 布局计算 ----------------
 const BASE_SPACING = 30;
@@ -190,34 +223,6 @@ const getEventDotStyle = (event: any) => {
     left: `${x}px`,
     top: `${y}px`
   };
-};
-
-const showTooltip = (e: MouseEvent, eventData: any, layer: any) => {
-  // Simple tooltip positioning logic
-  // Since we are in 3D, clientX/Y is safest.
-  // Add some offset to avoid cursor covering.
-  let targetX = e.clientX + 15;
-  let targetY = e.clientY - 100;
-
-  // Boundary check (rough)
-  if (targetX + 300 > window.innerWidth) targetX -= 320;
-  if (targetY < 0) targetY = 10;
-
-  tooltip.value = {
-    show: true,
-    x: targetX,
-    y: targetY,
-    title: eventData.title,
-    year: eventData.year_display,
-    type: eventData.type_main, // e.g. "战争"
-    location: eventData.location_raw,
-    impact: eventData.impact_tags,
-    note: eventData.hover // Full text
-  };
-};
-
-const hideTooltip = () => {
-  tooltip.value.show = false;
 };
 
 // 核心修改：缩放和平移逻辑
@@ -413,6 +418,7 @@ $slab-thick: 5px;
   transform-style: preserve-3d;
   cursor: pointer;
   transition: all 0.3s ease;
+  overflow: visible;
 }
 .layer-slab.is-hovered { transform: translateZ(10px); }
 
@@ -424,7 +430,7 @@ $slab-thick: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; /* 允许事件点显示 */
 }
 
 .layer-image {
@@ -439,6 +445,7 @@ $slab-thick: 5px;
   background: rgba(255,255,255,0.7);
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none; /* 不阻挡事件点交互 */
 }
 .slab-overlay.active { opacity: 1; }
 
@@ -544,5 +551,172 @@ $slab-thick: 5px;
   background: radial-gradient(circle, rgba(0,0,0,0.08) 0%, transparent 70%);
   transform: translateZ(-50px);
   pointer-events: none;
+}
+
+/* ---------------- 事件点图层 ---------------- */
+.events-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.event-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #AE8A53; /* 金棕色 - 与EcoIndexCard一致 */
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.18s ease;
+  z-index: 100;
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+
+  /* 涟漪子元素 */
+  .ripple {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid #AE8A53;
+    opacity: 0;
+    animation: none;
+  }
+
+  &:hover,
+  &.is-hovered {
+    transform: translate(-50%, -50%) scale(1.4);
+    background: #B79157;
+    box-shadow: 0 4px 12px rgba(183, 145, 87, 0.6);
+
+    .ripple {
+      animation: ripple-expand 0.5s ease-out;
+    }
+  }
+}
+
+@keyframes ripple-expand {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* ---------------- Tooltip 样式 (与 EcoIndexCard 一致) ---------------- */
+.fade-up-enter-active, .fade-up-leave-active {
+  transition: all 0.2s ease-out;
+}
+.fade-up-enter-from, .fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+</style>
+
+<style>
+/* Tooltip 需要全局样式（因为Teleport到body） */
+.arch-tooltip {
+  position: fixed;
+  z-index: 99999;
+  width: 300px;
+  max-width: 320px;
+  background: #E8E6E2; /* 浅灰米色，不透明 */
+  color: #333;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-left: 3px solid #EFD160; /* 金色左边框 */
+  pointer-events: none;
+  font-family: "Noto Serif SC", serif;
+}
+
+.arch-tooltip .tt-header {
+  border-bottom: 1px solid #CCC;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  background: #F0EFEB;
+  padding: 12px 16px;
+  margin: -16px -16px 12px -16px;
+}
+
+.arch-tooltip .tt-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.arch-tooltip .tt-name {
+  font-family: "Noto Serif SC", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}
+
+.arch-tooltip .tt-id {
+  font-size: 11px;
+  color: #666;
+  font-family: "Cinzel", serif;
+}
+
+.arch-tooltip .tt-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arch-tooltip .event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.arch-tooltip .event-tag {
+  display: inline-block;
+  background: #C9A962;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+}
+
+.arch-tooltip .event-location {
+  font-size: 11px;
+  color: #666;
+}
+
+.arch-tooltip .tt-divider {
+  height: 1px;
+  background: #D1CEC7;
+  margin: 4px 0;
+}
+
+.arch-tooltip .tt-description {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+}
+
+.arch-tooltip .desc-label {
+  font-weight: 700;
+  color: #555;
+}
+
+.arch-tooltip .tt-note {
+  font-size: 11px;
+  color: #777;
+  margin: 0;
+  padding: 8px;
+  background: #F0EFEB;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 </style>
