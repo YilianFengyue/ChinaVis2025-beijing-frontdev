@@ -539,14 +539,12 @@ onUnmounted(() => {
 .arch-tooltip {
   position: fixed;
   z-index: 99999;
-  width: 300px;
-  background: #E8E6E2;
-  border: 1px solid var(--tooltip-border);
+  width: 280px;
+  background: #E8E6E2; /* 浅灰色背景，不透明 */
   color: #333;
   padding: 16px;
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  border-left: 3px solid var(--highlight);
-  border-radius: 2px;
+  border-left: 3px solid #EFD160; /* 金色左边框 */
   pointer-events: none;
   font-family: var(--font-en);
 }

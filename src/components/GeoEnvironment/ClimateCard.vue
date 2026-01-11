@@ -525,20 +525,18 @@ onUnmounted(() => {
 .card-content { position: relative; height: calc(100% - 70px); width: 100%; padding: 0 16px; }
 .chart-container { width: 100%; height: 100%; }
 
-/* ==================== Tooltip 样式 (无磨砂/实体色) ==================== */
+/* ==================== Tooltip 样式 (与 RiversCard 统一) ==================== */
 .arch-tooltip {
   position: fixed;
-  background: var(--tooltip-bg);
-  border: 1px solid var(--tooltip-border);
-  padding: 0;
-  border-radius: 2px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
-  pointer-events: none;
   z-index: 99999;
-  min-width: 260px;
-  max-width: 320px;
-  color: var(--tooltip-text);
-  /* 移除 backdrop-filter */
+  width: 280px;
+  background: #E8E6E2; /* 浅灰色背景，不透明 */
+  color: #333;
+  padding: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-left: 3px solid #EFD160; /* 金色左边框 */
+  pointer-events: none;
+  font-family: var(--font-en);
 }
 
 .tt-header {
