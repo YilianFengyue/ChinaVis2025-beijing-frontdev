@@ -14,18 +14,7 @@ import CityCloudCard from "~/src/components/chinavis/CityCloudCard.vue";
     <!-- ---------------------------------------------- -->
     <v-row class="flex-0" dense>
       <v-col cols="12" xl="4">
-        <!-- Sales Card -->
-        <v-card class="card-shadow" height="420">
-          <!-- <sales-card></sales-card> -->
-          <sales-card
-            :value="1837.32"
-            class="h-100"
-            :percentage="3.2"
-            style="min-height: 380px"
-            percentage-label="上周"
-            action-label="查看报告"
-          ></sales-card>
-        </v-card>
+       
       </v-col>
       <v-col cols="6" xl="6">
         <v-card class="card-shadow" height="600"
@@ -38,11 +27,7 @@ import CityCloudCard from "~/src/components/chinavis/CityCloudCard.vue";
           ><admin-evo-sankey-card></admin-evo-sankey-card>
         </v-card>
       </v-col>
-      <v-col cols="12" xl="6">
-        <v-card class="card-shadow"
-          ><rivers-card></rivers-card>
-        </v-card>
-      </v-col>
+     
     </v-row>
 
     <!-- ---------------------------------------------- -->
