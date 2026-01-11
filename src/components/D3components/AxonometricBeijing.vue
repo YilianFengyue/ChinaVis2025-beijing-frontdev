@@ -38,8 +38,6 @@
             :key="layer.id"
             class="layer-group"
             :style="getLayerTransform(index)"
-            @mouseenter="hoveredLayerId = layer.id"
-            @mouseleave="hoveredLayerId = null"
           >
             
             <template v-if="index > 0">
@@ -392,6 +390,7 @@ $slab-thick: 5px;
   width: 100%; height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none; /* 让事件穿透 */
 }
 
 /* 辅助虚线 */
@@ -416,9 +415,10 @@ $slab-thick: 5px;
   position: absolute;
   width: 100%; height: 100%;
   transform-style: preserve-3d;
-  cursor: pointer;
+  cursor: default;
   transition: all 0.3s ease;
   overflow: visible;
+  pointer-events: none; /* 不拦截事件 */
 }
 .layer-slab.is-hovered { transform: translateZ(10px); }
 
@@ -431,12 +431,14 @@ $slab-thick: 5px;
   align-items: center;
   justify-content: center;
   overflow: visible; /* 允许事件点显示 */
+  pointer-events: none; /* 让事件穿透到layer-group */
 }
 
 .layer-image {
   width: 94%; height: 94%;
   object-fit: contain;
-  filter: sepia(0.1) contrast(1.1); 
+  filter: sepia(0.1) contrast(1.1);
+  pointer-events: none; /* 图片不拦截事件 */
 }
 
 .slab-overlay {
@@ -558,7 +560,9 @@ $slab-thick: 5px;
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 50;
+  z-index: 200;
+  transform-style: preserve-3d;
+  transform: translateZ(1px); /* 微微抬高确保在最上层 */
 }
 
 .event-dot {
@@ -569,11 +573,11 @@ $slab-thick: 5px;
   background: #AE8A53; /* 金棕色 - 与EcoIndexCard一致 */
   border: 2px solid #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(2px); /* 3D抬高 */
   cursor: pointer;
-  pointer-events: auto;
+  pointer-events: auto !important;
   transition: all 0.18s ease;
-  z-index: 100;
+  z-index: 9999;
   filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
 
   /* 涟漪子元素 */
@@ -588,7 +592,7 @@ $slab-thick: 5px;
 
   &:hover,
   &.is-hovered {
-    transform: translate(-50%, -50%) scale(1.4);
+    transform: translate(-50%, -50%) translateZ(2px) scale(1.4);
     background: #B79157;
     box-shadow: 0 4px 12px rgba(183, 145, 87, 0.6);
 
