@@ -1,26 +1,39 @@
 <template>
-  <v-card class="chart-card d-flex flex-column h-100" elevation="0" color="transparent">
-    <v-card-title class="chart-title text-center py-4">
-      <div class="text-h6 font-weight-bold d-flex align-center justify-center gap-2" style="letter-spacing: 1.5px; font-family: 'Noto Serif SC', serif;">
-        <v-icon color="brown-darken-3" size="small" class="mr-2">mdi-sword-cross</v-icon>
-        历代战争与植被综合分析
-      </div>
-      <div class="text-caption text-medium-emphasis mt-1 d-flex align-center justify-center" style="opacity: 0.8;">
-        <span class="legend-dot vegetation mr-1"></span>植被
-        <span class="mx-2">|</span>
+  <v-card flat class="minguo-panel transparent">
+    <div class="panel-header">
+      <v-row align="center" dense no-gutters>
+        <v-col cols="auto" class="d-flex align-center">
+          <div class="header-block"></div>
+          <div class="header-text-group">
+            <h2 class="panel-title">历代战争与植被</h2>
+            <span class="panel-subtitle">WAR & VEGETATION · 综合分析</span>
+          </div>
+        </v-col>
+
+        <v-spacer></v-spacer>
+
+        <v-col cols="auto">
+          
+        </v-col>
+      </v-row>
+
+      <div class="desc-line">
+        <span class="legend-dot vegetation mr-1"></span>植被状况
+        <span class="mx-2 separator">/</span>
         <span class="legend-dot importance mr-1"></span>综合国力
-        <span class="mx-2">|</span>
+        <span class="mx-2 separator">/</span>
         <span class="legend-dot war mr-1"></span>战争频次
       </div>
-    </v-card-title>
-    
-    <v-card-text class="chart-container flex-grow-1 position-relative">
-      <div ref="echartsContainer" class="echarts-container"></div>
-      <div ref="svgContainer" class="d3-svg-container"></div>
-      <div ref="tooltip" class="chart-tooltip"></div>
-    </v-card-text>
+    </div>
+
+    <div class="chart-wrapper">
+      <div ref="echartsContainer" class="echarts-layer"></div>
+      <div ref="svgContainer" class="d3-layer"></div>
+      <div ref="tooltip" class="arch-tooltip"></div>
+    </div>
   </v-card>
 </template>
+
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed, watch, nextTick, shallowRef } from 'vue';
@@ -53,9 +66,9 @@ const warCategories = ['决定性战役', '重要战役', '一般冲突'];
 
 // 战争数据配色 (战火色调)
 const colorMap: Record<string, string> = {
-  '决定性战役': '#B71C1C', // 猩红 (Importance 9-10)
-  '重要战役': '#E65100',   // 深橙 (Importance 7-8)
-  '一般冲突': '#F9A825',   // 暗黄 (Importance < 7)
+  '决定性战役': '#8D4E3C', // 铁锈红 (Rust) - 沉稳的警示
+  '重要战役': '#B08B57',   // 古铜金 (Antique Bronze)
+  '一般冲突': '#CDB398',   // 砂岩色 (Sandstone)
 };
 
 // 响应式数据
@@ -90,8 +103,15 @@ const importanceData: ImportanceData[] = [
 ];
 
 const importanceColors = [
-  '#8B4513', '#A0522D', '#CD853F', '#DEB887', 
-  '#D2691E', '#BC8F8F', '#F4A460', '#DAA520', '#B8860B'
+  '#7E8C91', // 铁灰 (先秦)
+  '#8D6E63', // 褐土 (秦汉)
+  '#A1887F', // 浅陶 (魏晋)
+  '#8B7355', // 古铜 (隋唐) - 盛世用金铜色
+  '#9C8B7A', // 驼灰 (辽宋金)
+  '#6D4C41', // 深咖 (元)
+  '#BCAAA4', // 暖灰 (明)
+  '#795548', // 赭石 (清)
+  '#A0909A'  // 藕灰 (民国)
 ];
 
 // 植被数据 (内圈)
@@ -166,26 +186,43 @@ const processWarData = (rawData: any[]) => {
 const themeColors = computed(() => {
   const isDark = vuetifyTheme.global.current.value.dark;
   
+  // ☀️【光模式：民国老报纸/建筑图纸风】
   const antiqueLight = {
     bg: "transparent",       
-    text: "#5a4b40",     
-    textLight: "#6d5f53", 
-    stroke: "#dcd3c5",
-    bandFill: "#BF360C",
-    bandLine: "#8D6E63",
-    tooltipBg: "rgba(252, 250, 246, 0.95)",
-    tooltipBorder: "#dcd3c5"
+    text: "#4A4035",         
+    textLight: "#9A8B7A",    
+    stroke: "#BCAAA4",       
+    bandFill: "#A1887F",     
+    bandLine: "#5D4037",     
+    
+    // 👇 核心修改：改为白底、深灰框、深色字 (RiverCard 风格)
+    tooltipBg: "rgba(255, 255, 255, 0.96)", 
+    tooltipBorder: "rgba(0, 0, 0, 0.08)",
+    tooltipText: "#333333" // 改为深色字
   };
 
+  // 🌙【暗模式：夜间博物馆/拓片风】
   const antiqueDark = {
-    bg: "transparent", 
-    text: "#D7CCC8", 
-    textLight: "#A1887F", 
-    stroke: "#4E342E",
-    bandFill: "#FF8A65",
-    bandLine: "#D7CCC8",
-    tooltipBg: "rgba(38, 50, 56, 0.95)",
-    tooltipBorder: "#4E342E"
+     
+    
+    // 字体：米白/骨色，不刺眼
+    text: "#E6DACE",         
+    // 次要字体：灰褐，融入背景
+    textLight: "#8D7B6F",    
+    
+    // 线条：深褐木色，低调的结构感
+    stroke: "#5D4037",       
+    
+    // 国力带状图基调：稍亮的红陶色，在深色背景中透出来
+    bandFill: "#8D4E3C",     
+    
+    // 中心虚线：浅骨色
+    bandLine: "#D7CCC8",     
+    
+    // Tooltip：更深的黑褐背景
+    tooltipBg: "rgba(30, 26, 23, 0.95)", 
+    tooltipBorder: "rgba(141, 110, 99, 0.3)",
+    tooltipText: "#D7CCC8"
   };
   
   return isDark ? antiqueDark : antiqueLight;
@@ -234,7 +271,13 @@ const innerRingImages = computed<GraphicOption[]>(() => {
 });
 
 const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChartsOption => {
-  const colors = ['#D27D46', '#D4AF37', '#8FBC8F', '#D2B48C', '#C0A080'];
+  const colors = [
+    '#8A9B8A', // 苔灰 (Moss Grey)
+    '#9C8B7A', // 驼灰 (Camel Grey)
+    '#7E8C91', // 铁灰 (Iron Grey)
+    '#B5A995', // 米灰 (Rice Grey)
+    '#A0909A'  // 藕灰 (Lotus Grey)
+  ];
   
   const chartData = data.map((item, index) => ({
     value: 1,
@@ -606,6 +649,9 @@ const drawChart = () => {
         .selectAll("text")
         .data(chars)
         .join("text")
+        .attr("fill", "#4A4035") // 强制使用深褐色
+        .attr("font-family", '"Source Han Serif SC", serif') // 使用衬线体
+        .attr("font-weight", "700")
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
         .attr("fill", colors.text)
@@ -684,49 +730,109 @@ watch(themeColors, () => {
 }, { deep: true });
 </script>
 
-<style scoped lang="scss">
-$text-dark-brown: #5a4b40;
-$border-color: #dcd3c5;
-
-.chart-card {
-  background-color: transparent !important;
-  border: none !important;
+<style scoped>
+/* ================= 基础容器风格 ================= */
+.minguo-panel {
+  --font-en: "Product Sans", "Helvetica Neue", sans-serif;
+  --font-cn: "Source Han Serif SC", "Noto Serif SC", serif;
+  /* 民国风背景色，带一点点暖调的透明白 */
+  background: rgba(250, 248, 245, 0.4) !important; 
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(139, 115, 85, 0.15); /* 极淡的古铜色边框 */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.chart-title {
-  color: $text-dark-brown;
-  
-  .v-theme--dark & {
-    color: #D7CCC8;
-  }
+/* ================= 头部设计 ================= */
+.panel-header {
+  padding: 16px 20px 10px;
+  border-bottom: 1px solid rgba(139, 115, 85, 0.1);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
 }
 
-// 图例圆点
+.header-block {
+  width: 5px;
+  height: 28px;
+  background: #8B7355; /* 民国古铜色 */
+  margin-right: 12px;
+  border-radius: 1px;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  font-family: var(--font-cn);
+  font-size: 18px;
+  font-weight: 700;
+  color: #4A4035; /* 深褐灰色 */
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.panel-subtitle {
+  font-family: var(--font-en);
+  font-size: 9px;
+  color: #9A8B7A; /* 浅驼灰 */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.source-tag {
+  display: flex;
+  align-items: center;
+  padding: 4px 10px;
+  background: rgba(139, 115, 85, 0.05);
+  border: 1px solid rgba(139, 115, 85, 0.1);
+  border-radius: 2px;
+}
+
+.source-text {
+  font-family: var(--font-cn);
+  font-size: 10px;
+  color: #8B7355;
+}
+
+.desc-line {
+  font-family: var(--font-cn);
+  font-size: 11px;
+  color: #7E7065;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.separator {
+  color: #ccc;
+  font-weight: 300;
+}
+
+/* ================= 图例颜色点 ================= */
 .legend-dot {
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
-  
-  &.vegetation { background-color: #8FBC8F; }
-  &.importance { background-color: #D2691E; }
-  &.war { background-color: #B71C1C; }
+  border-radius: 50%; /* 如果想要更建筑感，可以改成 border-radius: 1px (方形) */
 }
+/* 这里对应 Script 中的新色系 */
+.legend-dot.vegetation { background-color: #8A9B8A; } /* 苔灰 */
+.legend-dot.importance { background-color: #BDA29A; } /* 褐灰 */
+.legend-dot.war { background-color: #8D4E3C; }        /* 铁锈红 */
 
-.gap-2 {
-  gap: 8px;
-}
-
-.chart-container {
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
-  width: 100%;
+/* ================= 图表布局 (核心) ================= */
+.chart-wrapper {
   position: relative;
-  min-height: 600px;
+  width: 100%;
+  height: 700px; /* 强制高度 */
+  overflow: hidden;
+  flex-grow: 1;
 }
 
-.echarts-container {
+.echarts-layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -734,13 +840,9 @@ $border-color: #dcd3c5;
   height: 100%;
   z-index: 1;
   pointer-events: auto !important;
-  
-  canvas {
-    pointer-events: auto !important;
-  }
 }
 
-.d3-svg-container {
+.d3-layer {
   position: absolute;
   top: 0;
   left: 0;
@@ -748,38 +850,156 @@ $border-color: #dcd3c5;
   height: 100%;
   z-index: 2;
   pointer-events: none !important;
-  
-  svg {
-    pointer-events: none !important;
-    
-    g path, g text {
-      pointer-events: auto;
-    }
-  }
 }
 
-.chart-tooltip {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: none;
-  background-color: rgba(250, 246, 240, 0.95);
-  border: 1px solid $border-color;
-  border-radius: 6px;
-  padding: 8px 12px;
-  font-size: 12px;
-  color: $text-dark-brown;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 100;
-  backdrop-filter: blur(4px); 
-  transition: opacity 0.2s, transform 0.1s;
+/* 必须保留 pointer-events 穿透设置 */
+.d3-layer :deep(svg) {
+  pointer-events: none !important;
+}
+.d3-layer :deep(g path), 
+.d3-layer :deep(g text) {
+  pointer-events: auto;
+}
+
+/* ==================== Tooltip (建筑文档风格·高可视度版) ==================== */
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.arch-tooltip {
+  position: fixed;
+  z-index: 99999;
+  width: 260px;
   
-  .v-theme--dark & {
-    background-color: rgba(38, 50, 56, 0.95);
-    border-color: #4E342E;
-    color: #D7CCC8;
-  }
+  /* 核心修改：改为高亮磨砂白背景 */
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  
+  /* 边框：极细的灰线 */
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  /* 左侧强调线：保留，但颜色加深一点以便识别 */
+  border-left: 3px solid #D4AF37; 
+  
+  /* 投影：加深投影，让它“浮”在图表之上 */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+  
+  padding: 16px;
+  pointer-events: none;
+  font-family: var(--font-en);
+  border-radius: 2px;
+}
+
+.tt-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.tt-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tt-name {
+  font-family: var(--font-cn);
+  font-size: 16px; /* 稍微调小一点，更精致 */
+  font-weight: 800;
+  color: #1a1a1a; /* 纯黑偏灰，极高对比度 */
+  letter-spacing: 1px;
+}
+
+.tt-id {
+  font-size: 11px;
+  color: #999;
+  font-weight: 600;
+}
+
+.tt-sub-row {
+  margin-top: 2px;
+}
+
+.tt-alias {
+  font-size: 11px;
+  color: #666;
+  font-family: var(--font-cn);
+  background: #F0F0F0;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.tt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px; /* 增加列间距 */
+  margin-bottom: 12px;
+}
+
+.tt-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.tt-item.full {
+  grid-column: span 2;
+}
+
+.tt-label {
+  font-size: 9px;
+  color: #888; /* 标签用浅灰 */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.tt-value {
+  font-size: 12px;
+  color: #333; /* 数值用深灰 */
+  font-family: var(--font-cn);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* 核心修改：金色的文字在白底上看不清，改为“古铜色” */
+.tt-value.highlight-gold {
+  color: #9C7C13; /* 深古铜金，在白底上清晰可见 */
+  font-weight: 700;
+  background: rgba(239, 209, 96, 0.15); /* 淡金背景衬托 */
+  padding: 0 4px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.tt-note {
+  /* 核心修改：Note区域改为浅灰底，与白底区分 */
+  background: #F7F7F7;
+  border: 1px solid #EDEDED;
+  padding: 8px 10px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.tt-note-label {
+  font-size: 8px;
+  color: #999;
+  margin-bottom: 4px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.tt-note-text {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #555; /* 正文深灰 */
+  font-family: var(--font-cn);
+  text-align: justify;
+  margin: 0;
 }
 </style>

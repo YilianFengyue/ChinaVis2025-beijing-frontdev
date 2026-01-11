@@ -341,10 +341,10 @@ onUnmounted(() => {
 
 <template>
   <div class="pa-5">
-    <h2 class="text-h4 mb-6 text-center font-weight-bold">都城纪事与环境综合分析</h2>
+   
 
     <v-row class="mb-6">
-      <v-col cols="12">
+      <v-col cols="8">
         <CombinedRadialChart />
       </v-col>
     </v-row>

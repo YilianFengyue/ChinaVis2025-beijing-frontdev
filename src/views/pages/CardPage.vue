@@ -211,7 +211,7 @@ onMounted(() => {
     );
 
     // 2. 卡片组切换 (Staggered Stack)
-    const groups = gsap.utils.toArray(".task-group-container");
+    const groups = gsap.utils.toArray<HTMLElement>(".task-group-container");
     const totalGroups = groups.length;
     
     // 初始化：隐藏

@@ -1,44 +1,65 @@
 <template>
-  <v-card class="eco-card" elevation="2">
-    <v-card-title class="card-title">
-      <span class="title-text">历代生态环境因素贡献图</span>
-      <div class="legend">
-        <span class="legend-item">
-          <span class="legend-color veg"></span>植被指数
-        </span>
-        <span class="legend-item">
-          <span class="legend-color climate"></span>气候适宜度
-        </span>
-        <span class="legend-item">
-          <span class="legend-color water"></span>水系丰沛
-        </span>
-      </div>
-    </v-card-title>
-    <v-card-text class="card-content">
-      <div ref="chartContainer" class="chart-container"></div>
-    </v-card-text>
-    
-    <!-- Tooltip -->
-    <div 
-      v-if="tooltip.show" 
-      class="custom-tooltip"
-      :style="{ left: tooltip.x + 'px', top: tooltip.y + 'px' }"
-    >
-      <div class="tooltip-title">{{ tooltip.title }}</div>
-      <div class="tooltip-year">{{ tooltip.year }}</div>
-      <div class="tooltip-content">{{ tooltip.content }}</div>
-      <div v-if="tooltip.scores" class="tooltip-scores">
-        <div class="score-item">
-          <span class="score-dot veg"></span>植被: {{ tooltip.scores.veg }}
+  <v-card flat class="arch-panel">
+    <div class="panel-header">
+      <v-row align="center" dense no-gutters>
+        <v-col cols="auto" class="d-flex align-center">
+          <div class="header-block"></div>
+          <div class="header-text-group">
+            <h2 class="panel-title">历代生态环境因素贡献图</h2>
+            <span class="panel-subtitle">ECOLOGICAL FACTOR CONTRIBUTION</span>
+          </div>
+        </v-col>
+
+        <v-spacer></v-spacer>
+
+        <div class="legend-bar">
+          <div class="legend-group">
+            <span class="legend-head">INDEX</span>
+            <div class="legend-items">
+              <span class="l-item"><span class="legend-color veg"></span>植被指数</span>
+              <span class="l-item"><span class="legend-color climate"></span>气候适宜度</span>
+              <span class="l-item"><span class="legend-color water"></span>水系丰沛</span>
+            </div>
+          </div>
+
+          <div class="legend-sep">/</div>
+
+          <div class="legend-group">
+            <span class="legend-head">EVENT</span>
+            <div class="legend-items">
+              <span class="l-item"><span class="legend-dot positive"></span>植被记录</span>
+              <span class="l-item"><span class="legend-dot negative"></span>退化/干旱</span>
+            </div>
+          </div>
         </div>
-        <div class="score-item">
-          <span class="score-dot climate"></span>气候: {{ tooltip.scores.climate }}
-        </div>
-        <div class="score-item">
-          <span class="score-dot water"></span>水系: {{ tooltip.scores.water }}
-        </div>
-      </div>
+      </v-row>
     </div>
+
+    <div class="card-content">
+      <div ref="chartContainer" class="chart-container"></div>
+    </div>
+
+    <Teleport to="body">
+      <Transition name="fade-up">
+        <div
+          v-if="tooltip.show"
+          class="arch-tooltip"
+          :style="{ left: tooltip.x + 'px', top: tooltip.y + 'px' }"
+        >
+          <div class="tt-header">
+            <div class="tt-title-row">
+              <span class="tt-name">{{ tooltip.title }}</span>
+              <span class="tt-id">{{ tooltip.subLabel }}</span>
+            </div>
+          </div>
+
+          <div class="tt-note">
+            <div class="tt-note-label">ARCHIVE RECORD:</div>
+            <p class="tt-note-text">{{ tooltip.note }}</p>
+          </div>
+        </div>
+      </Transition>
+    </Teleport>
   </v-card>
 </template>
 
@@ -50,9 +71,10 @@ import * as d3 from 'd3'
 
 // 生态贡献指数数据（直接使用提供的数据）
 const ecoIndexData = [
+  { label: "史前",     start: -2500, end: -800, mid: -1650, veg: 5, climate: 5, water: 5 },
   { label: "先秦至汉", start: -800, end: 220,  mid: -290, veg: 5, climate: 5, water: 5 },
-  { label: "汉至唐",   start: 220,  end: 960,  mid: 590,  veg: 4, climate: 4, water: 4 },
-  { label: "辽",       start: 907,  end: 1125, mid: 1016, veg: 4, climate: 3, water: 4 },
+  { label: "汉至唐",   start: 220,  end: 907,  mid: 563.5, veg: 4, climate: 4, water: 4 },
+  { label: "辽",       start: 907,  end: 1115, mid: 1011,  veg: 4, climate: 3, water: 4 },
   { label: "金",       start: 1115, end: 1234, mid: 1175, veg: 3, climate: 2, water: 5 },
   { label: "元",       start: 1234, end: 1368, mid: 1301, veg: 3, climate: 1, water: 5 },
   { label: "明",       start: 1368, end: 1644, mid: 1506, veg: 2, climate: 3, water: 3 },
@@ -196,17 +218,14 @@ const vegetationEvents = [
   }
 ]
 
+// 预处理：为事件增加随机Y轴偏移，防止过于整齐
+vegetationEvents.forEach(event => {
+  event.randomY = (Math.random() - 0.5) * 0.9
+})
+
 // ==================== 响应式数据 ====================
 const chartContainer = ref(null)
-const tooltip = ref({
-  show: false,
-  x: 0,
-  y: 0,
-  title: '',
-  year: '',
-  content: '',
-  scores: null
-})
+const tooltip = ref({ show: false, x: 0, y: 0, kind: 'event', title: '', subLabel: '', note: '' })
 
 let svg = null
 let resizeObserver = null
@@ -221,61 +240,65 @@ const colors = {
   waterLight: '#6495ED',
   eventPositive: '#2E8B57',  // 正面事件 - 深绿
   eventNegative: '#CD5C5C',  // 负面事件 - 印第安红
+  eventHover: '#B79157',
   text: '#4A4A4A',
   axis: '#999999',
   grid: '#e0e0e0'
 }
 
 // ==================== 绑定事件 ====================
-const bindEvents = (eventDots, xScale, chartHeight) => {
+const bindEvents = (eventDots, xScale) => {
   eventDots
     .on('mouseenter', (event, d) => {
-      const rect = chartContainer.value.getBoundingClientRect()
+      let clientX = event.clientX
+      let clientY = event.clientY
+      if (document.body.clientWidth - clientX < 320) clientX -= 320
+
       tooltip.value = {
         show: true,
-        x: event.clientX - rect.left + 10,
-        y: event.clientY - rect.top - 10,
+        kind: 'event',
+        x: clientX + 15,
+        y: clientY - 80,
         title: d.title,
-        year: `${d.dynasty} · ${d.year < 0 ? '前' + Math.abs(d.year) : d.year}年`,
-        content: d.content,
-        scores: null
+        subLabel: `${d.dynasty} · ${d.year < 0 ? `前${Math.abs(Math.round(d.year))}` : Math.round(d.year)}年`,
+        note: d.content
       }
+
       d3.select(event.currentTarget)
+        .raise()
         .transition()
-        .duration(200)
+        .duration(180)
         .attr('r', 8)
+        .attr('fill', colors.eventHover)
+        .attr('stroke', colors.eventHover)
+
+      const rippleLayer = d3.select(chartContainer.value).select('svg g')
+      const cx = xScale(d.year)
+      const cy = Number(d3.select(event.currentTarget).attr('cy'))
+      rippleLayer
+        .append('circle')
+        .attr('class', 'event-ripple')
+        .attr('cx', cx)
+        .attr('cy', cy)
+        .attr('r', 6)
+        .attr('fill', 'none')
+        .attr('stroke', colors.eventHover)
+        .attr('stroke-width', 2)
+        .attr('opacity', 0.7)
+        .transition()
+        .duration(450)
+        .attr('r', 18)
+        .attr('opacity', 0)
+        .remove()
     })
     .on('mouseleave', (event) => {
       tooltip.value.show = false
       d3.select(event.currentTarget)
         .transition()
-        .duration(200)
+        .duration(180)
         .attr('r', 5)
-    })
-}
-
-// ==================== 绑定区域事件 ====================
-const bindAreaEvents = (areas, xScale, yScale) => {
-  areas
-    .on('mouseenter', (event, d) => {
-      const rect = chartContainer.value.getBoundingClientRect()
-      const data = d.data || d
-      tooltip.value = {
-        show: true,
-        x: event.clientX - rect.left + 10,
-        y: event.clientY - rect.top - 10,
-        title: data.label,
-        year: `${data.start < 0 ? '前' + Math.abs(data.start) : data.start} - ${data.end}年`,
-        content: `总贡献分数: ${data.veg + data.climate + data.water}`,
-        scores: {
-          veg: data.veg,
-          climate: data.climate,
-          water: data.water
-        }
-      }
-    })
-    .on('mouseleave', () => {
-      tooltip.value.show = false
+        .attr('fill', d => d.type === 'positive' ? colors.eventPositive : colors.eventNegative)
+        .attr('stroke', '#fff')
     })
 }
 
@@ -287,7 +310,7 @@ const drawChart = () => {
   d3.select(chartContainer.value).selectAll('*').remove()
   
   const containerRect = chartContainer.value.getBoundingClientRect()
-  const margin = { top: 20, right: 30, bottom: 50, left: 40 }
+  const margin = { top: 40, right: 30, bottom: 50, left: 30 }
   const width = containerRect.width - margin.left - margin.right
   const height = containerRect.height - margin.top - margin.bottom
   
@@ -302,8 +325,11 @@ const drawChart = () => {
     .attr('transform', `translate(${margin.left}, ${margin.top})`)
   
   // X轴比例尺（时间）
+  const minYear = d3.min(ecoIndexData, d => d.start) ?? -800
+  const maxYear = d3.max(ecoIndexData, d => d.end) ?? 1912
+
   const xScale = d3.scaleLinear()
-    .domain([-800, 1912])
+    .domain([minYear, maxYear])
     .range([0, width])
   
   // Y轴比例尺（堆叠值 0-15）
@@ -318,12 +344,21 @@ const drawChart = () => {
     .order(d3.stackOrderNone)
     .offset(d3.stackOffsetNone)
   
+  // 用“曲线点”渲染（避免矩形台阶），并在左右端补点填满边界
+  const firstSeg = ecoIndexData[0]
+  const lastSeg = ecoIndexData[ecoIndexData.length - 1]
+  const ecoCurvePoints = [
+    { year: minYear, veg: firstSeg.veg, climate: firstSeg.climate, water: firstSeg.water },
+    ...ecoIndexData.map(d => ({ year: d.mid, veg: d.veg, climate: d.climate, water: d.water })),
+    { year: maxYear, veg: lastSeg.veg, climate: lastSeg.climate, water: lastSeg.water }
+  ]
+
   // 为每个数据点创建堆叠数据
-  const stackedData = stack(ecoIndexData)
+  const stackedData = stack(ecoCurvePoints)
   
   // 创建曲线面积生成器
   const area = d3.area()
-    .x(d => xScale(d.data.mid))
+    .x(d => xScale(d.data.year))
     .y0(d => yScale(d[0]))
     .y1(d => yScale(d[1]))
     .curve(d3.curveMonotoneX)  // 使用单调曲线使其更平滑
@@ -362,44 +397,18 @@ const drawChart = () => {
     .attr('stroke', d => colorMap[d.key])
     .attr('stroke-width', 2)
   
-  // 绘制顶部曲线上的数据点和标签
-  const topData = stackedData[2]  // veg层是最顶层
-  svg.selectAll('.data-point')
-    .data(topData)
-    .enter()
-    .append('circle')
-    .attr('class', 'data-point')
-    .attr('cx', d => xScale(d.data.mid))
-    .attr('cy', d => yScale(d[1]))
-    .attr('r', 4)
-    .attr('fill', '#fff')
-    .attr('stroke', colors.veg)
-    .attr('stroke-width', 2)
-  
-  // 顶部数值标签
-  svg.selectAll('.value-label')
-    .data(topData)
-    .enter()
-    .append('text')
-    .attr('class', 'value-label')
-    .attr('x', d => xScale(d.data.mid))
-    .attr('y', d => yScale(d[1]) - 10)
-    .attr('text-anchor', 'middle')
-    .attr('font-size', '11px')
-    .attr('font-weight', '600')
-    .attr('fill', colors.text)
-    .text(d => d.data.veg + d.data.climate + d.data.water)
-  
   // 绘制植被事件点
-  const eventY = height * 0.15  // 事件点在图表上部
+  const eventBandY = height * 0.08
+  const eventBandHeight = height * 0.22
+  const eventsInRange = vegetationEvents.filter(e => e.year >= minYear && e.year <= maxYear)
   
   const eventDots = svg.selectAll('.event-dot')
-    .data(vegetationEvents)
+    .data(eventsInRange)
     .enter()
     .append('circle')
     .attr('class', 'event-dot')
     .attr('cx', d => xScale(d.year))
-    .attr('cy', eventY)
+    .attr('cy', d => eventBandY + eventBandHeight / 2 + d.randomY * eventBandHeight)
     .attr('r', 5)
     .attr('fill', d => d.type === 'positive' ? colors.eventPositive : colors.eventNegative)
     .attr('stroke', '#fff')
@@ -408,7 +417,7 @@ const drawChart = () => {
     .style('filter', 'drop-shadow(0 2px 3px rgba(0,0,0,0.2))')
   
   // 绑定事件
-  bindEvents(eventDots, xScale, height)
+  bindEvents(eventDots, xScale)
   
   // Y轴
   const yAxis = d3.axisLeft(yScale)
@@ -450,21 +459,8 @@ const drawChart = () => {
     .attr('fill', colors.text)
     .attr('font-size', '10px')
     .text(d => d.label)
-  
-  // 添加交互区域（透明矩形）
-  const interactAreas = svg.selectAll('.interact-area')
-    .data(ecoIndexData)
-    .enter()
-    .append('rect')
-    .attr('class', 'interact-area')
-    .attr('x', d => xScale(d.start))
-    .attr('y', 0)
-    .attr('width', d => xScale(d.end) - xScale(d.start))
-    .attr('height', height)
-    .attr('fill', 'transparent')
-    .style('cursor', 'pointer')
-  
-  bindAreaEvents(interactAreas, xScale, yScale)
+
+  // 只保留“事件点”交互：不做时间段 hover（避免遮挡 event dots）
 }
 
 // ==================== 生命周期 ====================
@@ -489,140 +485,88 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.eco-card {
+@import url('https://fonts.googleapis.com/css2?family=Product+Sans:wght@400;700&display=swap');
+
+.arch-panel {
+  --font-en: "Product Sans", sans-serif;
+  --font-cn: "Source Han Serif SC", "SimSun", serif;
+
+  --tooltip-bg: #E8E6E2;
+  --tooltip-border: #D1CEC7;
+  --tooltip-text: #2D3748;
+  --highlight: #B79157;
+
   height: 100%;
-  min-height: 280px;
-  background: linear-gradient(135deg, #fdfbf9 0%, #f8f6f3 100%);
-  border: 1px solid #e8e4df;
-  position: relative;
+  min-height: 380px;
+  background: #E9E9E9;
+  font-family: var(--font-cn);
+  border-radius: 0;
+  color: #333;
 }
 
-.card-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 16px;
-  border-bottom: 1px solid #e8e4df;
-  background: rgba(255, 255, 255, 0.6);
-  flex-wrap: wrap;
-  gap: 8px;
+.panel-header {
+  padding: 16px 24px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 100%);
+  border-bottom: 1px solid #DCDCDC;
 }
 
-.title-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: #5D4E37;
-  letter-spacing: 0.5px;
-}
+.header-block { width: 6px; height: 32px; background: #2C3E50; margin-right: 12px; }
+.panel-title { font-size: 20px; font-weight: 900; color: #212121; letter-spacing: 2px; margin: 0; }
+.panel-subtitle { font-family: var(--font-en); font-size: 10px; letter-spacing: 2px; color: #616161; }
 
-.legend {
-  display: flex;
-  gap: 12px;
-  font-size: 11px;
-  color: #666;
-}
+.legend-bar { display: flex; align-items: center; gap: 16px; font-family: var(--font-en); }
+.legend-head { font-size: 9px; color: #999; font-weight: 700; margin-bottom: 2px; }
+.legend-items { display: flex; gap: 12px; }
+.l-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #555; font-family: var(--font-cn); }
+.legend-sep { color: #CCC; font-weight: 300; }
 
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+.legend-color { width: 12px; height: 12px; border-radius: 2px; border: 1px solid rgba(0,0,0,0.08); }
+.legend-color.veg { background: #B3D6C0; }
+.legend-color.climate { background: #CEE5F1; }
+.legend-color.water { background: #6495B2; }
 
-.legend-color {
-  width: 14px;
-  height: 10px;
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+.legend-dot.positive { background: #2E8B57; }
+.legend-dot.negative { background: #CD5C5C; }
+
+.card-content { position: relative; height: calc(100% - 70px); width: 100%; padding: 0 16px; }
+.chart-container { width: 100%; height: 100%; }
+
+/* ==================== Tooltip (Blueprint style) ==================== */
+.fade-up-enter-active, .fade-up-leave-active { transition: all 0.2s ease-out; }
+.fade-up-enter-from, .fade-up-leave-to { opacity: 0; transform: translateY(6px); }
+
+.arch-tooltip {
+  position: fixed;
+  z-index: 99999;
+  width: 300px;
+  background: #E8E6E2;
+  border: 1px solid var(--tooltip-border);
+  color: #333;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-left: 3px solid var(--highlight);
   border-radius: 2px;
-}
-
-.legend-color.veg {
-  background: #8FBC8F;
-}
-
-.legend-color.climate {
-  background: #87CEEB;
-}
-
-.legend-color.water {
-  background: #4682B4;
-}
-
-.card-content {
-  padding: 8px 12px;
-  height: calc(100% - 52px);
-}
-
-.chart-container {
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-}
-
-.custom-tooltip {
-  position: absolute;
-  background: rgba(93, 78, 55, 0.95);
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-size: 12px;
-  max-width: 300px;
   pointer-events: none;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-  backdrop-filter: blur(4px);
+  font-family: var(--font-en);
 }
 
-.tooltip-title {
-  font-weight: 600;
-  font-size: 13px;
-  margin-bottom: 4px;
-  color: #F5DEB3;
-}
+.tt-header { border-bottom: 1px solid #CCC; padding-bottom: 8px; margin-bottom: 12px; background: #F0EFEB; padding: 12px 16px; margin: -16px -16px 12px -16px; }
+.tt-title-row { display: flex; justify-content: space-between; align-items: baseline; }
+.tt-name { font-family: var(--font-cn); font-size: 18px; font-weight: 700; color: #333; }
+.tt-id { font-size: 10px; color: #666; font-family: var(--font-en); }
 
-.tooltip-year {
-  font-size: 11px;
-  color: #ccc;
-  margin-bottom: 6px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
+/* 保留结构类名以便未来扩展 */
+.tt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.tt-item { display: flex; flex-direction: column; }
+.tt-item.full { grid-column: span 2; }
+.tt-label { font-size: 9px; color: #888; letter-spacing: 1px; margin-bottom: 2px; font-weight: 700; font-family: var(--font-en); }
+.tt-value { font-size: 13px; color: #333; font-family: var(--font-cn); }
+.highlight-gold { color: var(--highlight); font-weight: 800; }
 
-.tooltip-content {
-  line-height: 1.5;
-  color: #eee;
-  margin-bottom: 8px;
-}
-
-.tooltip-scores {
-  display: flex;
-  gap: 12px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(255,255,255,0.2);
-}
-
-.score-item {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 11px;
-}
-
-.score-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-}
-
-.score-dot.veg {
-  background: #8FBC8F;
-}
-
-.score-dot.climate {
-  background: #87CEEB;
-}
-
-.score-dot.water {
-  background: #4682B4;
-}
+.tt-note { background: #F0EFEB; padding: 10px; border-radius: 2px; border: 1px solid rgba(0,0,0,0.06); }
+.tt-note-label { font-size: 9px; color: #666; margin-bottom: 4px; font-family: var(--font-en); font-weight: 700; }
+.tt-note-text { font-size: 11px; line-height: 1.5; color: #444; font-family: var(--font-cn); text-align: justify; margin: 0; }
 
 /* Y轴样式 */
 :deep(.y-axis) .domain {

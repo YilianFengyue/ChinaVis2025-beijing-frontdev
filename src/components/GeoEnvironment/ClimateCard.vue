@@ -542,9 +542,9 @@ onUnmounted(() => {
 }
 
 .tt-header {
-  background: rgba(0,0,0,0.03); 
+  background: #F0EFEB; 
   padding: 12px 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid #DAD7D0;
 }
 
 .tt-title-row { display: flex; justify-content: space-between; align-items: baseline; }
@@ -562,7 +562,7 @@ onUnmounted(() => {
 .t-warm { color: #A08153; } /* 暖色文字稍微带点褐 */
 .t-cold { color: #4A6E82; } /* 冷色文字稍微带点蓝 */
 
-.tt-divider { height: 1px; background: rgba(0,0,0,0.06); margin: 10px 0; }
+.tt-divider { height: 1px; background: #DAD7D0; margin: 10px 0; }
 
 .tt-description { font-size: 13px; line-height: 1.6; color: #4A5568; margin: 0; text-align: justify; }
 .desc-label { font-weight: bold; color: #2D3748; }
