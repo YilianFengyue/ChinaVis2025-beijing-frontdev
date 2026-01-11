@@ -14,7 +14,7 @@ import { CanvasRenderer } from 'echarts/renderers';
 // 引入新增的 D3 可视化组件
 import CombinedRadialChart from '@/components/D3components/CombinedRadialChart.vue';
 import RadialAreaChart from '@/components/D3components/RadialAreaChart.vue';
-
+import AxonometricBeijing from '@/components/D3components/AxonometricBeijing.vue';
 // 注册 ECharts 组件
 echarts.use([
   TitleComponent,
@@ -346,6 +346,9 @@ onUnmounted(() => {
     <v-row class="mb-6">
       <v-col cols="8">
         <CombinedRadialChart />
+      </v-col>
+      <v-col cols="4">
+        <AxonometricBeijing />
       </v-col>
     </v-row>
 

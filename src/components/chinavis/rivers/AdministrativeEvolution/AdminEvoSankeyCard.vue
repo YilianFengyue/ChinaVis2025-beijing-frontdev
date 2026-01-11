@@ -520,7 +520,7 @@ onUnmounted(() => {
   --font-en: "Product Sans", sans-serif;
   --font-cn: "Source Han Serif SC", "SimSun", serif;
 
-  height: 600px;
+  height: 100%;
   background: #E9E9E9;
   font-family: var(--font-cn);
   border-radius: 0;
@@ -567,7 +567,7 @@ onUnmounted(() => {
 
 .chart-area {
   min-width: 900px;
-  height: 960px;
+  height: 100%;
 }
 
 :deep(*) { 

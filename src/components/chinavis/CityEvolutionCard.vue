@@ -228,12 +228,12 @@ let populationArcs: any[] = []
 let areaArcs: any[] = []
 let dynasties: any[] = []
 
-// 图表尺寸
-const margin = { top: 80, right: 80, bottom: 80, left: 80 }
+// 图表尺寸（宽度固定，高度动态获取）
+const margin = { top: 40, right: 60, bottom: 50, left: 60 }
 const width = 1400 - margin.left - margin.right
-const height = 600 - margin.top - margin.bottom
-const baselineY = height / 2
-const areaBand = height * 0.18
+let height = 280 // 默认值，会在 initChart 中重新计算
+let baselineY = height / 2
+let areaBand = height * 0.22
 
 // 加载数据
 async function loadData() {
@@ -273,11 +273,17 @@ function initChart() {
   // 清空容器
   d3.select(chartContainer.value).selectAll('*').remove()
 
-  // 创建SVG
+  // 动态获取容器高度
+  const containerHeight = chartContainer.value.clientHeight || 300
+  height = containerHeight - margin.top - margin.bottom
+  baselineY = height / 2
+  areaBand = height * 0.22
+
+  // 创建SVG：宽度固定（可横向滚动），高度占满容器
   svg = d3.select(chartContainer.value)
     .append('svg')
-    .attr('width', '100%')
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', containerHeight)
     .style('background-color', colors.background)
 
   // 创建主绘图区

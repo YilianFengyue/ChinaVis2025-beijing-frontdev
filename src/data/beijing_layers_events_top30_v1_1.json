@@ -1,0 +1,1059 @@
+{
+  "schema_version": "1.1",
+  "crs": "EPSG:4326",
+  "canvas_px": {
+    "width": 300,
+    "height": 300
+  },
+  "image_inset_ratio": 0.94,
+  "image_inset_margin_ratio": 0.03,
+  "layers": [
+    {
+      "id": "tang",
+      "name_cn": "唐幽州城",
+      "period": "618-907 CE",
+      "bbox_wgs84": {
+        "west": 116.332,
+        "east": 116.371,
+        "south": 39.878,
+        "north": 39.903
+      },
+      "events_top30": [
+        {
+          "event_id": 222,
+          "rank_top30": 3,
+          "year": 755,
+          "year_display": "755年",
+          "title": "安禄山起兵（安史之乱爆发）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "冲击/破坏",
+          "location_raw": "契丹、蓟城、洛阳",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.351778,
+          "lat": 39.890392,
+          "px": [
+            152.1,
+            151.3
+          ],
+          "hover": "755年｜安禄山起兵（安史之乱爆发）（战争）"
+        },
+        {
+          "event_id": 224,
+          "rank_top30": 4,
+          "year": 759,
+          "year_display": "759年",
+          "title": "史思明称帝，改范阳为燕京",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "政权/制度变动",
+          "location_raw": "燕京、郡",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.351006,
+          "lat": 39.890141,
+          "px": [
+            146.2,
+            154.3
+          ],
+          "hover": "759年｜史思明称帝，改范阳为燕京（战争）"
+        }
+      ]
+    },
+    {
+      "id": "liao",
+      "name_cn": "辽南京城",
+      "period": "938-1125 CE",
+      "bbox_wgs84": {
+        "west": 116.332,
+        "east": 116.371,
+        "south": 39.878,
+        "north": 39.903
+      },
+      "events_top30": [
+        {
+          "event_id": 267,
+          "rank_top30": 5,
+          "year": 938,
+          "year_display": "938年",
+          "title": "后晋割让燕云十六州（幽州归辽）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "政权/制度变动",
+          "location_raw": "契丹、幽州、南京、燕京、蓟县、蓟北",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.352001,
+          "lat": 39.890358,
+          "px": [
+            153.9,
+            151.7
+          ],
+          "hover": "938年｜后晋割让燕云十六州（幽州归辽）（战争）"
+        },
+        {
+          "event_id": 306,
+          "rank_top30": 6,
+          "year": 1012,
+          "year_display": "1012年",
+          "title": "十一月，改南京为燕京",
+          "type_main": "政权",
+          "event_type": "其他",
+          "impact_tags": "nan",
+          "location_raw": "燕京、析津府、析津县、宛平县",
+          "location_focus": "lugou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.334573,
+          "lat": 39.879369,
+          "px": [
+            19.8,
+            283.6
+          ],
+          "hover": "1012年｜十一月，改南京为燕京（政权）"
+        },
+        {
+          "event_id": 326,
+          "rank_top30": 7,
+          "year": 1057,
+          "year_display": "1057年",
+          "title": "七月，南京地震，毁城郭，死数万人",
+          "type_main": "灾害",
+          "event_type": "自然灾害",
+          "impact_tags": "冲击/破坏",
+          "location_raw": "南京、房山云居寺、契丹",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.351675,
+          "lat": 39.890369,
+          "px": [
+            151.3,
+            151.6
+          ],
+          "hover": "1057年｜七月，南京地震，毁城郭，死数万人（灾害）"
+        },
+        {
+          "event_id": 343,
+          "rank_top30": 8,
+          "year": 1122,
+          "year_display": "1122年",
+          "title": "正月，金人逼燕山，辽天祚帝弃南京自居庸关出逃",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "燕山、南京、固安、渡卢水(即永定河)、雄州、庸关",
+          "location_focus": "juyong",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.351184,
+          "lat": 39.901806,
+          "px": [
+            147.6,
+            14.3
+          ],
+          "hover": "1122年｜正月，金人逼燕山，辽天祚帝弃南京自居庸关出逃（战争）"
+        }
+      ]
+    },
+    {
+      "id": "jin",
+      "name_cn": "金中都城",
+      "period": "1153-1215 CE",
+      "bbox_wgs84": {
+        "west": 116.315,
+        "east": 116.4,
+        "south": 39.86,
+        "north": 39.905
+      },
+      "events_top30": [
+        {
+          "event_id": 359,
+          "rank_top30": 9,
+          "year": 1153,
+          "year_display": "1153年",
+          "title": "金迁都燕京，营建金中都",
+          "type_main": "政权",
+          "event_type": "政权/制度 / 城市建设/空间",
+          "impact_tags": "建成区扩展/工程、政权/制度变动",
+          "location_raw": "燕京、县有大兴、宛平、安次、漷阴、永清、宝坻、香河、昌平、武清、良乡。镇为广阳",
+          "location_focus": "lugou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.320741,
+          "lat": 39.862076,
+          "px": [
+            20.3,
+            286.2
+          ],
+          "hover": "1153年｜金迁都燕京，营建金中都（政权）"
+        },
+        {
+          "event_id": 396,
+          "rank_top30": 10,
+          "year": 1210,
+          "year_display": "1210年",
+          "title": "中都连发地震（蒙古攻金前夕）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 自然灾害 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、政权/制度变动、军事防御强化",
+          "location_raw": "中都、京师、中都",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.358703,
+          "lat": 39.882728,
+          "px": [
+            154.2,
+            148.5
+          ],
+          "hover": "1210年｜中都连发地震（蒙古攻金前夕）（战争）"
+        },
+        {
+          "event_id": 400,
+          "rank_top30": 11,
+          "year": 1214,
+          "year_display": "1214年",
+          "title": "金南迁汴京，放弃中都",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "政权/制度变动、人口迁移、军事防御强化",
+          "location_raw": "京师、蒙古、开封、中都",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.356472,
+          "lat": 39.882151,
+          "px": [
+            146.4,
+            152.3
+          ],
+          "hover": "1214年｜金南迁汴京，放弃中都（战争）"
+        },
+        {
+          "event_id": 401,
+          "rank_top30": 12,
+          "year": 1215,
+          "year_display": "1215年",
+          "title": "蒙古攻陷中都（焚毁与迁徙）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "冲击/破坏、政权/制度变动",
+          "location_raw": "通州、中都、蒙古",
+          "location_focus": "tongzhou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.394914,
+          "lat": 39.882528,
+          "px": [
+            282.0,
+            149.8
+          ],
+          "hover": "1215年｜蒙古攻陷中都（焚毁与迁徙）（战争）"
+        }
+      ]
+    },
+    {
+      "id": "yuan",
+      "name_cn": "元大都城",
+      "period": "1267-1368 CE",
+      "bbox_wgs84": {
+        "west": 116.33,
+        "east": 116.44,
+        "south": 39.9,
+        "north": 39.985
+      },
+      "events_top30": [
+        {
+          "event_id": 419,
+          "rank_top30": 13,
+          "year": 1267,
+          "year_display": "1267年",
+          "title": "忽必烈营建元大都（新都开工）",
+          "type_main": "政权",
+          "event_type": "政权/制度 / 城市建设/空间",
+          "impact_tags": "nan",
+          "location_raw": "燕京",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.384983,
+          "lat": 39.941509,
+          "px": [
+            150.0,
+            153.5
+          ],
+          "hover": "1267年｜忽必烈营建元大都（新都开工）（政权）"
+        },
+        {
+          "event_id": 422,
+          "rank_top30": 14,
+          "year": 1272,
+          "year_display": "1272年",
+          "title": "二月，改中都为大都",
+          "type_main": "政权",
+          "event_type": "政权/制度",
+          "impact_tags": "冲击/破坏、人口迁移",
+          "location_raw": "大都、京师、大圣寿万安寺(今白塔寺)",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.386551,
+          "lat": 39.941783,
+          "px": [
+            154.2,
+            152.5
+          ],
+          "hover": "1272年｜二月，改中都为大都（政权）"
+        },
+        {
+          "event_id": 456,
+          "rank_top30": 15,
+          "year": 1316,
+          "year_display": "1316年",
+          "title": "郭守敬治水与都城供水体系",
+          "type_main": "政权",
+          "event_type": "政权/制度 / 城市建设/空间",
+          "impact_tags": "nan",
+          "location_raw": "河北邢台",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.383828,
+          "lat": 39.9422,
+          "px": [
+            146.8,
+            151.1
+          ],
+          "hover": "1316年｜郭守敬治水与都城供水体系（政权）"
+        }
+      ]
+    },
+    {
+      "id": "mingqing",
+      "name_cn": "明清北京城",
+      "period": "1421-1912 CE",
+      "bbox_wgs84": {
+        "west": 116.33,
+        "east": 116.455,
+        "south": 39.865,
+        "north": 39.955
+      },
+      "events_top30": [
+        {
+          "event_id": 504,
+          "rank_top30": 16,
+          "year": 1368,
+          "year_display": "1368年",
+          "title": "明军克大都，改北平（元亡）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度",
+          "impact_tags": "人口迁移",
+          "location_raw": "大都、命徙北平居民于北京(今河南开封市)、顺义县、密云",
+          "location_focus": "miyun",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.44825,
+          "lat": 39.949682,
+          "px": [
+            283.8,
+            17.7
+          ],
+          "hover": "1368年｜明军克大都，改北平（元亡）（战争）"
+        },
+        {
+          "event_id": 525,
+          "rank_top30": 17,
+          "year": 1403,
+          "year_display": "1403年",
+          "title": "正月，改北平为北京",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 自然灾害 / 政权/制度",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "北京、直隶、山东、河南、浙江、苏州",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.392167,
+          "lat": 39.910375,
+          "px": [
+            149.2,
+            148.7
+          ],
+          "hover": "1403年｜正月，改北平为北京（战争）"
+        },
+        {
+          "event_id": 527,
+          "rank_top30": 18,
+          "year": 1406,
+          "year_display": "1406年",
+          "title": "永乐筹备迁都与大规模营建",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "北京、四川、湖广、江西、浙江、山西",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.390917,
+          "lat": 39.911148,
+          "px": [
+            146.2,
+            146.2
+          ],
+          "hover": "1406年｜永乐筹备迁都与大规模营建（战争）"
+        },
+        {
+          "event_id": 539,
+          "rank_top30": 19,
+          "year": 1421,
+          "year_display": "1421年",
+          "title": "明正式迁都北京（京城火灾）",
+          "type_main": "政权",
+          "event_type": "政权/制度",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "北京",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.391903,
+          "lat": 39.90943,
+          "px": [
+            148.6,
+            151.9
+          ],
+          "hover": "1421年｜明正式迁都北京（京城火灾）（政权）"
+        },
+        {
+          "event_id": 560,
+          "rank_top30": 20,
+          "year": 1449,
+          "year_display": "1449年",
+          "title": "七月，英宗与王振率军五十万余出京师，征瓦剌",
+          "type_main": "战争",
+          "event_type": "战争/冲突",
+          "impact_tags": "nan",
+          "location_raw": "京师",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.39311,
+          "lat": 39.909205,
+          "px": [
+            151.5,
+            152.6
+          ],
+          "hover": "1449年｜七月，英宗与王振率军五十万余出京师，征瓦剌（战争）"
+        },
+        {
+          "event_id": 572,
+          "rank_top30": 21,
+          "year": 1471,
+          "year_display": "1471年",
+          "title": "北京连年灾荒饥馑与大疫",
+          "type_main": "灾害",
+          "event_type": "自然灾害 / 城市建设/空间",
+          "impact_tags": "冲击/破坏",
+          "location_raw": "北京",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.394004,
+          "lat": 39.909112,
+          "px": [
+            153.6,
+            153.0
+          ],
+          "hover": "1471年｜北京连年灾荒饥馑与大疫（灾害）"
+        },
+        {
+          "event_id": 636,
+          "rank_top30": 22,
+          "year": 1550,
+          "year_display": "1550年",
+          "title": "嘉靖庚戌之变（俺答入寇）",
+          "type_main": "战争",
+          "event_type": "战争/冲突",
+          "impact_tags": "nan",
+          "location_raw": "京师、密云、怀柔，顺义、通州",
+          "location_focus": "tongzhou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.448521,
+          "lat": 39.910745,
+          "px": [
+            284.4,
+            147.5
+          ],
+          "hover": "1550年｜嘉靖庚戌之变（俺答入寇）（战争）"
+        },
+        {
+          "event_id": 639,
+          "rank_top30": 23,
+          "year": 1553,
+          "year_display": "1553年",
+          "title": "北京增筑外城（回应庚戌之变）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 城市建设/空间",
+          "impact_tags": "nan",
+          "location_raw": "昌平、怀柔、顺义",
+          "location_focus": "huairou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.390853,
+          "lat": 39.948392,
+          "px": [
+            146.0,
+            22.0
+          ],
+          "hover": "1553年｜北京增筑外城（回应庚戌之变）（战争）"
+        },
+        {
+          "event_id": 689,
+          "rank_top30": 24,
+          "year": 1607,
+          "year_display": "1607年",
+          "title": "京师大水（城垣塌毁）",
+          "type_main": "建设",
+          "event_type": "城市建设/空间",
+          "impact_tags": "冲击/破坏",
+          "location_raw": "京师",
+          "location_focus": "center",
+          "coord_mode": "city_center_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.390737,
+          "lat": 39.908836,
+          "px": [
+            145.8,
+            153.9
+          ],
+          "hover": "1607年｜京师大水（城垣塌毁）（建设）"
+        },
+        {
+          "event_id": 706,
+          "rank_top30": 25,
+          "year": 1629,
+          "year_display": "1629年",
+          "title": "己巳之变：后金入塞逼近北京",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、军事防御强化",
+          "location_raw": "京师、遵化、顺义、通州",
+          "location_focus": "tongzhou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.447918,
+          "lat": 39.911292,
+          "px": [
+            283.0,
+            145.7
+          ],
+          "hover": "1629年｜己巳之变：后金入塞逼近北京（战争）"
+        },
+        {
+          "event_id": 721,
+          "rank_top30": 26,
+          "year": 1644,
+          "year_display": "1644年",
+          "title": "甲申之变：李自成入京与清军入关",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "西安、京师、太原、南京、燕京、通、昌平、涿、霸、蓟、大兴、宛平、良乡、固安、永清、东安、香河、三河、武清、宝坻、漷、顺义、密云、怀柔、房山、文安、大城、保定、玉田、平谷、遵化、丰润、",
+          "location_focus": "lugou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.338139,
+          "lat": 39.870329,
+          "px": [
+            19.5,
+            282.2
+          ],
+          "hover": "1644年｜甲申之变：李自成入京与清军入关（战争）"
+        },
+        {
+          "event_id": 756,
+          "rank_top30": 27,
+          "year": 1679,
+          "year_display": "1679年",
+          "title": "四月十五日，以大旱，康熙帝步祷于天坛",
+          "type_main": "灾害",
+          "event_type": "自然灾害 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、人口迁移",
+          "location_raw": "京师",
+          "location_focus": "tiantan",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.391213,
+          "lat": 39.870966,
+          "px": [
+            146.9,
+            280.1
+          ],
+          "hover": "1679年｜四月十五日，以大旱，康熙帝步祷于天坛（灾害）"
+        },
+        {
+          "event_id": 874,
+          "rank_top30": 28,
+          "year": 1813,
+          "year_display": "1813年",
+          "title": "天理教起义攻入紫禁城（1813）",
+          "type_main": "战争",
+          "event_type": "战争/冲突",
+          "impact_tags": "nan",
+          "location_raw": "滑县、紫禁城、瀛台、河南、山东",
+          "location_focus": "forbidden_city",
+          "coord_mode": "manual_landmark",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.396525,
+          "lat": 39.915995,
+          "px": [
+            159.7,
+            130.0
+          ],
+          "hover": "1813年｜天理教起义攻入紫禁城（1813）（战争）"
+        },
+        {
+          "event_id": 907,
+          "rank_top30": 29,
+          "year": 1860,
+          "year_display": "1860年",
+          "title": "英法联军进犯北京（1860）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移、军事防御强化",
+          "location_raw": "天津、僧格林、英国、法国、通州",
+          "location_focus": "tongzhou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.447062,
+          "lat": 39.911322,
+          "px": [
+            280.9,
+            145.6
+          ],
+          "hover": "1860年｜英法联军进犯北京（1860）（战争）"
+        },
+        {
+          "event_id": 947,
+          "rank_top30": 30,
+          "year": 1900,
+          "year_display": "1900年",
+          "title": "义和团与八国联军占领北京（1900）",
+          "type_main": "战争",
+          "event_type": "战争/冲突 / 政权/制度 / 城市建设/空间",
+          "impact_tags": "冲击/破坏、政权/制度变动、人口迁移",
+          "location_raw": "英、美、日、法、俄、意等国、良乡、涿州、颐和园、杨村、姚家井、通州",
+          "location_focus": "tongzhou",
+          "coord_mode": "edge_proxy",
+          "coord_note": "在300×300城市卡片内可视化用的稳定落点：中心点/边缘代理/地标。若要严格GIS坐标，请用历史地名→坐标的人工/检索表替换。",
+          "lon": 116.448506,
+          "lat": 39.908899,
+          "px": [
+            284.4,
+            153.7
+          ],
+          "hover": "1900年｜义和团与八国联军占领北京（1900）（战争）"
+        }
+      ]
+    }
+  ],
+  "event_index": {
+    "222": {
+      "layer_id": "tang",
+      "year": 755,
+      "year_display": "755年",
+      "title": "安禄山起兵（安史之乱爆发）",
+      "type_main": "战争",
+      "px": [
+        152.1,
+        151.3
+      ],
+      "lon": 116.351778,
+      "lat": 39.890392,
+      "coord_mode": "city_center_proxy"
+    },
+    "224": {
+      "layer_id": "tang",
+      "year": 759,
+      "year_display": "759年",
+      "title": "史思明称帝，改范阳为燕京",
+      "type_main": "战争",
+      "px": [
+        146.2,
+        154.3
+      ],
+      "lon": 116.351006,
+      "lat": 39.890141,
+      "coord_mode": "city_center_proxy"
+    },
+    "267": {
+      "layer_id": "liao",
+      "year": 938,
+      "year_display": "938年",
+      "title": "后晋割让燕云十六州（幽州归辽）",
+      "type_main": "战争",
+      "px": [
+        153.9,
+        151.7
+      ],
+      "lon": 116.352001,
+      "lat": 39.890358,
+      "coord_mode": "city_center_proxy"
+    },
+    "306": {
+      "layer_id": "liao",
+      "year": 1012,
+      "year_display": "1012年",
+      "title": "十一月，改南京为燕京",
+      "type_main": "政权",
+      "px": [
+        19.8,
+        283.6
+      ],
+      "lon": 116.334573,
+      "lat": 39.879369,
+      "coord_mode": "edge_proxy"
+    },
+    "326": {
+      "layer_id": "liao",
+      "year": 1057,
+      "year_display": "1057年",
+      "title": "七月，南京地震，毁城郭，死数万人",
+      "type_main": "灾害",
+      "px": [
+        151.3,
+        151.6
+      ],
+      "lon": 116.351675,
+      "lat": 39.890369,
+      "coord_mode": "city_center_proxy"
+    },
+    "343": {
+      "layer_id": "liao",
+      "year": 1122,
+      "year_display": "1122年",
+      "title": "正月，金人逼燕山，辽天祚帝弃南京自居庸关出逃",
+      "type_main": "战争",
+      "px": [
+        147.6,
+        14.3
+      ],
+      "lon": 116.351184,
+      "lat": 39.901806,
+      "coord_mode": "edge_proxy"
+    },
+    "359": {
+      "layer_id": "jin",
+      "year": 1153,
+      "year_display": "1153年",
+      "title": "金迁都燕京，营建金中都",
+      "type_main": "政权",
+      "px": [
+        20.3,
+        286.2
+      ],
+      "lon": 116.320741,
+      "lat": 39.862076,
+      "coord_mode": "edge_proxy"
+    },
+    "396": {
+      "layer_id": "jin",
+      "year": 1210,
+      "year_display": "1210年",
+      "title": "中都连发地震（蒙古攻金前夕）",
+      "type_main": "战争",
+      "px": [
+        154.2,
+        148.5
+      ],
+      "lon": 116.358703,
+      "lat": 39.882728,
+      "coord_mode": "city_center_proxy"
+    },
+    "400": {
+      "layer_id": "jin",
+      "year": 1214,
+      "year_display": "1214年",
+      "title": "金南迁汴京，放弃中都",
+      "type_main": "战争",
+      "px": [
+        146.4,
+        152.3
+      ],
+      "lon": 116.356472,
+      "lat": 39.882151,
+      "coord_mode": "city_center_proxy"
+    },
+    "401": {
+      "layer_id": "jin",
+      "year": 1215,
+      "year_display": "1215年",
+      "title": "蒙古攻陷中都（焚毁与迁徙）",
+      "type_main": "战争",
+      "px": [
+        282.0,
+        149.8
+      ],
+      "lon": 116.394914,
+      "lat": 39.882528,
+      "coord_mode": "edge_proxy"
+    },
+    "419": {
+      "layer_id": "yuan",
+      "year": 1267,
+      "year_display": "1267年",
+      "title": "忽必烈营建元大都（新都开工）",
+      "type_main": "政权",
+      "px": [
+        150.0,
+        153.5
+      ],
+      "lon": 116.384983,
+      "lat": 39.941509,
+      "coord_mode": "city_center_proxy"
+    },
+    "422": {
+      "layer_id": "yuan",
+      "year": 1272,
+      "year_display": "1272年",
+      "title": "二月，改中都为大都",
+      "type_main": "政权",
+      "px": [
+        154.2,
+        152.5
+      ],
+      "lon": 116.386551,
+      "lat": 39.941783,
+      "coord_mode": "city_center_proxy"
+    },
+    "456": {
+      "layer_id": "yuan",
+      "year": 1316,
+      "year_display": "1316年",
+      "title": "郭守敬治水与都城供水体系",
+      "type_main": "政权",
+      "px": [
+        146.8,
+        151.1
+      ],
+      "lon": 116.383828,
+      "lat": 39.9422,
+      "coord_mode": "city_center_proxy"
+    },
+    "504": {
+      "layer_id": "mingqing",
+      "year": 1368,
+      "year_display": "1368年",
+      "title": "明军克大都，改北平（元亡）",
+      "type_main": "战争",
+      "px": [
+        283.8,
+        17.7
+      ],
+      "lon": 116.44825,
+      "lat": 39.949682,
+      "coord_mode": "edge_proxy"
+    },
+    "525": {
+      "layer_id": "mingqing",
+      "year": 1403,
+      "year_display": "1403年",
+      "title": "正月，改北平为北京",
+      "type_main": "战争",
+      "px": [
+        149.2,
+        148.7
+      ],
+      "lon": 116.392167,
+      "lat": 39.910375,
+      "coord_mode": "city_center_proxy"
+    },
+    "527": {
+      "layer_id": "mingqing",
+      "year": 1406,
+      "year_display": "1406年",
+      "title": "永乐筹备迁都与大规模营建",
+      "type_main": "战争",
+      "px": [
+        146.2,
+        146.2
+      ],
+      "lon": 116.390917,
+      "lat": 39.911148,
+      "coord_mode": "city_center_proxy"
+    },
+    "539": {
+      "layer_id": "mingqing",
+      "year": 1421,
+      "year_display": "1421年",
+      "title": "明正式迁都北京（京城火灾）",
+      "type_main": "政权",
+      "px": [
+        148.6,
+        151.9
+      ],
+      "lon": 116.391903,
+      "lat": 39.90943,
+      "coord_mode": "city_center_proxy"
+    },
+    "560": {
+      "layer_id": "mingqing",
+      "year": 1449,
+      "year_display": "1449年",
+      "title": "七月，英宗与王振率军五十万余出京师，征瓦剌",
+      "type_main": "战争",
+      "px": [
+        151.5,
+        152.6
+      ],
+      "lon": 116.39311,
+      "lat": 39.909205,
+      "coord_mode": "city_center_proxy"
+    },
+    "572": {
+      "layer_id": "mingqing",
+      "year": 1471,
+      "year_display": "1471年",
+      "title": "北京连年灾荒饥馑与大疫",
+      "type_main": "灾害",
+      "px": [
+        153.6,
+        153.0
+      ],
+      "lon": 116.394004,
+      "lat": 39.909112,
+      "coord_mode": "city_center_proxy"
+    },
+    "636": {
+      "layer_id": "mingqing",
+      "year": 1550,
+      "year_display": "1550年",
+      "title": "嘉靖庚戌之变（俺答入寇）",
+      "type_main": "战争",
+      "px": [
+        284.4,
+        147.5
+      ],
+      "lon": 116.448521,
+      "lat": 39.910745,
+      "coord_mode": "edge_proxy"
+    },
+    "639": {
+      "layer_id": "mingqing",
+      "year": 1553,
+      "year_display": "1553年",
+      "title": "北京增筑外城（回应庚戌之变）",
+      "type_main": "战争",
+      "px": [
+        146.0,
+        22.0
+      ],
+      "lon": 116.390853,
+      "lat": 39.948392,
+      "coord_mode": "edge_proxy"
+    },
+    "689": {
+      "layer_id": "mingqing",
+      "year": 1607,
+      "year_display": "1607年",
+      "title": "京师大水（城垣塌毁）",
+      "type_main": "建设",
+      "px": [
+        145.8,
+        153.9
+      ],
+      "lon": 116.390737,
+      "lat": 39.908836,
+      "coord_mode": "city_center_proxy"
+    },
+    "706": {
+      "layer_id": "mingqing",
+      "year": 1629,
+      "year_display": "1629年",
+      "title": "己巳之变：后金入塞逼近北京",
+      "type_main": "战争",
+      "px": [
+        283.0,
+        145.7
+      ],
+      "lon": 116.447918,
+      "lat": 39.911292,
+      "coord_mode": "edge_proxy"
+    },
+    "721": {
+      "layer_id": "mingqing",
+      "year": 1644,
+      "year_display": "1644年",
+      "title": "甲申之变：李自成入京与清军入关",
+      "type_main": "战争",
+      "px": [
+        19.5,
+        282.2
+      ],
+      "lon": 116.338139,
+      "lat": 39.870329,
+      "coord_mode": "edge_proxy"
+    },
+    "756": {
+      "layer_id": "mingqing",
+      "year": 1679,
+      "year_display": "1679年",
+      "title": "四月十五日，以大旱，康熙帝步祷于天坛",
+      "type_main": "灾害",
+      "px": [
+        146.9,
+        280.1
+      ],
+      "lon": 116.391213,
+      "lat": 39.870966,
+      "coord_mode": "edge_proxy"
+    },
+    "874": {
+      "layer_id": "mingqing",
+      "year": 1813,
+      "year_display": "1813年",
+      "title": "天理教起义攻入紫禁城（1813）",
+      "type_main": "战争",
+      "px": [
+        159.7,
+        130.0
+      ],
+      "lon": 116.396525,
+      "lat": 39.915995,
+      "coord_mode": "manual_landmark"
+    },
+    "907": {
+      "layer_id": "mingqing",
+      "year": 1860,
+      "year_display": "1860年",
+      "title": "英法联军进犯北京（1860）",
+      "type_main": "战争",
+      "px": [
+        280.9,
+        145.6
+      ],
+      "lon": 116.447062,
+      "lat": 39.911322,
+      "coord_mode": "edge_proxy"
+    },
+    "947": {
+      "layer_id": "mingqing",
+      "year": 1900,
+      "year_display": "1900年",
+      "title": "义和团与八国联军占领北京（1900）",
+      "type_main": "战争",
+      "px": [
+        284.4,
+        153.7
+      ],
+      "lon": 116.448506,
+      "lat": 39.908899,
+      "coord_mode": "edge_proxy"
+    }
+  }
+}

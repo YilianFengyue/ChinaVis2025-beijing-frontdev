@@ -1,5 +1,5 @@
 <template>
-  <v-card flat class="minguo-panel transparent">
+  <v-card flat class="minguo-panel transparent" height="800px">
     <div class="panel-header">
       <v-row align="center" dense no-gutters>
         <v-col cols="auto" class="d-flex align-center">
@@ -29,8 +29,12 @@
     <div class="chart-wrapper">
       <div ref="echartsContainer" class="echarts-layer"></div>
       <div ref="svgContainer" class="d3-layer"></div>
-      <div ref="tooltip" class="arch-tooltip"></div>
     </div>
+
+    <!-- Tooltip 使用 Teleport 确保在最顶层 -->
+    <Teleport to="body">
+      <div ref="tooltip" class="arch-tooltip"></div>
+    </Teleport>
   </v-card>
 </template>
 
@@ -306,14 +310,14 @@ const getChartOption = (isDark: boolean, data: VegetationData[]): echarts.EChart
           </div>
         `;
       },
-      backgroundColor: themeColors.value.tooltipBg,
-      borderColor: themeColors.value.tooltipBorder,
+      backgroundColor: '#E8E6E2',
+      borderColor: '#CCC',
       borderWidth: 1,
       textStyle: {
-        color: themeColors.value.text,
+        color: '#333',
       },
       padding: 12,
-      extraCssText: 'backdrop-filter: blur(4px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);'
+      extraCssText: 'border-left: 3px solid #EFD160; box-shadow: 0 8px 24px rgba(0,0,0,0.15);'
     },
     series: [
       {
@@ -480,8 +484,8 @@ const drawChart = () => {
         `;
       })
       .on("mousemove", function(event) {
-        const [x, y] = d3.pointer(event, svgContainer.value);
-        tooltip.value!.style.transform = `translate(${x + 20}px, ${y}px)`;
+        tooltip.value!.style.left = (event.pageX + 20) + 'px';
+        tooltip.value!.style.top = (event.pageY - 10) + 'px';
       })
       .on("mouseout", function() {
         d3.select(this)
@@ -612,8 +616,8 @@ const drawChart = () => {
       `;
     })
     .on("mousemove", function(event) {
-      const [x, y] = d3.pointer(event, svgContainer.value);
-      tooltip.value!.style.transform = `translate(${x + 20}px, ${y}px)`;
+      tooltip.value!.style.left = (event.pageX + 20) + 'px';
+      tooltip.value!.style.top = (event.pageY - 10) + 'px';
     })
     .on("mouseout", function() {
       d3.select(this)
@@ -875,24 +879,22 @@ watch(themeColors, () => {
 .arch-tooltip {
   position: fixed;
   z-index: 99999;
-  width: 260px;
+  width: 280px;
+  display: none; /* 初始隐藏 */
   
-  /* 核心修改：改为高亮磨砂白背景 */
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(8px);
+  /* 统一风格：浅灰不透明背景 */
+  background: #E8E6E2;
   
-  /* 边框：极细的灰线 */
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  /* 左侧强调线：保留，但颜色加深一点以便识别 */
-  border-left: 3px solid #D4AF37; 
+  /* 边框：金色左边框 */
+  border-left: 3px solid #EFD160;
   
-  /* 投影：加深投影，让它“浮”在图表之上 */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+  /* 投影 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   
   padding: 16px;
   pointer-events: none;
   font-family: var(--font-en);
-  border-radius: 2px;
+  color: #333;
 }
 
 .tt-header {

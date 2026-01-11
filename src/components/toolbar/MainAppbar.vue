@@ -15,7 +15,7 @@ const customizeTheme = useCustomizeThemeStore();
   <!-- ---------------------------------------------- -->
   <!--App Bar -->
   <!-- ---------------------------------------------- -->
-  <v-app-bar :density="mdAndUp ? 'default' : 'compact'">
+  <v-app-bar :density="mdAndUp ? 'default' : 'compact'"  image="/images/AppBarBackGround.png" :elevation="20">
     <!-- ---------------------------------------------- -->
     <!-- search input mobil -->
     <!-- ---------------------------------------------- -->
