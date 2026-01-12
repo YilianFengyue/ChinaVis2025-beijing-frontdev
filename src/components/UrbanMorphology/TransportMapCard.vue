@@ -396,15 +396,23 @@ const collectEvidenceDialog = () => {
   evidenceDialog.value.show = false
 }
 
+// const loadGeoData = async () => {
+//   try {
+//     const response = await fetch('/src/data/transport/中国_省.geojson')
+//     geoData.value = await response.json()
+//   } catch (error) {
+//     console.error('Failed to load GeoJSON:', error)
+//   }
+// }
 const loadGeoData = async () => {
   try {
-    const response = await fetch('/src/data/transport/中国_省.geojson')
+    const geoJsonUrl = new URL('../../data/transport/中国_省.geojson', import.meta.url)
+    const response = await fetch(geoJsonUrl)
     geoData.value = await response.json()
   } catch (error) {
     console.error('Failed to load GeoJSON:', error)
   }
 }
-
 const resetZoom = () => {
   if (!svgMap.value || !zoomBehavior.value) return
   d3.select(svgMap.value)
